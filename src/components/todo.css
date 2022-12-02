@@ -1,0 +1,45 @@
+*{
+    background-color: rgb(232, 239, 247);
+}
+.container{
+    text-align: center;
+    margin-top:100px;
+}
+h1{
+    color:rgb(0, 89, 255)
+}
+#plus{
+    color:rgb(0, 89, 255);
+    font-weight: bold;
+    padding:5px;
+    cursor: pointer;
+    border:2px solid grey;
+    border-left: none;
+}
+#inputtodo{
+    padding:5px;
+    width:400px;
+    border:2px solid grey;
+    border-right:none;
+    margin-bottom:40px;
+}
+#show{
+    width:432px;
+    margin:auto;
+}
+
+p{
+    background-color: blue;
+    color:white;
+    font-weight: bold;
+    padding:5px;
+    padding-left: 10px;
+    text-align: left;
+}
+#minus{
+   color:white;
+   float: right;
+   background-color: rgb(0, 89, 255 ,0);
+   border:none;
+   font-weight: bold;
+}

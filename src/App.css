@@ -1,0 +1,27 @@
+.container{
+  text-align: center;
+}
+
+h1{
+  color:grey;
+  margin-top:100px;
+}
+h4{
+  color:grey;
+  margin-top:20px;
+}
+.quantity{
+  background-color: rgb(239, 237, 237);
+  width:100px;
+  margin:auto;
+  padding:3px;
+}
+.quantity_input{
+  width:20px;
+  text-align: center;
+}
+a{
+  color: blue;
+  margin:10px;
+  font-weight: bold;
+}
