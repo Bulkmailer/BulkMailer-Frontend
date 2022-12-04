@@ -7,7 +7,6 @@ const Todo=()=>{
     const dispatch = useDispatch();
 const [todo , setTodo] = useState('');
 const list = useSelector((state)=>state.todoReducer.list);
-console.log(list);
 return(<>
 <div className='container'>
 <h1>ToDo List</h1>

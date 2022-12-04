@@ -22,7 +22,8 @@ export const Add_Todo =(data)=>{
 }
 export const Remove_Todo =(id)=>{
     return{
-        type:"Remove_Todo",
+        type:"Remove_Todo"
+        ,
         id
     }
 }
