@@ -1,33 +1,28 @@
-// import react from 'react';
-// import './App.css'
-// import { useSelector , useDispatch } from 'react-redux';
-// import {incNum , decNum} from './actions/index'
-
-// function App(){
-//   const myState =useSelector((state)=>state.changeTheNum);
-//   const dispatch = useDispatch();
-// return(<>
-// <div className='container'>
-// <h1>Increement/Decreement Counter</h1>
-// <h4>Using react and Redux</h4>
-// <div className='quantity'>
-//   <a className='quantity_minus' title='decreement' onClick={()=>dispatch(decNum())}><span> - </span></a>
-//   <input name='quantity' type='text' className='quantity_input' value={myState}></input>
-//   <a className='quantity_plus' title='increement' onClick={()=>dispatch(incNum())}><span> + </span></a>
-// </div>
-// </div>
-// </>)
-// }
-// export default App;
-
 import './App.css';
-import Todo from './components/todo';
+import { BrowserRouter as Router, Routes, Route} from "react-router-dom";
+import FrgPass from './components/auth/Frgpassword';
+import Login from './components/auth/Login';
+import Loginotp from './components/auth/LoginOtp';
+import ResetPass from './components/auth/ResetPass';
+import Signup from './components/auth/signup';
+import SignupDetails from './components/auth/SignupDetails';
+import Signupotp from './components/auth/SignupOtp';
 
 function App() {
   return (
-   <>
-   <Todo/>
-   </>
+  <>
+  <Router>
+    <Routes>
+      <Route path='/login' exact element={<Login />}></Route>
+      <Route path="/forgot" exact element={<FrgPass />}></Route>
+      <Route path="/loginotp" exact element={<Loginotp />}></Route>
+      <Route path="/resetpass" exact element={<ResetPass />}></Route>
+      <Route path="/signup" exact element={<Signup />}></Route>
+      <Route path="/signupotp" exact element={<Signupotp />}></Route>
+      <Route path="/signupdetails" exact element={<SignupDetails />}></Route>
+    </Routes>
+  </Router>
+  </>
   );
 }
 
