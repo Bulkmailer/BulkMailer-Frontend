@@ -5,12 +5,15 @@ import circle from "../../assets/circle.svg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {faEnvelope} from "@fortawesome/fontawesome-free-solid";
 import { useDispatch } from "react-redux";
-import { frgdata } from "../../redux/actions/auth";
+import { frgdata } from "../../redux/actions/AuthAction";
+import * as ReactBootStrap from 'react-bootstrap';
 
 function FrgPass() {
     const [email, setEmail] = useState("");
 
     const [correctMail, setCorrectMail] = useState(false);
+
+    const [loading , setLoading] = useState(false);
 
     const dispatch = useDispatch();
 
@@ -35,15 +38,17 @@ function FrgPass() {
       e.preventDefault();
       localStorage.setItem("forgotMail" , email);
       if(correctMail){
+        setLoading(true);
       const frgData={
         email:email
       }
-    dispatch(frgdata(frgData));
+    dispatch(frgdata(frgData , setLoading));
     }
   }
      
   return (
     <>
+     {loading?<div id='loader'><ReactBootStrap.Spinner animation="border" id="spinner"/></div>:null}
     <div id='flex'>
       <div className="bluediv">
         <img src={forgot} className="bluedivimg" />

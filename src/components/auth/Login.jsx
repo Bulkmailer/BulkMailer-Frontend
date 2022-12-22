@@ -6,8 +6,10 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash  , faEnvelope} from "@fortawesome/fontawesome-free-solid";
 import { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
-import {logindata} from '../../redux/actions/auth.jsx';
+// import {logindata} from '../../redux/actions/authActions/LoginAction';
+import { logindata } from "../../redux/actions/AuthAction";
 import {Link} from 'react-router-dom';
+import * as ReactBootStrap from 'react-bootstrap';
 
 function Login() {
   const [email, setEmail] = useState("");
@@ -16,6 +18,8 @@ function Login() {
   const [correctMail, setCorrectMail] = useState(false);
 
   const [show, setShow] = useState(false);
+
+  const [loading , setLoading] = useState(false);
 
   const rightmail =
     /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
@@ -45,16 +49,18 @@ function Login() {
   function handleSubmit(e) {
     e.preventDefault();
     if(correctMail){
+    setLoading(true);
     const loginData={
       email:email,
       password:password
     }
-    dispatch(logindata(loginData))
+    dispatch(logindata(loginData , setLoading))
   }
 }
   
   return (
     <>
+    {loading?<div id='loader'><ReactBootStrap.Spinner animation="border" id="spinner"/></div>:null}
 <div id="flex">
         <div className="bluediv">
           <img src={login} className="bluedivimg" />
@@ -119,6 +125,7 @@ function Login() {
         <img src={circle} className="bluecircleimg"></img>
         <div className="bluecircleimg2"></div>
       </div>
+
     </>
   );
 }

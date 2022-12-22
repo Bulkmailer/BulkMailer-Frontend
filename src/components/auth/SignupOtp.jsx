@@ -4,12 +4,15 @@ import otpicon from "../../assets/otpicon.svg";
 import circle from "../../assets/circle.svg";
 import otpimg from '../../assets/otp.svg';
 import { useDispatch } from "react-redux";
-import { signupotp } from "../../redux/actions/auth";
+import { signupotp } from "../../redux/actions/AuthAction";
+import * as ReactBootStrap from 'react-bootstrap';
 
 function Signupotp() {
 const [otp , setOtp]= useState('');
 
 const [correctOtp , setCorrectOtp]= useState(false);
+
+const [loading , setLoading] = useState(false);
 
 const rightOtp = /^[0-9]/;
 
@@ -23,11 +26,14 @@ setOtp(e.target.value);
 
 function handleSubmit(e){
     e.preventDefault();
+    if(correctOtp){
+    setLoading(true);
     const signupOtp={
       email:email , 
       otp:otp
     }
-    dispatch(signupotp(signupOtp))
+    dispatch(signupotp(signupOtp , setLoading))
+ }
 }
 useEffect(()=>{
 if(rightOtp.test(otp)){
@@ -41,6 +47,7 @@ else if(otp){
 } , [otp])
   return (
     <>
+        {loading?<div id='loader'><ReactBootStrap.Spinner animation="border" id="spinner"/></div>:null}
     <div id='flex'>
       <div className="bluediv">
         <img src={otpimg} className="bluedivimg" />

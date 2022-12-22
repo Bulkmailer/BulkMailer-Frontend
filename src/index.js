@@ -6,6 +6,8 @@ import reportWebVitals from './reportWebVitals';
 import store , {persistor} from './redux/store.jsx'
 import {Provider} from 'react-redux'
 import { PersistGate } from 'redux-persist/integration/react';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 store.subscribe(() => console. log(store.getState())) ;
 root.render(

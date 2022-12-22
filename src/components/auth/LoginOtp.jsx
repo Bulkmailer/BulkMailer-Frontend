@@ -5,19 +5,21 @@ import otpimg from '../../assets/otp.svg';
 import { useState } from "react";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { loginotp } from "../../redux/actions/auth";
+import { loginotp } from "../../redux/actions/AuthAction";
+import * as ReactBootStrap from 'react-bootstrap';
 
 function Loginotp() {
 const [otp , setOtp]= useState('');
 
 const [correctOtp , setCorrectOtp]= useState(false);
 
+const [loading , setLoading] = useState(false);
+
 const rightOtp = /^[0-9]*$/;
 
 const dispatch=useDispatch();
 
 var email = localStorage.getItem("forgotMail");
-console.log(email);
 
 function handleOtp(e){
 setOtp(e.target.value);
@@ -37,16 +39,18 @@ else if(otp){
 function handleSubmit(e){
   e.preventDefault();
   if(correctOtp){
+    setLoading(true);
   const loginOtp={
     email:email , 
     otp:otp
   }
-  dispatch(loginotp(loginOtp));
+  dispatch(loginotp(loginOtp , setLoading));
  }
 }
 
   return (
     <>
+    {loading?<div id='loader'><ReactBootStrap.Spinner animation="border" id="spinner"/></div>:null}
     <div id='flex'>
       <div className="bluediv">
         <img src={otpimg} className="bluedivimg" />
@@ -57,7 +61,7 @@ function handleSubmit(e){
        <form onSubmit={handleSubmit}>
         <div id='formflex'>
        <label htmlFor="otp" id='formlabel'>OTP</label> 
-       <input type='text' value={otp} id='forminput' placeholder='Enter Your OTP' onChange={handleOtp} maxLength={4}></input>
+       <input type='text' value={otp} id='forminput' placeholder='Enter Your OTP' onChange={handleOtp} maxLength={4} required></input>
        <img src={otpicon} id='mailimg'></img>
        <p id='emailerr3'>Numbers Only</p>
        </div>

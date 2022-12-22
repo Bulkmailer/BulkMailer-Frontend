@@ -5,7 +5,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser, faLock , faEye , faEyeSlash} from "@fortawesome/fontawesome-free-solid";
 import { useState , useEffect} from "react";
 import { useDispatch } from "react-redux";
-import { signupdetails } from "../../redux/actions/auth";
+import { signupdetails } from "../../redux/actions/AuthAction";
+import * as ReactBootStrap from 'react-bootstrap';
 
 function SignupDetails() {
 const [fullname , setFullname] = useState(''); 
@@ -18,6 +19,8 @@ const[show2 , setShow2]=useState(false);
 
 const [correctPass , setCorrectPass] = useState(false);
 const [correctRepass , setCorrectRepass] = useState(false);
+
+const [loading , setLoading] = useState(false);
 
 const rightPass =/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
 
@@ -70,17 +73,21 @@ function handleRepass(e){
 
 function handleSubmit(e){
     e.preventDefault();
+    if(correctPass && correctRepass){
+    setLoading(true);
     const signupDetails={
       email:email ,
       user_name:username,
       password:password , 
       name:fullname
     }
-    dispatch(signupdetails(signupDetails))
+    dispatch(signupdetails(signupDetails , setLoading))
+ }
 }
 
   return (
     <>
+    {loading?<div id='loader'><ReactBootStrap.Spinner animation="border" id="spinner"/></div>:null}
     <div id='flex'>
       <div className="bluediv">
         <img src={signup} className="bluedivimg" />
