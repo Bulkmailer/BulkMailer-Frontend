@@ -1,23 +1,22 @@
 
 *{
     font-family: 'Montserrat', sans-serif;
-    overflow-y: hidden;
+    overflow-x: hidden;
+}
+#formtop{
+    margin-top:7vh;
 }
 .bluediv {
+  box-sizing: border-box;
   background-color: #536dfe80;
-  /* width: 600; */
+  width: 50%;
   height: 100vh;
-  padding-top: 183px;
-  padding-bottom: 183px;
-  padding-left: 60px;
-  padding-right:120px;
+  overflow-y: hidden;
 }
 .bluedivimg {
-  /* width: 67%; */
-  /* padding-left:40px; */
-  /* height: 90%; */
-  width: 498px;
-  height: 420px;
+  width: 34.58vw;
+  height: 58.89vh;
+  margin:20.89vh 8.33vw 23.04vh 3.16vw;
 }
 .bluecircleimg {
   position: absolute;
@@ -37,12 +36,14 @@
     display:flex;
 }
 .form-heading{
-    margin-top:140px;
-    font-size: 50px;
+    margin-top:17.632vh;
+    font-size: 3.5rem;
+    font-weight: 600;
+    z-index:-1;
 }
 #forms{
-    padding-left:90px;
-    /* padding-right:70px; */
+    padding-left:7.25vw;
+    width:50%;
 }
 #formflex{
 display:flex;
@@ -50,48 +51,122 @@ flex-direction: column;
 }
 #formlabel{
     font-weight: 600;
-    margin-top:12px;
+    margin-top:1vh;
+}
+#formlabel2{
+    font-weight: 600;
+    margin-top:4vh;
+}
+#formlabel3{
+    font-weight: 600;
+    margin-top:-1vh;
+}
+#formlabel4{
+    font-weight: 600;
+    margin-top:-3vh;
 }
 #forminput{
     background-color: #D6D7DC50;
     border:0.5px solid black;
-    margin-top:5px;
+    margin-top:0.129vh;
     border-radius:7px;
-    width:395px;
-    height:40px;
+    width:35.43vw;
+    height:7vh;
+    font-size: 1rem;
     font-weight: 600;
-    padding-left:40px;
+    padding-left:5.5vh;
+}
+#forminput3{
+    background-color: #D6D7DC50;
+    border:0.5px solid black;
+    margin-top:0.129vh;
+    /* margin-bottom:5vh; */
+    border-radius:7px;
+    width:35.43vw;
+    height:7vh;
+    font-size: 1rem;
+    font-weight: 600;
+    padding-left:5.5vh;
+}
+#formflex2{
+    display:flex;
+    flex-direction: column;
+    height:400px;
+    }
+#forminput2{
+    background-color: #D6D7DC50;
+    border:0.5px solid black;
+    margin-top:0.129vh;
+    border-radius:7px;
+    width:35.43vw;
+    height:7vh;
+    font-size: 1rem;
+    font-weight: 600;
+    padding-left:5.5vh;
+}
+#eyecloseimg{
+    width:24px;
+    margin-top:-60px;
+    margin-left: 32.63vw;
+    color:grey;
+    height:20px;
+}
+#eyecloseimg2{
+    position:relative;
+    width:24px;
+    top:90px;
+    margin-left: 32.63vw;
+    color:grey;
+    height:20px;
+}
+#eyecloseimg3{
+    position:relative;
+    width:24px;
+    top:40px;
+    margin-left: 32.63vw;
+    color:grey;
+    height:20px;
+}
+#forgotlink{
+    margin:6vh 0vw 0 0vw ;
+}
+#forgotlink a{
+    font-weight: 700;
+    text-decoration: none;
+    color:black;
+}
+#formbtn{
+    background-color: rgba(83 , 109 , 254 , 0.9);
+    border:none;
+    color:white;
+    margin-top:6vh;
+    font-weight: 600;
+    width:35.43vw;
+    height:7vh;
+    border-radius: 5px;
+    cursor: pointer;
 }
 #mailimg{
     width:24px;
     position:relative;
-    top:-32px;
+    top:-36px;
     left:10px;
 }
+#mailimg2{
+    width:24px;
+    position:relative;
+    top:-74px;
+    left:10px;
+}
+
+
 #lockimg{
     width:24px;
     position:relative;
     top:-37px;
     left:10px;
 }
-#forgotlink a{
-    font-weight: 700;
-    margin-left:250px;
-    text-decoration: none;
-    color:black;
-}
-/* #forgotlink a{
-    text-decoration:none;
-} */
-#formbtn{
-    background-color: rgba(83 , 109 , 254 , 0.9);
-    border:none;
-    color:white;
-    font-weight: 600;
-    padding:5px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-}
+
 #endtxt{
     margin-top:30px;
     font-weight: 600;
@@ -106,16 +181,9 @@ flex-direction: column;
     color:#D14444;
     font-weight: 600;
     position:absolute;
-    top:300px;
+    top:330px;
     display: none;
 }
-#eyecloseimg{
-    width:20px;
-    position:relative;
-    top:-54px;
-    left:360px;
-}
-
 
 #forms2{
     padding-left:90px;
@@ -125,17 +193,26 @@ flex-direction: column;
     color:#D14444;
     font-weight: 600;
     position:absolute;
-    top:380px;
+    top:410px;
     display:none;
 }
 #formbtn2{
-    background-color: rgba(83 , 109 , 254 , 0.9);
+    /* background-color: rgba(83 , 109 , 254 , 0.9);
     border:none;
     color:white;
     font-weight: 600;
     padding:5px 20px;
     border-radius: 5px;
-    margin-top:30px;
+    margin-top:30px; */
+    background-color: rgba(83 , 109 , 254 , 0.9);
+    border:none;
+    color:white;
+    margin-top:2vh;
+    font-weight: 600;
+    width:35.43vw;
+    height:7vh;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
 
@@ -143,29 +220,29 @@ flex-direction: column;
     color:#D14444;
     font-weight: 600;
     position:absolute;
-    top:510px;  
-    width:410px;
+    top:380px;  
+    /* width:520px; */
     display: none;
 }
 
-#eyecloseimg2{
+/* #eyecloseimg2{
     width:20px;
     position:relative;
     top:-54px;
     left:360px;
-}
+} */
 
 #forms3{
     padding-left:90px;
-    margin-top:-30px;
+    margin-top:-40px;
 }
-#passwrderr2{
+/* #passwrderr2{
     color:#D14444;
     font-weight: 600;
     position:absolute;
     top:660px;   
     width:410px;
-}
+} */
 #passerr{
     color:#D14444;
     font-weight: 600;
@@ -177,7 +254,7 @@ flex-direction: column;
     color:#D14444;
     font-weight: 600;
     position:absolute;
-    top:425px;
+    top:470px;
     display:none;
 }
 
@@ -185,11 +262,11 @@ flex-direction: column;
     color:#D14444;
     font-weight: 600;
     position:absolute;
-    top:423px;  
+    top:530px;  
     width:410px;
     display: none;
 }
-#mailicon{
+/* #mailicon{
     position:relative;
     top:-34px;
     left:-175px;
@@ -235,20 +312,20 @@ flex-direction: column;
     position:absolute;
     top:495px;
     left:1130px;
-}
+} */
 #passerr3{
     color:#D14444;
     font-weight: 600;
     position:absolute;
-    top:507px;
+    top:547px;
     display:none;
 }
 #passwrderr3{
     color:#D14444;
     font-weight: 600;
     position:absolute;
-    top:575px;
-    width:400px;
+    top:645px;
+    padding-right: 20px;
     display:none;
 }
 #loader{
@@ -262,4 +339,12 @@ flex-direction: column;
 #spinner{
     position: relative;
     top:45%;
+}
+@media (max-width:1052px){
+    #passwrderr{
+        top:450px;  
+    }  
+    #passwrderr2{
+        top:600px;  
+    }  
 }

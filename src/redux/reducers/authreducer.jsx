@@ -1,16 +1,21 @@
 import { useNavigate } from 'react-router-dom';
 
-const initial={};
+const initial={
+    response:""
+};
 const authreducer =(state=initial 
     , action)=>{
     switch(action.type){
         case "Login" :{
         console.log(action.payload);
-        break;
+        console.log(action.payload.response.data.msg);
+        return{
+        response:action.payload.response.data.msg
+        }
+        // break;
         }
         case "Forgot" :{
         console.log(action.payload);
-        // navigate('/loginotp');
         break;
         }
         case "Signup" :{
@@ -26,6 +31,10 @@ const authreducer =(state=initial
         break;
         }
         case "LoginOtp" :{
+        console.log(action.payload);
+        break;
+        }
+        case "ResetPass" :{
         console.log(action.payload);
         break;
         }

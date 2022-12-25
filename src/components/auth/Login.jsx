@@ -1,15 +1,22 @@
 import "./auth.css";
 import login from "../../assets/login.svg";
 import circle from "../../assets/circle.svg";
-import lock from "../../assets/lock.svg";
+import mailimg from '../../assets/mail.svg';
+import lockimg from '../../assets/lock.svg';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEye, faEyeSlash  , faEnvelope} from "@fortawesome/fontawesome-free-solid";
+import { useNavigate } from "react-router-dom";
+import FormData from 'form-data';
+import {
+  faEye,
+  faEyeSlash,
+} from "@fortawesome/fontawesome-free-solid";
 import { useState, useEffect } from "react";
-import { useDispatch } from "react-redux";
-// import {logindata} from '../../redux/actions/authActions/LoginAction';
+import { useDispatch , useSelector } from "react-redux";
 import { logindata } from "../../redux/actions/AuthAction";
-import {Link} from 'react-router-dom';
-import * as ReactBootStrap from 'react-bootstrap';
+import { Link } from "react-router-dom";
+import * as ReactBootStrap from "react-bootstrap";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function Login() {
   const [email, setEmail] = useState("");
@@ -19,12 +26,25 @@ function Login() {
 
   const [show, setShow] = useState(false);
 
-  const [loading , setLoading] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const rightmail =
     /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 
-  const dispatch = useDispatch();  
+  const dispatch = useDispatch();
+  const fd = new FormData();
+  const navigate = useNavigate();
+
+  const mssg = useSelector((state)=>state.authreducer.response[0])
+   console.log(mssg);
+
+//    const showToastMessage = () => {
+//     if(correctMail&& email && password && mssg){
+//     toast.success(mssg, {
+//         position: toast.POSITION.TOP_RIGHT
+//     });
+//   }
+// }; 
 
   useEffect(() => {
     if (rightmail.test(email)) {
@@ -48,26 +68,28 @@ function Login() {
   }
   function handleSubmit(e) {
     e.preventDefault();
-    if(correctMail){
-    setLoading(true);
-    const loginData={
-      email:email,
-      password:password
+    if (correctMail) {
+      setLoading(true);
+      fd.append("email" , email);
+      fd.append("password" , password);
+      dispatch(logindata(fd, setLoading , navigate));
     }
-    dispatch(logindata(loginData , setLoading))
   }
-}
-  
+
   return (
     <>
-    {loading?<div id='loader'><ReactBootStrap.Spinner animation="border" id="spinner"/></div>:null}
-<div id="flex">
+      {loading ? (
+        <div id="loader">
+          <ReactBootStrap.Spinner animation="border" id="spinner" />
+        </div>
+      ) : null}
+      <div id="flex">
         <div className="bluediv">
           <img src={login} className="bluedivimg" />
         </div>
         <div id="forms">
           <h1 className="form-heading">Login</h1>
-          <form onSubmit={handleSubmit}>
+          <form onSubmit={handleSubmit} id='formtop'>
             <div id="formflex">
               <label htmlFor="email" id="formlabel">
                 Email Address
@@ -80,10 +102,8 @@ function Login() {
                 onChange={handleMail}
                 required
               ></input>
-              <FontAwesomeIcon icon={faEnvelope} id='mailicon' ></FontAwesomeIcon>
+              <img src={mailimg} id="mailimg"></img>
               <p id="emailerr">Invalid Email Address</p>
-            </div>
-            <div id="formflex">
               <label htmlFor="password" id="formlabel">
                 Password
               </label>
@@ -95,37 +115,39 @@ function Login() {
                 onChange={handlePass}
                 required
               ></input>
-              <img src={lock} id="lockimg"></img>
+              <img src={lockimg} id="mailimg"></img>
               {show ? (
                 <FontAwesomeIcon
                   icon={faEye}
-                  id="eyecloseimg"
                   onClick={showHide}
+                  id="eyecloseimg"
                 />
               ) : (
                 <FontAwesomeIcon
                   icon={faEyeSlash}
-                  id="eyecloseimg"
                   onClick={showHide}
+                  id="eyecloseimg"
                 />
               )}
-            </div>
-            <div id="formflex">
-              <p id="forgotlink"><Link to='/forgot'>Forgot Password?</Link></p>
+              <p id="forgotlink">
+                <Link to="/forgot">Forgot Password?</Link>
+              </p>
             </div>
             <button type="submit" id="formbtn">
               LOGIN
             </button>
+            <ToastContainer />
           </form>
           <p id="endtxt">
-            New To Bulk Mailer? <span id="endlink"><Link to='/signup'>Signup</Link></span>
+            New To Bulk Mailer?{" "}
+            <span id="endlink">
+              <Link to="/signup">Signup</Link>
+            </span>
           </p>
         </div>
-        <div></div>
-        <img src={circle} className="bluecircleimg"></img>
-        <div className="bluecircleimg2"></div>
       </div>
-
+      <img src={circle} className="bluecircleimg"></img>
+      <div className="bluecircleimg2"></div>
     </>
   );
 }

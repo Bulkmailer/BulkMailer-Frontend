@@ -7,6 +7,7 @@ import ResetPass from './components/auth/ResetPass';
 import Signup from './components/auth/signup';
 import SignupDetails from './components/auth/SignupDetails';
 import Signupotp from './components/auth/SignupOtp';
+import Test from './components/auth/test';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
       <Route path="/signup" exact element={<Signup />}></Route>
       <Route path="/signupotp" exact element={<Signupotp />}></Route>
       <Route path="/signupdetails" exact element={<SignupDetails />}></Route>
+      <Route path="/test" exact element={<Test />}></Route>
     </Routes>
   </Router>
   </>

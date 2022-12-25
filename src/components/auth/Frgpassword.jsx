@@ -2,10 +2,11 @@ import { useState , useEffect } from "react";
 import "./auth.css";
 import forgot from "../../assets/forgot.svg";
 import circle from "../../assets/circle.svg";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {faEnvelope} from "@fortawesome/fontawesome-free-solid";
+import FormData from 'form-data';
 import { useDispatch } from "react-redux";
 import { frgdata } from "../../redux/actions/AuthAction";
+import mailimg from '../../assets/mail.svg'
+import { useNavigate } from "react-router-dom";
 import * as ReactBootStrap from 'react-bootstrap';
 
 function FrgPass() {
@@ -16,6 +17,8 @@ function FrgPass() {
     const [loading , setLoading] = useState(false);
 
     const dispatch = useDispatch();
+    const fd= new FormData();
+    const navigate= useNavigate();
 
     function handleMail(e) {
         setEmail(e.target.value);
@@ -39,10 +42,8 @@ function FrgPass() {
       localStorage.setItem("forgotMail" , email);
       if(correctMail){
         setLoading(true);
-      const frgData={
-        email:email
-      }
-    dispatch(frgdata(frgData , setLoading));
+        fd.append("email" , email);
+    dispatch(frgdata(fd , setLoading , navigate));
     }
   }
      
@@ -55,11 +56,11 @@ function FrgPass() {
       </div>
       <div id='forms2'>
        <h1 className="form-heading">Email Verification</h1> 
-       <form onSubmit={handleSubmit}>
+       <form onSubmit={handleSubmit} id='formtop'>
         <div id='formflex'>
        <label htmlFor="email" id='formlabel'>Email Address</label> 
-       <input type='text' id='forminput' value={email} placeholder='Enter Your Email Address' onChange={handleMail}></input>
-       <FontAwesomeIcon icon={faEnvelope} id='mailicon2' ></FontAwesomeIcon>
+       <input type='text' id='forminput' value={email} placeholder='Enter Your Email Address' onChange={handleMail} required></input>
+       <img src={mailimg} id='mailimg'></img>
        <p id='emailerr2'>Invalid Email Address</p>
        </div>
        <button type='submit' id='formbtn2'>Send OTP</button>

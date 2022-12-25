@@ -1,11 +1,13 @@
 import { useState , useEffect } from "react";
 import "./auth.css";
-import otpicon from "../../assets/otpicon.svg";
+import key from "../../assets/key.svg";
 import circle from "../../assets/circle.svg";
 import otpimg from '../../assets/otp.svg';
+import FormData from 'form-data';
 import { useDispatch } from "react-redux";
 import { signupotp } from "../../redux/actions/AuthAction";
 import * as ReactBootStrap from 'react-bootstrap';
+import { useNavigate } from "react-router-dom";
 
 function Signupotp() {
 const [otp , setOtp]= useState('');
@@ -17,6 +19,8 @@ const [loading , setLoading] = useState(false);
 const rightOtp = /^[0-9]/;
 
 const dispatch= useDispatch();
+const fd = new FormData();
+const navigate = useNavigate();
 
 var email = localStorage.getItem("signupMail");
 
@@ -28,11 +32,9 @@ function handleSubmit(e){
     e.preventDefault();
     if(correctOtp){
     setLoading(true);
-    const signupOtp={
-      email:email , 
-      otp:otp
-    }
-    dispatch(signupotp(signupOtp , setLoading))
+    fd.append("email" , email);
+    fd.append("otp" , otp);
+    dispatch(signupotp(fd , setLoading , navigate))
  }
 }
 useEffect(()=>{
@@ -55,11 +57,11 @@ else if(otp){
       <div id='forms2'>
        <h1 className="form-heading">OTP Verification</h1>
        <p id='endtxt'>We have sent an OTP to your Email</p>
-       <form onSubmit={handleSubmit}>
+       <form onSubmit={handleSubmit} id='formtop'>
         <div id='formflex'>
        <label htmlFor="otp" id='formlabel'>OTP</label> 
-       <input type='text' id='forminput' value={otp} placeholder='Enter Your OTP' onChange={handleOtp} maxLength={4}></input>
-       <img src={otpicon} id='mailimg'></img>
+       <input type='text' id='forminput' value={otp} placeholder='Enter Your OTP' onChange={handleOtp} maxLength={4} required></input>
+       <img src={key} id='mailimg'></img>
        <p id='emailerr3'>Numbers Only</p>
        </div>
        <button type='submit' id='formbtn2'>Verify</button>

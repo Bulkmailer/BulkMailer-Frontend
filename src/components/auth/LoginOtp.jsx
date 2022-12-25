@@ -1,12 +1,14 @@
 import "./auth.css";
-import otpicon from "../../assets/otpicon.svg";
+import key from "../../assets/key.svg";
 import circle from "../../assets/circle.svg";
 import otpimg from '../../assets/otp.svg';
 import { useState } from "react";
 import { useEffect } from "react";
+import FormData from 'form-data';
 import { useDispatch } from "react-redux";
 import { loginotp } from "../../redux/actions/AuthAction";
 import * as ReactBootStrap from 'react-bootstrap';
+import { useNavigate } from "react-router-dom";
 
 function Loginotp() {
 const [otp , setOtp]= useState('');
@@ -18,6 +20,8 @@ const [loading , setLoading] = useState(false);
 const rightOtp = /^[0-9]*$/;
 
 const dispatch=useDispatch();
+const fd= new FormData();
+const navigate = useNavigate();
 
 var email = localStorage.getItem("forgotMail");
 
@@ -40,11 +44,9 @@ function handleSubmit(e){
   e.preventDefault();
   if(correctOtp){
     setLoading(true);
-  const loginOtp={
-    email:email , 
-    otp:otp
-  }
-  dispatch(loginotp(loginOtp , setLoading));
+    fd.append("email" , email);
+    fd.append("otp" , otp);
+  dispatch(loginotp(fd , setLoading , navigate));
  }
 }
 
@@ -58,11 +60,11 @@ function handleSubmit(e){
       <div id='forms2'>
        <h1 className="form-heading">OTP Verification</h1> 
        <p id='endtxt'>We have sent an OTP to your Email</p>
-       <form onSubmit={handleSubmit}>
+       <form onSubmit={handleSubmit} id='formtop'>
         <div id='formflex'>
        <label htmlFor="otp" id='formlabel'>OTP</label> 
        <input type='text' value={otp} id='forminput' placeholder='Enter Your OTP' onChange={handleOtp} maxLength={4} required></input>
-       <img src={otpicon} id='mailimg'></img>
+       <img src={key} id='mailimg'></img>
        <p id='emailerr3'>Numbers Only</p>
        </div>
        <button type='submit' id='formbtn2'>Verify</button>

@@ -6,7 +6,11 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash } from "@fortawesome/fontawesome-free-solid";
 import { useState } from "react";
 import { useEffect } from "react";
+import FormData from 'form-data';
 import { useDispatch } from "react-redux";
+import { resetpass } from "../../redux/actions/AuthAction";
+import { useNavigate } from "react-router-dom";
+import * as ReactBootStrap from 'react-bootstrap';
 
 function ResetPass() {
 
@@ -19,7 +23,15 @@ function ResetPass() {
   const [correctPass , setCorrectPass] = useState(false);
   const [correctRepass , setCorrectRepass] = useState(false);
 
+  const [loading , setLoading] = useState(false);
+
   const rightPass =/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+
+  const dispatch = useDispatch();
+  const fd = new FormData();
+  const navigate = useNavigate();
+
+  var email = localStorage.getItem("forgotMail");
 
   useEffect(()=>{
   if(rightPass.test(password)){
@@ -61,63 +73,66 @@ function ResetPass() {
 
   function handleSubmit(e){
     e.preventDefault();
+    if (correctPass && correctRepass) {
+      setLoading(true);
+      fd.append("email" , email);
+      fd.append("password" , password);
+      dispatch(resetpass(fd, setLoading , navigate));
+    }
   }
 
   return (
     <>
+     {loading?<div id='loader'><ReactBootStrap.Spinner animation="border" id="spinner"/></div>:null}
     <div id='flex'>
       <div className="bluediv">
         <img src={reset} className="bluedivimg" />
       </div>
       <div id='forms'>
-       <h1 className="form-heading">Reset Password</h1> 
-       <form onSubmit={handleSubmit}>
+       <form onSubmit={handleSubmit} id='formtop'>
         <div id='formflex'>
-       <label htmlFor="text" id='formlabel'>Password</label> 
+        <h1 className="form-heading">Reset Password</h1> 
+        {show1 ? (
+                <FontAwesomeIcon
+                  icon={faEye}
+                  id="eyecloseimg2"
+                  onClick={showHide1}
+                />
+              ) : (
+                <FontAwesomeIcon
+                  icon={faEyeSlash}
+                  id="eyecloseimg2"
+                  onClick={showHide1}
+                />
+              )}
+       <label htmlFor="text" id='formlabel2'>Password</label> 
        <input 
         type={show1 ? "text" : "password"}
         id='forminput' placeholder='Enter Your Password'
-       value={password} onChange={handlePassword}></input>
+       value={password} onChange={handlePassword} required></input>
        <img src={lock} id='mailimg'></img>
-       {show1 ? (
-                <FontAwesomeIcon
-                  icon={faEye}
-                  id="eyecloseimg"
-                  onClick={showHide1}
-                />
-              ) : (
-                <FontAwesomeIcon
-                  icon={faEyeSlash}
-                  id="eyecloseimg"
-                  onClick={showHide1}
-                />
-              )}
-       </div>
-       <div id='formflex'>
-       <label htmlFor="password" id='formlabel'>Confirm Password</label> 
-       <input 
-        type={show2 ? "text" : "password"}
-        id='forminput' placeholder='Re-enter Password'
-       value={repass} onChange={handleRepass}></input>
-       <img src={lock} id='lockimg'></img>
        {show2 ? (
                 <FontAwesomeIcon
                   icon={faEye}
-                  id="eyecloseimg"
+                  id="eyecloseimg2"
                   onClick={showHide2}
                 />
               ) : (
                 <FontAwesomeIcon
                   icon={faEyeSlash}
-                  id="eyecloseimg"
+                  id="eyecloseimg2"
                   onClick={showHide2}
                 />
               )}
+       <label htmlFor="password" id='formlabel2'>Confirm Password</label> 
+       <input 
+        type={show2 ? "text" : "password"}
+        id='forminput' placeholder='Re-enter Password'
+       value={repass} onChange={handleRepass} required></input>
+       <img src={lock} id='lockimg'></img>
        <p id='passwrderr2'>Didn't Match</p>
-       </div>
-       <div id='formflex'>
-       </div>
        <button type='submit' id='formbtn'>Continue</button>
+       </div>
        </form>
        <p id='passwrderr'>Password must contain at least 8 characters, a special symbol, an uppercase, a lowecase,a numeric value and no space</p>
       </div>
