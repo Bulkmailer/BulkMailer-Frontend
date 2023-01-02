@@ -11,6 +11,8 @@ import lock from '../../assets/lock.svg';
 import { signupdetails } from "../../redux/actions/AuthAction";
 import * as ReactBootStrap from 'react-bootstrap';
 import { useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function SignupDetails() {
 const [fullname , setFullname] = useState(''); 
@@ -97,7 +99,7 @@ function handleSubmit(e){
         <img src={signup} className="bluedivimg" />
       </div>
       <div id='forms3'>
-      <h1 className="form-heading">User Details</h1> 
+      <h1 className="form-heading4">User Details</h1> 
        <form onSubmit={handleSubmit}>
        <div id='formflex'>
        <label htmlFor="fullname" id='formlabel'>Full Name</label> 

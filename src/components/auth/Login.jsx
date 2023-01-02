@@ -4,12 +4,12 @@ import circle from "../../assets/circle.svg";
 import mailimg from '../../assets/mail.svg';
 import lockimg from '../../assets/lock.svg';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useNavigate } from "react-router-dom";
-import FormData from 'form-data';
 import {
   faEye,
   faEyeSlash,
 } from "@fortawesome/fontawesome-free-solid";
+import { useNavigate } from "react-router-dom";
+import FormData from 'form-data';
 import { useState, useEffect } from "react";
 import { useDispatch , useSelector } from "react-redux";
 import { logindata } from "../../redux/actions/AuthAction";
@@ -35,18 +35,21 @@ function Login() {
   const fd = new FormData();
   const navigate = useNavigate();
 
-  const mssg = useSelector((state)=>state.authreducer.response[0])
-   console.log(mssg);
+  const [check , setCheck]= useState(0);
 
-//    const showToastMessage = () => {
-//     if(correctMail&& email && password && mssg){
-//     toast.success(mssg, {
-//         position: toast.POSITION.TOP_RIGHT
-//     });
-//   }
-// }; 
+const mssg = useSelector((state)=>state.authreducer);
+console.log(mssg);
 
-  useEffect(() => {
+useEffect(()=>{
+    console.log(check);
+    if(check==1){
+    toast.error(mssg.response[0], {
+        position: toast.POSITION.TOP_RIGHT
+    });
+  }
+} ,[check]);
+   
+useEffect(() => {
     if (rightmail.test(email)) {
       document.getElementById("emailerr").style.display = "none";
       setCorrectMail(true);
@@ -70,9 +73,11 @@ function Login() {
     e.preventDefault();
     if (correctMail) {
       setLoading(true);
+      setCheck(0);
       fd.append("email" , email);
       fd.append("password" , password);
-      dispatch(logindata(fd, setLoading , navigate));
+      console.log(fd);
+      dispatch(logindata(fd, setLoading , navigate , setCheck));
     }
   }
 
@@ -98,7 +103,7 @@ function Login() {
                 type="text"
                 id="forminput"
                 value={email}
-                placeholder="Enter Your Email Address"
+                placeholder="Enter Your Email"
                 onChange={handleMail}
                 required
               ></input>
@@ -139,7 +144,7 @@ function Login() {
             <ToastContainer />
           </form>
           <p id="endtxt">
-            New To Bulk Mailer?{" "}
+            New To Bulk Mailer?
             <span id="endlink">
               <Link to="/signup">Signup</Link>
             </span>

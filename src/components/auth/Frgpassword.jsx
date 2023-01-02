@@ -3,11 +3,14 @@ import "./auth.css";
 import forgot from "../../assets/forgot.svg";
 import circle from "../../assets/circle.svg";
 import FormData from 'form-data';
-import { useDispatch } from "react-redux";
+import { useDispatch , useSelector} from "react-redux";
 import { frgdata } from "../../redux/actions/AuthAction";
 import mailimg from '../../assets/mail.svg'
 import { useNavigate } from "react-router-dom";
 import * as ReactBootStrap from 'react-bootstrap';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 function FrgPass() {
     const [email, setEmail] = useState("");
@@ -19,6 +22,18 @@ function FrgPass() {
     const dispatch = useDispatch();
     const fd= new FormData();
     const navigate= useNavigate();
+
+    const [check , setCheck]= useState(0);
+    const mssg = useSelector((state)=>state.authreducer);
+
+    useEffect(()=>{
+      console.log(check);
+      if(check==1){
+      toast.error(mssg.response1[0], {
+          position: toast.POSITION.TOP_RIGHT
+      });
+    }
+  } ,[check]);
 
     function handleMail(e) {
         setEmail(e.target.value);
@@ -42,8 +57,9 @@ function FrgPass() {
       localStorage.setItem("forgotMail" , email);
       if(correctMail){
         setLoading(true);
+        setCheck(0);
         fd.append("email" , email);
-    dispatch(frgdata(fd , setLoading , navigate));
+    dispatch(frgdata(fd , setLoading , navigate , setCheck));
     }
   }
      
@@ -55,7 +71,7 @@ function FrgPass() {
         <img src={forgot} className="bluedivimg" />
       </div>
       <div id='forms2'>
-       <h1 className="form-heading">Email Verification</h1> 
+       <h1 className="form-heading2">Email Verification</h1> 
        <form onSubmit={handleSubmit} id='formtop'>
         <div id='formflex'>
        <label htmlFor="email" id='formlabel'>Email Address</label> 
@@ -64,6 +80,7 @@ function FrgPass() {
        <p id='emailerr2'>Invalid Email Address</p>
        </div>
        <button type='submit' id='formbtn2'>Send OTP</button>
+       <ToastContainer />
        </form>
       </div>
       <div>

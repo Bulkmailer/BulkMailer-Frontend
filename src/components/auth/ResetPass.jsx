@@ -7,10 +7,12 @@ import { faEye, faEyeSlash } from "@fortawesome/fontawesome-free-solid";
 import { useState } from "react";
 import { useEffect } from "react";
 import FormData from 'form-data';
-import { useDispatch } from "react-redux";
+import { useDispatch , useSelector } from "react-redux";
 import { resetpass } from "../../redux/actions/AuthAction";
 import { useNavigate } from "react-router-dom";
 import * as ReactBootStrap from 'react-bootstrap';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function ResetPass() {
 
@@ -32,6 +34,19 @@ function ResetPass() {
   const navigate = useNavigate();
 
   var email = localStorage.getItem("forgotMail");
+
+  const [check , setCheck]= useState(0);
+
+const mssg =useSelector((state)=>state.authreducer);
+
+useEffect(()=>{
+    console.log(check);
+    if(check==1){
+    toast.error(mssg.response6[0], {
+        position: toast.POSITION.TOP_RIGHT
+    });
+  }
+} ,[check]);
 
   useEffect(()=>{
   if(rightPass.test(password)){
@@ -75,9 +90,10 @@ function ResetPass() {
     e.preventDefault();
     if (correctPass && correctRepass) {
       setLoading(true);
+      setCheck(0);
       fd.append("email" , email);
       fd.append("password" , password);
-      dispatch(resetpass(fd, setLoading , navigate));
+      dispatch(resetpass(fd, setLoading , navigate , setCheck));
     }
   }
 
@@ -88,10 +104,10 @@ function ResetPass() {
       <div className="bluediv">
         <img src={reset} className="bluedivimg" />
       </div>
-      <div id='forms'>
+      <div id='forms4'>
        <form onSubmit={handleSubmit} id='formtop'>
         <div id='formflex'>
-        <h1 className="form-heading">Reset Password</h1> 
+        <h1 className="form-heading3">Reset Password</h1> 
         {show1 ? (
                 <FontAwesomeIcon
                   icon={faEye}
@@ -129,9 +145,10 @@ function ResetPass() {
         type={show2 ? "text" : "password"}
         id='forminput' placeholder='Re-enter Password'
        value={repass} onChange={handleRepass} required></input>
-       <img src={lock} id='lockimg'></img>
+       <img src={lock} id='mailimg'></img>
        <p id='passwrderr2'>Didn't Match</p>
        <button type='submit' id='formbtn'>Continue</button>
+       <ToastContainer/>
        </div>
        </form>
        <p id='passwrderr'>Password must contain at least 8 characters, a special symbol, an uppercase, a lowecase,a numeric value and no space</p>
