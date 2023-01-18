@@ -14,6 +14,16 @@ import Copy from './components/layout/Dashboard/Group/Copy';
 import CreateGroup from './components/layout/Dashboard/Group/Creategroup';
 import Uploads from './components/layout/Dashboard/Group/UploadFile';
 import AddContacts from './components/layout/Dashboard/Group/AddContact';
+import Mailhistory from './components/layout/Dashboard/Mailhistory';
+import MyGroup from './components/layout/MyGroup/MyGroup';
+import Groupinfo from './components/layout/MyGroup/Groupinfo';
+import ProfilePage from './components/layout/ProfilePage/ProfilePage';
+import Templates from './components/layout/Mailing/Templates/Template';
+import Templates1 from './components/layout/Mailing/Templates/Template1';
+import EditProfile from './components/layout/ProfilePage/ProfileEdit';
+import AddPassword from './components/layout/ProfilePage/AddPassword';
+import UpdatePassword from './components/layout/ProfilePage/UpdateAppPassword';
+import AddEmails from './components/layout/ProfilePage/AddEmails';
 
 function App() {
   return (
@@ -34,6 +44,17 @@ function App() {
       <Route path="/creategroup" exact element={<CreateGroup />}></Route>
       <Route path="/uploads" exact element={<Uploads />}></Route>
       <Route path="/addcontacts" exact element={<AddContacts />}></Route>
+      <Route path="/mailhistory" exact element={<Mailhistory />}></Route>
+      <Route path="/mygrp" exact element={<MyGroup />}></Route>
+      <Route path="/groupinfo" exact element={<Groupinfo />}></Route>
+      <Route path="/profilepage" exact element={<ProfilePage />}></Route>
+      <Route path="/templates" exact element={<Templates />}></Route>
+      <Route path="/template-1" exact element={<Templates1 />}></Route>
+      <Route path="/editprofile" exact element={<EditProfile />}></Route>
+      <Route path="/addpassword" exact element={<AddPassword />}></Route>
+      <Route path="/updatepassword" exact element={<UpdatePassword />}></Route>
+      <Route path="/addmails" exact element={<AddEmails />}></Route>
+     
     </Routes>
   </Router>
   </>

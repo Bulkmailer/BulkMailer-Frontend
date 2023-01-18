@@ -183,16 +183,11 @@ flex-direction: column;
 }
 
 /* ResetPassword */
-#forms4{
-    padding-left:90px;
-   margin-top:-60px;
-    width:50%;
-}
 #passwrderr{
     color:#D14444;
     font-weight: 600;
     position:absolute;
-    top:300px;  
+    top:320px;  
     padding-right:90px;
     display: none;
 }
@@ -200,7 +195,7 @@ flex-direction: column;
     color:#D14444;
     font-weight: 600;
     position:absolute;
-    top:445px;  
+    top:465px;  
     width:410px;
     display: none;
 }
@@ -213,7 +208,7 @@ flex-direction: column;
     height:20px;
 }
 .form-heading3{
-    margin-top:17.632vh;
+    margin-top:0.632vh;
     font-size: 2.5rem;
     font-weight: 600;
     z-index:-1;

@@ -1,16 +1,48 @@
+/* Create group */
 #sidebarflex{
     display:flex;
 }
+#grouphead{
+    font-weight:700;
+    color:#00000080;
+    margin:120px 0 0 100px;
+    padding-right: 20px;
+}
+#flexform{
+    display: flex;
+    flex-direction: column;
+    margin-left:100px;
+    margin-top:80px;
+}
+
 #pagehead{
     font-weight:700;
     color:#00000080;
     margin:180px 0 0 100px;
 }
-#grouphead{
-        font-weight:700;
-        color:#00000080;
-        margin:120px 0 0 100px;
-    }
+#pagediv{
+  margin-top:50px;  
+  margin-left:50px;
+}
+#divhead{
+    font-weight:700;
+    color:#00000080;
+}
+#forminput2{
+    background-color: #D6D7DC50;
+    border:0.5px solid black;
+    margin-top:1px;
+    border-radius:7px;
+    width:35.43vw;
+    height:50px;
+    font-size: 1rem;
+    font-weight: 600;
+    padding-left:42px;
+}
+#formslabel{
+    font-weight: 600;
+    margin-top:7px;
+}
 #intropara2{
     margin-left:100px;  
     margin-top:20px; 
@@ -25,13 +57,20 @@
     padding-right:100px;
     font-weight: 500;
 }
+#intropara4{
+    margin-left:100px;  
+    margin-top:20px; 
+    font-size:20px;
+    padding-right:100px;
+    font-weight: 500;
+}
 #marginer{
     margin-left:40px;
 }
 #managing{
-    margin-top:-140px;
-    margin-left:-60px;
-    /* width:80%; */
+    margin-top:-100px;
+    margin-left:20px;
+    width:100%;
 }
 #boxflex2{
     display: flex;
@@ -55,17 +94,26 @@
     margin-left:100px;
     visibility: hidden;
 }
+#copyform2 input{
+    width:40vw;
+    height:300px;
+    margin-left:100px;
+   border:1px dashed black;
+   padding-bottom:50px 0;
+   text-align: start;
+   margin-top:40px;
+}
 #pagehead2{
     font-weight:700;
     color:#00000080;
     margin:100px 0 0 100px;
 }
-#flexform{
-    display: flex;
-    flex-direction: column;
-    margin-left:100px;
-    margin-top:80px;
+#pagehead3{
+    font-weight:700;
+    color:#00000080;
+    margin:100px 0 0 100px;
 }
+
 #flexform2{
     display: flex;
     flex-direction: column;
@@ -84,6 +132,64 @@
     cursor: pointer;
     margin-right:30px;
 }
+#formbtn4{
+    background-color: rgba(83 , 109 , 254 , 0.9);
+    border:none;
+    color:white;
+    margin-top:2vh;
+    font-weight: 600;
+    width:15.43vw;
+    height:50px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right:30px;
+}
+#formbtn5{
+    margin-left:-360px;
+    margin-top:3vh;
+    background-color: rgba(83 , 109 , 254 , 0.9);
+    border:none;
+    color:white;
+    font-weight: 600;
+    width:15.43vw;
+    height:50px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+#formbtn6{
+    position:absolute;
+    top:630px;
+    left:450px;
+    background-color: rgba(83 , 109 , 254 , 0.9);
+    border:none;
+    color:white;
+    font-weight: 600;
+    width:15.43vw;
+    height:50px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+#formbtn7{
+    background-color: rgba(83 , 109 , 254 , 0.9);
+    border:none;
+    color:white;
+    font-weight: 600;
+    width:5.43vw;
+    height:30px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top:30px;
+    margin-right:20px;
+}
+#searchinp{
+    color:black;
+    border-radius: 5px;
+    border:none;
+    height:30px;
+    width:25.43vw;
+    background-color: #D6D7DC50;
+    padding-left:40px;
+}
 #buttonpara{
     color:#536DFE;
     font-weight: 600;
@@ -99,9 +205,27 @@
 #upload{
     margin-top:10px;
 }
+hr{
+    width:50vw;
+}
+#historydiv{
+    width:50vw;
+    height:70px;
+    background-color: #D6D7DC50;
+    margin-top:20px;
+}
+#mailerr{
+    position:absolute;
+    top:292px;
+    color:#D14444;
+    display: none;
+}
 @media(max-width:1088px){
     #manager{
         margin-left:-30px;
+    }
+    #pagediv{
+      width:100%;
     }
 }
 @media(max-width:1021px){
@@ -109,10 +233,24 @@
         margin-left:-50px;
     }
 }
+@media(max-width:954px){
+   #copyform2 input{
+  margin-top:0px;
+}
+}
 @media(max-width:985px){
     #manager{
         margin-left:-60px;
     }
+    #managerC{
+        margin-left:-60px;
+    }
+}
+@media(max-width:943px){
+#formbtn4{
+    position: relative;
+    top:10px;
+}
 }
 @media(max-width:934px){
     #boxflex2{
@@ -122,13 +260,44 @@
     #manager{
         margin-top:-90px;
     }
+    #manager2{
+        margin-top:-90px;
+    }
+    #manager3{
+        margin-top:-90px;
+    }
     #pagehead2{
         margin:180px 0 0 100px;
+    }
+    #pagehead3{
+        margin:180px 0 0 100px;
+    }
+}
+@media(max-width:855px){
+    #manager3{
+        margin-left:-30px;
     }
 }
 @media(max-width:832px){
     #manager{
         margin-top:-130px;
+    }
+    #formbtn7{
+        width:8vw;
+        margin-right: 10px;
+    }
+    #searchinp{
+        width:28vw;
+    }
+}
+@media(max-width:827px){
+#grouphead{
+    margin-bottom: -50px;
+}
+}
+@media(max-width:805px){
+    #copyform2 input{
+       margin-top:20px;
     }
 }
 @media(max-width:782px){
@@ -143,19 +312,62 @@
         margin-left:17vw
     }
 }
+@media(max-width:748px){
+    #formbtn4{
+        position: relative;
+        top:0px;
+    }  
+}
+@media(max-width:708px){
+    #manager2{
+        margin-left:-30px;
+    }
+}
 @media(max-width:680px){
     #boxflex2{
         margin-left:14vw
+    }
+    #manager3{
+        margin-left:-50px;
+    }
+    #managing{
+        margin-top:-100px;
+        margin-left:-80px;
+        width:100%;
+        padding-left:20px;
+    }  
+}
+@media(max-width:630px){
+    #manager2{
+        margin-left:-50px;
     }
 }
 @media(max-width:605px){
     #boxflex2{
         margin-left:12vw
     }
+    #manager2{
+        margin-left:-70px;
+    }
+    #manager3{
+        margin-left:-60px;
+    }
 }
 @media(max-width:573px){
     #pagehead img{
         width:70px;
+    }
+    #formbtn6{
+        left:55vw;
+    }
+    #formbtn7{
+       width:10vw;
+    }
+    hr{
+        width:52vw;
+    }
+    #historydiv{
+        width:52vw;
     }
 }
 @media(max-width:543px){
@@ -173,10 +385,76 @@
         margin-left:0.5vw;
         width:100%;
     }
+    #manager2{
+        margin-left:0.5vw;
+        width:100%;
+    }
+    #manager3{
+        margin-left:0.5vw;
+        width:100%;
+    }
+    #imgdiv{
+        width:70vw;
+        margin-left:15vw;
+    }
+    #copyform2 input{
+        width:70vw;
+        margin-left:15vw;
+    }
+    #pagehead2{
+        margin:200px 0 0 15vw;
+    }
+    #pagehead3{
+        margin:200px 0 0 20vw;
+    }
+    #intropara3{
+        margin:40px 0 0 15vw; 
+    }
+    #intropara4{
+        margin:40px 0 0 20vw; 
+    }
+    #forminput2{
+        width:80vw;
+    }
+    #formbtn3{
+        width:35.43vw;
+    }
+    #formbtn4{
+        width:35.43vw;
+    }
+    #managing{
+        width:1000vw
+    }
+    #formbtn6{
+        left:32vw;
+        width:35vw;
+    }
+    #formbtn5{
+        width:35vw;
+        margin-left:32vw;
+    }
+    #formbtn7{
+        width:15vw;
+    }
+    #searchinp{
+        width:65vw;
+        margin-top:20px;
+    }
+    hr{
+        width:70vw;
+    }
+    #historydiv{
+        width:75vw;
+    }
 }
 @media(max-width:424px){
     #manager{
         margin-left:-2vw;
+    }
+}
+@media(max-width:410px){
+    #formbtn4{
+        top:10px;
     }
 }
 @media(max-width:399px){
@@ -197,12 +475,49 @@
 @media(max-width:855px){
     #intropara3{
         font-size:14px;
-
+    }
+    #intropara4{
+        font-size:14px;
     }
     }
     @media(max-width:510px){
         #intropara3{
             font-size:12px;
         }
+        #intropara4{
+            font-size:12px;
         }
-
+        }
+        @media (min-width:1024px) and (max-width:1024px) {
+    #manager{
+       margin-top:-100px;
+    }
+    #manager2{
+        margin-top:-60px;
+     }
+    #manager3{
+        margin-top:-60px;
+     }
+     #copyform2 input{
+    margin-top:10px;
+     }
+     #formbtn6{
+        top:540px;
+     }
+    #pagehead3{
+        margin-top:200px;
+    }
+}     
+@media(max-width:390px){
+    #manager3{
+        margin-top:-120px;
+     } 
+     #formbtn6{
+        top:580px;
+     }
+}
+@media(max-width:290px){
+     #formbtn6{
+        top:600px;
+     }
+}

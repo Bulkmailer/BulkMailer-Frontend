@@ -71,6 +71,7 @@ useEffect(() => {
   }
   function handleSubmit(e) {
     e.preventDefault();
+    localStorage.setItem("loginMail" , email);
     if (correctMail) {
       setLoading(true);
       setCheck(0);

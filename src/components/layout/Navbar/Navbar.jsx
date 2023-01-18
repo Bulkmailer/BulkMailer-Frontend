@@ -2,6 +2,7 @@ import './Navbar.css';
 import logo from '../../../assets/logo.svg';
 import profile from '../../../assets/profile.svg';
 import circle from '../../../assets/circlestwo.svg';
+import { Link } from "react-router-dom";
 
 function Navbar(){
 return(
@@ -12,9 +13,9 @@ return(
             <li></li>
             <li>Dashboard</li>
             <li>Mails</li>
-            <li>Schedules</li>
+            <Link to='/mygrp'><li>My groups</li></Link>
         </ul>
-        <img src={profile} id="profile"></img>
+        <Link to='/profilepage'><img src={profile} id="profile"></img></Link>
     </div>
     <img src = {circle} id="circletwo"></img>
     </>

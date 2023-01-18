@@ -1,0 +1,137 @@
+
+#profileimage{
+    width:150px;
+    margin-top:50px;
+    margin-left:50px;
+}
+#profilediv{
+    margin-top:20px;
+}
+#prohead{
+    margin-top:110px;
+    font-weight: 600;
+    margin-left:50px;
+}
+#profiledetails{
+    margin-left:50px;
+    background-color: #D6D7DC50;
+    padding:50px 30px;
+    width:70%;
+    font-size:20px;
+    margin-top:50px;
+    font-family: montserrat;
+}
+#flexdiv{
+    display:flex;
+}
+#formbtn8{
+    background-color: rgba(83 , 109 , 254 , 0.9);
+    border:none;
+    color:white;
+    font-weight: 600;
+    width:200px;
+    height:40px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top:30px;
+    margin-left:50px;
+}
+#grouphead2{
+    font-weight:700;
+    color:#00000080;
+    margin:120px 0 -50px 100px;
+    padding-right: 20px;
+}
+#plike{
+    background-color: rgba(255 , 255 , 255 , 0);
+    border:none;
+    color:rgba(83 , 109 , 254 );
+    font-weight: bold;
+}
+#error1{
+    color:#D14444;
+    font-weight: 600;
+    position:absolute;
+    top:342px;
+    display: none;
+}
+#error2{
+    color:#D14444;
+    font-weight: 600;
+    position:absolute;
+    top:545px;
+    display: none;
+    width:500px;
+}
+#error3{
+    color:#D14444;
+    font-weight: 600;
+    position:absolute;
+    top:505px;
+    display: none;
+    width:500px;
+}
+#error4{
+    color:#D14444;
+    font-weight: 600;
+    position:absolute;
+    top:505px;
+    display: none;
+    width:500px;
+}
+#error5{
+    color:#D14444;
+    font-weight: 600;
+    position:absolute;
+    top:505px;
+    display: none;
+    width:500px;
+}
+@media(max-width:627px){
+    #profiledetails{
+        width:85%;
+    }
+}
+@media(max-width:527px){
+    #profiledetails{
+        width:90%;
+        margin-left:25px;
+    }
+    #formbtn8{
+        margin-left:25px;
+    }
+}
+@media(max-width:502px){
+    #profiledetails{
+        width:90%;
+        margin-left:15px;
+        font-size:15px;
+    }
+    #formbtn8{
+        margin-left:15px;
+    }
+    #profileimage{
+        width:100px;
+        margin-top:50px;
+        margin-left:20px;
+    }
+    #prohead{
+        margin-top:90px;
+        font-weight: 600;
+        margin-left:20px;
+    }
+}
+@media(max-width:388px){
+    #profiledetails{
+        margin-left:10px;
+        width:95%;
+    }
+    #formbtn8{
+        margin-left:10px;
+    }
+}
+@media(max-width:364px){
+    #profiledetails{
+       font-size:12px;
+    }
+}

@@ -1,0 +1,40 @@
+.groupnamediv{
+    background-color: #D6D7DC50;
+    margin:15px;
+    padding:30px 20px;
+    width:70%;
+}
+.namesdiv{
+    margin-top:30px;
+    margin-left:20px;
+}
+.groupnames{
+    font-weight: bold;
+}
+#nothing{
+    display:flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+    margin-left:-80px;
+}
+#nothingimg{
+    width:500px;
+    margin-top:80px;
+}
+#nothing p{
+    font-weight: bold;
+    margin-top:30px;
+}
+#formbtn9{
+    background-color: rgba(83 , 109 , 254 , 0.9);
+    border:none;
+    color:white;
+    font-weight: 600;
+    width:200px;
+    height:40px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top:60px;
+    margin-left:50px;
+}

@@ -16,6 +16,10 @@
     margin-left:-10px;
     margin-top: 40px;
 }
+#sideul a{
+    color:#12121280;
+    text-decoration:none;
+}
 #sideul li{
     margin-top:15px;
 }

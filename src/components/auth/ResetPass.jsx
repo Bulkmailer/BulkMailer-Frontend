@@ -104,7 +104,7 @@ useEffect(()=>{
       <div className="bluediv">
         <img src={reset} className="bluedivimg" />
       </div>
-      <div id='forms4'>
+      <div id='forms2'>
        <form onSubmit={handleSubmit} id='formtop'>
         <div id='formflex'>
         <h1 className="form-heading3">Reset Password</h1> 
