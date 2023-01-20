@@ -3,8 +3,7 @@ const initial={
 response:'',
 status1:'' , 
 status2:'' , 
-status3:'' , 
-status4:'' , 
+status3:'' ,
 };
 const profilereducer =(state=initial 
     , action)=>{
@@ -13,7 +12,6 @@ const profilereducer =(state=initial
         console.log(action.payload);
        return{
         response:action.payload.data[0],
-        status4:action.payload.request.status
        }
         }
         case "EditProfile" :{

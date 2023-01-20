@@ -3,7 +3,6 @@
     margin-left:-40px;
 }
 #navul li{
-    /* padding:10px 20px; */
     margin:20px 40px 0 0;
     color:white;
     font-weight:600;
@@ -13,20 +12,73 @@
     display:flex;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
+#navul a{
+    text-decoration: none;
+}
 #logo{
 width:44px; 
 margin:10px 0px 10px 20px;
 }
-#profile{
+#menu{
    position:absolute;
-    width:44px; 
-    margin:10px 0px 10px 20px;
-    right: 20px;
+    width:25px; 
+    margin:20px 0px 10px 20px;
+    right: 80px;
+    display: none;
 }
+#profile{
+    position:absolute;
+     width:44px; 
+     margin:10px 0px 10px 20px;
+     right: 20px;
+ }
 #circletwo{
     width:170px;
     position:absolute;
     top:30px;
     right: 0px;
     z-index: -1;
+}
+#uli{
+    width:100%;
+    background-color: #D6D7DC;
+    position:fixed;
+    transition: all .5s;
+    top:0px;
+    left:-100vw;
+    height:100vh;
+    flex-direction: column;
+    padding-top:150px;
+    font-weight:600;
+    font-size: 20px;
+    z-index: 2;
+}
+#uli ul{
+    margin-left:20px;
+    list-style-type: disc;
+}
+#uli ul li{
+    padding-bottom:20px;
+}
+#uli ul li a{
+   text-decoration: none;
+   color:black;
+}
+#crossimg{
+    position:absolute;
+    top:20px;
+    right:20px;
+}
+#olli{
+    font-size:15px;
+    display:none;
+    color:#12121250;
+}
+@media(max-width:497px){
+    #navul li{
+       display: none;
+    }   
+    #menu{
+         display:block;
+     } 
 }

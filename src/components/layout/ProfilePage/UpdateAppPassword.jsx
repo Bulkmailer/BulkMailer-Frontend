@@ -9,6 +9,7 @@ import * as ReactBootStrap from "react-bootstrap";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { updatepassdata } from "../../../redux/actions/ProfileActions";
+import addpass from '../../../assets/addpass.svg';
 
 function UpdatePassword(){
     const [password, setPassword] = useState("");
@@ -71,16 +72,17 @@ function UpdatePassword(){
       ) : null}
     <Navbar />
     <div id='sidebarflex'>
-    <div id='managerC'>
-    <h1 id='grouphead'>Update App Password</h1>
-        <form id='flexform' onSubmit={handleSubmit}>
+    <div id='managerD'>
+    <h1 id='grouphead3'>Update App Password</h1>
+        <form id='addmailform' onSubmit={handleSubmit}>
         <label htmlFor='title' id='formslabel'>App Password</label>
-        <input type='text' id='forminput2' placeholder='Enter Password' value={password} onChange={handlePass} required></input>
+        <input type='text' id='forminput3' placeholder='Enter Password' value={password} onChange={handlePass} required></input>
         <img src={lock} id="mailimg"></img>
-        <p id='buttonpara'><button id='formbtn3' type='submit'>Submit</button> <Link to='/profilepage'><button id='plike'>Cancel</button></Link></p>
+        <p id='buttonpara'><button id='formbtn3' type='submit'>Submit</button><Link to='/profilepage'><button id='plike'>Cancel</button></Link></p>
         <p id='error3'>Password must contain at least 8 characters, a special symbol, an uppercase, a lowecase, a numeric value and no space.</p>
         </form>
     </div>
+    <img src={addpass} id='sideimg'></img>
     </div>
     </>)
 }

@@ -28,6 +28,32 @@ const config ={
               setCheck(1);
       })
   }
+  export const deletegroupdata =(deletegroupdata , navigate , setCheck) =>
+async (dispatch)=>{
+  var accesstoken =localStorage.getItem("accesstokenb")
+const config ={
+      Authorization:`Bearer ${accesstoken}`,
+  }
+    await api.delete("/dashboard/create_group/",{
+      headers:config , 
+      data : deletegroupdata 
+    })
+      .then((res)=>{
+          navigate("/contacts");
+          dispatch(
+              {type:'Delete' ,
+              payload :res}
+              )
+              setCheck(1);
+          })
+      .catch((err)=>{
+          dispatch(
+              {type:'Delete' ,
+              payload :err}
+              )
+              setCheck(1);
+      })
+  }
 
   export const uploaddata =(uploaddata , setLoading , navigate ,setCheck) =>
   async (dispatch)=>{
@@ -112,35 +138,30 @@ const config ={
           })
       }
 
-    export const groupinfo =() =>
+    export const groupinfo =(setCheck) =>
     async (dispatch)=>{
       var accesstoken =localStorage.getItem("accesstokenb")
       var group_id =localStorage.getItem("groupid")
-      const fd = new FormData();
-      fd.append("group_id" , group_id)
-      console.log(group_id);
     const config ={
         headers:{
           Authorization:`Bearer ${accesstoken}`,
         }
       }
-        await api.get("/dashboard/view_group_data/", config , group_id)
+        await api.get("/dashboard/view_group_data/?group_id="+group_id , config )
           .then((res)=>{
             console.log(res);
-              // setLoading(false);
               dispatch(
                   {type:'Groupinfo' ,
                   payload :res}
                   )
-                  // setCheck(1);
+                  setCheck(1);
               })
           .catch((err)=>{
-              // setLoading(false);
               dispatch(
                   {type:'Groupinfo' ,
                   payload :err}
                   )
-                  // setCheck(1);
+                  setCheck(1);
           })
       }
   

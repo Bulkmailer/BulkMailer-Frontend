@@ -16,9 +16,6 @@ const [check , setCheck] = useState(0);
 const [arr , setarr]= useState([]);
 const arr1= useSelector((state)=>state.profilereducer);
 const [loading , setLoading] = useState(true);
-
-const response= useSelector((state)=>state.profilereducer);
-
  
 useEffect(()=>{
 if(check==1){
@@ -26,7 +23,8 @@ if(check==1){
    setLoading(false);
 }
 } , [check])
-
+ 
+const app = arr.AppPassword;
 const dispatch = useDispatch();
 useEffect(()=>{
     dispatch(profilegetdata(setCheck));
@@ -46,16 +44,15 @@ return(<>
 </div>
 <div id='profilecomp'>
 <div id='profiledetails'>
-    <pre>Name         : {arr.name}</pre>    
-    <pre>Email        : {arr.email}</pre>    
-    <pre>Phone No.    : {arr.mobile}</pre>    
-    <pre>Gender       : {arr.gender}</pre>    
-    <pre>Username     : {arr.user_name}</pre>    
+    <pre><p>Name             :  {arr.name}</p></pre>    
+    <pre><p>Email             :  {arr.email}</p></pre>    
+    <pre><p>Phone No.    :  {arr.mobile}</p></pre>    
+    <pre><p>Gender          :  {arr.gender}</p></pre>    
+    <pre><p>Username     :  {arr.user_name}</p></pre>    
     </div>
 </div>
 <Link to='/editprofile'><button id='formbtn8'>Edit Profile</button></Link>
-<Link to='/addpassword'><button id='formbtn8'>Add App Password</button></Link>
-<Link to='/updatepassword'><button id='formbtn8'>Update App Password</button></Link>
+{{app}?<Link to='/updatepassword'><button id='formbtn8'>Update App Password</button></Link>:<Link to='/addpassword'><button id='formbtn8'>Add App Password</button></Link>}
 <Link to='/addmails'><button id='formbtn8'>Add Emails</button></Link>
 </div>
 </>)

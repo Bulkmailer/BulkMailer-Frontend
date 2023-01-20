@@ -1,0 +1,14 @@
+#marginer{
+    /* margin-left:40px;
+    margin-top:40px; */
+}
+#formhead{
+    font-weight:700;
+    color:#00000080;
+    margin-top:40px;
+}
+#formflexer{
+    display: flex;
+    flex-direction: column;
+    margin-top:30px;
+}

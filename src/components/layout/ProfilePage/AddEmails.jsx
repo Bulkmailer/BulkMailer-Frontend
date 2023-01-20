@@ -10,6 +10,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { apppassdata } from "../../../redux/actions/ProfileActions";
 import mailimg from '../../../assets/mail.svg';
+import addmails from '../../../assets/addmails.svg';
 
 function AddEmails(){
     const [password, setPassword] = useState("");
@@ -58,6 +59,11 @@ function AddEmails(){
     if(response.status2){
       setLoading(false);
        }
+       if(response.status2==400){
+        toast.error("Mail already added", {
+            position: toast.POSITION.TOP_RIGHT
+        });
+       }
     } , [response.status2])
 
   function handlePass(e){
@@ -86,21 +92,23 @@ function AddEmails(){
       ) : null}
     <Navbar />
     <div id='sidebarflex'>
-    <div id='managerC'>
+    <div id='managerD'>
     <h1 id='grouphead2'>Add Mails</h1>
-        <form id='flexform' onSubmit={handleSubmit}>
+        <form id='addmailform' onSubmit={handleSubmit}>
         <label htmlFor='title' id='formslabel'>Email Address</label>
-        <input type='text' id='forminput2' placeholder='Enter Email Address' value={email} onChange={handleEmail} required></input>
+        <input type='text' id='forminput3' placeholder='Enter Email Address' value={email} onChange={handleEmail} required></input>
         <img src={mailimg} id="mailimg"></img>
         <p id='error1'>Invalid Mail</p>
         <label htmlFor='title' id='formslabel'>App Password</label>
-        <input type='text' id='forminput2' placeholder='Enter Password' value={password} onChange={handlePass} required></input>
+        <input type='text' id='forminput3' placeholder='Enter Password' value={password} onChange={handlePass} required></input>
         <img src={lock} id="mailimg"></img>
         <p id='buttonpara'><button id='formbtn3' type='submit'>Submit</button>
         <Link to='/profilepage'><button id='plike'>Cancel</button></Link></p>
         <p id='error2'>Password must contain at least 8 characters, a special symbol, an uppercase, a lowecase, a numeric value and no space.</p>
         </form>
+        <ToastContainer />
     </div>
+    <img src={addmails} id='sideimg'></img>
     </div>
     </>)
 }

@@ -6,6 +6,7 @@
 }
 #profilediv{
     margin-top:20px;
+    z-index:2;
 }
 #prohead{
     margin-top:110px;
@@ -39,8 +40,16 @@
 #grouphead2{
     font-weight:700;
     color:#00000080;
-    margin:120px 0 -50px 100px;
+    margin:120px 0 -50px 60px;
     padding-right: 20px;
+    overflow: hidden;
+}
+#grouphead3{
+    font-weight:700;
+    color:#00000080;
+    margin:180px 0 -40px 60px;
+    padding-right: 20px;
+    overflow: hidden;
 }
 #plike{
     background-color: rgba(255 , 255 , 255 , 0);
@@ -61,7 +70,7 @@
     position:absolute;
     top:545px;
     display: none;
-    width:500px;
+    width:45.43vw;
 }
 #error3{
     color:#D14444;
@@ -69,7 +78,7 @@
     position:absolute;
     top:505px;
     display: none;
-    width:500px;
+    width:45.43vw;
 }
 #error4{
     color:#D14444;
@@ -77,7 +86,7 @@
     position:absolute;
     top:505px;
     display: none;
-    width:500px;
+    width:45.43vw;
 }
 #error5{
     color:#D14444;
@@ -85,11 +94,81 @@
     position:absolute;
     top:505px;
     display: none;
-    width:500px;
+    width:45.43vw;
 }
+#sideimg{
+    width:30vw;
+    margin-left:10vw;
+    margin-top:130px;
+    z-index: -1;
+    padding-right:60px;
+}
+#addmailform{
+    display: flex;
+    flex-direction: column;
+    margin-left:60px;
+    margin-top:80px;
+}
+#forminput3{
+    background-color: #D6D7DC50;
+    border:0.5px solid black;
+    margin-top:1px;
+    border-radius:7px;
+    width:45.43vw;
+    height:50px;
+    font-size: 1rem;
+    font-weight: 600;
+    padding-left:42px;
+}
+#forminput4{
+    background-color: #D6D7DC50;
+    border:0.5px solid black;
+    margin-top:1px;
+    border-radius:7px;
+    width:65.43vw;
+    height:50px;
+    font-size: 1rem;
+    font-weight: 600;
+    padding-left:42px;
+}
+#managingB{
+    margin-top:-100px;
+    margin-left:-50px;
+    width:100%;
+}
+#flexkro{
+    display:flex;
+}
+@media(max-width:962px){
+    #error1{
+        top:334px;
+    }
+}
+@media(max-width:871px){
+    #sideimg{
+        width:35vw;
+    }
+    #error3{
+        top:534px;
+    }
+    #error4{
+        top:534px;
+    }
+    #grouphead3{
+        margin:150px 0 -40px 60px;
+    }
+}
+
 @media(max-width:627px){
     #profiledetails{
         width:85%;
+    }
+    #sideimg{
+        width:35vw;
+        margin-left:8vw;
+        margin-top:100px;
+        z-index: -1;
+        padding-right:40px;
     }
 }
 @media(max-width:527px){
@@ -99,6 +178,9 @@
     }
     #formbtn8{
         margin-left:25px;
+    }
+    #sideimg{
+        margin-left:6vw;
     }
 }
 @media(max-width:502px){
@@ -121,6 +203,36 @@
         margin-left:20px;
     }
 }
+@media(max-width:497px){
+    #forminput3{
+        width:80vw;
+    }
+    #error2{
+        width:80vw;
+    }
+    #error3{
+        width:80vw;
+        top:490px;
+    }
+    #error4{
+        width:80vw;
+        top:490px;
+    }
+    #sideimg{
+      display: none;
+    }
+    #managerD{
+        margin-left:-4vw;
+    }
+    #grouphead3{
+        margin:150px 0 -40px 60px;
+    }
+}
+@media(max-width:400px){
+    #managerD{
+        margin-left:-6vw;
+    }  
+}
 @media(max-width:388px){
     #profiledetails{
         margin-left:10px;
@@ -130,8 +242,26 @@
         margin-left:10px;
     }
 }
+@media(max-width:379px){
+    #grouphead3{
+        margin:120px 0 -40px 60px;
+    }
+}
 @media(max-width:364px){
     #profiledetails{
        font-size:12px;
     }
+}
+@media(max-width:346px){
+    #managerD{
+        margin-left:-8vw;
+    }  
+}
+@media(max-width:310px){
+    #managerD{
+        margin-left:-10vw;
+    }
+    #managingB{
+        margin-left:-60px;
+    }  
 }
