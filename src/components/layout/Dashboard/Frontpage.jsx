@@ -2,6 +2,9 @@ import Navbar from "../Navbar/Navbar";
 import dashboard from '../../../assets/dashboard.svg'
 import './Frontpage.css'
 import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { useEffect } from "react";
+import { mailhistory } from "../../../redux/actions/GroupAction";
 
 function FrontPage(){
 return(

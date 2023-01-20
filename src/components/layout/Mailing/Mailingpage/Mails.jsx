@@ -10,7 +10,7 @@ import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 import { useEffect } from "react";
 import { useState } from "react";
-import { showgroup } from "../../../../redux/actions/GroupAction";
+import { sendmailsdata, showgroup } from "../../../../redux/actions/GroupAction";
 import FormData from 'form-data';
 
 function Mails(){
@@ -20,6 +20,8 @@ function Mails(){
     const [subject , setSubject] = useState("");
     const [company , setCompany] = useState("");
     const [body , setBody] = useState("");
+    const [template , setTemplate] = useState("");
+    const [file , setFile] = useState([]);
 
     const dispatch = useDispatch();
     const fd= new FormData();
@@ -46,7 +48,6 @@ function Mails(){
    document.getElementById("groupsdiv").style.display="block";
     }
     function addid(e){
-        fd.append("_group" , e.target.id);
         setGroup(e.target.id);
         document.getElementById("groupsdiv").style.display="none";
     }
@@ -59,10 +60,23 @@ function Mails(){
     function handleBody(e){
         setBody(e.target.value);
     }
+    function handleTemplate(e){
+        setTemplate(e.target.value);
+    }
+    function handleFile(e){
+        setFile(e.target.files[0]);
+    }
     function handleSubmit(e){
         e.preventDefault();
+        setCheck(0);
         fd.append("_from" ,1);
-        
+        fd.append("_company" , company);
+        fd.append("_subject" , subject);
+        fd.append("_body" , body);
+        fd.append("_template" ,template );
+        fd.append("_group" , group);
+        fd.append("_file" , file);
+        dispatch(sendmailsdata(fd , setCheck));
     }
     return(
         <>
@@ -81,8 +95,8 @@ function Mails(){
         <input type='text' placeholder='Enter Body' id='forminput3' value={body} onChange={handleBody} required></input>
         <img src={bodyimg} id='mailimg'></img>
         <label htmlFor="from" id='formlabel'>Template</label>
-        <select id='forminput3' required>
-            <option value="1">--select--</option>
+        <select id='forminput3' required onChange={handleTemplate}>
+            <option value="1" >--select--</option>
             <option value="1">1</option>
             <option value="2">2</option>
         </select>
@@ -91,7 +105,7 @@ function Mails(){
         <input type='text' placeholder='Enter Company Name' id='forminput3' value={company} onChange={handleCompany} required></input>
         <img src={companyimg} id='mailimg'></img>
         <label htmlFor="from" id='formlabel'>Add A File</label>
-        <input type='file' placeholder='Enter Recipient' required accept='image/*'></input>
+        <input type='file' placeholder='Enter Recipient' accept='image/*' onChange={handleFile}></input>
         <button type='submit' id='formbtn10'>Send</button>
     </form>
 </div>

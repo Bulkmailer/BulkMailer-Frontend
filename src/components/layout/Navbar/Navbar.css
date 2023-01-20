@@ -74,7 +74,7 @@ margin:10px 0px 10px 20px;
     display:none;
     color:#12121250;
 }
-@media(max-width:497px){
+@media(max-width:655px){
     #navul li{
        display: none;
     }   

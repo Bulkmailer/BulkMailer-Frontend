@@ -1,7 +1,8 @@
 
 const initial={
 contactList:"" ,
-response6:""
+response6:"" ,
+mailList:""
 };
 const groupreducer =(state=initial 
     , action)=>{
@@ -22,6 +23,12 @@ const groupreducer =(state=initial
             case "AddContacts":{
                 console.log(action.payload);
                 return null
+            }
+            case "SendMail":{
+                console.log(action.payload);
+                return{
+                    mailList:action.payload.data
+                }
             }
             case "Groupinfo" :
                 console.log(action.payload);

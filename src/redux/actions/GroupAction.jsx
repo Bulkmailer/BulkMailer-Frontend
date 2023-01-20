@@ -164,4 +164,82 @@ const config ={
                   setCheck(1);
           })
       }
-  
+      export const sendmailsdata =(setCheck , sendmailsdata) =>
+      async (dispatch)=>{
+        var accesstoken =localStorage.getItem("accesstokenb");
+      const config ={
+        headers:{
+          Authorization:`Bearer ${accesstoken}`,
+        }   
+        }
+          await api.post("/dashboard/send_mail/",config , sendmailsdata
+          // {
+          //   headers:config,
+          //   data:sendmailsdata
+          // }
+          )
+            .then((res)=>{
+                dispatch(
+                    {type:'SendMail' ,
+                    payload :res}
+                    )
+                    setCheck(1);
+                })
+            .catch((err)=>{
+                dispatch(
+                    {type:'SendMail' ,
+                    payload :err}
+                    )
+                    setCheck(1);
+            })
+        }
+        export const mailhistory =(setCheck) =>
+        async (dispatch)=>{
+          var accesstoken =localStorage.getItem("accesstokenb");
+        const config ={
+          headers:{
+            Authorization:`Bearer ${accesstoken}`,
+          }   
+          }
+            await api.get("/dashboard/send_mail/",config
+            )
+              .then((res)=>{
+                  dispatch(
+                      {type:'SendMail' ,
+                      payload :res}
+                      )
+                      setCheck(1);
+                  })
+              .catch((err)=>{
+                  dispatch(
+                      {type:'SendMail' ,
+                      payload :err}
+                      )
+                      setCheck(1);
+              })
+          }
+          export const schedulehistory =(setCheck) =>
+        async (dispatch)=>{
+          var accesstoken =localStorage.getItem("accesstokenb");
+        const config ={
+          headers:{
+            Authorization:`Bearer ${accesstoken}`,
+          }   
+          }
+            await api.get("/dashboard/schedule_mail/",config
+            )
+              .then((res)=>{
+                  dispatch(
+                      {type:'SendMail' ,
+                      payload :res}
+                      )
+                      setCheck(1);
+                  })
+              .catch((err)=>{
+                  dispatch(
+                      {type:'SendMail' ,
+                      payload :err}
+                      )
+                      setCheck(1);
+              })
+          }

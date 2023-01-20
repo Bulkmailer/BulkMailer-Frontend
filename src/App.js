@@ -26,6 +26,7 @@ import UpdatePassword from './components/layout/ProfilePage/UpdateAppPassword';
 import AddEmails from './components/layout/ProfilePage/AddEmails';
 import Mails from './components/layout/Mailing/Mailingpage/Mails';
 import Home from './components/auth/home';
+import ScheduleHistory from './components/layout/Schedules/ScheduleHistory';
 
 function App() {
   return (
@@ -58,6 +59,7 @@ function App() {
       <Route path="/addmails" exact element={<AddEmails />}></Route>
       <Route path="/mails" exact element={<Mails />}></Route>
       <Route path="/" exact element={<Home />}></Route>
+      <Route path="/schedulehistory" exact element={<ScheduleHistory/>}></Route>
      
     </Routes>
   </Router>

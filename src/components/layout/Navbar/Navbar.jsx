@@ -45,6 +45,7 @@ return(
             <Link to='/home'><li>Dashboard</li></Link>
             <Link to='/mails'><li>Mails</li></Link>
             <Link to='/mygrp'><li>My groups</li></Link>
+            <Link to='/schedulehistory'><li>My Schedules</li></Link>
         </ul>
         <img src={menu} id="menu" onClick={showmenu}></img>
         <Link to='/profilepage'><img src={profile} id="profile"></img></Link>
