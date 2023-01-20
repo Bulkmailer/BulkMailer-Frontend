@@ -8,6 +8,7 @@ import templateimg from '../../../../assets/template.svg'
 import companyimg from '../../../../assets/company.svg'
 
 function Mails(){
+   const my =[1 , 2 ,3, 4]
     return(
         <>
 <Navbar />
@@ -16,9 +17,9 @@ function Mails(){
     <form id='formflexer'>
         <label htmlFor="from" id='formlabel'>From</label>
         <input type='text' placeholder='Enter Sender details' id='forminput3'></input>
-        <img src={fromimg} id='mailimg'></img>
+        <img src={fromimg} id='mailimg2'></img>
         <label htmlFor="from" id='formlabel'>To</label>
-        <input type='text' placeholder='Enter Recipient' id='forminput3'></input>
+        <input type='text' placeholder='Enter Sender details' id='forminput3'></input>
         <img src={toimg} id='mailimg'></img>
         <label htmlFor="from" id='formlabel'>Subject</label>
         <input type='text' placeholder='Enter Subject' id='forminput3'></input>

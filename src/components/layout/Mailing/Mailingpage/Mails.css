@@ -12,3 +12,9 @@
     flex-direction: column;
     margin-top:30px;
 }
+#mailimg2{
+    width:20px;
+    position:relative;
+    top:-36px;
+    left:10px;
+}
