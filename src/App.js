@@ -25,6 +25,7 @@ import AddPassword from './components/layout/ProfilePage/AddPassword';
 import UpdatePassword from './components/layout/ProfilePage/UpdateAppPassword';
 import AddEmails from './components/layout/ProfilePage/AddEmails';
 import Mails from './components/layout/Mailing/Mailingpage/Mails';
+import Home from './components/auth/home';
 
 function App() {
   return (
@@ -56,6 +57,7 @@ function App() {
       <Route path="/updatepassword" exact element={<UpdatePassword />}></Route>
       <Route path="/addmails" exact element={<AddEmails />}></Route>
       <Route path="/mails" exact element={<Mails />}></Route>
+      <Route path="/" exact element={<Home />}></Route>
      
     </Routes>
   </Router>
