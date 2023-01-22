@@ -34,15 +34,16 @@ async (dispatch)=>{
 const config ={
       Authorization:`Bearer ${accesstoken}`,
   }
-    await api.delete("/dashboard/create_group/",{
+    await api.delete("/dashboard/create_group/", {
       headers:config , 
       data : deletegroupdata 
     })
       .then((res)=>{
-          navigate("/contacts");
           dispatch(
-              {type:'Delete' ,
-              payload :res}
+              {
+                type:'Delete',
+              payload :res
+            }
               )
               setCheck(1);
           })
@@ -164,23 +165,20 @@ const config ={
                   setCheck(1);
           })
       }
-      export const sendmailsdata =(setCheck , sendmailsdata) =>
+      export const sendmailsdata =(setCheck , sendmail) =>
       async (dispatch)=>{
         var accesstoken =localStorage.getItem("accesstokenb");
       const config ={
         headers:{
           Authorization:`Bearer ${accesstoken}`,
+          // 'Content-Type': 'application/json'
         }   
         }
-          await api.post("/dashboard/send_mail/",config , sendmailsdata
-          // {
-          //   headers:config,
-          //   data:sendmailsdata
-          // }
+          await api.post("/dashboard/send_mail/" , sendmail ,config
           )
             .then((res)=>{
                 dispatch(
-                    {type:'SendMail' ,
+                    {type:'SendMail',
                     payload :res}
                     )
                     setCheck(1);
@@ -193,6 +191,34 @@ const config ={
                     setCheck(1);
             })
         }
+        export const schedulemaildata =(setCheck , schedulemail ) =>
+        async (dispatch)=>{
+          var accesstoken =localStorage.getItem("accesstokenb");
+        const config ={
+          headers:{
+            Authorization:`Bearer ${accesstoken}`,
+            // 'Content-Type': 'application/json'
+          }   
+          }
+          console.log(schedulemail);
+            await api.post("/dashboard/schedule_mail/" , schedulemail ,config
+            )
+              .then((res)=>{
+                  dispatch(
+                      {type:'ScheduleMail',
+                      payload :res}
+                      )
+                      setCheck(1);
+      
+                  })
+              .catch((err)=>{
+                  dispatch(
+                      {type:'ScheduleMail' ,
+                      payload :err}
+                      )
+                      setCheck(1);
+              })
+          }
         export const mailhistory =(setCheck) =>
         async (dispatch)=>{
           var accesstoken =localStorage.getItem("accesstokenb");
@@ -205,14 +231,14 @@ const config ={
             )
               .then((res)=>{
                   dispatch(
-                      {type:'SendMail' ,
+                      {type:'MailHistory' ,
                       payload :res}
                       )
                       setCheck(1);
                   })
               .catch((err)=>{
                   dispatch(
-                      {type:'SendMail' ,
+                      {type:'MailHistory' ,
                       payload :err}
                       )
                       setCheck(1);
@@ -230,14 +256,14 @@ const config ={
             )
               .then((res)=>{
                   dispatch(
-                      {type:'SendMail' ,
+                      {type:'ScheduleHistory' ,
                       payload :res}
                       )
                       setCheck(1);
                   })
               .catch((err)=>{
                   dispatch(
-                      {type:'SendMail' ,
+                      {type:'ScheduleHistory' ,
                       payload :err}
                       )
                       setCheck(1);

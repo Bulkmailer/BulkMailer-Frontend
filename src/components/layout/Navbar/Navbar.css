@@ -23,13 +23,19 @@ margin:10px 0px 10px 20px;
    position:absolute;
     width:25px; 
     margin:20px 0px 10px 20px;
-    right: 80px;
+    right: 130px;
     display: none;
 }
 #profile{
     position:absolute;
      width:44px; 
      margin:10px 0px 10px 20px;
+     right: 70px;
+ }
+ #logout{
+    position:absolute;
+     width:38px; 
+     margin:15px 0px 10px 20px;
      right: 20px;
  }
 #circletwo{
@@ -45,7 +51,8 @@ margin:10px 0px 10px 20px;
     position:fixed;
     transition: all .5s;
     top:0px;
-    left:-100vw;
+    width:0;
+    /* left:-100vw; */
     height:100vh;
     flex-direction: column;
     padding-top:150px;
@@ -54,7 +61,7 @@ margin:10px 0px 10px 20px;
     z-index: 2;
 }
 #uli ul{
-    margin-left:20px;
+    margin-left:0px;
     list-style-type: disc;
 }
 #uli ul li{
@@ -73,8 +80,49 @@ margin:10px 0px 10px 20px;
     font-size:15px;
     display:none;
     color:#12121250;
+    margin-left:30px;
 }
-@media(max-width:655px){
+#dashboardimg3{
+    width:40px;
+    margin-right:10px;
+}
+#dashboardimg4{
+    width:30px;
+    margin-left:5px;
+    margin-right:15px;
+}
+#askmenudiv{
+        height:150vh;
+        width:100vw;
+        display:none ;
+        text-align: center;
+        background-color: rgba(255 , 255 , 255 ,0.5);
+        position: absolute;
+        z-index: 2;
+}
+#logoutdiv{
+    background-color: #D6D7DC ;
+    width:50vw;
+    margin-top:300px;
+    padding:40px;
+    border-radius:10px;
+    margin-left:25%;
+    font-weight: 600;
+    text-align: center;
+}
+#formbtn12{
+    background-color: rgba(83 , 109 , 254 , 0.9);
+    border:none;
+    color:white;
+    margin-top:10px;
+    margin-bottom:10px;
+    font-weight: 600;
+    width:80px;
+    height:50px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+@media(max-width:720px){
     #navul li{
        display: none;
     }   

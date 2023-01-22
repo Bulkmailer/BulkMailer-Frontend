@@ -19,7 +19,7 @@ function AddContacts(){
 
     const [correctMail, setCorrectMail] = useState(false);
 
-   var group = localStorage.getItem("grpId");
+   var group = localStorage.getItem("groupid");
 
    const [loading, setLoading] = useState(false);
    const [check, setCheck] = useState(0);

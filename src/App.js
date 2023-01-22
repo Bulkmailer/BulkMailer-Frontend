@@ -27,6 +27,7 @@ import AddEmails from './components/layout/ProfilePage/AddEmails';
 import Mails from './components/layout/Mailing/Mailingpage/Mails';
 import Home from './components/auth/home';
 import ScheduleHistory from './components/layout/Schedules/ScheduleHistory';
+import Schedule from './components/layout/Schedules/Schedules';
 
 function App() {
   return (
@@ -60,6 +61,7 @@ function App() {
       <Route path="/mails" exact element={<Mails />}></Route>
       <Route path="/" exact element={<Home />}></Route>
       <Route path="/schedulehistory" exact element={<ScheduleHistory/>}></Route>
+      <Route path="/schedule" exact element={<Schedule/>}></Route>
      
     </Routes>
   </Router>

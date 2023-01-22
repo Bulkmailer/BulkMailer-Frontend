@@ -1,0 +1,38 @@
+#headd{
+    font-weight:700;
+    color:#00000080;
+    margin:90px 0 0 40px;
+}
+.forminput5{
+    background-color: #D6D7DC50;
+    border:0.5px solid black;
+    margin-top:1px;
+    border-radius:7px;
+    width:80px;
+    height:50px;
+    font-size: 1rem;
+    font-weight: 600;
+    padding-left:12px;
+    margin-right:20px;
+    margin-bottom:30px;
+}
+#scheduleform{
+    display:flex;
+    flex-direction: column;
+    margin-left:40px;
+    margin-top:20px;
+}
+#formbtn11{
+    background-color: rgba(83 , 109 , 254 , 0.9);
+    border:none;
+    color:white;
+    font-weight: 600;
+    width:200px;
+    height:40px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top:20px;
+}
+#sideimgdiv{
+    margin-top:-40px;
+}

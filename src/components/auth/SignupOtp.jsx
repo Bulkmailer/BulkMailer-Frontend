@@ -74,6 +74,7 @@ function handleSubmit(e){
     if(correctOtp){
     setLoading(true);
     setCheck(0);
+    console.log(otp);
     fd.append("email" , email);
     fd.append("otp" , otp);
     dispatch(signupotp(fd , setLoading , navigate , setCheck))

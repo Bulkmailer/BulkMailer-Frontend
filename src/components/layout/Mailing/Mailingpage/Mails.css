@@ -34,11 +34,12 @@
     border:none;
     color:white;
     font-weight: 600;
-    width:200px;
+    width:15vw;
     height:40px;
     border-radius: 5px;
     cursor: pointer;
     margin-top:40px;
+    margin-right:20px;
 }
 #textarea2{
     width:45.43vw;

@@ -40,6 +40,9 @@ return(<>
 <div className="namesdiv">
 {(groupArr)?groupArr.map((rest)=>getGroup(rest)):<div id='nothing'><img src={nogroups} id='nothingimg'></img><Link to='/creategroup'><button id='formbtn9'>Add Groups</button></Link></div>}
 </div>
+{(groupArr)?<div id='btndiv'>
+<Link to='/creategroup'><button id='formbtn10'>Add Groups</button></Link>
+</div>:null}
 </>)
 }
 export default MyGroup;

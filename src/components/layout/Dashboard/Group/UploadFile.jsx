@@ -14,7 +14,7 @@ function Uploads(){
     const [loading , setLoading] = useState(false);
     const [check , setCheck] = useState(0);
 
-    var group = localStorage.getItem("grpId");
+    var group = localStorage.getItem("groupid");
 
     const fd= new FormData();
     const navigate = useNavigate();

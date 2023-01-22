@@ -12,6 +12,7 @@ import { useEffect } from "react";
 import { useState } from "react";
 import { sendmailsdata, showgroup } from "../../../../redux/actions/GroupAction";
 import FormData from 'form-data';
+import { Link } from "react-router-dom";
 
 function Mails(){
     const [check , setCheck] = useState(0);
@@ -69,14 +70,22 @@ function Mails(){
     function handleSubmit(e){
         e.preventDefault();
         setCheck(0);
+        console.log(company , subject ,body , template , group );
+        localStorage.setItem("_from" , 1);
+        localStorage.setItem("_company" , company);
+        localStorage.setItem("_subject" , subject);
+        localStorage.setItem("_body" , body);
+        localStorage.setItem("_template" ,template );
+        localStorage.setItem("_group" , group);
+        localStorage.setItem("_file" , file);
         fd.append("_from" ,1);
         fd.append("_company" , company);
         fd.append("_subject" , subject);
         fd.append("_body" , body);
-        fd.append("_template" ,template );
+        // fd.append("_template" ,template );
         fd.append("_group" , group);
         fd.append("_file" , file);
-        dispatch(sendmailsdata(fd , setCheck));
+        dispatch(sendmailsdata( setCheck , fd));
     }
     return(
         <>
@@ -106,7 +115,10 @@ function Mails(){
         <img src={companyimg} id='mailimg'></img>
         <label htmlFor="from" id='formlabel'>Add A File</label>
         <input type='file' placeholder='Enter Recipient' accept='image/*' onChange={handleFile}></input>
-        <button type='submit' id='formbtn10'>Send</button>
+        <div>
+        <button type='submit' id='formbtn10'>Send Now</button>
+        <Link to='/schedule'><button id='formbtn10'>Schedule</button></Link>
+        </div>
     </form>
 </div>
 </>

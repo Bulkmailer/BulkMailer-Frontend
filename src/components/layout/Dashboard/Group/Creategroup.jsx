@@ -26,6 +26,18 @@ function CreateGroup(){
     setName(e.target.value);
   }
 
+  const mssg = useSelector((state)=>state.groupreducer);
+  console.log(mssg);
+  
+  useEffect(()=>{
+      console.log(check);
+      if(check==1){
+      toast.error(mssg.response[0], {
+          position: toast.POSITION.TOP_RIGHT
+      });
+    }
+  } ,[check]);
+
   function handleSubmit(e){
     e.preventDefault();
     setLoading(true);
@@ -50,8 +62,9 @@ function CreateGroup(){
         <label htmlFor='title' id='formslabel'>Group title</label>
         <input type='text' id='forminput2' placeholder='Enter Group Title' value={name} onChange={handleName} required></input>
         <img src={group} id="mailimg"></img>
-        <p id='buttonpara'><button id='formbtn3' type='submit'>Create</button>Cancel</p>
+        <p id='buttonpara'><button id='formbtn3' type='submit'>Create</button><Link to='/home'><button id='plike'>Cancel</button></Link></p>
         </form>
+        <ToastContainer />
     </div>
     </div>
     </>)

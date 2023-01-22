@@ -20,7 +20,7 @@ return (
         </li>
         </Link> */}
         <Link to='/mailhistory'><li>
-         <p id='sideoptions'><img src={history} id='templateimg'></img>  Mail History</p> 
+         <p id='sideoptions'><img src={history} id='templateimg'></img>Mail History</p> 
         </li>
         </Link>
         </ul> 
