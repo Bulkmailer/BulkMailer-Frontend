@@ -23,17 +23,19 @@ function Groupname(props){
     }
     function handleDelete(e){
     setCheck(0);
-    fd.append("id" , e.currentTarget.id)
+    const id=e.target.id;
+    fd.append("id" , e.currentTarget.id);
     dispatch(deletegroupdata(fd , setCheck));
+    document.getElementById(id).style.display="none";
     }
 
 return(
     <>
     <div id='flexkro' className='blur'>
    <div className="groupnamediv"  id={props.id} onClick={groupclick}>
-    <p className='groupnames' id={props.id}>{props.id}. {props.groupname}</p>
+    <p className='groupnames' id={props.id}> {props.groupname}</p>
     </div>
-    <div id='greydiv'>
+    <div className='greydiv' id={props.id}>
    <img src={deleteitem} className='deleteimg' id={props.id} onClick={handleDelete}></img>
    </div>
    </div>

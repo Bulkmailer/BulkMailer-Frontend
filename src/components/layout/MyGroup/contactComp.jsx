@@ -16,6 +16,7 @@ function Contactname(props){
         console.log(e.currentTarget.id);
        fd.append("id" , e.currentTarget.id);
         dispatch(deletecontact(fd , setCheck));
+        document.getElementById(e.currentTarget.id).style.display="none";
         }
     
 return(
@@ -26,7 +27,7 @@ return(
     <pre className='groupnames'><p id='contactpara'>Email    :{props.email}</p></pre>
     <pre className='groupnames'><p id='contactpara'>Gender :{props.gender}</p></pre>
    </div>
-   <div id='greydiv'>
+   <div className='greydiv' id={props.id}>
    <img src={deleteitem} className='deleteimg' id={props.id} onClick={handleDelete}></img>
    </div>
    </div>

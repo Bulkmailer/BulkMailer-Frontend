@@ -31,6 +31,7 @@ function Mails(){
     const [body , setBody] = useState("");
     const [template , setTemplate] = useState("");
     const [file , setFile] = useState([]);
+    const scheduleMail = "false";
 
     const dispatch = useDispatch();
     const fd= new FormData();
@@ -63,7 +64,9 @@ function Mails(){
 
     function getEmail(emailArr){
         return (
-        <p id={emailArr.id} onClick={addid2}>{emailArr.email}</p>
+        <p id={emailArr.id} 
+        onClick={addid2}
+        >{emailArr.email}</p>
         );
         }
 
@@ -99,19 +102,19 @@ function Mails(){
     function handleSubmit(e){
         e.preventDefault();
         setCheck(0);
-        console.log(company , subject ,body , from, group , campaign);
-        fd.append("_from" ,from);
+        console.log(company , subject ,body , from, group , campaign , scheduleMail);
+        fd.append("_from" ,1);
         fd.append("_company" , company);
         fd.append("_subject" , subject);
         fd.append("_body" , body);
         fd.append("_group" , group);
         fd.append("id" , campaign);
         fd.append("_template" , templatesid);
-        fd.append("scheduleMail" , false);
+        fd.append("scheduleMail" , scheduleMail);
         dispatch(sendmaildata( setCheck , fd , navigate));
     }
     function setValue(){
-        localStorage.setItem("_from" , from);
+        localStorage.setItem("_from" , 1);
         localStorage.setItem("_company" , company);
         localStorage.setItem("_subject" , subject);
         localStorage.setItem("_body" , body);
@@ -131,7 +134,9 @@ function Mails(){
         <input type='text' placeholder='--select--' id='forminput3' onClick={showdiv} autoComplete="off" value={group} required></input>
         <img src={toimg} id='mailimg'></img>
         <label htmlFor="from" id='formlabel'>From</label>
-        <input type='text' placeholder='--select--' id='forminput3' onClick={showdiv2} autoComplete="off" value={from} required></input>
+        <input type='text' placeholder='--select--' id='forminput3' 
+        // onClick={showdiv2} 
+        autoComplete="off" value={from} required></input>
         <img src={toimg} id='failimg'></img>
         <label htmlFor="from" id='formlabel'>Subject</label>
         <input type='text' placeholder='Enter Subject' id='forminput3' value={subject} onChange={handleSubject} required></input>

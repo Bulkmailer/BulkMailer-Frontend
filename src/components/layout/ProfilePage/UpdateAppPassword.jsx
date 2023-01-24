@@ -17,23 +17,23 @@ function UpdatePassword(){
 
     const response= useSelector((state)=>state.profilereducer);
     
-    const rightPass =/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+    // const rightPass =/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
 
     var email=localStorage.getItem("loginMail");
 
     const [loading, setLoading] = useState(false);
     const [check, setCheck] = useState(0);
 
-    useEffect(()=>{
-        if(rightPass.test(password)){
-        document.getElementById("error3").style.display = "none";
-        setCorrectPass(true);
-        }
-        else if(password){
-          document.getElementById("error3").style.display = "block";
-          setCorrectPass(false); 
-        }
-        },[password])
+    // useEffect(()=>{
+    //     if(rightPass.test(password)){
+    //     document.getElementById("error3").style.display = "none";
+    //     setCorrectPass(true);
+    //     }
+    //     else if(password){
+    //       document.getElementById("error3").style.display = "block";
+    //       setCorrectPass(false); 
+    //     }
+    //     },[password])
 
         useEffect(()=>{
             if(response.status3==200){
@@ -54,13 +54,13 @@ function UpdatePassword(){
 
   function handleSubmit(e){
     e.preventDefault();
-    if(correctPass){
+    // if(correctPass){
     setLoading(true);
     setCheck(0);
     fd.append("app_password" , password);
     fd.append("email" , email);
     dispatch(updatepassdata(fd, setCheck))
-    }
+    // }
   }
 
     return(
@@ -79,7 +79,7 @@ function UpdatePassword(){
         <input type='text' id='forminput3' placeholder='Enter Password' value={password} onChange={handlePass} required></input>
         <img src={lock} id="mailimg"></img>
         <p id='buttonpara'><button id='formbtn3' type='submit'>Submit</button><Link to='/profilepage'><button id='plike'>Cancel</button></Link></p>
-        <p id='error3'>Password must contain at least 8 characters, a special symbol, an uppercase, a lowecase, a numeric value and no space.</p>
+        {/* <p id='error3'>Password must contain at least 8 characters, a special symbol, an uppercase, a lowecase, a numeric value and no space.</p> */}
         </form>
     </div>
     <img src={addpass} id='sideimg'></img>

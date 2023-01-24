@@ -32,6 +32,9 @@ const list =useSelector((s)=>s.groupreducer);
                 subject={list1._subject}
                 body={list1._body}
                 company={list1._company}
+                from ={list1._from}
+                to ={list1._group}
+                status= {list1.status}
               />
             );
             }
@@ -42,11 +45,11 @@ const list =useSelector((s)=>s.groupreducer);
     {/* <Sidebar /> */}
     <div id='pagediv'>
         <h1 id='divhead'>Mail History</h1> 
-        {/* <button id='formbtn7'>All</button>
-        <button id='formbtn7'>Sent</button>
-        <input type='text' placeholder='Search' id='searchinp'></input> */}
+        {/* <button id='formbtn17'>All</button>
+        <button id='formbtn17'>Sent</button>
+        <button id='formbtn17'>Schedule</button> */}
         <hr></hr>
-        <div className="namesdiv2">
+        <div className="namesdiv3">
 {(list1)?(list1.map((rest)=>getMail(rest))):<div id='nothing'><img src={nomails} id='nothingimg'></img><p>No contacts</p></div>}
 </div>
     </div>

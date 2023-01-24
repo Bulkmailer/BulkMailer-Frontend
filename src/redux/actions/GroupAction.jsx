@@ -339,7 +339,7 @@ const config ={
             Authorization:`Bearer ${accesstoken}`,
           }   
           }
-            await api.get("/dashboard/send_mail/?schedulmail=false",config
+            await api.get("/dashboard/send_mail/?schedulmail=False",config
             )
               .then((res)=>{
                   dispatch(

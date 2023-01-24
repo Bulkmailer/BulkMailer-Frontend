@@ -4,7 +4,7 @@ import FormData from 'form-data';
 import { useDispatch } from "react-redux";
 import { schedulemaildata, sendmaildata } from "../../../redux/actions/GroupAction";
 import './Schedule.css';
-import schedule from '../../../assets/schedule.svg'
+import schedule from '../../../assets/schedule.svg';
 import { useNavigate } from "react-router-dom";
 
 function Schedule(){
@@ -18,6 +18,8 @@ function Schedule(){
     const fd= new FormData();
     const dispatch= useDispatch();
     const navigate=useNavigate();
+
+    const scheduleMail = "true";
 
         var from = localStorage.getItem("_from");
         var group = localStorage.getItem("_group");
@@ -64,6 +66,7 @@ var d = new Date();
 
     var dateoptions = "Date";
     function show1(){
+    if(month==1||month==3||month==5||month==7||month==8||month==10||month==12){
     for (var i = 0; i <= 31; i++) {
         if(i==0){
         dateoptions="<option value= '0'>Date</option>";
@@ -72,6 +75,37 @@ var d = new Date();
         dateoptions += "<option value='"+i+"'>"+i+"</option>"
         }
         }
+    }
+    else if(month==2&&year%4!=0){
+        for (var i = 0; i <= 28; i++) {
+            if(i==0){
+                dateoptions="<option value= '0'>Date</option>";
+                }
+                else{
+                dateoptions += "<option value='"+i+"'>"+i+"</option>"
+                }
+                } 
+    }
+    else if(month==2&&year%4==0){
+        for (var i = 0; i <= 29; i++) {
+            if(i==0){
+                dateoptions="<option value= '0'>Date</option>";
+                }
+                else{
+                dateoptions += "<option value='"+i+"'>"+i+"</option>"
+                }
+                } 
+    }
+    else{
+        for (var i = 0; i <= 30; i++) {
+        if(i==0){
+            dateoptions="<option value= '0'>Date</option>";
+            }
+            else{
+            dateoptions += "<option value='"+i+"'>"+i+"</option>"
+            }
+            } 
+    }
             if(b==1){
         document.getElementById('dateselect').innerHTML= dateoptions;
             }
@@ -95,9 +129,9 @@ var d = new Date();
 
         var houroptions = "Hour";
         function show4(){
-        for (var i = 0; i <= 24; i++) {
-            if(i==0){
-            houroptions="<option value= '0'>Hour</option>";
+        for (var i = -1; i <= 23; i++) {
+            if(i==-1){
+            houroptions="<option value= '-1'>Hour</option>";
             }
             else{
             houroptions += "<option value='"+i+"'>"+i+"</option>"
@@ -111,9 +145,9 @@ var d = new Date();
 
             var minoptions = "Min";
             function show5(){
-            for (var i = 0; i <= 60; i++) {
-                if(i==0){
-                minoptions="<option value= '0'>Min</option>";
+            for (var i = -1; i <= 60; i++) {
+                if(i==-1){
+                minoptions="<option value= '-1'>Min</option>";
                 }
                 else{
                 minoptions += "<option value='"+i+"'>"+i+"</option>"
@@ -126,7 +160,8 @@ var d = new Date();
                 }
 function handlesubmit(e){
     e.preventDefault();
-    console.log(year , hour , month , minute , date);
+    console.log(year , hour , month , minute , date );
+    console.log(scheduleMail)
     fd.append("_date" , date);
         fd.append("_hour" , hour);
         fd.append("_year" , year);
@@ -136,9 +171,9 @@ function handlesubmit(e){
         fd.append("_company" , company);
         fd.append("_subject" , subject);
         fd.append("_body" , body);
-        fd.append("_template" ,template );
+        fd.append("_template" ,template);
         fd.append("_group" , group);
-        fd.append("scheduleMail" , true);
+        fd.append("scheduleMail" , scheduleMail);
         fd.append("id" , campaign);
        dispatch(sendmaildata(setCheck ,fd , navigate));
 }  
@@ -150,22 +185,22 @@ return(<>
 <form onSubmit={handlesubmit} id='scheduleform'>
 <label htmlFor='date' id='formlabel'>Date</label>  
 <div id='flexkro'>
-<select onChange={handleMonth} onClick={show3} id='monthselect' className="forminput5">
+<select onChange={handleMonth} onClick={show3} id='monthselect' className="forminput5" required>
    <option>{monthoptions}</option>
 </select>
-<select onChange={handleDate} onClick={show1} id='dateselect' className="forminput5">
-   <option>{dateoptions}</option>
-</select>
-<select onChange={handleYear} onClick={show2} id='yearselect' className="forminput5">
+<select onChange={handleYear} onClick={show2} id='yearselect' className="forminput5" required>
    <option>{yroptions}</option>
+</select>
+<select onChange={handleDate} onClick={show1} id='dateselect' className="forminput5" required>
+   <option>{dateoptions}</option>
 </select>
 </div>
 <label htmlFor='time' id='formlabel'>Time</label>  
 <div id='flexkro'>
-<select onChange={handleHour} onClick={show4} id='hourselect' className="forminput5">
+<select onChange={handleHour} onClick={show4} id='hourselect' className="forminput5" required>
    <option>{houroptions}</option>
 </select>
-<select onChange={handleMinute} onClick={show5} id='minselect' className="forminput5">
+<select onChange={handleMinute} onClick={show5} id='minselect' className="forminput5" required>
    <option>{minoptions}</option>
 </select>
 </div>

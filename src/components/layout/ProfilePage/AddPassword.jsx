@@ -21,18 +21,18 @@ function AddPassword(){
 
     const [correctPass , setCorrectPass] =useState(false);
 
-    const rightPass =/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+    // const rightPass =/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
 
-    useEffect(()=>{
-        if(rightPass.test(password)){
-        document.getElementById("error4").style.display = "none";
-        setCorrectPass(true);
-        }
-        else if(password){
-          document.getElementById("error4").style.display = "block";
-          setCorrectPass(false); 
-        }
-        },[password])
+    // useEffect(()=>{
+    //     if(rightPass.test(password)){
+    //     document.getElementById("error4").style.display = "none";
+    //     setCorrectPass(true);
+    //     }
+    //     else if(password){
+    //       document.getElementById("error4").style.display = "block";
+    //       setCorrectPass(false); 
+    //     }
+    //     },[password])
 
         const response= useSelector((state)=>state.profilereducer);
 
@@ -55,13 +55,11 @@ function AddPassword(){
 
   function handleSubmit(e){
     e.preventDefault();
-    if(correctPass){
     setLoading(true);
     setCheck(0);
     fd.append("app_password" , password);
     fd.append("email" , email);
     dispatch(apppassdata(fd, setCheck))
-    }
   }
 
     return(
@@ -80,7 +78,7 @@ function AddPassword(){
         <input type='text' id='forminput3' placeholder='Enter Password' value={password} onChange={handlePass} required></input>
         <img src={lock} id="mailimg"></img>
         <p id='buttonpara'><button id='formbtn3' type='submit'>Submit</button> <Link to='/profilepage'><button id='plike'>Cancel</button></Link></p>
-        <p id='error4'>Password must contain at least 8 characters, a special symbol, an uppercase, a lowecase, a numeric value and no space.</p>
+        {/* <p id='error4'>Password must contain at least 8 characters, a special symbol, an uppercase, a lowecase, a numeric value and no space.</p> */}
         </form>
     </div>
     <img src={addpass} id='sideimg'></img>

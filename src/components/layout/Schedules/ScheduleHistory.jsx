@@ -37,6 +37,9 @@ useEffect(()=>{
             minute={list1._minute}
             month={list1._month}
             year={list1._year}
+            from={list1._from}
+            to={list1._group}
+            status={list1.status}
           />
         );
         }
