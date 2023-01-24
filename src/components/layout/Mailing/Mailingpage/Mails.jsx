@@ -10,14 +10,22 @@ import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 import { useEffect } from "react";
 import { useState } from "react";
-import { sendmailsdata, showgroup } from "../../../../redux/actions/GroupAction";
+import { showgroup, viewtemp } from "../../../../redux/actions/GroupAction";
+import { sendmaildata } from "../../../../redux/actions/GroupAction";
 import FormData from 'form-data';
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { seeappPassword } from "../../../../redux/actions/ProfileActions";
 
 function Mails(){
+    var a=1;
+    var campaign = localStorage.getItem("campaign");
+    var templatesid = localStorage.getItem("templateid");
     const [check , setCheck] = useState(0);
+    const [check2 , setCheck2] = useState(0);
     const [groupArr , setGroupArr] = useState([])
+    const [emailArr , setemailArr] = useState([])
     const [group , setGroup] = useState();
+    const [from , setFrom] = useState();
     const [subject , setSubject] = useState("");
     const [company , setCompany] = useState("");
     const [body , setBody] = useState("");
@@ -26,18 +34,26 @@ function Mails(){
 
     const dispatch = useDispatch();
     const fd= new FormData();
+    const navigate = useNavigate();
 
     useEffect(()=>{
     dispatch(showgroup(setCheck))
+    dispatch(seeappPassword(setCheck2))
     },[])
     
     const groupArr1= useSelector((state)=>state.mygroupreducer)
+    const emailArr1= useSelector((state)=>state.profilereducer)
 
     useEffect(()=>{
     if(check==1){
-     setGroupArr(groupArr1.initial);
+     setGroupArr(groupArr1.initial)
     }
     },[check])
+    useEffect(()=>{
+        if(check2==1){
+         setemailArr(emailArr1.response2);
+        }
+        },[check2])
 
     function getGroup(grouparr) {
         return (
@@ -45,12 +61,25 @@ function Mails(){
         );
         }
 
+    function getEmail(emailArr){
+        return (
+        <p id={emailArr.id} onClick={addid2}>{emailArr.email}</p>
+        );
+        }
+
     function showdiv(){
    document.getElementById("groupsdiv").style.display="block";
     }
+    function showdiv2(){
+        document.getElementById("groupsdiv2").style.display="block";
+         }
     function addid(e){
         setGroup(e.target.id);
         document.getElementById("groupsdiv").style.display="none";
+    }
+    function addid2(e){
+        setFrom(e.target.id);
+        document.getElementById("groupsdiv2").style.display="none";
     }
     function handleSubject(e){
         setSubject(e.target.value);
@@ -70,54 +99,52 @@ function Mails(){
     function handleSubmit(e){
         e.preventDefault();
         setCheck(0);
-        console.log(company , subject ,body , template , group );
-        localStorage.setItem("_from" , 1);
-        localStorage.setItem("_company" , company);
-        localStorage.setItem("_subject" , subject);
-        localStorage.setItem("_body" , body);
-        localStorage.setItem("_template" ,template );
-        localStorage.setItem("_group" , group);
-        localStorage.setItem("_file" , file);
-        fd.append("_from" ,1);
+        console.log(company , subject ,body , from, group , campaign);
+        fd.append("_from" ,from);
         fd.append("_company" , company);
         fd.append("_subject" , subject);
         fd.append("_body" , body);
-        // fd.append("_template" ,template );
         fd.append("_group" , group);
-        fd.append("_file" , file);
-        dispatch(sendmailsdata( setCheck , fd));
+        fd.append("id" , campaign);
+        fd.append("_template" , templatesid);
+        fd.append("scheduleMail" , false);
+        dispatch(sendmaildata( setCheck , fd , navigate));
+    }
+    function setValue(){
+        localStorage.setItem("_from" , from);
+        localStorage.setItem("_company" , company);
+        localStorage.setItem("_subject" , subject);
+        localStorage.setItem("_body" , body);
+        localStorage.setItem("_template" , templatesid);
+        localStorage.setItem("_group" , group);
+        navigate("/schedule");
     }
     return(
         <>
 <Navbar />
 <div id='groupsdiv'>{groupArr.map((rest)=>getGroup(rest))}</div>
+<div id='groupsdiv2'>{emailArr.map((rest)=>getEmail(rest))}</div>
 <div id='marginer'>
     <h1 id='formhead'>Form A Mail</h1>
     <form id='formflexer' onSubmit={handleSubmit}>
         <label htmlFor="from" id='formlabel'>To(Choose A Group)</label>
         <input type='text' placeholder='--select--' id='forminput3' onClick={showdiv} autoComplete="off" value={group} required></input>
         <img src={toimg} id='mailimg'></img>
+        <label htmlFor="from" id='formlabel'>From</label>
+        <input type='text' placeholder='--select--' id='forminput3' onClick={showdiv2} autoComplete="off" value={from} required></input>
+        <img src={toimg} id='failimg'></img>
         <label htmlFor="from" id='formlabel'>Subject</label>
         <input type='text' placeholder='Enter Subject' id='forminput3' value={subject} onChange={handleSubject} required></input>
         <img src={subjectimg} id='mailimg'></img>
         <label htmlFor="from" id='formlabel'>Body</label>
-        <input type='text' placeholder='Enter Body' id='forminput3' value={body} onChange={handleBody} required></input>
-        <img src={bodyimg} id='mailimg'></img>
-        <label htmlFor="from" id='formlabel'>Template</label>
-        <select id='forminput3' required onChange={handleTemplate}>
-            <option value="1" >--select--</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-        </select>
-        <img src={templateimg} id='mailimg'></img>
+        <textarea rows={5} cols={6} value={body} onChange={handleBody} required id='textarea2'></textarea>
+        <img src={bodyimg} id='failimg'></img>
         <label htmlFor="from" id='formlabel'>Company Name</label>
         <input type='text' placeholder='Enter Company Name' id='forminput3' value={company} onChange={handleCompany} required></input>
         <img src={companyimg} id='mailimg'></img>
-        <label htmlFor="from" id='formlabel'>Add A File</label>
-        <input type='file' placeholder='Enter Recipient' accept='image/*' onChange={handleFile}></input>
         <div>
-        <button type='submit' id='formbtn10'>Send Now</button>
-        <Link to='/schedule'><button id='formbtn10'>Schedule</button></Link>
+        <button type='submit' id='formbtn10'>Send now</button>
+        <button id='formbtn10' onClick={setValue}>Schedule</button>
         </div>
     </form>
 </div>

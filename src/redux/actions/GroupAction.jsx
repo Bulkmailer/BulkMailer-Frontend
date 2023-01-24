@@ -67,6 +67,7 @@ const config ={
       await api.post("/dashboard/bulk_add/" , uploaddata , config)
         .then((res)=>{
             setLoading(false);
+            navigate("/mails")
             dispatch(
                 {type:'Upload' ,
                 payload :res}
@@ -165,7 +166,65 @@ const config ={
                   setCheck(1);
           })
       }
-      export const sendmailsdata =(setCheck , sendmail) =>
+
+      export const deletecontact =(deletegroupdata , setCheck) =>
+async (dispatch)=>{
+  var accesstoken =localStorage.getItem("accesstokenb")
+const config ={
+      Authorization:`Bearer ${accesstoken}`,
+  }
+    await api.delete("/dashboard/view_group_data/", {
+      headers:config , 
+      data : deletegroupdata 
+    })
+      .then((res)=>{
+          dispatch(
+              {
+                type:'DeleteContact',
+              payload :res
+            }
+              )
+              setCheck(1);
+          })
+      .catch((err)=>{
+          dispatch(
+              {type:'DeleteContact' ,
+              payload :err}
+              )
+              setCheck(1);
+      })
+  }
+
+  export const deleteschedule =(deletegroupdata , setCheck) =>
+  async (dispatch)=>{
+    var accesstoken =localStorage.getItem("accesstokenb")
+  const config ={
+        Authorization:`Bearer ${accesstoken}`,
+    }
+      await api.delete("/dashboard/schedule_mail/", {
+        headers:config , 
+        data : deletegroupdata 
+      })
+        .then((res)=>{
+            dispatch(
+                {
+                  type:'DeleteSchedule',
+                payload :res
+              }
+                )
+                setCheck(1);
+            })
+        .catch((err)=>{
+            dispatch(
+                {type:'DeleteSchedule' ,
+                payload :err}
+                )
+                setCheck(1);
+        })
+    }
+  
+
+      export const campaigndata =( sendmail , setCheck , setLoading , navigate) =>
       async (dispatch)=>{
         var accesstoken =localStorage.getItem("accesstokenb");
       const config ={
@@ -177,27 +236,81 @@ const config ={
           await api.post("/dashboard/send_mail/" , sendmail ,config
           )
             .then((res)=>{
+              navigate("/templates")
                 dispatch(
-                    {type:'SendMail',
+                    {type:'Campaign',
                     payload :res}
                     )
                     setCheck(1);
+                    setLoading(false);
                 })
             .catch((err)=>{
                 dispatch(
-                    {type:'SendMail' ,
+                    {type:'Campaign' ,
                     payload :err}
                     )
                     setCheck(1);
+                    setLoading(false);
             })
         }
+        export const sendmaildata =( setCheck , sendmail , navigate) =>
+        async (dispatch)=>{
+          var accesstoken =localStorage.getItem("accesstokenb");
+        const config ={
+          headers:{
+            Authorization:`Bearer ${accesstoken}`,
+          }   
+          }
+            await api.patch("/dashboard/send_mail/" , sendmail ,config
+            )
+              .then((res)=>{
+                // navigate("/home");
+                  dispatch(
+                      {type:'SendMail',
+                      payload :res}
+                      )
+                      setCheck(1);
+                  })
+              .catch((err)=>{
+                  dispatch(
+                      {type:'SendMail' ,
+                      payload :err}
+                      )
+                      setCheck(1);
+              })
+          }
+            export const fileuploadimg =( sendmail , navigate , setCheck) =>
+            async (dispatch)=>{
+              var accesstoken =localStorage.getItem("accesstokenb");
+            const config ={
+              headers:{
+                Authorization:`Bearer ${accesstoken}`,
+              }   
+              }
+                await api.post("/dashboard/file_upload/" , sendmail ,config
+                )
+                  .then((res)=>{
+                    navigate("/mailingpage");
+                      dispatch(
+                          {type:'UploadFile',
+                          payload :res}
+                          )
+                          setCheck(1);
+                      })
+                  .catch((err)=>{
+                      dispatch(
+                          {type:'UploadFile' ,
+                          payload :err}
+                          )
+                          setCheck(1);
+                  })
+              }
         export const schedulemaildata =(setCheck , schedulemail ) =>
         async (dispatch)=>{
           var accesstoken =localStorage.getItem("accesstokenb");
         const config ={
           headers:{
             Authorization:`Bearer ${accesstoken}`,
-            // 'Content-Type': 'application/json'
           }   
           }
           console.log(schedulemail);
@@ -209,7 +322,6 @@ const config ={
                       payload :res}
                       )
                       setCheck(1);
-      
                   })
               .catch((err)=>{
                   dispatch(
@@ -227,7 +339,7 @@ const config ={
             Authorization:`Bearer ${accesstoken}`,
           }   
           }
-            await api.get("/dashboard/send_mail/",config
+            await api.get("/dashboard/send_mail/?schedulmail=false",config
             )
               .then((res)=>{
                   dispatch(
@@ -252,7 +364,7 @@ const config ={
             Authorization:`Bearer ${accesstoken}`,
           }   
           }
-            await api.get("/dashboard/schedule_mail/",config
+            await api.get("/dashboard/send_mail/?schedulmail=True",config
             )
               .then((res)=>{
                   dispatch(
@@ -269,3 +381,57 @@ const config ={
                       setCheck(1);
               })
           }
+
+          export const viewtemp =(setCheck) =>
+          async (dispatch)=>{
+            var accesstoken =localStorage.getItem("accesstokenb")
+          const config ={
+              headers:{
+                Authorization:`Bearer ${accesstoken}`,
+              }
+            }
+              await api.get("/dashboard/template_view/", config)
+                .then((res)=>{
+                    // setLoading(false);
+                    dispatch(
+                        {type:'Templateview' ,
+                        payload :res}
+                        )
+                        setCheck(1);
+                    })
+                .catch((err)=>{
+                    // setLoading(false);
+                    dispatch(
+                        {type:'Templateview' ,
+                        payload :err}
+                        )
+                        setCheck(1);
+                })
+            }
+            export const addtemp =(tempdata , navigate ,setCheck , setLoading) =>
+            async (dispatch)=>{
+              var accesstoken =localStorage.getItem("accesstokenb")
+            const config ={
+                headers:{
+                  Authorization:`Bearer ${accesstoken}`,
+                }
+              }
+                await api.post("/dashboard/template_view/" , tempdata , config)
+                  .then((res)=>{
+                      setLoading(false);
+                      navigate("/templates")
+                      dispatch(
+                          {type:'Addtemp' ,
+                          payload :res}
+                          )
+                          setCheck(1);
+                      })
+                  .catch((err)=>{
+                      setLoading(false);
+                      dispatch(
+                          {type:'Addtemp' ,
+                          payload :err}
+                          )
+                          setCheck(1);
+                  })
+              }

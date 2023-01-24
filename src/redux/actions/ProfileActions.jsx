@@ -77,6 +77,31 @@ const config ={
           })
       }
 
+      export const seeappPassword =(setCheck) =>
+async (dispatch)=>{
+  var accesstoken =localStorage.getItem("accesstokenb")
+const config ={
+    headers:{
+      Authorization:`Bearer ${accesstoken}`,
+    }
+  }
+    await api.get("/auth/add_App_password/" , config)
+      .then((res)=>{
+          dispatch(
+              {type:'Emailget' ,
+              payload :res}
+              )
+              setCheck(1);
+          })
+      .catch((err)=>{
+          dispatch(
+              {type:'Emailget',
+              payload :err}
+              )
+              setCheck(1);
+      })
+  }
+
       export const updatepassdata=( updatepassdata ,setCheck) =>
     async (dispatch)=>{
       var accesstoken =localStorage.getItem("accesstokenb")

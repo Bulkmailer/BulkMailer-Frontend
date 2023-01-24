@@ -41,11 +41,11 @@ return(<>
 {(list1)?<h1 id='listhead'>Group Contacts</h1>:null}
 <div className="namesdiv">
 {(list1)?(list1.map((rest)=>getContact(rest))):<div id='nothing'><img src={nocontacts} id='nothingimg'></img><div id='btndiv'>
-<Link to='/addcontacts'><button id='formbtn10'>Add Contacts</button></Link>
+<Link to='/contacts'><button id='formbtn10'>Add Contacts</button></Link>
 </div></div>}
 </div>
 {(list1)?<div id='btndiv'>
-<Link to='/addcontacts'><button id='formbtn10'>Add Contacts</button></Link>
+<Link to='/contacts'><button id='formbtn10'>Add Contacts</button></Link>
 </div>:null}
 </>)
 }

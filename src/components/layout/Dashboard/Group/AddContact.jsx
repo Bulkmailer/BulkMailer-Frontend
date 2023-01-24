@@ -11,6 +11,9 @@ import { useDispatch } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
 import { addcontactsdata } from '../../../../redux/actions/GroupAction';
 import * as ReactBootStrap from "react-bootstrap";
+import { useSelector } from 'react-redux';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function AddContacts(){
     const [email , setEmail] = useState();
@@ -27,6 +30,17 @@ function AddContacts(){
    const dispatch = useDispatch();
    const navigate= useNavigate();
    const fd = new FormData();
+
+   const mssg = useSelector((state)=>state.groupreducer);
+  
+  useEffect(()=>{
+      console.log(check);
+      if(check==1){
+      toast.error(mssg.response2[0], {
+          position: toast.POSITION.TOP_RIGHT}
+      );
+    }
+  } ,[check]);
 
    const rightmail =
     /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
@@ -53,8 +67,8 @@ function AddContacts(){
         setGender(e.target.value);
         }
      function handleSubmit(e){
-      if(correctMail){
       e.preventDefault();
+      if(correctMail){
       setLoading(true);
       setCheck(0);
       fd.append("email" , email);
@@ -62,6 +76,9 @@ function AddContacts(){
       fd.append("group" , group);
       fd.append("gender" , gender);
       dispatch(addcontactsdata(fd, setLoading , navigate , setCheck));
+      setEmail('');
+      setGender('');
+      setName('');
       }
      }   
     return(<>
@@ -75,7 +92,7 @@ function AddContacts(){
     <Sidebar />
     <div id='managing'>
         <h1 id='pagehead'>Add Contacts</h1>
-        <form id='flexform2' onSubmit={handleSubmit}>
+        <form id='flexform2' onSubmit={handleSubmit} name='contactform'>
         <label htmlFor='title' id='formlabel'>Email Address</label>
         <input type='text' id='forminput2' placeholder='Enter Email Address' required value={email} onChange={handleMail}></input>
         <p id='mailerr'>Invalid Email Address</p>
@@ -85,7 +102,7 @@ function AddContacts(){
         <img src={names} id="mailimg"></img>
         <label htmlFor='title' id='formlabel'>Gender</label>
         <select name="foodcategory" id='forminput2' onChange={handleGender}>
-              <option value="Select">--select--</option>
+              <option value='0'>--select--</option>
               <option value="Male">Male</option>
               <option value="Female">Female</option>
               {/* <option value="Binary">Binary</option>
@@ -97,6 +114,7 @@ function AddContacts(){
       <Link to='/mails'><button id='formbtn4'>Close</button></Link>
       </div>
         </form>
+        <ToastContainer />
     </div>
     </div>
     </>)

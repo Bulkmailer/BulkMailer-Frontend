@@ -25,6 +25,7 @@ if(check==1){
 } , [check])
  
 const app = arr.AppPassword;
+console.log(app);
 const dispatch = useDispatch();
 useEffect(()=>{
     dispatch(profilegetdata(setCheck));
@@ -52,7 +53,7 @@ return(<>
     </div>
 </div>
 <Link to='/editprofile'><button id='formbtn8'>Edit Profile</button></Link>
-{{app}?<Link to='/updatepassword'><button id='formbtn8'>Update App Password</button></Link>:<Link to='/addpassword'><button id='formbtn8'>Add App Password</button></Link>}
+{(app==true)?<Link to='/updatepassword'><button id='formbtn8'>Update App Password</button></Link>:<Link to='/addpassword'><button id='formbtn8'>Add App Password</button></Link>}
 <Link to='/addmails'><button id='formbtn8'>Add Emails</button></Link>
 </div>
 </>)

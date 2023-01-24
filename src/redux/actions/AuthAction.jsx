@@ -68,9 +68,9 @@ async (dispatch)=>{
       })
   }
 
-export const signupotp =(signupotp , setLoading , navigate , setCheck)=>
+export const signupotp =(signup , setLoading , navigate , setCheck)=>
 async (dispatch)=>{
-    await api.post("/auth/otp_verify/" , signupotp)
+    await api.post("/auth/otp_verify/" , signup)
       .then((res)=>{
         setLoading(false);
         navigate("/signupdetails");

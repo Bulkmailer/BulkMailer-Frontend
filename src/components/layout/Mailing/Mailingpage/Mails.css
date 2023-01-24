@@ -29,6 +29,17 @@
     z-index:2;
     font-weight:bold;
 }
+#groupsdiv2{
+    display:none;
+    position:absolute;
+    background-color: #D6D7DC;
+    width:45.43vw;
+    top:372px;
+    left:40px;
+    padding:20px 0 20px 10px;
+    z-index:2;
+    font-weight:bold;
+}
 #formbtn10{
     background-color: rgba(83 , 109 , 254 , 0.9);
     border:none;
@@ -43,14 +54,23 @@
 }
 #textarea2{
     width:45.43vw;
-    padding-top:20px;
+    padding:20px;
     border:1px solid black;
     font-weight:500;
     background-color: #D6D7DC50;
     border:0.5px solid black;
     margin-top:1px;
     border-radius:7px;
-    height:50px;
     font-size: 1rem;
     font-weight: 600;
+}
+#failimg{
+    visibility: hidden;
+    width:24px;
+    position:relative;
+    top:-36px;
+    left:10px;
+}
+#showpara{
+    display:none;
 }

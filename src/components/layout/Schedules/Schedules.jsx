@@ -1,50 +1,50 @@
 import { useState } from "react";
 import Navbar from "../Navbar/Navbar";
-import './Schedule.css'
-import schedule from '../../../assets/schedule.svg'
-import FormData from "form-data";
-import { schedulemaildata } from "../../../redux/actions/GroupAction";
+import FormData from 'form-data';
 import { useDispatch } from "react-redux";
+import { schedulemaildata, sendmaildata } from "../../../redux/actions/GroupAction";
+import './Schedule.css';
+import schedule from '../../../assets/schedule.svg'
+import { useNavigate } from "react-router-dom";
 
 function Schedule(){
-    var from = localStorage.getItem("_from");
-    var group = localStorage.getItem("_group");
-    var subject = localStorage.getItem("_subject");
-    var template = localStorage.getItem("_template");
-    var body = localStorage.getItem("_body");
-    var company = localStorage.getItem("_company");
-    var file = localStorage.getItem("_file");
-
-    const [date , setDate] = useState("");
-    const [month , setMonth] = useState("");
-    const [hour , setHour] = useState("");
-    const [minute , setMinute] = useState("");
-    const [year , setYear] = useState("");
-
-    const [check , setCheck] = useState(0);
-
-    function handleDate(){
-        setDate(e.target.value);
-    }
-    function handleMonth(){
-        setMonth(e.target.value);
-    }
-    function handleYear(){
-        setHour(e.target.value);
-    }
-    function handleHour(){
-        setMinute(e.target.value); 
-    }
-    function handleMinute(){
-        setYear(e.target.value);
-    }
+    const [year , setYear] = useState();
+    const [month , setMonth] = useState();
+    const [date , setDate] = useState();
+    const [hour , setHour] = useState();
+    const [minute , setMinute] = useState();
+    const [check, setCheck] = useState(0);
 
     const fd= new FormData();
-    const dispatch = useDispatch();
+    const dispatch= useDispatch();
+    const navigate=useNavigate();
 
-    var a=1 , b=1 , c=1 ;
-    var e=1 , f=1;
-    var d = new Date();
+        var from = localStorage.getItem("_from");
+        var group = localStorage.getItem("_group");
+        var subject = localStorage.getItem("_subject");
+        var template = localStorage.getItem("_template");
+        var body = localStorage.getItem("_body");
+        var company = localStorage.getItem("_company");
+        var campaign = localStorage.getItem("campaign");
+    
+function handleYear(e){
+setYear(e.target.value);
+} 
+function handleMonth(e){
+    setMonth(e.target.value);
+    } 
+    function handleDate(e){
+        setDate(e.target.value);
+        } 
+        function handleMinute(e){
+            setMinute(e.target.value);
+            } 
+            function handleHour(e){
+                setHour(e.target.value);
+                } 
+
+var a=1 , b=1 , c=1 , e=1 , f=1;
+var d = new Date();
     var currentYear = d.getFullYear ();
     var yroptions = "Year";
     function show2(){
@@ -53,7 +53,7 @@ function Schedule(){
             yroptions="<option value= '0'>Year</option>";
             }
             else{
-    yroptions += "<option value="+i+">"+i+"</option>"
+    yroptions += "<option value='"+i+"'>"+i+"</option>"
             }
     }
         if(a==1){
@@ -61,6 +61,7 @@ function Schedule(){
         }
     return a=0;
     }
+
     var dateoptions = "Date";
     function show1(){
     for (var i = 0; i <= 31; i++) {
@@ -68,7 +69,7 @@ function Schedule(){
         dateoptions="<option value= '0'>Date</option>";
         }
         else{
-        dateoptions += "<option value="+i+">"+i+"</option>"
+        dateoptions += "<option value='"+i+"'>"+i+"</option>"
         }
         }
             if(b==1){
@@ -83,7 +84,7 @@ function Schedule(){
         monthoptions="<option value= '0'>Month</option>";
         }
         else{
-        monthoptions += "<option value="+i+">"+i+"</option>"
+        monthoptions += "<option value='"+i+"'>"+i+"</option>"
         }
         }
             if(c==1){
@@ -99,7 +100,7 @@ function Schedule(){
             houroptions="<option value= '0'>Hour</option>";
             }
             else{
-            houroptions += "<option value="+i+">"+i+"</option>"
+            houroptions += "<option value='"+i+"'>"+i+"</option>"
             }
             }
                 if(e==1){
@@ -115,7 +116,7 @@ function Schedule(){
                 minoptions="<option value= '0'>Min</option>";
                 }
                 else{
-                minoptions += "<option value="+i+">"+i+"</option>"
+                minoptions += "<option value='"+i+"'>"+i+"</option>"
                 }
                 }
                     if(f==1){
@@ -123,59 +124,59 @@ function Schedule(){
                     }
                 return f=0;
                 }
-      
-    function handleSubmit(e){
+function handlesubmit(e){
     e.preventDefault();
-    console.log(date , hour , year , month , minute , from , company , subject , body , template , group);
+    console.log(year , hour , month , minute , date);
     fd.append("_date" , date);
-    fd.append("_hour" , hour);
-    fd.append("_year" , year);
-    fd.append("_month" , month);
-    fd.append("_minute" , minute);
-    fd.append("_from" ,from);
-    fd.append("_company" , company);
-    fd.append("_subject" , subject);
-    fd.append("_body" , body);
-    fd.append("_template" ,template );
-    fd.append("_group" , group);
-   dispatch(schedulemaildata(setCheck ,fd));
-}            
-       
-return (<>
-<Navbar />
+        fd.append("_hour" , hour);
+        fd.append("_year" , year);
+        fd.append("_month" , month);
+        fd.append("_minute" , minute);
+        fd.append("_from" ,from);
+        fd.append("_company" , company);
+        fd.append("_subject" , subject);
+        fd.append("_body" , body);
+        fd.append("_template" ,template );
+        fd.append("_group" , group);
+        fd.append("scheduleMail" , true);
+        fd.append("id" , campaign);
+       dispatch(sendmaildata(setCheck ,fd , navigate));
+}  
+return(<>
+<Navbar/>
 <h1 id='headd'>Schedule Your Mail</h1>
-<div id='sidebarflex'>
+ <div id='sidebarflex'>
 <div>
-<form id='scheduleform' onSubmit={handleSubmit}>
+<form onSubmit={handlesubmit} id='scheduleform'>
 <label htmlFor='date' id='formlabel'>Date</label>  
 <div id='flexkro'>
-<select className='forminput5' id='dateselect' onClick={show1} required onChange={handleDate}>
-<option>{dateoptions}</option>
+<select onChange={handleMonth} onClick={show3} id='monthselect' className="forminput5">
+   <option>{monthoptions}</option>
 </select>
-<select className='forminput5' id='monthselect' onClick={show3} required onChange={handleMonth}>
-<option>{monthoptions}</option>
+<select onChange={handleDate} onClick={show1} id='dateselect' className="forminput5">
+   <option>{dateoptions}</option>
 </select>
-<select id='yearselect' className="forminput5" onClick={show2} required onChange={handleYear}>
-<option>{yroptions}</option>
+<select onChange={handleYear} onClick={show2} id='yearselect' className="forminput5">
+   <option>{yroptions}</option>
 </select>
 </div>
-<label html='time' id='formlabel'>Time</label> 
+<label htmlFor='time' id='formlabel'>Time</label>  
 <div id='flexkro'>
-<select id='hourselect' className="forminput5" onClick={show4} required onChange={handleHour}> 
-<option>{houroptions}</option>
+<select onChange={handleHour} onClick={show4} id='hourselect' className="forminput5">
+   <option>{houroptions}</option>
 </select>
-<select id='minselect' className="forminput5" onClick={show5} required onChange={handleMinute}>
-<option>{minoptions}</option>
+<select onChange={handleMinute} onClick={show5} id='minselect' className="forminput5">
+   <option>{minoptions}</option>
 </select>
-    </div> 
-    <button id='formbtn11' type='submit'>Schedule</button>
+</div>
+<button type='submit' id='formbtn11'>Schedule</button>
 </form>
 </div>
 <div id='sideimgdiv'>
-<img src={schedule} id='sideimg'></img>
+ <img src={schedule} id='sideimg'></img>
 </div>
 </div>
-
-</>)
+</>
+)
 }
 export default Schedule;

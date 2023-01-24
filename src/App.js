@@ -19,7 +19,6 @@ import MyGroup from './components/layout/MyGroup/MyGroup';
 import Groupinfo from './components/layout/MyGroup/Groupinfo';
 import ProfilePage from './components/layout/ProfilePage/ProfilePage';
 import Templates from './components/layout/Mailing/Templates/Template';
-import Templates1 from './components/layout/Mailing/Templates/Template1';
 import EditProfile from './components/layout/ProfilePage/ProfileEdit';
 import AddPassword from './components/layout/ProfilePage/AddPassword';
 import UpdatePassword from './components/layout/ProfilePage/UpdateAppPassword';
@@ -28,6 +27,10 @@ import Mails from './components/layout/Mailing/Mailingpage/Mails';
 import Home from './components/auth/home';
 import ScheduleHistory from './components/layout/Schedules/ScheduleHistory';
 import Schedule from './components/layout/Schedules/Schedules';
+import Campaign from './components/layout/Mailing/Mailingpage/Campaign';
+import TemplateComp from './components/layout/Mailing/Templates/TemplateComp';
+import AddTemplate from './components/layout/Mailing/Templates/Addtemplate';
+import FileUpload from './components/layout/Mailing/Mailingpage/FileUpload';
 
 function App() {
   return (
@@ -53,15 +56,17 @@ function App() {
       <Route path="/groupinfo" exact element={<Groupinfo />}></Route>
       <Route path="/profilepage" exact element={<ProfilePage />}></Route>
       <Route path="/templates" exact element={<Templates />}></Route>
-      <Route path="/template-1" exact element={<Templates1 />}></Route>
       <Route path="/editprofile" exact element={<EditProfile />}></Route>
       <Route path="/addpassword" exact element={<AddPassword />}></Route>
       <Route path="/updatepassword" exact element={<UpdatePassword />}></Route>
       <Route path="/addmails" exact element={<AddEmails />}></Route>
-      <Route path="/mails" exact element={<Mails />}></Route>
+      <Route path="/mails" exact element={<Campaign />}></Route>
+      <Route path="/mailingpage" exact element={<Mails />}></Route>
       <Route path="/" exact element={<Home />}></Route>
       <Route path="/schedulehistory" exact element={<ScheduleHistory/>}></Route>
       <Route path="/schedule" exact element={<Schedule/>}></Route>
+      <Route path="/addtemp" exact element={<AddTemplate/>}></Route>
+      <Route path="/fileupload" exact element={<FileUpload/>}></Route>
      
     </Routes>
   </Router>

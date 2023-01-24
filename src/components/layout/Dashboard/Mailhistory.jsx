@@ -8,6 +8,7 @@ import { useState } from 'react';
 import { useSelector } from 'react-redux';
 import HistoryComp from './MailHistoryComp';
 import nomails from '../../../assets/nomails.svg'
+import { seeappPassword } from '../../../redux/actions/ProfileActions';
 
 function Mailhistory(){
     const[list1 , setList1] = useState();

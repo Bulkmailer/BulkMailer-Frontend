@@ -4,6 +4,10 @@ contactList:"" ,
 response6:"" ,
 mailList:"" ,
 response:"" ,
+response2:"" ,
+status2:"" ,
+status3:"" , 
+temp:""
 };
 const groupreducer =(state=initial 
     , action)=>{
@@ -21,19 +25,52 @@ if(action.payload.data){
         }
         case "Upload" :{
             console.log(action.payload);
-            break;
+           return{
+            status3:action.payload.request.status
+           }
             }
             case "Delete" :{
                 console.log(action.payload);
             break;
                 }
+                case "DeleteContact" :{
+                    console.log(action.payload);
+                break;
+                    }
+                    case "DeleteSchedule" :{
+                        console.log(action.payload);
+                    break;
+                        }
             case "AddContacts":{
                 console.log(action.payload);
-                return null
+                return{
+                    response2:action.payload.response.data.msg
+                }
             }
             case "SendMail":{
                 console.log(action.payload);
-               return null ;}
+               return null ;
+            }
+            case "UploadFile":{
+                console.log(action.payload);
+               return null ;
+            }
+            case "Addtemp":{
+                console.log(action.payload);
+               return null ;
+            }
+            case "Templateview":{
+                console.log(action.payload);
+              return{
+                temp:action.payload.data
+              }
+            }
+            case "Campaign":{
+                console.log(action.payload);
+                console.log(action.payload.data.id);
+                localStorage.setItem("campaign" , action.payload.data.id)
+               return null ;
+            }
                case "ScheduleMail":{
                 console.log(action.payload);
                return null ;}

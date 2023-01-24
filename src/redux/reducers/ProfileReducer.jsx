@@ -1,6 +1,7 @@
 
 const initial={
 response:'',
+response2:'',
 status1:'' , 
 status2:'' , 
 status3:'' ,
@@ -14,6 +15,12 @@ const profilereducer =(state=initial
         response:action.payload.data[0],
        }
         }
+        case "Emailget" :{
+            console.log(action.payload);
+           return{
+            response2:action.payload.data,
+           }
+            }
         case "EditProfile" :{
             console.log(action.payload);
           return {

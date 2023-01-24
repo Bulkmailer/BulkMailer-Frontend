@@ -14,7 +14,7 @@ function Contacts(){
     <p id='intropara2'>You can add contacts manually or upload them through csv , txt , xls file....</p>
     <div id='marginer'>
     <div id='boxflex2'>
-    <Link to='/import'><div id='box'>Import Contacts</div></Link>
+    <Link to='/uploads'><div id='box'>Import Contacts</div></Link>
     <Link to='/addcontacts'><div id='box'>Add Contacts Manually</div></Link>
 </div>
 </div> 
