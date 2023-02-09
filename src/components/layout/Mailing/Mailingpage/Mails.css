@@ -18,6 +18,9 @@
     top:-36px;
     left:10px;
 }
+#sider{
+    margin-left:100px;
+}
 #groupsdiv{
     display:none;
     position:absolute;

@@ -1,6 +1,6 @@
 import Navbar from "../../Navbar/Navbar";
 import './Templates.css'
-import { Link, useSearchParams } from "react-router-dom";
+import { Link, useNavigate, useSearchParams } from "react-router-dom";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { viewtemp } from "../../../../redux/actions/GroupAction";
@@ -13,6 +13,7 @@ function Templates(){
   const [tempArr1 , setTempArr1] = useState([]);
 
   const tempArr = useSelector((s)=>s.groupreducer);
+  const navigate = useNavigate();
 
   useEffect(()=>{
   if(check==1){
@@ -33,6 +34,11 @@ function view(tempArr1){
   )
 }
 console.log(tempArr1)
+function handleSkip(e){
+// localStorage.setItem("templateid" , null);
+localStorage.removeItem("templateid");
+navigate("/fileupload");
+}
 return (<>
 <Navbar />
     <div id='templatesdiv'>
@@ -40,7 +46,8 @@ return (<>
         <div id='templateflex'>
 {(tempArr1)?(tempArr1.map((rest)=>view(rest))):<p>No templates</p>}
 </div>
-<Link to='/addtemp'><button id='formbtn10'>Add new</button></Link>
+{/* <Link to='/addtemp'><button id='formbtn10'>Add new</button></Link> */}
+<p id='buttonpara'><Link to='/addtemp'><button id='formbtn3' type='submit'>Add New</button></Link><button id='plike' onClick={handleSkip}>Skip</button></p>
     </div>
 </>)
 }

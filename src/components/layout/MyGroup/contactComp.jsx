@@ -22,13 +22,13 @@ function Contactname(props){
 return(
     <>
     <div id='flexkro'>
-   <div className="groupnamediv"  id={props.id}>
+   <div className="groupnamediv2"  id={props.id}>
     <h4 className='groupnames'>{props.name}</h4>
     <pre className='groupnames'><p id='contactpara'>Email    :{props.email}</p></pre>
     <pre className='groupnames'><p id='contactpara'>Gender :{props.gender}</p></pre>
-   </div>
-   <div className='greydiv' id={props.id}>
+    {/* <div> */}
    <img src={deleteitem} className='deleteimg' id={props.id} onClick={handleDelete}></img>
+   {/* </div> */}
    </div>
    </div>
     </>

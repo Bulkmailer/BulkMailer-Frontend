@@ -4,6 +4,13 @@
     padding:30px 20px;
     width:70%;
 }
+.groupnamediv2{
+    background-color: #D6D7DC50;
+    margin:15px 0 15px 15px;
+    padding:30px 20px;
+    width:70%;
+    display: flex;
+}
 .namesdiv{
     margin-top:30px;
     margin-left:20px;
@@ -40,8 +47,9 @@
     margin-left:50px;
 }
 .deleteimg{
-    margin-top:40px;
+    /* margin-top:40px; */
     margin-right:10px;
+    cursor: pointer;
 }
 .greydiv{
     background-color: #D6D7DC50;  
@@ -57,4 +65,8 @@ background-color:#D6D7DC50
 }
 #btndiv{
     margin-left:40px;
+}
+.divseye{
+cursor: pointer;  
+ margin-top:12px;  
 }

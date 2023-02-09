@@ -28,7 +28,7 @@ const config ={
               setCheck(1);
       })
   }
-  export const deletegroupdata =(deletegroupdata , navigate , setCheck) =>
+  export const deletegroupdata =(deletegroupdata, setCheck , navigate) =>
 async (dispatch)=>{
   var accesstoken =localStorage.getItem("accesstokenb")
 const config ={

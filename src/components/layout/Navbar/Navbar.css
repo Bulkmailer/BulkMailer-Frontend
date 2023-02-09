@@ -100,6 +100,14 @@ margin:10px 0px 10px 20px;
         position: absolute;
         z-index: 2;
 }
+#askmenudiv2{
+    height:150vh;
+    width:100vw;
+    text-align: center;
+    background-color: rgba(255 , 255 , 255 ,0.5);
+    position: absolute;
+    z-index: 2;
+}
 #logoutdiv{
     background-color: #D6D7DC ;
     width:50vw;

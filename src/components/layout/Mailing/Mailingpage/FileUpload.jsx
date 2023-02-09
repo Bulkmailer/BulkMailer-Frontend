@@ -11,6 +11,7 @@ import * as ReactBootStrap from "react-bootstrap";
 import { useSelector } from 'react-redux';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { Link } from "react-router-dom";
 
 function FileUpload(){
     const [file , setFile] = useState([]);
@@ -49,7 +50,10 @@ function FileUpload(){
        </div>
     </label>
     <input type="file" name='file' id='file-input' onChange={handleFiles}/>
-    <button id='formbtn5' type='submit'>Upload</button>
+    {/* <button id='formbtn5' type='submit'>Upload</button> */}
+    <div id='sider'>
+    <p id='buttonpara'><button id='formbtn3' type='submit'>Upload</button><Link to='/mailingpage'><button id='plike'>Skip</button></Link></p>
+    </div>
     </form>
     <ToastContainer />
     </div>

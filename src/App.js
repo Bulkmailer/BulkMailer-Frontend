@@ -31,6 +31,7 @@ import Campaign from './components/layout/Mailing/Mailingpage/Campaign';
 import TemplateComp from './components/layout/Mailing/Templates/TemplateComp';
 import AddTemplate from './components/layout/Mailing/Templates/Addtemplate';
 import FileUpload from './components/layout/Mailing/Mailingpage/FileUpload';
+import DeleteConf from './components/layout/MyGroup/DeleteConf';
 
 function App() {
   return (
@@ -67,6 +68,7 @@ function App() {
       <Route path="/schedule" exact element={<Schedule/>}></Route>
       <Route path="/addtemp" exact element={<AddTemplate/>}></Route>
       <Route path="/fileupload" exact element={<FileUpload/>}></Route>
+      <Route path="/deletepage" exact element={<DeleteConf/>}></Route>
      
     </Routes>
   </Router>

@@ -6,8 +6,10 @@ import { deletegroupdata } from '../../../redux/actions/GroupAction';
 import FormData from 'form-data';
 import { showgroup } from '../../../redux/actions/GroupAction';
 import { useState } from 'react';
+import { faEye } from '@fortawesome/fontawesome-free-solid';
 import { useSelector } from 'react-redux';
 import { useEffect } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 function Groupname(props){
     const dispatch = useDispatch();
@@ -21,22 +23,22 @@ function Groupname(props){
         localStorage.setItem("groupid" , e.currentTarget.id);
         Navigate("/groupinfo");
     }
+
     function handleDelete(e){
     setCheck(0);
-    const id=e.target.id;
-    fd.append("id" , e.currentTarget.id);
-    dispatch(deletegroupdata(fd , setCheck));
-    document.getElementById(id).style.display="none";
+    localStorage.setItem('deletegroup' ,e.currentTarget.id);
+    Navigate('/deletepage');
+    // fd.append("id" , e.currentTarget.id);
+    // dispatch(deletegroupdata(fd , setCheck));
     }
 
 return(
     <>
     <div id='flexkro' className='blur'>
-   <div className="groupnamediv"  id={props.id} onClick={groupclick}>
+   <div className="groupnamediv2"  id={props.id}>
     <p className='groupnames' id={props.id}> {props.groupname}</p>
-    </div>
-    <div className='greydiv' id={props.id}>
    <img src={deleteitem} className='deleteimg' id={props.id} onClick={handleDelete}></img>
+   <FontAwesomeIcon icon={faEye} id={props.id} className='divseye' onClick={groupclick} />
    </div>
    </div>
     </>

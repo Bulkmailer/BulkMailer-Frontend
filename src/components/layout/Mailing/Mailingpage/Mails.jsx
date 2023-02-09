@@ -103,7 +103,7 @@ function Mails(){
         e.preventDefault();
         setCheck(0);
         console.log(company , subject ,body , from, group , campaign , scheduleMail);
-        fd.append("_from" ,1);
+        fd.append("_from" , 2);
         fd.append("_company" , company);
         fd.append("_subject" , subject);
         fd.append("_body" , body);
@@ -114,7 +114,7 @@ function Mails(){
         dispatch(sendmaildata( setCheck , fd , navigate));
     }
     function setValue(){
-        localStorage.setItem("_from" , 1);
+        localStorage.setItem("_from" , 2);
         localStorage.setItem("_company" , company);
         localStorage.setItem("_subject" , subject);
         localStorage.setItem("_body" , body);
@@ -133,10 +133,10 @@ function Mails(){
         <label htmlFor="from" id='formlabel'>To(Choose A Group)</label>
         <input type='text' placeholder='--select--' id='forminput3' onClick={showdiv} autoComplete="off" value={group} required></input>
         <img src={toimg} id='mailimg'></img>
-        <label htmlFor="from" id='formlabel'>From</label>
-        <input type='text' placeholder='--select--' id='forminput3' 
-        // onClick={showdiv2} 
-        autoComplete="off" value={from} required></input>
+        {/* <label htmlFor="from" id='formlabel'>From</label> */}
+        {/* <input type='text' placeholder='--select--' id='forminput3'  */}
+        {/* // onClick={showdiv2}  */}
+        {/* autoComplete="off" value={from} required></input> */}
         <img src={toimg} id='failimg'></img>
         <label htmlFor="from" id='formlabel'>Subject</label>
         <input type='text' placeholder='Enter Subject' id='forminput3' value={subject} onChange={handleSubject} required></input>
