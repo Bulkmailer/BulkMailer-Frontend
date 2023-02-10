@@ -141,9 +141,9 @@ function Mails(){
         <label htmlFor="from" id='formlabel'>Subject</label>
         <input type='text' placeholder='Enter Subject' id='forminput3' value={subject} onChange={handleSubject} required></input>
         <img src={subjectimg} id='mailimg'></img>
-        <label htmlFor="from" id='formlabel'>Body</label>
+        {(templatesid==null)?<><label htmlFor="from" id='formlabel'>Body</label>
         <textarea rows={5} cols={6} value={body} onChange={handleBody} required id='textarea2'></textarea>
-        <img src={bodyimg} id='failimg'></img>
+        <img src={bodyimg} id='failimg'></img></>:null}    
         <label htmlFor="from" id='formlabel'>Company Name</label>
         <input type='text' placeholder='Enter Company Name' id='forminput3' value={company} onChange={handleCompany} required></input>
         <img src={companyimg} id='mailimg'></img>

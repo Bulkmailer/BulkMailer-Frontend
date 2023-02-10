@@ -10,13 +10,16 @@ function Contactname(props){
     const dispatch = useDispatch();
     const [check , setCheck] = useState(0);
     const fd = new FormData();
+    const navigate = useNavigate();
 
     function handleDelete(e){
         setCheck(0);
-        console.log(e.currentTarget.id);
-       fd.append("id" , e.currentTarget.id);
-        dispatch(deletecontact(fd , setCheck));
-        document.getElementById(e.currentTarget.id).style.display="none";
+        localStorage.setItem("contactid" , e.currentTarget.id);
+        navigate("/deletepage2");
+    //     console.log(e.currentTarget.id);
+    //    fd.append("id" , e.currentTarget.id);
+    //     dispatch(deletecontact(fd , setCheck));
+    //     document.getElementById(e.currentTarget.id).style.display="none";
         }
     
 return(

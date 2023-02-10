@@ -167,7 +167,7 @@ const config ={
           })
       }
 
-      export const deletecontact =(deletegroupdata , setCheck) =>
+      export const deletecontact =(deletegroupdata , setCheck , navigate) =>
 async (dispatch)=>{
   var accesstoken =localStorage.getItem("accesstokenb")
 const config ={
@@ -185,6 +185,7 @@ const config ={
             }
               )
               setCheck(1);
+              // navigate("/groupinfo");
           })
       .catch((err)=>{
           dispatch(

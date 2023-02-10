@@ -15,6 +15,7 @@
     "react-bootstrap": "^2.7.0",
     "react-dom": "^18.2.0",
     "react-formdata": "^3.0.0",
+    "react-papaparse": "^4.1.0",
     "react-redux": "^8.0.5",
     "react-router-dom": "^6.5.0",
     "react-scripts": "5.0.1",
