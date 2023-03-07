@@ -14,6 +14,7 @@ import * as ReactBootStrap from "react-bootstrap";
 import { useSelector } from 'react-redux';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import addcontacts from '../../../../assets/addcontacts.svg'
 
 function AddContacts(){
     const [email , setEmail] = useState();
@@ -88,20 +89,20 @@ function AddContacts(){
         </div>
       ) : null}
     <Navbar />
-    <div id='sidebarflex'>
-    <Sidebar />
-    <div id='managing'>
-        <h1 id='pagehead'>Add Contacts</h1>
+    <div id='managerC'>
+      <img src={addcontacts} id='create'></img>
+      <div>
+        <h1 id='pagehead20'>Add Contacts</h1>
         <form id='flexform2' onSubmit={handleSubmit} name='contactform'>
         <label htmlFor='title' id='formlabel'>Email Address</label>
-        <input type='text' id='forminput2' placeholder='Enter Email Address' required value={email} onChange={handleMail}></input>
+        <input type='text' id='forminput20' placeholder='Enter Email Address' required value={email} onChange={handleMail}></input>
         <p id='mailerr'>Invalid Email Address</p>
         <img src={emailimg} id="mailimg"></img>
         <label htmlFor='title' id='formlabel'>Full Name</label>
-        <input type='text' id='forminput2' placeholder='Enter Fullname' required value={name} onChange={handleName}></input>
+        <input type='text' id='forminput20' placeholder='Enter Fullname' required value={name} onChange={handleName}></input>
         <img src={names} id="mailimg"></img>
         <label htmlFor='title' id='formlabel'>Gender</label>
-        <select name="foodcategory" id='forminput2' onChange={handleGender}>
+        <select name="foodcategory" id='forminput20' onChange={handleGender}>
               <option value='0'>--select--</option>
               <option value="Male">Male</option>
               <option value="Female">Female</option>
@@ -110,12 +111,13 @@ function AddContacts(){
              </select>
         <img src={genderimg} id="mailimg"></img>
         <div id='buttondiv'>
-      <button id='formbtn3' type='submit'>Save & Add next</button>
-      <Link to='/mails'><button id='formbtn4'>Close</button></Link>
+      <button id='formbtn31' type='submit'>Save & Add next</button>
+      <Link to='/mails'><button id='formbtn31'>Close</button></Link>
       </div>
         </form>
         <ToastContainer />
-    </div>
+        </div>
+        <img src={addcontacts} id='create6'></img>
     </div>
     </>)
 }

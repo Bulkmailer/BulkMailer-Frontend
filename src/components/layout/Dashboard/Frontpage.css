@@ -1,6 +1,7 @@
 #dashboardimg{
-margin-top:70px; 
+margin-top:100px; 
 margin-left:60px; 
+margin-bottom:-50px;
 }
 #h1part{
     color:#536DFE;
@@ -32,6 +33,9 @@ margin-left:60px;
   text-decoration: none;
   border:none;
 }
+#box:hover{
+    background: #536DFE90;  
+}
 #box a{
     text-decoration: none;
     color:#00000080
@@ -42,6 +46,14 @@ margin-left:60px;
     width:1200px;
     margin-left:60px;
     flex-wrap: wrap;
+}
+#frontpageimg{
+    width:20vw;
+}
+#frontpagediv{
+margin-left:65vw;
+margin-top:-100px;
+margin-bottom: -100px;
 }
 
 @media(max-width:570px){
@@ -55,17 +67,40 @@ margin-left:60px;
         width:1000px;
     }
 }
+@media(max-width:1034px){
+    #frontpagediv{
+        margin-bottom: -60px;
+        } 
+}
+@media(max-width:922px){
+    #frontpagediv{
+        margin-bottom: -30px;
+        } 
+}
 @media(max-width:756px){
     #boxflex{
     width:600px;
     margin-left:30%;
     }
 }
+@media(max-width:725px){
+        #dashboardimg{
+            margin-bottom:-30px;
+            }
+}
 @media(max-width:620px){
     #boxflex{
     width:600px;
     margin-left:25%;
     }
+}
+@media(max-width:589px){
+    #dashboardimg{
+        margin-bottom:0px;
+        }
+        #frontpagediv{
+           display:none;
+            }
 }
 @media(max-width:518px){
     #boxflex{

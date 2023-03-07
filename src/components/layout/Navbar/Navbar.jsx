@@ -2,7 +2,7 @@ import './Navbar.css';
 import logo from '../../../assets/logo.svg';
 import profile from '../../../assets/profile.svg';
 import circle from '../../../assets/circlestwo.svg';
-import { Link } from "react-router-dom";
+import { Link , NavLink} from "react-router-dom";
 import menu from '../../../assets/menu.svg';
 import cross from '../../../assets/cross.svg';
 import dashboardimg from '../../../assets/dashboard.svg';
@@ -10,11 +10,13 @@ import mails from '../../../assets/mail.svg'
 import groups from '../../../assets/group.svg';
 import logout from '../../../assets/logout.svg';
 import { useNavigate } from 'react-router-dom';
+import { useState } from 'react';
+import { useLocation } from 'react-router-dom';
 
 function Navbar(){
 
 const Navigate = useNavigate();
-
+const { pathname } = useLocation();
 function showmenu(){
         document.getElementById('uli').style.width="75vw";
 }
@@ -39,13 +41,14 @@ else{
     document.getElementById('olli').style.display="none";
     }
 }
+
 return(
     <>
     <div id='askmenudiv'>
         <div id='logoutdiv'>
             <p>Do you really want to LogOut?</p>
             <button id='formbtn12' onClick={logoutfunc}>Yes</button>
-            <p onClick={hideaskmenu}>No</p>
+            <p id='nobtn' onClick={hideaskmenu}>No</p>
         </div>
     </div>
     <div id='uli'>
@@ -62,19 +65,19 @@ return(
             <li><Link to='/mygrp'><img src={groups} id='dashboardimg4'></img>My Groups</Link></li>
         </ul>
     </div>
-    <div id='nav' className='blur'>
-    <img src={logo} id='logo'></img>
+    <nav id='nav' className='blur'>
+   <img src={logo} id='logo'></img>
         <ul id='navul'>
             <li></li>
-            <Link to='/home'><li> Dashboard</li></Link>
-            <Link to='/mails'><li>Mails</li></Link>
-            <Link to='/mygrp'><li>My groups</li></Link>
-            <Link to='/schedulehistory'><li>My Schedules</li></Link>
+            <NavLink to='/home' className={(['/home', '/creategroup' , '/template' , '/mailhistory' , '/contacts' , '/uploads' , '/addcontacts' , '/addtemp'].includes(pathname))?'active':'inactive'}><li>Dashboard</li></NavLink>
+            <NavLink to='/mails'className={(['/mails', '/templates' , '/fileupload' , '/mailingpage' , '/schedule'].includes(pathname))?'active':'inactive'}><li>Mails</li></NavLink>
+            <NavLink to='/mygrp' className={(['/mygrp', '/groupinfo'].includes(pathname))?'active':'inactive'}><li>My groups</li></NavLink>
+            <NavLink to='/schedulehistory'><li>My Schedules</li></NavLink>
         </ul>
         <img src={menu} id="menu" onClick={showmenu}></img>
         <Link to='/profilepage'><img src={profile} id="profile"></img></Link>
         <img src={logout} id="logout" onClick={askmenu}></img>
-    </div>
+    </nav>
     <img src = {circle} id="circletwo"></img>
     </>
 )

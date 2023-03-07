@@ -33,6 +33,7 @@ import AddTemplate from './components/layout/Mailing/Templates/Addtemplate';
 import FileUpload from './components/layout/Mailing/Mailingpage/FileUpload';
 import DeleteConf from './components/layout/MyGroup/DeleteConf';
 import DeleteConf2 from './components/layout/MyGroup/DeleteConf2';
+import TemplatesShow from './components/layout/Mailing/Templates/TempShow';
 
 function App() {
   return (
@@ -71,6 +72,7 @@ function App() {
       <Route path="/fileupload" exact element={<FileUpload/>}></Route>
       <Route path="/deletepage" exact element={<DeleteConf/>}></Route>
       <Route path="/deletepage2" exact element={<DeleteConf2/>}></Route>
+      <Route path="/template" exact element={<TemplatesShow/>}></Route>
      
     </Routes>
   </Router>

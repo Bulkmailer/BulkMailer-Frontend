@@ -11,6 +11,7 @@ import { Link } from "react-router-dom";
 import * as ReactBootStrap from "react-bootstrap";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import create from '../../../../assets/Create.svg'
 
 function CreateGroup(){
     const [name, setName] = useState("");
@@ -54,9 +55,9 @@ function CreateGroup(){
         </div>
       ) : null}
     <Navbar />
-    <div id='sidebarflex'>
-    <Sidebar />
     <div id='managerC'>
+      <img src={create} id='create'></img>
+      <div>
     <h1 id='grouphead'>Create A Mailing Group</h1>
         <form id='flexform' onSubmit={handleSubmit}>
         <label htmlFor='title' id='formslabel'>Group title</label>
@@ -65,8 +66,9 @@ function CreateGroup(){
         <p id='buttonpara'><button id='formbtn3' type='submit'>Create</button><Link to='/home'><button id='plike'>Cancel</button></Link></p>
         </form>
         <ToastContainer />
-    </div>
-    </div>
+        </div>
+        <img src={create} id='create2'></img>
+        </div>
     </>)
 }
 export default CreateGroup;

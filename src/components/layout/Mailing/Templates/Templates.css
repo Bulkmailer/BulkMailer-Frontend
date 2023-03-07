@@ -1,17 +1,16 @@
 #heading1{
     font-weight:700;
     color:#00000080;
+    height:100px;
 }
 #templatesdiv{
     margin:40px 40px;
-    width:100%;
 }
 .template{
     border:2px dotted black;
-    width:20vw;
+    width:220px;
     margin-right:20px;
     margin-bottom:20px;
-    box-sizing: border-box;
     text-align: center;
     padding:100px 0;
 }
@@ -21,48 +20,73 @@
 }
 #templateflex{
     display:flex;
-    margin-top:40px;
+    flex-wrap:wrap;
    margin-right:-20px;
+   width:1200px;
 }
-@media(max-width:750px){
+#formbtn30{
+    background-color: rgba(83 , 109 , 254 , 0.9);
+    border:none;
+    color:white;
+    margin-top:2vh;
+    font-weight: 600;
+    width:15.43vw;
+    height:50px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right:30px;
+}
+@media(max-width:1262px){
     #templateflex{
        flex-wrap:wrap;
-       width:750px;
+       width:1100px;
        margin-right:0px;
     }
-    #template{
-     width:42vw;
+}
+@media(max-width:1020px){
+    #templateflex{
+       width:900px;
     }
 }
-@media(max-width:547px){
+@media(max-width:780px){
     #templateflex{
-        width:550px;
-     }
+       width:710px;
+    }
 }
-
-@media(max-width:497px){
-     #template{
-      width:40vw;
-     }
+@media(max-width:780px){
+    #formbtn30{
+       width:30vw;
+    }
 }
-@media(max-width:408px){
+@media(max-width:541px){
     #templateflex{
        width:400px;
     }
+    #templatesdiv{
+        margin:40px 40px 0  25vw;
+    }
+    #formbtn30{
+        width:30vw;
+        margin-left:30px;
+     }
 }
-@media(max-width:400px){
-    #template{
-     width:38vw;
+@media(max-width:423px){
+    #templatesdiv{
+        margin:40px 40px 0  22vw;
     }
 }
+
 @media(max-width:370px){
-    #template{
-     width:36vw;
+    #templatesdiv{
+        margin:40px 40px 0  18vw;
     }
 }
-@media(max-width:317px){
-    #template{
-     width:68vw;
+@media(max-width:326px){
+    #templatesdiv{
+        margin:40px 40px 0  18vw;
+    }
+    .template{
+        width:180px;
     }
     #templateflex{
         width:300px;

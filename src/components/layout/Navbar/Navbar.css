@@ -4,8 +4,16 @@
 }
 #navul li{
     margin:20px 40px 0 0;
-    color:white;
     font-weight:600;
+}
+nav a{
+    color:white;
+}
+nav a:hover{
+    color:black
+}
+nav a.active{
+    color:black;
 }
 #nav{
     background-color: #536DFE;
@@ -71,6 +79,7 @@ margin:10px 0px 10px 20px;
    text-decoration: none;
    color:black;
 }
+
 #crossimg{
     position:absolute;
     top:20px;
@@ -129,6 +138,9 @@ margin:10px 0px 10px 20px;
     height:50px;
     border-radius: 5px;
     cursor: pointer;
+}
+#nobtn{
+   cursor: pointer;
 }
 @media(max-width:720px){
     #navul li{

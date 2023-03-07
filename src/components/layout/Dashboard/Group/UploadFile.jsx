@@ -11,44 +11,86 @@ import * as ReactBootStrap from "react-bootstrap";
 import { useSelector } from 'react-redux';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import {CSVReader} from 'react-papaparse';
+import Papa from 'papaparse';
+import uploading from '../../../../assets/uploading.svg';
 
 function Uploads(){
-    // const [file , setFile] = useState([]);
+    const [file , setFile] = useState([]);
     const [loading , setLoading] = useState(false);
-    // const [check , setCheck] = useState(0);
+    const [check , setCheck] = useState(0);
 
-    // var group = localStorage.getItem("groupid");
+    var group = localStorage.getItem("groupid");
 
-    // const mssg = useSelector((s)=>s.groupreducer);
-    // useEffect(()=>{
-    //   if(check==1){
-    //     console.log(mssg.status3)
-    //     if(mssg.status3==400 || mssg.status3==500){
-    //     toast.error("Select a valid .csv file containing emails , names and gender of contacts to be added ", {
-    //       position: toast.POSITION.TOP_RIGHT}
-    //   );
-    //     }
-    //   }
-    // },[check]);
+    const mssg = useSelector((s)=>s.groupreducer);
+    useEffect(()=>{
+      if(check==1){
+        console.log(mssg.status3)
+        if(mssg.status3==400 || mssg.status3==500){
+        toast.error("Select a valid .csv file containing emails , names and gender of contacts to be added ", {
+          position: toast.POSITION.TOP_RIGHT}
+      );
+        }
+      }
+    },[check]);
    
-    // const fd= new FormData();
-    // const navigate = useNavigate();
-    // const dispatch = useDispatch();
+    const fd= new FormData();
+    const navigate = useNavigate();
+    const dispatch = useDispatch();
 
-    // function handleFiles(e){
-    //     console.log(e.target.files);
-    //     setFile(e.target.files[0]);
-    // }
-    // function handleSubmit(e){
-    // e.preventDefault();
-    // console.log(group);
-    // setLoading(true);
-    // setCheck(0);
-    // fd.append("file" , file);
-    // fd.append("group" , group);
-    // dispatch(uploaddata(fd, setLoading , navigate , setCheck));
-    // }
+    function handleSubmit(e){
+    e.preventDefault();
+    console.log(group);
+    setLoading(true);
+    setCheck(0);
+    fd.append("file" , file);
+    fd.append("group" , group);
+    dispatch(uploaddata(fd, setLoading , navigate , setCheck));
+    }
+
+function handleFiles(e){
+setFile(e.target.files[0]);
+Papa.parse(e.target.files[0],{
+  header:false,
+  download:true, 
+  skipEmptyLines:true ,
+  complete:function (result){
+    console.log(result);
+    let i=0;
+result.data.map((data , index)=>{
+if(i==0){
+  let table = document.getElementById('tb1-data');
+  generateTableHead(table , data);
+}
+else{
+  let table = document.getElementById('tb1-data');
+  generateTableRows(table , data);
+}
+i++;
+    });
+  }
+})
+  }
+
+  function generateTableHead(table , data){
+    let thead = table.createTHead();
+    let row = thead.insertRow();
+    for(let key of data){
+      let th = document.createElement('th');
+      let text = document.createTextNode(key);
+      th.appendChild(text);
+      row.appendChild(th);
+    }
+  }
+
+  function generateTableRows(table , data){
+    let newRow = table.insertRow(-1);
+    data.map((row , index)=>{
+      let newCell = newRow.insertCell();
+      let newText = document.createTextNode(row);
+      newCell.appendChild(newText)
+    })
+  }
+
     return(<>
     {loading ? (
         <div id="loader">
@@ -56,11 +98,21 @@ function Uploads(){
         </div>
       ) : null}
     <Navbar />
-    <div id='sidebarflex'>
-    <Sidebar />
-    <div id="manager2">
+    <div id="managerC">
+      <img src={uploading} id='create7'></img>
+      <div>
     <h1 id='pagehead2'>Upload a File</h1>   
     <p id='intropara3'>Select a .csv or an excel file...</p>
+   
+   <input type='file' name='file' accept='.csv' onChange={handleFiles} style={{display: "block", margin: "10px auto"}}></input>
+  
+   <table id='tb1-data'>
+
+   </table>
+   <button onClick={handleSubmit}>Upload</button>
+   <br>
+   </br>
+   </div>
     {/* <div id='copyform'>
     <form onSubmit={handleSubmit}>
     <label htmlFor="file-input">
@@ -74,7 +126,7 @@ function Uploads(){
     </form>
     <ToastContainer />
     </div> */}
-    </div>
+     <img src={uploading} id='create8'></img>
     </div>
     </>)
 }

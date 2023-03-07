@@ -1,17 +1,17 @@
 #sidebar{
-    background-color: #D6D7DC80;
-    width:350px;
+    background-color: #536DFE30;
+    width:25vw;
     height:100vh;
-    /* position: fixed; */
 }
 #dashboardimg2{
     width:48px;
+    margin-top:-4px;
 }
 #mainhead{
-    margin-top:40px;
+    margin-top:42px;
     margin-left:20px;
-    font-weight:600;
-    color:#12121280
+    font-weight:700;
+    color:#00000099;
 }
 #sideul{
     margin-left:-10px;
@@ -29,11 +29,13 @@
     padding-top:20px;
 }
 #groupimg{
-    margin-top:-15px;
+    width:40px;
+    margin-top:-5px;
     margin-right:10px;
 }
 #templateimg{
-    margin-top:-10px;
+    width:40px;
+    margin-top:-5px;
     margin-right:10px;
 }
 @media(max-width:782px){
@@ -59,7 +61,7 @@
         margin-top: 20px;
     }
 }
-@media(max-width:497px){
+@media(max-width:720px){
     #sidebar{
        display: none;
     }  

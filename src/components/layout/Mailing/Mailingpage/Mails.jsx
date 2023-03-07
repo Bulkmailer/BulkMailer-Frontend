@@ -25,6 +25,7 @@ function Mails(){
     const [groupArr , setGroupArr] = useState([])
     const [emailArr , setemailArr] = useState([])
     const [group , setGroup] = useState();
+    const [groupname , setGroupName] = useState();
     const [from , setFrom] = useState();
     const [subject , setSubject] = useState("");
     const [company , setCompany] = useState("");
@@ -58,7 +59,7 @@ function Mails(){
 
     function getGroup(grouparr) {
         return (
-        <p id={grouparr.id} onClick={addid}>{grouparr.name}</p>
+        <p id={grouparr.id} onClick={addid} className={grouparr.name}>{grouparr.name}</p>
         );
         }
 
@@ -78,6 +79,7 @@ function Mails(){
          }
     function addid(e){
         setGroup(e.target.id);
+        setGroupName(e.target.className);
         document.getElementById("groupsdiv").style.display="none";
     }
     function addid2(e){
@@ -131,7 +133,7 @@ function Mails(){
     <h1 id='formhead'>Form A Mail</h1>
     <form id='formflexer' onSubmit={handleSubmit}>
         <label htmlFor="from" id='formlabel'>To(Choose A Group)</label>
-        <input type='text' placeholder='--select--' id='forminput3' onClick={showdiv} autoComplete="off" value={group} required></input>
+        <input type='text' placeholder='--select--' id='forminput3' onClick={showdiv} autoComplete="off" value={groupname} required></input>
         <img src={toimg} id='mailimg'></img>
         {/* <label htmlFor="from" id='formlabel'>From</label> */}
         {/* <input type='text' placeholder='--select--' id='forminput3'  */}
