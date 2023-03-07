@@ -12,6 +12,7 @@ import { useSelector } from 'react-redux';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Link } from "react-router-dom";
+import uploading from '../../../../assets/uploading.svg';
 
 function FileUpload(){
     const [file , setFile] = useState([]);
@@ -37,27 +38,25 @@ function FileUpload(){
     }
     return(<>
     <Navbar />
-    <div id='sidebarflex'>
-    <div id="manager2">
+    <div id="managerC">
+    <img src={uploading} id='create7'></img>
+    <div>
     <h1 id='pagehead2'>Upload a File</h1>   
-    <p id='intropara3'>Select a file to be attached with your email</p>
-    <div id='copyform'>
-    <form onSubmit={handleSubmit}>
+    <p id='intropara3A'>Select a file to be attached with your email</p>
+
     <label htmlFor="file-input">
        <div id='imgdiv'>
-        <img src={uploads}></img>
+        <img src={uploads} id='upimg'></img>
         <p id='upload'>Upload file here</p>
        </div>
     </label>
     <input type="file" name='file' id='file-input' onChange={handleFiles}/>
     {/* <button id='formbtn5' type='submit'>Upload</button> */}
-    <div id='sider'>
-    <p id='buttonpara'><button id='formbtn3' type='submit'>Upload</button><Link to='/mailingpage'><button id='plike'>Skip</button></Link></p>
-    </div>
-    </form>
+    <p id='buttonpara'><button id='formbtn32' type='submit' onClick={handleSubmit}>Upload</button><Link to='/mailingpage'><button id='plike'>Skip</button></Link></p>
     <ToastContainer />
+
     </div>
-    </div>
+    <img src={uploading} id='create11'></img>
     </div>
     </>)
 }

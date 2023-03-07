@@ -179,8 +179,10 @@ function handlesubmit(e){
 }  
 return(<>
 <Navbar/>
-<h1 id='headd'>Schedule Your Mail</h1>
- <div id='sidebarflex'>
+<div id="managerdiv">
+<img src={schedule} id='create13'></img>
+<div id='siderdiv'>
+<h1 id='headd'>Schedule Mail</h1>
 <div>
 <form onSubmit={handlesubmit} id='scheduleform'>
 <label htmlFor='date' id='formlabel'>Date</label>  
@@ -207,10 +209,9 @@ return(<>
 <button type='submit' id='formbtn11'>Schedule</button>
 </form>
 </div>
-<div id='sideimgdiv'>
- <img src={schedule} id='sideimg'></img>
 </div>
-</div>
+ <img src={schedule} id='create14'></img>
+ </div>
 </>
 )
 }

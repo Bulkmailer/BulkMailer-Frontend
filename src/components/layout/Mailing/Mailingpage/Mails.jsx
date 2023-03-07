@@ -15,6 +15,7 @@ import { sendmaildata } from "../../../../redux/actions/GroupAction";
 import FormData from 'form-data';
 import { Link, useNavigate } from "react-router-dom";
 import { seeappPassword } from "../../../../redux/actions/ProfileActions";
+import mailimg from '../../../../assets/mailimg.svg'
 
 function Mails(){
     var a=1;
@@ -129,6 +130,7 @@ function Mails(){
 <Navbar />
 <div id='groupsdiv'>{groupArr.map((rest)=>getGroup(rest))}</div>
 <div id='groupsdiv2'>{emailArr.map((rest)=>getEmail(rest))}</div>
+<div id='flexkro'>
 <div id='marginer'>
     <h1 id='formhead'>Form A Mail</h1>
     <form id='formflexer' onSubmit={handleSubmit}>
@@ -154,6 +156,8 @@ function Mails(){
         <button id='formbtn10' onClick={setValue}>Schedule</button>
         </div>
     </form>
+</div>
+<img src={mailimg} id='mailbox'></img>
 </div>
 </>
     )

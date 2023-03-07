@@ -18,6 +18,7 @@ function Uploads(){
     const [file , setFile] = useState([]);
     const [loading , setLoading] = useState(false);
     const [check , setCheck] = useState(0);
+    const [bool , setbool] = useState(false);
 
     var group = localStorage.getItem("groupid");
 
@@ -48,6 +49,8 @@ function Uploads(){
     }
 
 function handleFiles(e){
+setbool(true);
+console.log(bool);
 setFile(e.target.files[0]);
 Papa.parse(e.target.files[0],{
   header:false,
@@ -103,29 +106,17 @@ i++;
       <div>
     <h1 id='pagehead2'>Upload a File</h1>   
     <p id='intropara3'>Select a .csv or an excel file...</p>
-   
-   <input type='file' name='file' accept='.csv' onChange={handleFiles} style={{display: "block", margin: "10px auto"}}></input>
-  
-   <table id='tb1-data'>
 
-   </table>
-   <button onClick={handleSubmit}>Upload</button>
-   <br>
-   </br>
-   </div>
-    {/* <div id='copyform'>
-    <form onSubmit={handleSubmit}>
-    <label htmlFor="file-input">
+   {(file.length!=0)?<div><table id='tb1-data'>
+
+</table><button onClick={handleSubmit} id='formbtn5'>Upload</button></div>:<label htmlFor="file-input">
        <div id='imgdiv'>
-        <img src={uploads}></img>
+        <img src={uploads} id='upimg'></img>
         <p id='upload'>Upload file here</p>
        </div>
-    </label>
+    </label>}
     <input type="file" name='file' accept=".csv" id='file-input' onChange={handleFiles}/>
-    <button id='formbtn5' type='submit'>Upload</button>
-    </form>
-    <ToastContainer />
-    </div> */}
+   </div>
      <img src={uploading} id='create8'></img>
     </div>
     </>)

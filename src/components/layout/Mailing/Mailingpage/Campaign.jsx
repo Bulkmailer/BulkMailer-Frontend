@@ -63,19 +63,20 @@ return(
         </div>
       ) : null}
     <Navbar />
-    <div id='sidebarflex'>
-    <div id='managerD'>
-    <h1 id='grouphead3'>Add Campaign Name</h1>
-        <form id='addmailform' onSubmit={handleSubmit}>
+    <div id='managerA'>
+      <img src={campaign} id='create9'></img>
+      <div>
+    <h1 id='groupheadA'>Add Campaign Name</h1>
+        <form id='flexformA' onSubmit={handleSubmit}>
         <label htmlFor='campaignName' id='formslabel'>Campaign Name</label>
-        <input type='text' id='forminput3' placeholder='Enter Campaign Name' value={campaignName} onChange={handleCampaign} required></input>
+        <input type='text' id='forminput2A' placeholder='Enter Campaign Name' value={campaignName} onChange={handleCampaign} required></input>
         <img src={campaignlogo} id="mailimg"></img>
-        <p id='buttonpara'><button id='formbtn3' type='submit'>Submit</button><Link to='/home'><button id='plike'>Cancel</button></Link></p>
+        <p id='buttonpara'><button id='formbtn3A' type='submit'>Submit</button><Link to='/home'><button id='plike'>Cancel</button></Link></p>
         </form>
         <ToastContainer />
+        </div>
+    <img src={campaign} id='create10'></img>
     </div>
-    <img src={campaign} id='sideimg'></img>
-    </div>   
     </>
 )
 }

@@ -49,7 +49,7 @@ function App() {
       <Route path="/signupdetails" exact element={<SignupDetails />}></Route>
       <Route path="/home" exact element={<FrontPage />}></Route>
       <Route path="/contacts" exact element={<Contacts />}></Route>
-      {/* <Route path="/import" exact element={<Import />}></Route> */}
+      <Route path="/import" exact element={<Import />}></Route>
       <Route path="/copy" exact element={<Copy />}></Route>
       <Route path="/creategroup" exact element={<CreateGroup />}></Route>
       <Route path="/uploads" exact element={<Uploads />}></Route>
