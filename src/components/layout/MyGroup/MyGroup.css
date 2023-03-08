@@ -1,53 +1,185 @@
-.groupnamediv{
-    background-color: #D6D7DC50;
-    margin:15px 0 15px 15px;
-    padding:30px 20px;
-    width:70%;
-}
+/* My groups */
+
 .groupnamediv2{
     background-color: #D6D7DC50;
-    margin:15px 0 15px 15px;
+    margin:15px 15px 15px 15px;
     padding:30px 20px;
-    width:70%;
-    display: flex;
+    width:22vw;
+    border:0.5px solid grey;
+    border-radius:10px;
 }
 .namesdiv{
     margin-top:30px;
+    word-wrap: break-word;
     margin-left:20px;
+    display:flex;
+    flex-wrap: wrap;
+    width:100vw;
 }
 .groupnames{
     font-weight: bold;
-    width:95%;
+    width:100%;
 }
 #nothing{
-    display:flex;
-    flex-direction: column;
-    justify-content:center;
-    align-items: center;
-    margin-left:-80px;
+    margin-left:30vw;
 }
 #nothingimg{
-    width:500px;
-    margin-top:80px;
+    width:40vw;
+    margin-top:100px;
 }
-#nothing p{
-    font-weight: bold;
-    margin-top:30px;
+#btndiv{
+    margin-left:5%;
 }
 #formbtn9{
     background-color: rgba(83 , 109 , 254 , 0.9);
     border:none;
     color:white;
     font-weight: 600;
-    width:200px;
+    width:30vw;
     height:40px;
     border-radius: 5px;
     cursor: pointer;
     margin-top:60px;
-    margin-left:50px;
+    margin-left:0px;
 }
+#formbtn11A{
+    background-color: rgba(83 , 109 , 254 , 0.9);
+    border:none;
+    color:white;
+    font-weight: 600;
+    width:16vw;
+    height:40px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top:40px;
+    margin-left:40px;
+}
+@media(max-width:1253px){
+    .groupnamediv2{
+        width:30vw;
+    }   
+}
+@media(max-width:1170px){
+    .groupnamediv2{
+        width:29vw;
+    }   
+}
+@media(max-width:940px){
+    .groupnamediv2{
+        width:28vw;
+    }
+}
+@media(max-width:813px){
+    #formbtn11A{
+        width:21vw;
+    }
+}
+@media(max-width:760px){
+    .groupnamediv2{
+        width:27vw;
+    }
+}
+@media(max-width:630px){
+    .groupnamediv2{
+        width:41vw;
+    }
+}
+@media(max-width:600px){
+    #formbtn11A{
+        width:26vw;
+    }
+}
+@media(max-width:510px){
+ .groupnamediv2{
+        width:40vw;
+    }  
+}
+@media(max-width:485px){
+    #formbtn11A{
+        width:29vw;
+    }
+}
+@media(max-width:440px){
+    .groupnamediv2{
+        width:39vw;
+    }
+    #formbtn11A{
+        width:31vw;
+    }
+    #nothing{
+        margin-left:25vw;
+    }  
+}
+@media(max-width:415px){
+    .groupnamediv2{
+        width:80vw;
+    }  
+}
+@media(max-width:397px){
+    #formbtn9{
+       font-size: 10px;
+    }
+    #formbtn11A{
+       font-size: 12px;
+       width:33vw;
+    }
+}
+@media(max-width:347px){
+    .groupnamediv2{
+        width:75vw;
+    }  
+}
+
+
+/* GroupContacts */
+#contactpara{
+    word-wrap: break-word;
+}
+.groupnamediv3{
+    background-color: #D6D7DC50;
+    margin:15px 15px 15px 15px;
+    padding:30px 20px;
+    width:30vw;
+    border:0.5px solid grey;
+    border-radius:10px;
+}
+@media(max-width:1201px){
+.groupnamediv3{
+    width:29vw;  
+}
+}
+@media(max-width:950px){
+    .groupnamediv3{
+        width:43vw;  
+    }  
+}
+@media(max-width:654px){
+    .groupnamediv3{
+        width:42vw;  
+    }  
+}
+@media(max-width:610px){
+    .groupnamediv3{
+        width:85vw;  
+    }  
+}
+@media(max-width:426px){
+    .groupnamediv3{
+        width:80vw;  
+    }  
+}
+@media(max-width:360px){
+    .groupnamediv3{
+       font-size: 14px;
+    }  
+}
+
+
+
+
+
+
 .deleteimg{
-    /* margin-top:40px; */
     margin-right:10px;
     cursor: pointer;
 }
@@ -62,9 +194,6 @@ background-color:#D6D7DC50
     font-weight:700;
     color:#00000080;
     margin:40px 0 0 30px;
-}
-#btndiv{
-    margin-left:40px;
 }
 .divseye{
 cursor: pointer;  

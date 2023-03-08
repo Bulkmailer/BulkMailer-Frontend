@@ -28,18 +28,14 @@ function Groupname(props){
     setCheck(0);
     localStorage.setItem('deletegroup' ,e.currentTarget.id);
     Navigate('/deletepage');
-    // fd.append("id" , e.currentTarget.id);
-    // dispatch(deletegroupdata(fd , setCheck));
     }
 
 return(
     <>
-    <div id='flexkro' className='blur'>
    <div className="groupnamediv2"  id={props.id}>
     <p className='groupnames' id={props.id}> {props.groupname}</p>
    <img src={deleteitem} className='deleteimg' id={props.id} onClick={handleDelete}></img>
    <FontAwesomeIcon icon={faEye} id={props.id} className='divseye' onClick={groupclick} />
-   </div>
    </div>
     </>
 );

@@ -16,22 +16,16 @@ function Contactname(props){
         setCheck(0);
         localStorage.setItem("contactid" , e.currentTarget.id);
         navigate("/deletepage2");
-    //     console.log(e.currentTarget.id);
-    //    fd.append("id" , e.currentTarget.id);
-    //     dispatch(deletecontact(fd , setCheck));
-    //     document.getElementById(e.currentTarget.id).style.display="none";
         }
     
 return(
     <>
     <div id='flexkro'>
-   <div className="groupnamediv2"  id={props.id}>
-    <h4 className='groupnames'>{props.name}</h4>
-    <pre className='groupnames'><p id='contactpara'>Email    :{props.email}</p></pre>
-    <pre className='groupnames'><p id='contactpara'>Gender :{props.gender}</p></pre>
-    {/* <div> */}
+   <div className="groupnamediv3"  id={props.id}>
+    <pre><p id='contactpara'><span className="groupnames">Name    :</span> {props.name}</p></pre>
+    <pre><p id='contactpara'><span className="groupnames">Email     :</span>  {props.email}</p></pre>
+    <pre><p id='contactpara'><span className="groupnames">Gender  :</span>  {props.gender}</p></pre>
    <img src={deleteitem} className='deleteimg' id={props.id} onClick={handleDelete}></img>
-   {/* </div> */}
    </div>
    </div>
     </>

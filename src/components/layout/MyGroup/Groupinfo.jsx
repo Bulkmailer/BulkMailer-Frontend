@@ -44,9 +44,9 @@ return(<>
 <Link to='/contacts'><button id='formbtn10'>Add Contacts</button></Link>
 </div></div>}
 </div>
-{(list1)?<div id='btndiv'>
-<Link to='/contacts'><button id='formbtn10'>Add Contacts</button></Link>
-</div>:null}
+{(list1)?
+<Link to='/contacts'><button id='formbtn11A'>Add Contacts</button></Link>
+:null}
 </>)
 }
 export default Groupinfo;
