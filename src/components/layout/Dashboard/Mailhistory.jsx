@@ -43,18 +43,13 @@ const list =useSelector((s)=>s.groupreducer);
     return(<>
         <img src={background} id='background'></img>
     <Navbar />
-    <div id='sidebarflex'>
-    {/* <Sidebar /> */}
-    <div id='pagediv'>
-        <h1 id='divhead'>Mail History</h1> 
+        <h1 id='listhead'>Mail History</h1> 
         {/* <button id='formbtn17'>All</button>
         <button id='formbtn17'>Sent</button>
         <button id='formbtn17'>Schedule</button> */}
-        <hr></hr>
-        <div className="namesdiv3">
+        {/* <hr></hr> */}
+        <div className="namesdiv2">
 {(list1)?(list1.map((rest)=>getMail(rest))):<div id='nothing'><img src={nomails} id='nothingimg'></img><p>No contacts</p></div>}
-</div>
-    </div>
     </div>
     </>)
 }
