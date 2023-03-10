@@ -1,8 +1,113 @@
+.namesdiv2{
+    word-wrap: break-word;
+    display:flex;
+    flex-wrap: wrap;
+margin:0px 0px 0px 10px;
+}
+.groupnamediv{
+    background-color: #D6D7DC50;
+    margin:15px 15px 15px 15px;
+    padding:30px 20px;
+    width:47vw;
+    border:0.5px solid grey;
+    border-radius:10px;   
+}
+#listhead{
+    font-weight:700;
+    color:#00000080;
+    margin:40px 0 0 30px;
+    height:50px;
+}
+#nothingpara{
+    font-weight: bold;
+    margin-left:13vw;
+    margin-top:20px;
+    height:50px;
+}
+
+@media(max-width:1230px){
+    .groupnamediv{
+width:46.5vw;
+    }
+}
+@media(max-width:1050px){
+    .groupnamediv{
+        width:46vw;
+    }
+}
+@media(max-width:930px){
+    .groupnamediv{
+        width:45.5vw;
+    }
+}
+@media(max-width:860px){
+    .groupnamediv{
+        width:45vw;
+    }
+}
+@media(max-width:800px){
+    .groupnamediv{
+        width:44.5vw;
+    }
+}
+@media(max-width:740px){
+    #nothingpara{
+       margin-left:10vw;
+    }
+}
+@media(max-width:680px){
+    .groupnamediv{
+        width:89vw;
+    }
+    #nothingpara{
+        margin-left:7vw;
+     }
+}
+@media(max-width:500px){
+    #nothingpara{
+       margin-left:4vw;
+    }
+}
+@media(max-width:450px){
+    .groupnamediv{
+        width:88vw;
+    }
+}
+@media(max-width:440px){
+    #nothingpara{
+       margin-left:2vw;
+    }
+}
+@media(max-width:380px){
+    .groupnamediv{
+        width:87vw;
+    }
+}
+@media(max-width:340px){
+    .groupnamediv{
+        width:86vw;
+    }
+}
+@media(max-width:320px){
+    .groupnamediv{
+        width:85vw;
+    }
+}
+@media(max-width:300px){
+    .groupnamediv{
+        width:84vw;
+    }
+}
+
+
+
+
 #managerdiv{
     display:flex;
     margin-left:5vw;
     margin-right:5vw;
 }
+
 #create13{
     width:20vw;
     margin-left:3vw;

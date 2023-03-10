@@ -4,6 +4,7 @@ import deleteitem from '../../../assets/delete.svg';
 import { useDispatch } from 'react-redux';
 import { deleteschedule } from '../../../redux/actions/GroupAction';
 
+
 function ScheduleComp(props){
     const dispatch = useDispatch();
     const [check , setCheck] = useState(0);
@@ -17,16 +18,17 @@ function ScheduleComp(props){
         }
     return(
         <>
+          
         <div id='flexkro'>
         <div className="groupnamediv">
-    <p className='groupnames'>Subject:{props.subject}</p>
-    <p className='groupnames'>Company:{props.company}</p>
-    <p className='groupnames'>Body:{props.body}</p>
-    <p className='groupnames'>Date:{props.date}-{props.month}-{props.year}</p>
-    <p className='groupnames'>Time:{props.hour}:{props.minute} </p>
-    <p className='groupnames'>From:{props.from} </p>
-    <p className='groupnames'>To:{props.to} </p>
-    <p className='groupnames'>Status:{props.status} </p>
+    <p><span className='groupnames'>Subject : </span> {props.subject}</p>
+    <p><span className='groupnames'>Company : </span> {props.company}</p>
+    <p><span className='groupnames'>Body : </span>{props.body}</p>
+    <p><span className='groupnames'>Date : </span>{props.date}-{props.month}-{props.year}</p>
+    <p><span className='groupnames'>Time : </span>{props.hour}:{props.minute} </p>
+    {/* <p><span className='groupnames'>From : </span>{props.from} </p> */}
+    {/* <p><span className='groupnames'>To : </span>{props.to} </p> */}
+    <p><span className='groupnames'>Status : </span>{props.status}</p>
     </div>
     {/* <div id='greydiv'> */}
    {/* <img src={deleteitem} className='deleteimg' id={props.id} onClick={handleDelete}></img> */}

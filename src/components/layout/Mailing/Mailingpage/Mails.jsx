@@ -16,6 +16,7 @@ import FormData from 'form-data';
 import { Link, useNavigate } from "react-router-dom";
 import { seeappPassword } from "../../../../redux/actions/ProfileActions";
 import mailimg from '../../../../assets/mailimg.svg'
+import background from '../../../../assets/background.jpg'
 
 function Mails(){
     var a=1;
@@ -127,6 +128,7 @@ function Mails(){
     }
     return(
         <>
+            <img src={background} id='background'></img>
 <Navbar />
 <div id='groupsdiv'>{groupArr.map((rest)=>getGroup(rest))}</div>
 <div id='groupsdiv2'>{emailArr.map((rest)=>getEmail(rest))}</div>

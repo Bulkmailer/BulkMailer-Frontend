@@ -8,6 +8,7 @@ import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { useState } from "react";
 import Contactname from "./contactComp";
+import background from '../../../assets/background.jpg'
 
 function Groupinfo(){
 const[list1 , setList1] = useState();
@@ -37,6 +38,7 @@ useEffect(()=>{
         );
         }
 return(<>
+<img src={background} id='background'></img>
 <Navbar/>
 {(list1)?<h1 id='listhead'>Group Contacts</h1>:null}
 <div className="namesdiv">

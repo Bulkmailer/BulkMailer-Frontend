@@ -9,6 +9,7 @@ import { useSelector } from 'react-redux';
 import HistoryComp from './MailHistoryComp';
 import nomails from '../../../assets/nomails.svg'
 import { seeappPassword } from '../../../redux/actions/ProfileActions';
+import background from '../../../assets/background.jpg'
 
 function Mailhistory(){
     const[list1 , setList1] = useState();
@@ -40,6 +41,7 @@ const list =useSelector((s)=>s.groupreducer);
             }
     
     return(<>
+        <img src={background} id='background'></img>
     <Navbar />
     <div id='sidebarflex'>
     {/* <Sidebar /> */}

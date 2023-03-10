@@ -6,10 +6,12 @@ import frontpage from '../../../assets/frontpage.svg'
 import { useDispatch } from "react-redux";
 import { useEffect } from "react";
 import { mailhistory } from "../../../redux/actions/GroupAction";
+import background from '../../../assets/background.jpg'
 
 function FrontPage(){
 return(
     <>
+    <img src={background} id='background'></img>
 <Navbar />
 <div id='padder'>
 <img src={dashboard} id='dashboardimg'></img>

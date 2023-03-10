@@ -6,6 +6,7 @@ import Navbar from "../Navbar/Navbar";
 import ScheduleComp from "./ScheduleComp";
 import { useSelector } from "react-redux";
 import noschedules from '../../../assets/noschedule.svg'
+import background from '../../../assets/background.jpg';
 
 function ScheduleHistory(){
 
@@ -44,10 +45,11 @@ useEffect(()=>{
         );
         }
 return(<>
+  <img src={background} id='background'></img>
 <Navbar />
+{(list1)?<h1 id='listhead'>My Schedules</h1>:null}
 <div className="namesdiv2">
-    {(list1)?<h1 id='listhead'>My Schedules</h1>:null}
-{(list1)?(list1.map((rest)=>getSchedule(rest))):<div id='nothing'><img src={noschedules} id='nothingimg'></img><p>No Schedules</p></div>}
+{(list1)?(list1.map((rest)=>getSchedule(rest))):<div id='nothing'><img src={noschedules} id='nothingimg'></img><h6 id='nothingpara'>No Schedules</h6></div>}
 </div>
 </>)
 }

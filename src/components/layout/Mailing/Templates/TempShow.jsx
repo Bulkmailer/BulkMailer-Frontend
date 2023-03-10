@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { viewtemp } from "../../../../redux/actions/GroupAction";
 import { useState } from "react";
 import TemplateShowComp from "./Tempshowcomp";
+import background from '../../../../assets/background.jpg';
 
 function TemplatesShow(){
   const dispatch =  useDispatch();
@@ -35,6 +36,7 @@ function view(tempArr1){
 }
 console.log(tempArr1)
 return (<>
+    <img src={background} id='background'></img>
 <Navbar />
     <div id='templatesdiv'>
         <h1 id='heading1'>My Templates</h1>

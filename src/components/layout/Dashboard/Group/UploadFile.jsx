@@ -13,6 +13,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Papa from 'papaparse';
 import uploading from '../../../../assets/uploading.svg';
+import background from '../../../../assets/background.jpg'
 
 function Uploads(){
     const [file , setFile] = useState([]);
@@ -95,6 +96,7 @@ i++;
   }
 
     return(<>
+          <img src={background} id='background'></img>
     {loading ? (
         <div id="loader">
           <ReactBootStrap.Spinner animation="border" id="spinner" />

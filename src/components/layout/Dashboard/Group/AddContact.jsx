@@ -15,6 +15,7 @@ import { useSelector } from 'react-redux';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import addcontacts from '../../../../assets/addcontacts.svg'
+import background from '../../../../assets/background.jpg'
 
 function AddContacts(){
     const [email , setEmail] = useState();
@@ -83,6 +84,7 @@ function AddContacts(){
       }
      }   
     return(<>
+          <img src={background} id='background'></img>
      {loading ? (
         <div id="loader">
           <ReactBootStrap.Spinner animation="border" id="spinner" />

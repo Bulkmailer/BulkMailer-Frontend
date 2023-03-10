@@ -7,6 +7,7 @@ import Groupname from "./groupComp";
 import { useSelector } from "react-redux";
 import nogroups from '../../../assets/nogroup.svg'
 import { Link } from "react-router-dom";
+import background from '../../../assets/background.jpg'
 
 function MyGroup(){
     
@@ -35,6 +36,7 @@ function MyGroup(){
         }
 
 return(<>
+<img src={background} id='background'></img>
 <Navbar />
 {(groupArr&&groupArr.length!=0)?<h1 id='listhead'>My Groups</h1>:null}
 <div className="namesdiv">

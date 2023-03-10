@@ -11,6 +11,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import campaign from '../../../../assets/campaign.svg'
 import { campaigndata } from '../../../../redux/actions/GroupAction';
 import { profilegetdata } from '../../../../redux/actions/ProfileActions';
+import background from '../../../../assets/background.jpg'
 
 function Campaign(){
 const [loading , setLoading] = useState(false);
@@ -57,6 +58,7 @@ setCampaignName(e.target.value);
 }
 return(
     <>
+         <img src={background} id='background'></img>
   {loading ? (
         <div id="loader">
           <ReactBootStrap.Spinner animation="border" id="spinner" />

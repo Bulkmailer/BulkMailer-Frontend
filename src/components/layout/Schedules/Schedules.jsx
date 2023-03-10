@@ -6,6 +6,7 @@ import { schedulemaildata, sendmaildata } from "../../../redux/actions/GroupActi
 import './Schedule.css';
 import schedule from '../../../assets/schedule.svg';
 import { useNavigate } from "react-router-dom";
+import background from '../../../assets/background.jpg';
 
 function Schedule(){
     const [year , setYear] = useState();
@@ -178,6 +179,7 @@ function handlesubmit(e){
        dispatch(sendmaildata(setCheck ,fd , navigate));
 }  
 return(<>
+  <img src={background} id='background'></img>
 <Navbar/>
 <div id="managerdiv">
 <img src={schedule} id='create13'></img>

@@ -1,41 +1,94 @@
-
-#profileimage{
-    width:150px;
-    margin-top:50px;
-    margin-left:50px;
+#background{
+    width:100vw;
+    height:100vh;
+    opacity: 0.03;
+    position:fixed;
+    z-index: -1;;
 }
-#profilediv{
-    margin-top:20px;
-    z-index:2;
+#profileimage{
+    width:30vw;
+    margin-top:100px;
+    margin-left:50px;
 }
 #prohead{
-    margin-top:110px;
-    font-weight: 600;
-    margin-left:50px;
+    font-weight:700;
+    color:#00000080;
+    margin:80px 0 0 50px;
+    height:80px;
 }
 #profiledetails{
     margin-left:50px;
-    background-color: #D6D7DC50;
-    padding:50px 30px;
-    width:70%;
-    font-size:20px;
-    margin-top:50px;
-    font-family: montserrat;
 }
-#flexdiv{
-    display:flex;
+#profilediv{
+    margin:30px 5vw 0 3vw;
+    display: flex;
+    flex-direction: column;
 }
 #formbtn8{
-    background-color: rgba(83 , 109 , 254 , 0.9);
+    background-color: rgba(83 , 109 , 254 , 0);
     border:none;
-    color:white;
+    color: rgba(83 , 109 , 254 , 1);
     font-weight: 600;
-    width:200px;
-    height:40px;
-    border-radius: 5px;
     cursor: pointer;
-    margin-top:30px;
-    margin-left:50px;
+    margin:10px 15px;
+}
+#flexer{
+    margin-left:30px;
+    margin-top:10px;
+}
+#create8A{
+    width:20vw;
+    margin-top:370px;
+    margin-right:5vw;
+}
+@media(max-width:545px){
+    #create8A{
+        display:none;
+    }
+    #profilediv{
+        margin:30px 3vw 0 0vw;
+    }
+}
+@media(max-width:400px){
+    #profilediv{
+        margin:30px 2vw 0 -2vw;
+    }
+}
+@media(max-width:360px){
+    #profilediv{
+        margin:30px 2vw 0 -4vw;
+    }
+}
+@media(max-width:320px){
+    #profilediv{
+        margin:30px 2vw 0 -6vw;
+    }
+}
+
+
+
+#pagehead21{
+    font-weight:700;
+    color:#00000080;
+    margin:60px 6vw 0 6vw;
+    height:50px;
+}
+#groupheadB{
+    font-weight:700;
+    color:#00000080;
+    height:60px;
+    margin:200px 6vw 0 6vw;
+}
+@media(max-width:720px){
+    #groupheadB{
+        margin:120px 6vw 0 8vw;
+    }
+}
+
+
+
+#flexdiv{
+    display:flex;
 }
 #grouphead2{
     font-weight:700;
@@ -139,7 +192,7 @@
 #flexkro{
     display:flex;
 }
-@media(max-width:962px){
+/* @media(max-width:962px){
     #error1{
         top:334px;
     }
@@ -264,4 +317,4 @@
     #managingB{
         margin-left:-60px;
     }  
-}
+} */

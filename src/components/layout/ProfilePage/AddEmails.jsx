@@ -11,6 +11,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import { apppassdata } from "../../../redux/actions/ProfileActions";
 import mailimg from '../../../assets/mail.svg';
 import addmails from '../../../assets/addmails.svg';
+import background from '../../../assets/background.jpg';
 
 function AddEmails(){
     const [password, setPassword] = useState("");
@@ -85,30 +86,32 @@ function AddEmails(){
   }
     return(
     <>
+     <img src={background} id='background'></img>
     {loading ? (
         <div id="loader">
           <ReactBootStrap.Spinner animation="border" id="spinner" />
         </div>
       ) : null}
     <Navbar />
-    <div id='sidebarflex'>
-    <div id='managerD'>
-    <h1 id='grouphead2'>Add Mails</h1>
-        <form id='addmailform' onSubmit={handleSubmit}>
+    <div id='managerA'>
+    <img src={addmails} id='create9'></img>
+      <div>
+    <h1 id='groupheadB'>Add Mails</h1>
+        <form id='flexformA' onSubmit={handleSubmit}>
         <label htmlFor='title' id='formslabel'>Email Address</label>
-        <input type='text' id='forminput3' placeholder='Enter Email Address' value={email} onChange={handleEmail} required></input>
+        <input type='text' id='forminput2A' placeholder='Enter Email Address' value={email} onChange={handleEmail} required></input>
         <img src={mailimg} id="mailimg"></img>
         <p id='error1'>Invalid Mail</p>
         <label htmlFor='title' id='formslabel'>App Password</label>
-        <input type='text' id='forminput3' placeholder='Enter Password' value={password} onChange={handlePass} required></input>
+        <input type='text' id='forminput2A' placeholder='Enter Password' value={password} onChange={handlePass} required></input>
         <img src={lock} id="mailimg"></img>
-        <p id='buttonpara'><button id='formbtn3' type='submit'>Submit</button>
+        <p id='buttonpara'><button id='formbtn3A' type='submit'>Submit</button>
         <Link to='/profilepage'><button id='plike'>Cancel</button></Link></p>
         <p id='error2'>Password must contain at least 8 characters, a special symbol, an uppercase, a lowecase, a numeric value and no space.</p>
         </form>
         <ToastContainer />
     </div>
-    <img src={addmails} id='sideimg'></img>
+    <img src={addmails} id='create10'></img>
     </div>
     </>)
 }

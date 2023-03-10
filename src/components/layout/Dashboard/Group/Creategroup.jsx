@@ -12,6 +12,7 @@ import * as ReactBootStrap from "react-bootstrap";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import create from '../../../../assets/Create.svg'
+import background from '../../../../assets/background.jpg'
 
 function CreateGroup(){
     const [name, setName] = useState("");
@@ -49,12 +50,14 @@ function CreateGroup(){
 
     return(
     <>
+            <img src={background} id='background'></img>
     {loading ? (
         <div id="loader">
           <ReactBootStrap.Spinner animation="border" id="spinner" />
         </div>
       ) : null}
     <Navbar />
+
     <div id='managerC'>
       <img src={create} id='create'></img>
       <div>

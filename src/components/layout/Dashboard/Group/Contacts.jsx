@@ -4,9 +4,11 @@ import Sidebar from "../../Sidebar/Sidebar";
 import contacts from '../../../../assets/contacts.svg';
 import { Link } from 'react-router-dom';
 import newcontact from '../../../../assets/newcontact.svg';
+import background from '../../../../assets/background.jpg'
 
 function Contacts(){
     return(<>
+          <img src={background} id='background'></img>
     <Navbar />
     <div id="managerC">
         <img src={newcontact} id='create3'></img>

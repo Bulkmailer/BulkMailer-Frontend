@@ -13,6 +13,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Link } from "react-router-dom";
 import uploading from '../../../../assets/uploading.svg';
+import background from '../../../../assets/background.jpg'
 
 function FileUpload(){
     const [file , setFile] = useState([]);
@@ -37,6 +38,7 @@ function FileUpload(){
     dispatch(fileuploadimg(fd , navigate , setCheck))
     }
     return(<>
+        <img src={background} id='background'></img>
     <Navbar />
     <div id="managerC">
     <img src={uploading} id='create7'></img>

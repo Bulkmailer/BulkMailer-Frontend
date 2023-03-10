@@ -13,7 +13,8 @@ import { useEffect } from "react";
 import { profilegetdata } from "../../../redux/actions/ProfileActions";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import editprofile from '../../../assets/editProfile.svg'
+import edit from '../../../assets/edit.svg'
+import background from '../../../assets/background.jpg'
 
 
 function EditProfile(){
@@ -102,28 +103,31 @@ function EditProfile(){
       }
      }   
     return(<>
+    <img src={background} id='background'></img>
      {loading ? (
         <div id="loader">
           <ReactBootStrap.Spinner animation="border" id="spinner" />
         </div>
       ) : null}
     <Navbar />
-    <div id='flexkro'>
-    <div id='managingB'>
-        <h1 id='pagehead'>Edit Profile</h1>
+    <div id='managerC'>
+      <img src={edit} id='create'></img>
+<div>
+        <h1 id='pagehead21'>Edit Profile</h1>
+        <div>
         <form id='flexform2' onSubmit={handleSubmit}>
         <label htmlFor='title' id='formlabel'>Username</label>
-        <input type='text' id='forminput4' required value={username} onChange={handleUsername}></input>
+        <input type='text' id='forminput20' required value={username} onChange={handleUsername}></input>
         <img src={emailimg} id="mailimg"></img>
         <label htmlFor='title' id='formlabel'>Full Name</label>
-        <input type='text' id='forminput4' placeholder={arr.name} required value={name} onChange={handleName}></input>
+        <input type='text' id='forminput20' placeholder={arr.name} required value={name} onChange={handleName}></input>
         <img src={names} id="mailimg"></img>
         <label htmlFor='title' id='formlabel'>Mobile Number</label>
-        <input type='text' id='forminput4' placeholder={arr.mobile} required value={mobile} onChange={handleMobile}></input>
+        <input type='text' id='forminput20' placeholder={arr.mobile} required value={mobile} onChange={handleMobile}></input>
         <img src={names} id="mailimg"></img>
         <p id='error5'>Invalid Phone No.</p>
         <label htmlFor='title' id='formlabel'>Gender</label>
-        <select name="foodcategory" id='forminput4' onChange={handleGender}>
+        <select name="foodcategory" id='forminput20' onChange={handleGender}>
               <option value="Select">--select--</option>
               <option value="Male">Male</option>
               <option value="Female">Female</option>
@@ -134,8 +138,10 @@ function EditProfile(){
         <p id='buttonpara'><button id='formbtn3' type='submit'>Save</button> <Link to='/profilepage'><button id='plike'>Cancel</button></Link></p>
       </div>
         </form>
+        </div>
         <ToastContainer />
     </div>
+    <img src={edit} id='create6'></img>
     </div>
     </>)
 }
