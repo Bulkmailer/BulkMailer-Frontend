@@ -24,15 +24,13 @@ import AddPassword from './components/layout/ProfilePage/AddPassword';
 import UpdatePassword from './components/layout/ProfilePage/UpdateAppPassword';
 import AddEmails from './components/layout/ProfilePage/AddEmails';
 import Mails from './components/layout/Mailing/Mailingpage/Mails';
-import Home from './components/auth/home';
+// import Home from './components/auth/home';
 import ScheduleHistory from './components/layout/Schedules/ScheduleHistory';
 import Schedule from './components/layout/Schedules/Schedules';
 import Campaign from './components/layout/Mailing/Mailingpage/Campaign';
 import TemplateComp from './components/layout/Mailing/Templates/TemplateComp';
 import AddTemplate from './components/layout/Mailing/Templates/Addtemplate';
 import FileUpload from './components/layout/Mailing/Mailingpage/FileUpload';
-import DeleteConf from './components/layout/MyGroup/DeleteConf';
-import DeleteConf2 from './components/layout/MyGroup/DeleteConf2';
 import TemplatesShow from './components/layout/Mailing/Templates/TempShow';
 
 function App() {
@@ -40,7 +38,7 @@ function App() {
   <>
   <Router>
     <Routes>
-      <Route path='/login' exact element={<Login />}></Route>
+      <Route path='/' exact element={<Login />}></Route>
       <Route path="/forgot" exact element={<FrgPass />}></Route>
       <Route path="/loginotp" exact element={<Loginotp />}></Route>
       <Route path="/resetpass" exact element={<ResetPass />}></Route>
@@ -65,13 +63,11 @@ function App() {
       <Route path="/addmails" exact element={<AddEmails />}></Route>
       <Route path="/mails" exact element={<Campaign />}></Route>
       <Route path="/mailingpage" exact element={<Mails />}></Route>
-      <Route path="/" exact element={<Home />}></Route>
+      {/* <Route path="/" exact element={<Home />}></Route> */}
       <Route path="/schedulehistory" exact element={<ScheduleHistory/>}></Route>
       <Route path="/schedule" exact element={<Schedule/>}></Route>
       <Route path="/addtemp" exact element={<AddTemplate/>}></Route>
       <Route path="/fileupload" exact element={<FileUpload/>}></Route>
-      <Route path="/deletepage" exact element={<DeleteConf/>}></Route>
-      <Route path="/deletepage2" exact element={<DeleteConf2/>}></Route>
       <Route path="/template" exact element={<TemplatesShow/>}></Route>
      
     </Routes>

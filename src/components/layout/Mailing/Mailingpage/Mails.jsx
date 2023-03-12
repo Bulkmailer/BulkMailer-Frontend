@@ -107,7 +107,7 @@ function Mails(){
         e.preventDefault();
         setCheck(0);
         console.log(company , subject ,body , from, group , campaign , scheduleMail);
-        fd.append("_from" , 2);
+        fd.append("_from" , 1);
         fd.append("_company" , company);
         fd.append("_subject" , subject);
         fd.append("_body" , body);

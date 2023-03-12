@@ -8,14 +8,16 @@ import { useSelector } from "react-redux";
 import nogroups from '../../../assets/nogroup.svg'
 import { Link } from "react-router-dom";
 import background from '../../../assets/background.jpg'
+import * as ReactBootStrap from 'react-bootstrap';
 
 function MyGroup(){
     
     const [check , setCheck] = useState(0);
+    const [loading , setLoading] = useState(true);
     const [groupArr , setGrouparr] = useState();
     const dispatch = useDispatch();
     useEffect(()=>{
-    dispatch(showgroup(setCheck))
+    dispatch(showgroup(setCheck , setLoading));
     },[])
     
     const groupArr1= useSelector((state)=>state.mygroupreducer)
@@ -36,6 +38,7 @@ function MyGroup(){
         }
 
 return(<>
+ {loading?<div id='loader'><ReactBootStrap.Spinner animation="border" id="spinner"/></div>:null}
 <img src={background} id='background'></img>
 <Navbar />
 {(groupArr&&groupArr.length!=0)?<h1 id='listhead'>My Groups</h1>:null}

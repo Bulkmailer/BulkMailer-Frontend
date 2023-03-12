@@ -7,7 +7,8 @@ response:"" ,
 response2:"" ,
 status2:"" ,
 status3:"" , 
-temp:""
+temp:"",
+delete:""
 };
 const groupreducer =(state=initial 
     , action)=>{

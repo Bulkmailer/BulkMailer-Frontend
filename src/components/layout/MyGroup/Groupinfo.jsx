@@ -9,17 +9,19 @@ import { useSelector } from "react-redux";
 import { useState } from "react";
 import Contactname from "./contactComp";
 import background from '../../../assets/background.jpg'
+import * as ReactBootStrap from 'react-bootstrap';
 
 function Groupinfo(){
 const[list1 , setList1] = useState();
 const [check , setCheck] = useState(0);
+const[loading , setLoading] = useState(true);
 
 const list =useSelector((s)=>s.groupreducer);
 
 const dispatch=useDispatch();
 
 useEffect(()=>{
-dispatch(groupinfo(setCheck));
+dispatch(groupinfo(setCheck , setLoading));
 },[])
 useEffect(()=>{
     if(check==1){
@@ -27,7 +29,12 @@ useEffect(()=>{
     }
     },[check])
 
-    function getContact(list1) {
+
+    useEffect(()=>{
+    console.log(loading);
+    },[loading])
+
+    function getContact(list1){
         return (
           <Contactname
             id={list1.id}
@@ -38,6 +45,7 @@ useEffect(()=>{
         );
         }
 return(<>
+ {loading?<div id='loader'><ReactBootStrap.Spinner animation="border" id="spinner"/></div>:null}
 <img src={background} id='background'></img>
 <Navbar/>
 {(list1)?<h1 id='listhead'>Group Contacts</h1>:null}

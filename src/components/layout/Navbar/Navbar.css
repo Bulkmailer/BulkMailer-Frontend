@@ -48,6 +48,7 @@ margin:10px 0px 10px 20px;
      width:38px; 
      margin:15px 0px 10px 20px;
      right: 20px;
+     cursor: pointer;
  }
 #circletwo{
     width:170px;
@@ -113,18 +114,34 @@ margin:10px 0px 10px 20px;
         z-index: 2;
 }
 #askmenudiv2{
+    margin-top:-200px;
+    margin-left:-20px;
     height:150vh;
     width:100vw;
+    display:none ;
     text-align: center;
+    position: fixed;
     background-color: rgba(255 , 255 , 255 ,0.5);
     position: absolute;
     z-index: 2;
 }
+#logoutdiv2{
+    background-color: #D6D7DC ;
+    width:50vw;
+    margin-top:320px;
+    padding:40px;
+    position: fixed;
+    border-radius:10px;
+    margin-left:25%;
+    font-weight: 600;
+    text-align: center;
+}
 #logoutdiv{
     background-color: #D6D7DC ;
     width:50vw;
-    margin-top:300px;
+    margin-top:320px;
     padding:40px;
+    position: fixed;
     border-radius:10px;
     margin-left:25%;
     font-weight: 600;

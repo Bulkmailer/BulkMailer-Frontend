@@ -12,14 +12,32 @@ function Contactname(props){
     const fd = new FormData();
     const navigate = useNavigate();
 
+    function handleBack(){
+        document.getElementById('askmenudiv2').style.display='none';
+    }
+    function handleConfirm(){
+        var id = localStorage.getItem("contactid");
+        fd.append("id" , id);
+        dispatch(deletecontact(fd , setCheck , navigate));
+        document.getElementById('askmenudiv2').style.display='none';
+        document.getElementById(id).style.display='none';
+    }
+
     function handleDelete(e){
+     document.getElementById('askmenudiv2').style.display='block';
         setCheck(0);
         localStorage.setItem("contactid" , e.currentTarget.id);
-        navigate("/deletepage2");
         }
     
 return(
     <>
+            <div id='askmenudiv2'>
+        <div id='logoutdiv'>
+            <p >Do you really want to delete this Contact?</p>
+            <button id='formbtn12' onClick={handleConfirm}>Yes</button>
+            <p id='nobtn' onClick={handleBack}>No</p>
+        </div>
+    </div> 
     <div id='flexkro'>
    <div className="groupnamediv3"  id={props.id}>
     <pre><p id='contactpara'><span className="groupnames">Name    :</span> {props.name}</p></pre>

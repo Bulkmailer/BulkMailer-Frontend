@@ -24,7 +24,7 @@ function askmenu(){
    document.getElementById("askmenudiv").style.display ="block";
 }
 function logoutfunc(){
-    Navigate("/login");
+    Navigate("/");
     localStorage.removeItem("accesstokenb");
 }
 function hideaskmenu(){
@@ -45,7 +45,7 @@ else{
 return(
     <>
     <div id='askmenudiv'>
-        <div id='logoutdiv'>
+        <div id='logoutdiv2'>
             <p>Do you really want to LogOut?</p>
             <button id='formbtn12' onClick={logoutfunc}>Yes</button>
             <p id='nobtn' onClick={hideaskmenu}>No</p>

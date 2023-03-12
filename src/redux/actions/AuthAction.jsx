@@ -95,7 +95,7 @@ async (dispatch)=>{
     await api.post("/auth/registration/" , signupdetails)
       .then((res)=>{
         setLoading(false);
-        navigate("/login");
+        navigate("/");
           dispatch(
               {type:'SignupDetails' ,
               payload :res}
@@ -138,7 +138,7 @@ async (dispatch)=>{
     await api.patch("/auth/enter_new_password/" , resetpass)
       .then((res)=>{
         setLoading(false);
-        navigate("/login");
+        navigate("/");
           dispatch(
               {type:'ResetPass' ,
               payload :res}

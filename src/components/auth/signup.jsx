@@ -83,7 +83,7 @@ function FrgPass() {
        <ToastContainer />
        </form>
        <p id="endtxt">
-            Already A Customer? <span id="endlink"><Link to='/login'>Login</Link></span>
+            Already A Customer? <span id="endlink"><Link to='/'>Login</Link></span>
           </p>
       </div>
       <div>

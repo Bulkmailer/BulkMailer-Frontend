@@ -113,7 +113,7 @@ const config ={
       }
   
 
-    export const showgroup =(setCheck) =>
+    export const showgroup =(setCheck , setLoading) =>
     async (dispatch)=>{
       var accesstoken =localStorage.getItem("accesstokenb")
     const config ={
@@ -129,6 +129,7 @@ const config ={
                   payload :res}
                   )
                   setCheck(1);
+                  setLoading(false);
               })
           .catch((err)=>{
               // setLoading(false);
@@ -140,7 +141,7 @@ const config ={
           })
       }
 
-    export const groupinfo =(setCheck) =>
+    export const groupinfo =(setCheck , setLoading) =>
     async (dispatch)=>{
       var accesstoken =localStorage.getItem("accesstokenb")
       var group_id =localStorage.getItem("groupid")
@@ -157,6 +158,7 @@ const config ={
                   payload :res}
                   )
                   setCheck(1);
+                  setLoading(false);
               })
           .catch((err)=>{
               dispatch(
@@ -164,6 +166,7 @@ const config ={
                   payload :err}
                   )
                   setCheck(1);
+                  setLoading(false);
           })
       }
 
