@@ -19,6 +19,7 @@ function Uploads(){
     const [loading , setLoading] = useState(false);
     const [check , setCheck] = useState(0);
     const [bool , setbool] = useState(false);
+    const [arr , setArr] = useState([]);
 
     var group = localStorage.getItem("groupid");
 
@@ -61,6 +62,7 @@ Papa.parse(e.target.files[0],{
   skipEmptyLines:true ,
   complete:function (result){
     console.log(result);
+    setArr(result);
     let i=0;
 result.data.map((data , index)=>{
 if(i==0){
@@ -98,6 +100,7 @@ i++;
   }
 
     return(<>
+    {console.log(arr)}
           <img src={background} id='background'></img>
     {loading ? (
         <div id="loader">

@@ -17,6 +17,8 @@ import { Link, useNavigate } from "react-router-dom";
 import { seeappPassword } from "../../../../redux/actions/ProfileActions";
 import mailimg from '../../../../assets/mailimg.svg'
 import background from '../../../../assets/background.jpg'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function Mails(){
     var a=1;
@@ -105,9 +107,10 @@ function Mails(){
     }
     function handleSubmit(e){
         e.preventDefault();
+        console.log("hey")
         setCheck(0);
         console.log(company , subject ,body , from, group , campaign , scheduleMail);
-        fd.append("_from" , 1);
+        fd.append("_from" , 2);
         fd.append("_company" , company);
         fd.append("_subject" , subject);
         fd.append("_body" , body);
@@ -124,7 +127,14 @@ function Mails(){
         localStorage.setItem("_body" , body);
         localStorage.setItem("_template" , templatesid);
         localStorage.setItem("_group" , group);
+        if(group && company && subject){
         navigate("/schedule");
+        }
+        else{
+            toast.error("Please Fill in all the fields first", {
+                position: toast.POSITION.TOP_RIGHT
+            });
+        }
     }
     return(
         <>
@@ -137,7 +147,7 @@ function Mails(){
     <h1 id='formhead'>Form A Mail</h1>
     <form id='formflexer'>
         <label htmlFor="from" id='formlabel'>To(Choose A Group)</label>
-        <input type='text' placeholder='--select--' id='forminput3' onClick={showdiv} autoComplete="off" value={groupname} required></input>
+        <input type='text' placeholder='--select--' id='forminput3A' onClick={showdiv} autoComplete="off" value={groupname} required></input>
         <img src={toimg} id='mailimg'></img>
         {/* <label htmlFor="from" id='formlabel'>From</label> */}
         {/* <input type='text' placeholder='--select--' id='forminput3'  */}
@@ -145,22 +155,26 @@ function Mails(){
         {/* autoComplete="off" value={from} required></input> */}
         <img src={toimg} id='failimg'></img>
         <label htmlFor="from" id='formlabel'>Subject</label>
-        <input type='text' placeholder='Enter Subject' id='forminput3' value={subject} onChange={handleSubject} required></input>
+        <input type='text' placeholder='Enter Subject' id='forminput3A' value={subject} onChange={handleSubject} required></input>
         <img src={subjectimg} id='mailimg'></img>
         {(templatesid==null)?<><label htmlFor="from" id='formlabel'>Body</label>
         <textarea rows={5} cols={6} value={body} onChange={handleBody} required id='textarea2'></textarea>
         <img src={bodyimg} id='failimg'></img></>:null}    
         <label htmlFor="from" id='formlabel'>Company Name</label>
-        <input type='text' placeholder='Enter Company Name' id='forminput3' value={company} onChange={handleCompany} required></input>
+        <input type='text' placeholder='Enter Company Name' id='forminput3A' value={company} onChange={handleCompany} required></input>
         <img src={companyimg} id='mailimg'></img>
         <div>
-        <button type='submit' onClick={handleSubmit} id='formbtn10'>Send now</button>
+        <button onClick={handleSubmit} id='formbtn10'>Send now</button>
         <button id='formbtn10' onClick={setValue}>Schedule</button>
         </div>
     </form>
+    {/* <div id='buttoner'>
+   
+    </div> */}
 </div>
 <img src={mailimg} id='mailbox'></img>
 </div>
+<ToastContainer />
 </>
     )
 

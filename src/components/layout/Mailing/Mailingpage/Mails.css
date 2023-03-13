@@ -119,22 +119,21 @@ margin-left:6vw;
     margin-top:370px;
     margin-right:5vw;
 }
+#previewImg{
+   width:40vw;
+   height:270px;
+}
 @media(max-width:545px){
     #formbtn32{
         width:20vw;
     }
         #create11{
-         margin-top:450px;
-         width:35vw;
-         margin-left:-65vw;
+       display: none;
         }
 }
 @media(max-width:380px){
     #intropara3A{
         width:300px;
-    }
-    #create11{
-        display: none;
     }
     #formbtn32{
         width:60vw;
@@ -170,6 +169,20 @@ margin-left:6vw;
     margin-top:40px;
     margin-right:20px;
 }
+#formbtn10A{
+    background-color: rgba(83 , 109 , 254 , 0.9);
+    border:none;
+    color:white;
+    font-weight: 600;
+    width:15vw;
+    height:40px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left:20vw;
+}
+#buttoner{
+    margin-top:-40px;
+}
 #textarea2{
     width:45.43vw;
     padding:20px;
@@ -181,6 +194,17 @@ margin-left:6vw;
     border-radius:7px;
     font-size: 1rem;
     font-weight: 600;
+}
+#forminput3A{
+    background-color: #D6D7DC50;
+    border:0.5px solid black;
+    margin-top:1px;
+    border-radius:7px;
+    width:45.43vw;
+    height:50px;
+    font-size: 1rem;
+    font-weight: 600;
+    padding-left:42px;
 }
 #formflexer{
     display: flex;
@@ -220,6 +244,10 @@ margin-left:6vw;
     #formbtn10{
         width:20vw;
     }
+    #formbtn10A{
+        width:20vw;
+        margin-left:23vw;
+    }
 }
 @media(max-width:497px){
     #mailbox{
@@ -228,8 +256,15 @@ margin-left:6vw;
     #textarea2{
         width:80vw;
     }
+    #forminput3A{
+        width:80vw;
+    }
     #formbtn10{
         width:35vw;
+    }
+    #formbtn10A{
+        width:35vw;
+        margin-left:38vw;
     }
 }
 @media(max-width:361px){

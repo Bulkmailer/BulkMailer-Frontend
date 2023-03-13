@@ -270,7 +270,7 @@ const config ={
             await api.patch("/dashboard/send_mail/" , sendmail ,config
             )
               .then((res)=>{
-                // navigate("/home");
+                navigate("/mailhistory");
                   dispatch(
                       {type:'SendMail',
                       payload :res}

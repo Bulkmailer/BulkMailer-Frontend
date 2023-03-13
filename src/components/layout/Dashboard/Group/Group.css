@@ -399,6 +399,15 @@ width:10px;
    padding:50px 0;
    margin:10px 6vw 0 6vw;
 }
+#imgdiv2{
+    width:40vw;
+   border:1px dashed black;
+   text-align:center;
+   height:270px;
+   overflow: hidden;
+   /* padding:100px 0; */
+   margin:10px 6vw 0 6vw;
+}
 #formbtn5{
    margin:20px 0 0 6vw;
     background-color: rgba(83 , 109 , 254 , 0.9);
@@ -429,22 +438,13 @@ width:10px;
         display:none;
     }
     #create8{
-     margin-top:450px;
-     width:35vw;
-     margin-left:-65vw;
+        display: none;
     }
     #imgdiv{
         width:87vw;
         margin-right:6vw;
     }
 }
-@media(max-width:308px){
-    #create8{
-        display: none;
-    }
-}
-
-
 
 #pagediv{
   margin-top:50px;  

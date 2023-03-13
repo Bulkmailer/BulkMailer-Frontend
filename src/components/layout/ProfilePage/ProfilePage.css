@@ -110,6 +110,13 @@
     color:rgba(83 , 109 , 254 );
     font-weight: bold;
 }
+#plike2{
+    background-color: rgba(255 , 255 , 255 , 0);
+    border:none;
+    margin:10px 6vw 0 6vw;
+    color:rgba(83 , 109 , 254 );
+    font-weight: bold;
+}
 #error1{
     color:#D14444;
     font-weight: 600;
@@ -191,6 +198,11 @@
 }
 #flexkro{
     display:flex;
+}
+@media(max-width:545px){
+    #plike2{
+        margin:10px 6vw;
+    }
 }
 /* @media(max-width:962px){
     #error1{
