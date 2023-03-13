@@ -38,7 +38,7 @@ function MyGroup(){
         }
 
 return(<>
- {loading?<div id='loader'><ReactBootStrap.Spinner animation="border" id="spinner"/></div>:null}
+ {groupArr?null:<div id='loader'><ReactBootStrap.Spinner animation="border" id="spinner"/></div>}
 <img src={background} id='background'></img>
 <Navbar />
 {(groupArr&&groupArr.length!=0)?<h1 id='listhead'>My Groups</h1>:null}

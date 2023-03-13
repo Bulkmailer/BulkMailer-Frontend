@@ -1,6 +1,5 @@
 // import './Group.css';
 import Navbar from "../../Navbar/Navbar";
-import Sidebar from "../../Sidebar/Sidebar";
 import uploads from '../../../../assets/uploads.svg';
 import { useEffect, useState } from 'react';
 import FormData from 'form-data';

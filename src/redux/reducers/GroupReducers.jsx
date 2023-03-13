@@ -8,7 +8,8 @@ response2:"" ,
 status2:"" ,
 status3:"" , 
 temp:"",
-delete:""
+delete:"",
+statusA:""
 };
 const groupreducer =(state=initial 
     , action)=>{
@@ -44,8 +45,10 @@ if(action.payload.data){
                         }
             case "AddContacts":{
                 console.log(action.payload);
+                // console.log(action.payload.request.status);
                 return{
-                    response2:action.payload.response.data.msg
+                    response2:action.payload.response.data.msg,
+                    // statusA:action.payload.request.status
                 }
             }
             case "SendMail":{

@@ -1,6 +1,5 @@
 import './Group.css';
 import Navbar from "../../Navbar/Navbar";
-import Sidebar from "../../Sidebar/Sidebar";
 import emailimg from "../../../../assets/mail.svg"
 import names from '../../../../assets/names.svg'
 import genderimg from '../../../../assets/gender.svg';
@@ -28,6 +27,7 @@ function AddContacts(){
 
    const [loading, setLoading] = useState(false);
    const [check, setCheck] = useState(0);
+   const [check2, setCheck2] = useState(0);
 
    const dispatch = useDispatch();
    const navigate= useNavigate();
@@ -43,6 +43,15 @@ function AddContacts(){
       );
     }
   } ,[check]);
+
+  useEffect(()=>{
+    console.log(check2);
+    if(check2==1){
+    toast.success("fvj", {
+        position: toast.POSITION.TOP_RIGHT}
+    );
+  }
+} ,[check2]);
 
    const rightmail =
     /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
@@ -77,10 +86,10 @@ function AddContacts(){
       fd.append("name" , name);
       fd.append("group" , group);
       fd.append("gender" , gender);
-      dispatch(addcontactsdata(fd, setLoading , navigate , setCheck));
+      dispatch(addcontactsdata(fd, setLoading , navigate , setCheck , setCheck2));
       setEmail('');
-      setGender('');
       setName('');
+      document.getElementById('forminput20A').selectedIndex=0;
       }
      }   
     return(<>
@@ -104,7 +113,7 @@ function AddContacts(){
         <input type='text' id='forminput20' placeholder='Enter Fullname' required value={name} onChange={handleName}></input>
         <img src={names} id="mailimg"></img>
         <label htmlFor='title' id='formlabel'>Gender</label>
-        <select name="foodcategory" id='forminput20' onChange={handleGender}>
+        <select name="gender" className='gender' id='forminput20A' onChange={handleGender}>
               <option value='0'>--select--</option>
               <option value="Male">Male</option>
               <option value="Female">Female</option>

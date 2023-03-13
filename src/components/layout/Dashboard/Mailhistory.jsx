@@ -1,7 +1,6 @@
 // import './Group.css';
 import { useEffect } from 'react';
 import Navbar from '../Navbar/Navbar';
-import Sidebar from '../Sidebar/Sidebar';
 import { useDispatch } from 'react-redux';
 import { mailhistory } from '../../../redux/actions/GroupAction';
 import { useState } from 'react';

@@ -135,7 +135,7 @@ function Mails(){
 <div id='flexkro'>
 <div id='marginer'>
     <h1 id='formhead'>Form A Mail</h1>
-    <form id='formflexer' onSubmit={handleSubmit}>
+    <form id='formflexer'>
         <label htmlFor="from" id='formlabel'>To(Choose A Group)</label>
         <input type='text' placeholder='--select--' id='forminput3' onClick={showdiv} autoComplete="off" value={groupname} required></input>
         <img src={toimg} id='mailimg'></img>
@@ -154,7 +154,7 @@ function Mails(){
         <input type='text' placeholder='Enter Company Name' id='forminput3' value={company} onChange={handleCompany} required></input>
         <img src={companyimg} id='mailimg'></img>
         <div>
-        <button type='submit' id='formbtn10'>Send now</button>
+        <button type='submit' onClick={handleSubmit} id='formbtn10'>Send now</button>
         <button id='formbtn10' onClick={setValue}>Schedule</button>
         </div>
     </form>

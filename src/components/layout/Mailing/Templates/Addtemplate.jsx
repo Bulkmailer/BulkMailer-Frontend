@@ -5,6 +5,7 @@ import FormData from 'form-data';
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { addtemp } from "../../../../redux/actions/GroupAction";
+import background from '../../../../assets/background.jpg';
 
 function AddTemplate(){
 
@@ -32,6 +33,7 @@ function handleSubmit(e){
 
 return(
     <>
+      <img src={background} id='background'></img>
     <Navbar />
    <div id='marginer'>
     <h1 id='formhead'>Add A Template</h1>

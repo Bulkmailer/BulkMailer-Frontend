@@ -287,6 +287,17 @@
     font-weight: 600;
     padding-left:42px;
 }
+#forminput20A{
+    background-color: #D6D7DC50;
+    border:0.5px solid black;
+    margin-top:1px;
+    border-radius:7px;
+    width:35.43vw;
+    height:50px;
+    font-size: 1rem;
+    font-weight: 600;
+    padding-left:42px;
+}
 #mailerr{
     position:absolute;
     top:335px;
@@ -316,6 +327,9 @@
     #forminput20{
         width:55vw;
     }
+    #forminput20A{
+        width:55vw;
+    }
     #create6{
 width:25vw;
 margin-top:200px;
@@ -332,6 +346,9 @@ margin-top:200px;
         margin-top:80px;
     }
     #forminput20{
+        width:85vw;
+    }
+    #forminput20A{
         width:85vw;
     }
     #formbtn31{

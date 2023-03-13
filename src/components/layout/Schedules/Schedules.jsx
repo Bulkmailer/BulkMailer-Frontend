@@ -7,6 +7,8 @@ import './Schedule.css';
 import schedule from '../../../assets/schedule.svg';
 import { useNavigate } from "react-router-dom";
 import background from '../../../assets/background.jpg';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function Schedule(){
     const [year , setYear] = useState();
@@ -15,6 +17,8 @@ function Schedule(){
     const [hour , setHour] = useState();
     const [minute , setMinute] = useState();
     const [check, setCheck] = useState(0);
+
+    var stm , std , sth , stmin;
 
     const fd= new FormData();
     const dispatch= useDispatch();
@@ -49,6 +53,11 @@ function handleMonth(e){
 var a=1 , b=1 , c=1 , e=1 , f=1;
 var d = new Date();
     var currentYear = d.getFullYear ();
+    var currentDate = d.getDate();
+    var currentMonth = d.getMonth();
+    var currentHour = d.getHours();
+    var currentMin = d.getMinutes();
+
     var yroptions = "Year";
     function show2(){
     for (var i = currentYear-1; i < currentYear + 5; i++) {
@@ -66,10 +75,16 @@ var d = new Date();
     }
 
     var dateoptions = "Date";
+    if(month==currentMonth+1){
+      std=currentDate;
+    }
+    else{
+   std ='1';
+    }
     function show1(){
     if(month==1||month==3||month==5||month==7||month==8||month==10||month==12){
-    for (var i = 0; i <= 31; i++) {
-        if(i==0){
+    for (var i = std-1; i <= 31; i++) {
+        if(i==std-1){
         dateoptions="<option value= '0'>Date</option>";
         }
         else{
@@ -78,8 +93,8 @@ var d = new Date();
         }
     }
     else if(month==2&&year%4!=0){
-        for (var i = 0; i <= 28; i++) {
-            if(i==0){
+        for (var i =std-1; i <= 28; i++) {
+            if(i==std-1){
                 dateoptions="<option value= '0'>Date</option>";
                 }
                 else{
@@ -88,8 +103,8 @@ var d = new Date();
                 } 
     }
     else if(month==2&&year%4==0){
-        for (var i = 0; i <= 29; i++) {
-            if(i==0){
+        for (var i = std-1; i <= 29; i++) {
+            if(i==std-1){
                 dateoptions="<option value= '0'>Date</option>";
                 }
                 else{
@@ -98,8 +113,8 @@ var d = new Date();
                 } 
     }
     else{
-        for (var i = 0; i <= 30; i++) {
-        if(i==0){
+        for (var i = std-1; i <= 30; i++) {
+        if(i==std-1){
             dateoptions="<option value= '0'>Date</option>";
             }
             else{
@@ -113,9 +128,15 @@ var d = new Date();
         return b=0;
         }
         var monthoptions = "Month";
+        if(year==currentYear){
+        stm=currentMonth;
+        }
+        else{
+       stm ='0';
+        }
     function show3(){
-    for (var i = 0; i <= 12; i++) {
-        if(i==0){
+    for (var i = stm; i <= 12; i++) {
+        if(i==stm){
         monthoptions="<option value= '0'>Month</option>";
         }
         else{
@@ -127,40 +148,58 @@ var d = new Date();
             }
         return c=0;
         }
-
+    
         var houroptions = "Hour";
+        if(date==currentDate){
+           sth=currentHour
+            }
+            else{
+           sth ='0';
+            }
         function show4(){
-        for (var i = -1; i <= 23; i++) {
-            if(i==-1){
+        for (var i = sth-1; i <= 23; i++) {
+            if(i==sth-1){
             houroptions="<option value= '-1'>Hour</option>";
             }
             else{
             houroptions += "<option value='"+i+"'>"+i+"</option>"
             }
             }
-                if(e==1){
+            if(e==1){
             document.getElementById('hourselect').innerHTML= houroptions;
                 }
             return e=0;
             }
 
             var minoptions = "Min";
+            if(hour==currentHour){
+                stmin=currentMin
+                 }
+                 else{
+                stmin ='0';
+                 }
             function show5(){
-            for (var i = -1; i <= 60; i++) {
-                if(i==-1){
+            for (var i = stmin-1; i <= 60; i++) {
+                if(i==stmin-1){
                 minoptions="<option value= '-1'>Min</option>";
                 }
                 else{
                 minoptions += "<option value='"+i+"'>"+i+"</option>"
                 }
                 }
-                    if(f==1){
+                if(f==1){
                 document.getElementById('minselect').innerHTML= minoptions;
                     }
                 return f=0;
                 }
 function handlesubmit(e){
     e.preventDefault();
+    if(year==currentYear&& month< currentMonth+1 || month==currentMonth && date<currentDate || date==currentDate && hour<currentHour || hour==currentHour&& minute<currentMin){
+        toast.error("Please select a present or future time", {
+            position: toast.POSITION.TOP_RIGHT
+        });
+    }
+    else{
     console.log(year , hour , month , minute , date );
     console.log(scheduleMail)
     fd.append("_date" , date);
@@ -177,6 +216,7 @@ function handlesubmit(e){
         fd.append("scheduleMail" , scheduleMail);
         fd.append("id" , campaign);
        dispatch(sendmaildata(setCheck ,fd , navigate));
+    }
 }  
 return(<>
   <img src={background} id='background'></img>
@@ -189,22 +229,22 @@ return(<>
 <form onSubmit={handlesubmit} id='scheduleform'>
 <label htmlFor='date' id='formlabel'>Date</label>  
 <div id='flexkro'>
-<select onChange={handleMonth} onClick={show3} id='monthselect' className="forminput5" required>
-   <option>{monthoptions}</option>
-</select>
 <select onChange={handleYear} onClick={show2} id='yearselect' className="forminput5" required>
    <option>{yroptions}</option>
 </select>
-<select onChange={handleDate} onClick={show1} id='dateselect' className="forminput5" required>
+<select onChange={handleMonth} onClick={show3} id='monthselect' className="forminput5" required disabled={(year==null || year==0)?true:false}>
+   <option>{monthoptions}</option>
+</select>
+<select onChange={handleDate} onClick={show1} id='dateselect' className="forminput5" required disabled={(month==null || month==0)?true:false}>
    <option>{dateoptions}</option>
 </select>
 </div>
 <label htmlFor='time' id='formlabel'>Time</label>  
 <div id='flexkro'>
-<select onChange={handleHour} onClick={show4} id='hourselect' className="forminput5" required>
+<select onChange={handleHour} onClick={show4} id='hourselect' className="forminput5" required disabled={(date==null || date==0)?true:false}>
    <option>{houroptions}</option>
 </select>
-<select onChange={handleMinute} onClick={show5} id='minselect' className="forminput5" required>
+<select onChange={handleMinute} onClick={show5} id='minselect' className="forminput5" required disabled={(hour==null || hour ==0)?true:false}>
    <option>{minoptions}</option>
 </select>
 </div>
@@ -213,6 +253,7 @@ return(<>
 </div>
 </div>
  <img src={schedule} id='create14'></img>
+ <ToastContainer />
  </div>
 </>
 )

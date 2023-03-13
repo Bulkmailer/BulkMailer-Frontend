@@ -7,18 +7,20 @@ import ScheduleComp from "./ScheduleComp";
 import { useSelector } from "react-redux";
 import noschedules from '../../../assets/noschedule.svg'
 import background from '../../../assets/background.jpg';
+import * as ReactBootStrap from 'react-bootstrap';
 
 function ScheduleHistory(){
 
 const [check , setCheck]=useState(0);
 const[list1 , setList1] = useState();
+const [loading , setLoading]= useState(true);
 
 const list =useSelector((s)=>s.groupreducer);
 
 const dispatch = useDispatch();
 
 useEffect(()=>{
-dispatch(schedulehistory(setCheck));
+dispatch(schedulehistory(setCheck , setLoading));
 },[])
 
 useEffect(()=>{
@@ -45,6 +47,7 @@ useEffect(()=>{
         );
         }
 return(<>
+ {loading?<div id='loader'><ReactBootStrap.Spinner animation="border" id="spinner"/></div>:null}
   <img src={background} id='background'></img>
 <Navbar />
 {(list1)?<h1 id='listhead'>My Schedules</h1>:null}

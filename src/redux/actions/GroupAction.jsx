@@ -84,7 +84,7 @@ const config ={
         })
     }
 
-    export const addcontactsdata =(addcontactsdata , setLoading , navigate ,setCheck) =>
+    export const addcontactsdata =(addcontactsdata , setLoading , navigate ,setCheck, setCheck2) =>
     async (dispatch)=>{
       var accesstoken =localStorage.getItem("accesstokenb")
     const config ={
@@ -100,6 +100,7 @@ const config ={
                   payload :res}
                   )
                   setCheck(1);
+                  setCheck2(1);
                   navigate("/addcontacts")
               })
           .catch((err)=>{
@@ -109,6 +110,7 @@ const config ={
                   payload :err}
                   )
                   setCheck(1);
+                  setCheck2(0);
           })
       }
   
@@ -129,7 +131,7 @@ const config ={
                   payload :res}
                   )
                   setCheck(1);
-                  setLoading(false);
+                  // setLoading(false);
               })
           .catch((err)=>{
               // setLoading(false);
@@ -360,7 +362,7 @@ const config ={
                       setCheck(1);
               })
           }
-          export const schedulehistory =(setCheck) =>
+          export const schedulehistory =(setCheck , setLoading) =>
         async (dispatch)=>{
           var accesstoken =localStorage.getItem("accesstokenb");
         const config ={
@@ -376,6 +378,7 @@ const config ={
                       payload :res}
                       )
                       setCheck(1);
+                      setLoading(false);
                   })
               .catch((err)=>{
                   dispatch(
@@ -383,6 +386,7 @@ const config ={
                       payload :err}
                       )
                       setCheck(1);
+                      setLoading(false);
               })
           }
 

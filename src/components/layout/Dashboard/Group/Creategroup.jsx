@@ -1,6 +1,5 @@
 import './Group.css';
 import Navbar from "../../Navbar/Navbar";
-import Sidebar from "../../Sidebar/Sidebar";
 import group from '../../../../assets/group.svg';
 import { useNavigate } from "react-router-dom";
 import FormData from 'form-data';

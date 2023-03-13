@@ -1,6 +1,5 @@
 import './Group.css';
 import Navbar from "../../Navbar/Navbar";
-import Sidebar from "../../Sidebar/Sidebar";
 import uploads from '../../../../assets/uploads.svg';
 import { useEffect, useState } from 'react';
 import FormData from 'form-data';
@@ -27,7 +26,7 @@ function Uploads(){
     useEffect(()=>{
       if(check==1){
         console.log(mssg.status3)
-        if(mssg.status3==400 || mssg.status3==500){
+        if(mssg.status3==500 || mssg.status3==400){
         toast.error("Select a valid .csv file containing emails , names and gender of contacts to be added ", {
           position: toast.POSITION.TOP_RIGHT}
       );
@@ -47,6 +46,9 @@ function Uploads(){
     fd.append("file" , file);
     fd.append("group" , group);
     dispatch(uploaddata(fd, setLoading , navigate , setCheck));
+    }
+    function handleCancel(){
+console.log(file);
     }
 
 function handleFiles(e){
@@ -109,15 +111,15 @@ i++;
     <h1 id='pagehead2'>Upload a File</h1>   
     <p id='intropara3'>Select a .csv or an excel file...</p>
 
-   {(file.length!=0)?<div><table id='tb1-data'>
-
-</table><button onClick={handleSubmit} id='formbtn5'>Upload</button></div>:<label htmlFor="file-input">
+   {(file.length!=0)?<form><table id='tb1-data'>
+</table><p id='buttonpara'><button id='formbtn5' onClick={handleSubmit}>Upload</button><button id='plike' onClick={handleCancel}>Cancel</button></p></form>:<div id='show'><label htmlFor="file-input">
        <div id='imgdiv'>
         <img src={uploads} id='upimg'></img>
         <p id='upload'>Upload file here</p>
        </div>
-    </label>}
-    <input type="file" name='file' accept=".csv" id='file-input' onChange={handleFiles}/>
+    </label>
+    </div>}
+    <input type="file" name='file' multiple accept=".csv" id='file-input' onChange={handleFiles}/>
    </div>
      <img src={uploading} id='create8'></img>
     </div>

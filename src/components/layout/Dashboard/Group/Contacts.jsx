@@ -1,6 +1,5 @@
 import './Group.css';
 import Navbar from "../../Navbar/Navbar";
-import Sidebar from "../../Sidebar/Sidebar";
 import contacts from '../../../../assets/contacts.svg';
 import { Link } from 'react-router-dom';
 import newcontact from '../../../../assets/newcontact.svg';
