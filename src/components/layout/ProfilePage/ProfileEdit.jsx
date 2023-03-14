@@ -62,8 +62,13 @@ function EditProfile(){
    const fd = new FormData();
 
    const [correctNo , setIsCorrectNo] = useState(false);
+   const [correctName , setIsCorrectName] = useState(false);
+   const [correctUsername , setIsCorrectUsername] = useState(false);
 
    const rightno =/(^[6-9][0-9]{9}$)/;
+   const rightName = /^[a-zA-Z]+[\-'\s]?[a-zA-Z ]+$/;
+   const rightUsername = /^\w[a-zA-Z@#0-9.]*$/;
+
   useEffect(() => {
     if (rightno.test(mobile)) {
       document.getElementById("error5").style.display = "none";
@@ -73,6 +78,27 @@ function EditProfile(){
       setIsCorrectNo(false);
     }
   }, [mobile]);
+
+
+  useEffect(() => {
+    if (rightName.test(name)) {
+      document.getElementById("error5A").style.display = "none";
+      setIsCorrectName(true);
+    } else if (name) {
+      document.getElementById("error5A").style.display = "block";
+      setIsCorrectName(false);
+    }
+  }, [name]);
+
+  useEffect(() => {
+    if (rightUsername.test(username)) {
+      document.getElementById("error5B").style.display = "none";
+      setIsCorrectUsername(true);
+    } else if (username) {
+      document.getElementById("error5B").style.display = "block";
+      setIsCorrectUsername(false);
+    }
+  }, [username]);
 
     function handleUsername(e){
     setUsername(e.target.value);
@@ -92,7 +118,7 @@ function EditProfile(){
 
      function handleSubmit(e){
       e.preventDefault();
-      if(correctNo){
+      if(correctNo && correctName && correctUsername){
       setCheck2(0);
       setLoading(true);
       fd.append("user_name" , username);
@@ -119,9 +145,11 @@ function EditProfile(){
         <label htmlFor='title' id='formlabel'>Username</label>
         <input type='text' id='forminput20' required value={username} onChange={handleUsername}></input>
         <img src={emailimg} id="mailimg"></img>
+        <p id='error5B'>Invalid UserName</p>
         <label htmlFor='title' id='formlabel'>Full Name</label>
         <input type='text' id='forminput20' placeholder={arr.name} required value={name} onChange={handleName}></input>
         <img src={names} id="mailimg"></img>
+        <p id='error5A'>Invalid Name</p>
         <label htmlFor='title' id='formlabel'>Mobile Number</label>
         <input type='text' id='forminput20' placeholder={arr.mobile} required value={mobile} onChange={handleMobile}></input>
         <img src={names} id="mailimg"></img>

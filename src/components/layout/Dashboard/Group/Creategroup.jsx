@@ -19,6 +19,20 @@ function CreateGroup(){
     const [loading, setLoading] = useState(false);
     const [check, setCheck] = useState(0);
 
+    const[correctGroupName , setCorrectGroupName] = useState(false);
+
+const rightGroupName=/^[^\s]+(\s+[^\s]+)*$/;
+
+useEffect(() => {
+    if (rightGroupName.test(name)) {
+      document.getElementById("error5G").style.display = "none";
+      setCorrectGroupName(true);
+    } else if (name) {
+      document.getElementById("error5G").style.display = "block";
+      setCorrectGroupName(false);
+    }
+  }, [name]);
+
   const dispatch = useDispatch();
   const fd = new FormData();
   const navigate = useNavigate();
@@ -41,10 +55,12 @@ function CreateGroup(){
 
   function handleSubmit(e){
     e.preventDefault();
+    if(correctGroupName){
     setLoading(true);
     setCheck(0);
     fd.append("name" , name);
     dispatch(creategroupdata(fd, setLoading , navigate , setCheck));
+    }
   }
 
     return(
@@ -65,6 +81,7 @@ function CreateGroup(){
         <label htmlFor='title' id='formslabel'>Group title</label>
         <input type='text' id='forminput2' placeholder='Enter Group Title' value={name} onChange={handleName} required></input>
         <img src={group} id="mailimg"></img>
+        <p id='error5G'>Invalid Group Name</p>
         <p id='buttonpara'><button id='formbtn3' type='submit'>Create</button><Link to='/home'><button id='plike'>Cancel</button></Link></p>
         </form>
         <ToastContainer />

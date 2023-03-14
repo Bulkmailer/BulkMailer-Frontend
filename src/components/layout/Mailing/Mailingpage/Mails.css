@@ -20,6 +20,12 @@
     /* height:100px; */
     margin:200px 6vw 0 6vw;
 }
+#error5C{
+    color:#D14444;
+    position:absolute;
+    top:403px;
+    display: none;
+}
 #flexformA{
     display: flex;
     flex-direction: column;
@@ -146,6 +152,19 @@ margin-left:6vw;
 }
 
 /* mails */
+
+#error5D{
+    color:#D14444;
+    position:absolute;
+    top:479px;
+    display: none;
+}
+#error5E{
+    color:#D14444;
+    position:absolute;
+    top:802px;
+    display: none;
+}
 #mailbox{
     transform: scaleX(-1);
     width:35vw;

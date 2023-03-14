@@ -91,6 +91,12 @@ flex-direction: column;
     top:-36px;
     left:10px;
 }
+#mailimg2A{
+    width:20px;
+    position:relative;
+    top:-36px;
+    left:10px;
+}
 #emailerr{
     color:#D14444;
     font-weight: 600;

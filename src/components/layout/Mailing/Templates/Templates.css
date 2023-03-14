@@ -6,6 +6,12 @@
 #templatesdiv{
     margin:40px 40px;
 }
+#error5F{
+    color:#D14444;
+    position:absolute;
+    top:265px;
+    display: none;
+}
 .template{
     border:2px dotted black;
     width:220px;

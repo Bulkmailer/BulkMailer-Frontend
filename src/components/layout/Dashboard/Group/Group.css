@@ -3,6 +3,12 @@
 #managerC{
     display: flex;
 }
+#error5G{
+    color:#D14444;
+    position:absolute;
+    top:455px;
+    display: none;
+}
 #create{
     width:20vw;
     margin-left:5vw;
@@ -301,6 +307,12 @@
 #mailerr{
     position:absolute;
     top:335px;
+    color:#D14444;
+    display: none;
+}
+#mailerrA{
+    position:absolute;
+    top:438px;
     color:#D14444;
     display: none;
 }

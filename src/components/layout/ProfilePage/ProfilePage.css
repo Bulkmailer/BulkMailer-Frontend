@@ -119,14 +119,12 @@
 }
 #error1{
     color:#D14444;
-    font-weight: 600;
     position:absolute;
-    top:342px;
+    top:415px;
     display: none;
 }
 #error2{
     color:#D14444;
-    font-weight: 600;
     position:absolute;
     top:545px;
     display: none;
@@ -134,7 +132,6 @@
 }
 #error3{
     color:#D14444;
-    font-weight: 600;
     position:absolute;
     top:505px;
     display: none;
@@ -142,7 +139,6 @@
 }
 #error4{
     color:#D14444;
-    font-weight: 600;
     position:absolute;
     top:505px;
     display: none;
@@ -150,9 +146,22 @@
 }
 #error5{
     color:#D14444;
-    font-weight: 600;
     position:absolute;
-    top:505px;
+    top:490px;
+    display: none;
+    width:45.43vw;
+}
+#error5A{
+    color:#D14444;
+    position:absolute;
+    top:380px;
+    display: none;
+    width:45.43vw;
+}
+#error5B{
+    color:#D14444;
+    position:absolute;
+    top:275px;
     display: none;
     width:45.43vw;
 }

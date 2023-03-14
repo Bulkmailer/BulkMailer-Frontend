@@ -26,6 +26,20 @@ const fd = new FormData();
 const dispatch = useDispatch();
 const navigate = useNavigate();
 
+const [correctName , setCorrectName] = useState(false);
+
+   const rightCampaignName=/^[^\s]+(\s+[^\s]+)*$/;
+
+   useEffect(() => {
+    if (rightCampaignName.test(campaignName)) {
+      document.getElementById("error5C").style.display = "none";
+      setCorrectName(true);
+    } else if (campaignName) {
+      document.getElementById("error5C").style.display = "block";
+      setCorrectName(false);
+    }
+  }, [campaignName]);
+
 useEffect(()=>{
 dispatch(profilegetdata(setCheck))
 },[])
@@ -42,6 +56,7 @@ console.log(app);
 
 function handleSubmit(e){
 e.preventDefault();
+if(correctName){
 if(app==true){
 setLoading(true);
 fd.append("title" , campaignName);
@@ -51,6 +66,7 @@ else{
   toast.error("Add an app password first", {
     position: toast.POSITION.TOP_RIGHT}
 );
+}
 }
 }
 function handleCampaign(e){
@@ -71,8 +87,9 @@ return(
     <h1 id='groupheadA'>Add Campaign Name</h1>
         <form id='flexformA' onSubmit={handleSubmit}>
         <label htmlFor='campaignName' id='formslabel'>Campaign Name</label>
-        <input type='text' id='forminput2A' placeholder='Enter Campaign Name' value={campaignName} onChange={handleCampaign} required></input>
+        <input type='text' id='forminput2A' placeholder='Enter Campaign Name' value={campaignName} onChange={handleCampaign} required maxLength={30}></input>
         <img src={campaignlogo} id="mailimg"></img>
+        <p id='error5C'>Invalid Campaign Name</p>
         <p id='buttonpara'><button id='formbtn3A' type='submit'>Submit</button><Link to='/home'><button id='plike'>Cancel</button></Link></p>
         </form>
         <ToastContainer />

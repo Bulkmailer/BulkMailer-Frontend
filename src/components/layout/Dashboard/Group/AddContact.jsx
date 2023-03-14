@@ -22,6 +22,7 @@ function AddContacts(){
     const [gender , setGender] = useState();
 
     const [correctMail, setCorrectMail] = useState(false);
+    const [correctName, setCorrectName] = useState(false);
 
    var group = localStorage.getItem("groupid");
 
@@ -38,6 +39,8 @@ function AddContacts(){
   useEffect(()=>{
       console.log(check);
       if(check==1){
+        console.log(mssg);
+        console.log(mssg.statusA);
       toast.error(mssg.response2[0], {
           position: toast.POSITION.TOP_RIGHT}
       );
@@ -55,6 +58,7 @@ function AddContacts(){
 
    const rightmail =
     /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+    const rightName = /^[a-zA-Z]+[\-'\s]?[a-zA-Z ]+$/;
 
     useEffect(() => {
       if (rightmail.test(email)) {
@@ -65,6 +69,16 @@ function AddContacts(){
         setCorrectMail(false);
       }
     }, [email]);
+
+    useEffect(() => {
+      if ((rightName).test(name)){
+        document.getElementById("mailerrA").style.display = "none";
+        setCorrectName(true);
+      } else if (name){
+        document.getElementById("mailerrA").style.display = "block";
+        setCorrectName(false);
+      }
+    }, [name]);
 
     function handleMail(e){
     setEmail(e.target.value);
@@ -79,7 +93,7 @@ function AddContacts(){
         }
      function handleSubmit(e){
       e.preventDefault();
-      if(correctMail){
+      if(correctMail && correctName){
       setLoading(true);
       setCheck(0);
       fd.append("email" , email);
@@ -111,6 +125,7 @@ function AddContacts(){
         <img src={emailimg} id="mailimg"></img>
         <label htmlFor='title' id='formlabel'>Full Name</label>
         <input type='text' id='forminput20' placeholder='Enter Fullname' required value={name} onChange={handleName}></input>
+        <p id='mailerrA'>Invalid Name</p>
         <img src={names} id="mailimg"></img>
         <label htmlFor='title' id='formlabel'>Gender</label>
         <select name="gender" className='gender' id='forminput20A' onChange={handleGender}>

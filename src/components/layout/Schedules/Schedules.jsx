@@ -202,6 +202,7 @@ function handlesubmit(e){
     else{
     console.log(year , hour , month , minute , date );
     console.log(scheduleMail)
+    if(year && hour && month && minute && date){
     fd.append("_date" , date);
         fd.append("_hour" , hour);
         fd.append("_year" , year);
@@ -216,6 +217,12 @@ function handlesubmit(e){
         fd.append("scheduleMail" , scheduleMail);
         fd.append("id" , campaign);
        dispatch(sendmaildata(setCheck ,fd , navigate));
+    }
+    else{
+        toast.error("Please Fill in all fields", {
+            position: toast.POSITION.TOP_RIGHT
+        }); 
+    }
     }
 }  
 return(<>

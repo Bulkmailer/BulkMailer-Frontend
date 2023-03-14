@@ -21,8 +21,6 @@ function AddEmails(){
     const [correctPass , setCorrectPass]= useState(false);
     const rightmail =
     /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-    const rightPass =/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
-
     useEffect(() => {
         if (rightmail.test(email)) {
           document.getElementById("error1").style.display = "none";
@@ -32,17 +30,6 @@ function AddEmails(){
           setCorrectMail(false);
         }
       }, [email]);
-    
-      useEffect(()=>{
-        if(rightPass.test(password)){
-        document.getElementById("error2").style.display = "none";
-        setCorrectPass(true);
-        }
-        else if(password){
-          document.getElementById("error2").style.display = "block";
-          setCorrectPass(false); 
-        }
-        },[password])
 
     const [loading, setLoading] = useState(false);
     const [check, setCheck] = useState(0);
@@ -54,18 +41,19 @@ function AddEmails(){
   const response= useSelector((state)=>state.profilereducer);
 
   useEffect(()=>{
-    if(response.status2==201){
+    if(response.status2==201 && check==1){
      navigate("/profilepage")
     }
-    if(response.status2){
+    if(response.status2 && check==1){
       setLoading(false);
        }
-       if(response.status2==400){
+       if(response.status2==400 && check==1){
+        setLoading(false);
         toast.error("Mail already added", {
             position: toast.POSITION.TOP_RIGHT
         });
        }
-    } , [response.status2])
+    } , [response.status2 , check])
 
   function handlePass(e){
     setPassword(e.target.value);
@@ -76,12 +64,12 @@ function AddEmails(){
 
   function handleSubmit(e){
     e.preventDefault();
-    if(correctMail && correctPass){
+    if(correctMail){
     setLoading(true);
     setCheck(0);
     fd.append("app_password" , password);
     fd.append("email" , email);
-    dispatch(apppassdata(fd, setCheck))
+    dispatch(apppassdata(fd, setCheck , setLoading))
     }
   }
     return(
@@ -107,7 +95,6 @@ function AddEmails(){
         <img src={lock} id="mailimg"></img>
         <p id='buttonpara'><button id='formbtn3A' type='submit'>Submit</button>
         <Link to='/profilepage'><button id='plike'>Cancel</button></Link></p>
-        <p id='error2'>Password must contain at least 8 characters, a special symbol, an uppercase, a lowecase, a numeric value and no space.</p>
         </form>
         <ToastContainer />
     </div>

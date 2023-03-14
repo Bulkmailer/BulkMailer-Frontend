@@ -45,10 +45,10 @@ if(action.payload.data){
                         }
             case "AddContacts":{
                 console.log(action.payload);
-                // console.log(action.payload.request.status);
+                console.log(action.payload.status);
                 return{
-                    response2:action.payload.response.data.msg,
-                    // statusA:action.payload.request.status
+                    statusA:action.payload.status,
+                    response2:action.payload.response.data.msg
                 }
             }
             case "SendMail":{

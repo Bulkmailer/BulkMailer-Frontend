@@ -50,7 +50,7 @@ const config ={
         })
     }
 
-    export const apppassdata =( apppassdata , setCheck) =>
+    export const apppassdata =( apppassdata , setCheck , setLoading) =>
     async (dispatch)=>{
       var accesstoken =localStorage.getItem("accesstokenb")
     const config ={
@@ -61,6 +61,7 @@ const config ={
         await api.post("/auth/add_App_password/" ,  apppassdata , config)
           .then((res)=>{
             setCheck(1);
+            setLoading(false);
               dispatch(
                   {type:'AddPass' ,
                   payload :res}
@@ -77,7 +78,7 @@ const config ={
           })
       }
 
-      export const seeappPassword =(setCheck) =>
+      export const seeappPassword =(setCheck2) =>
 async (dispatch)=>{
   var accesstoken =localStorage.getItem("accesstokenb")
 const config ={
@@ -91,14 +92,14 @@ const config ={
               {type:'Emailget' ,
               payload :res}
               )
-              setCheck(1);
+              setCheck2(1);
           })
       .catch((err)=>{
           dispatch(
               {type:'Emailget',
               payload :err}
               )
-              setCheck(1);
+              setCheck2(1);
       })
   }
 

@@ -50,9 +50,9 @@ return(<>
  {loading?<div id='loader'><ReactBootStrap.Spinner animation="border" id="spinner"/></div>:null}
   <img src={background} id='background'></img>
 <Navbar />
-{(list1)?<h1 id='listhead'>My Schedules</h1>:null}
+{(list1 && list1.length!=0)?<h1 id='listhead'>My Schedules</h1>:null}
 <div className="namesdiv2">
-{(list1)?(list1.map((rest)=>getSchedule(rest))):<div id='nothing'><img src={noschedules} id='nothingimg'></img><h6 id='nothingpara'>No Schedules</h6></div>}
+{(list1 && list1.length!=0)?(list1.map((rest)=>getSchedule(rest))):<div id='nothing'><img src={noschedules} id='nothingimg'></img><h6 id='nothingpara'>No Schedules</h6></div>}
 </div>
 </>)
 }

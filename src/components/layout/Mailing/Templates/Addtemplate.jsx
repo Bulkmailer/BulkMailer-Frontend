@@ -6,6 +6,7 @@ import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { addtemp } from "../../../../redux/actions/GroupAction";
 import background from '../../../../assets/background.jpg';
+import { useEffect } from "react";
 
 function AddTemplate(){
 
@@ -18,6 +19,20 @@ const fd = new FormData();
 const dispatch = useDispatch();
 const navigate = useNavigate();
 
+const[correctTemplateName , setCorrectTemplateName] = useState(false);
+
+const rightTemplateName=/^[^\s]+(\s+[^\s]+)*$/;
+
+useEffect(() => {
+    if (rightTemplateName.test(tempName)) {
+      document.getElementById("error5F").style.display = "none";
+      setCorrectTemplateName(true);
+    } else if (tempName) {
+      document.getElementById("error5F").style.display = "block";
+      setCorrectTemplateName(false);
+    }
+  }, [tempName]);
+
 function handleTemp(e){
 setTemp(e.target.value);
 }
@@ -26,9 +41,11 @@ function handleTempName(e){
     }
 function handleSubmit(e){
     e.preventDefault();
+    if(correctTemplateName){
     fd.append("name" , tempName);
     fd.append("template" , temp);
     dispatch(addtemp(fd , navigate , setCheck , setLoading));
+    }
 }
 
 return(
@@ -41,6 +58,7 @@ return(
         <label htmlFor='name' id='formlabel'>Template Name</label>
         <input type='text' placeholder='Enter Template Name' id='forminput3' value={tempName} onChange={handleTempName}></input>
         <img src={templateimg} id='mailimg'></img>
+        <p id='error5F'>Invalid Template Name</p>
         <label htmlFor="from" id='formlabel'>Template code</label>
         <p>Enter your template html code here..</p>
         <textarea rows={5} cols={6} required id='textarea2' value={temp} onChange={handleTemp}></textarea>

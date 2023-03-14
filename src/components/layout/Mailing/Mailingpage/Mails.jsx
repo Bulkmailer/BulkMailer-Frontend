@@ -31,6 +31,7 @@ function Mails(){
     const [group , setGroup] = useState();
     const [groupname , setGroupName] = useState();
     const [from , setFrom] = useState();
+    const [fromName , setFromName] = useState();
     const [subject , setSubject] = useState("");
     const [company , setCompany] = useState("");
     const [body , setBody] = useState("");
@@ -41,6 +42,31 @@ function Mails(){
     const dispatch = useDispatch();
     const fd= new FormData();
     const navigate = useNavigate();
+
+    const[correctSubject , setCorrectSubject]= useState(false);
+    const[correctCompanyName , setCorrectCompanyName]= useState(false);
+
+    const rightSubject=/^[^\s]+(\s+[^\s]+)*$/;
+
+    useEffect(() => {
+        if (rightSubject.test(subject)) {
+          document.getElementById("error5D").style.display = "none";
+          setCorrectSubject(true);
+        } else if (subject) {
+          document.getElementById("error5D").style.display = "block";
+          setCorrectSubject(false);
+        }
+      }, [subject]);
+
+      useEffect(() => {
+        if (rightSubject.test(company)) {
+          document.getElementById("error5E").style.display = "none";
+          setCorrectCompanyName(true);
+        } else if (company) {
+          document.getElementById("error5E").style.display = "block";
+          setCorrectCompanyName(false);
+        }
+      }, [company]);
 
     useEffect(()=>{
     dispatch(showgroup(setCheck))
@@ -69,7 +95,7 @@ function Mails(){
 
     function getEmail(emailArr){
         return (
-        <p id={emailArr.id} 
+        <p id={emailArr.id} className={emailArr.email}
         onClick={addid2}
         >{emailArr.email}</p>
         );
@@ -88,6 +114,7 @@ function Mails(){
     }
     function addid2(e){
         setFrom(e.target.id);
+        setFromName(e.target.className);
         document.getElementById("groupsdiv2").style.display="none";
     }
     function handleSubject(e){
@@ -107,10 +134,13 @@ function Mails(){
     }
     function handleSubmit(e){
         e.preventDefault();
+        if(correctSubject && correctCompanyName){
+        if(from && group && company && subject){
         console.log("hey")
         setCheck(0);
         console.log(company , subject ,body , from, group , campaign , scheduleMail);
-        fd.append("_from" , 2);
+        // fd.append("_from" , 2);
+        fd.append("_from" , from);
         fd.append("_company" , company);
         fd.append("_subject" , subject);
         fd.append("_body" , body);
@@ -119,9 +149,17 @@ function Mails(){
         fd.append("_template" , templatesid);
         fd.append("scheduleMail" , scheduleMail);
         dispatch(sendmaildata( setCheck , fd , navigate));
+        }
+        else{
+            toast.error("Please Fill in all the fields first", {
+                position: toast.POSITION.TOP_RIGHT
+            });
+        }
+    }
     }
     function setValue(){
-        localStorage.setItem("_from" , 2);
+        // localStorage.setItem("_from" , 2);
+        localStorage.setItem("_from" , from);
         localStorage.setItem("_company" , company);
         localStorage.setItem("_subject" , subject);
         localStorage.setItem("_body" , body);
@@ -149,20 +187,22 @@ function Mails(){
         <label htmlFor="from" id='formlabel'>To(Choose A Group)</label>
         <input type='text' placeholder='--select--' id='forminput3A' onClick={showdiv} autoComplete="off" value={groupname} required></input>
         <img src={toimg} id='mailimg'></img>
-        {/* <label htmlFor="from" id='formlabel'>From</label> */}
-        {/* <input type='text' placeholder='--select--' id='forminput3'  */}
-        {/* // onClick={showdiv2}  */}
-        {/* autoComplete="off" value={from} required></input> */}
-        <img src={toimg} id='failimg'></img>
+        <label htmlFor="from" id='formlabel'>From</label>
+        <input type='text' placeholder='--select--' id='forminput3' 
+        onClick={showdiv2} 
+         autoComplete="off" value={fromName} required></input> 
+        <img src={fromimg} id='mailimg2A'></img>
         <label htmlFor="from" id='formlabel'>Subject</label>
         <input type='text' placeholder='Enter Subject' id='forminput3A' value={subject} onChange={handleSubject} required></input>
         <img src={subjectimg} id='mailimg'></img>
+        <p id='error5D'>Invalid Subject</p>
         {(templatesid==null)?<><label htmlFor="from" id='formlabel'>Body</label>
         <textarea rows={5} cols={6} value={body} onChange={handleBody} required id='textarea2'></textarea>
         <img src={bodyimg} id='failimg'></img></>:null}    
         <label htmlFor="from" id='formlabel'>Company Name</label>
         <input type='text' placeholder='Enter Company Name' id='forminput3A' value={company} onChange={handleCompany} required></input>
         <img src={companyimg} id='mailimg'></img>
+        <p id='error5E'>Invalid Company Name</p>
         <div>
         <button onClick={handleSubmit} id='formbtn10'>Send now</button>
         <button id='formbtn10' onClick={setValue}>Schedule</button>
