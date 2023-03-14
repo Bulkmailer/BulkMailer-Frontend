@@ -20,7 +20,9 @@ function Groupname(props){
 
     function groupclick(e){
         console.log(e.target.id);
+        console.log(e.target.className);
         localStorage.setItem("groupid" , e.currentTarget.id);
+        localStorage.setItem("groupnameA" , e.currentTarget.className);
         navigate("/groupinfo");
     }
 function handleBack(){
@@ -51,7 +53,7 @@ return(
    <div className="groupnamediv2"  id={props.id}>
     <p className='groupnames' id={props.id}> {props.groupname}</p>
    <img src={deleteitem} className='deleteimg' id={props.id} onClick={handleDelete}></img>
-   <FontAwesomeIcon icon={faEye} id={props.id} className='divseye' onClick={groupclick} />
+   <FontAwesomeIcon icon={faEye} id={props.id} className={props.groupname} onClick={groupclick} />
    </div>
     </>
 );

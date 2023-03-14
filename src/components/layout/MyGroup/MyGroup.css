@@ -2,6 +2,10 @@
 #tes{
     display: none;
 }
+.groupnames2{
+    font-weight: 600;
+    margin: 20px 35px 0 35px;
+}
 .groupnamediv2{
     background-color: #D6D7DC50;
     margin:15px 15px 15px 15px;

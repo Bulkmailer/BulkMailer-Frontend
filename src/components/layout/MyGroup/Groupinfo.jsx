@@ -18,6 +18,8 @@ const[loading , setLoading] = useState(true);
 
 const list =useSelector((s)=>s.groupreducer);
 
+var name = localStorage.getItem("groupnameA");
+
 const dispatch=useDispatch();
 
 useEffect(()=>{
@@ -49,6 +51,7 @@ return(<>
 <img src={background} id='background'></img>
 <Navbar/>
 {(list1)?<h1 id='listhead'>Group Contacts</h1>:null}
+{(list1)?<p className='groupnames2'>Total No. Of Contacts : {list1.length}</p>:null}
 <div className="namesdiv">
 {(list1)?(list1.map((rest)=>getContact(rest))):<div id='nothing'><img src={nocontacts} id='nothingimg'></img><div id='btndiv'>
 <Link to='/contacts'><button id='formbtn10'>Add Contacts</button></Link>
