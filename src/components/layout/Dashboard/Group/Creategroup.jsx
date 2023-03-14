@@ -79,7 +79,7 @@ useEffect(() => {
     <h1 id='grouphead'>Create A Mailing Group</h1>
         <form id='flexform' onSubmit={handleSubmit}>
         <label htmlFor='title' id='formslabel'>Group title</label>
-        <input type='text' id='forminput2' placeholder='Enter Group Title' value={name} onChange={handleName} required></input>
+        <input type='text' id='forminput2' placeholder='Enter Group Title' value={name} onChange={handleName} required maxLength={40}></input>
         <img src={group} id="mailimg"></img>
         <p id='error5G'>Invalid Group Name</p>
         <p id='buttonpara'><button id='formbtn3' type='submit'>Create</button><Link to='/home'><button id='plike'>Cancel</button></Link></p>

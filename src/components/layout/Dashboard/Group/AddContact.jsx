@@ -124,7 +124,7 @@ function AddContacts(){
         <p id='mailerr'>Invalid Email Address</p>
         <img src={emailimg} id="mailimg"></img>
         <label htmlFor='title' id='formlabel'>Full Name</label>
-        <input type='text' id='forminput20' placeholder='Enter Fullname' required value={name} onChange={handleName}></input>
+        <input type='text' id='forminput20' placeholder='Enter Fullname' required value={name} onChange={handleName} maxLength={70}></input>
         <p id='mailerrA'>Invalid Name</p>
         <img src={names} id="mailimg"></img>
         <label htmlFor='title' id='formlabel'>Gender</label>

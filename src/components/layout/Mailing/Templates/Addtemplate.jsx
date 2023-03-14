@@ -56,7 +56,7 @@ return(
     <h1 id='formhead'>Add A Template</h1>
     <form id='formflexer' onSubmit={handleSubmit}>
         <label htmlFor='name' id='formlabel'>Template Name</label>
-        <input type='text' placeholder='Enter Template Name' id='forminput3' value={tempName} onChange={handleTempName}></input>
+        <input type='text' placeholder='Enter Template Name' id='forminput3' value={tempName} onChange={handleTempName} maxLength={20}></input>
         <img src={templateimg} id='mailimg'></img>
         <p id='error5F'>Invalid Template Name</p>
         <label htmlFor="from" id='formlabel'>Template code</label>

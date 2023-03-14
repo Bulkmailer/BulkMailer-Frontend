@@ -129,7 +129,7 @@ margin:10px 0px 10px 20px;
     background-color: #D6D7DC ;
     width:50vw;
     margin-top:320px;
-    padding:40px;
+    padding:40px 20px;
     position: fixed;
     border-radius:10px;
     margin-left:25%;
@@ -140,7 +140,7 @@ margin:10px 0px 10px 20px;
     background-color: #D6D7DC ;
     width:50vw;
     margin-top:320px;
-    padding:40px;
+    padding:40px 20px;
     position: fixed;
     border-radius:10px;
     margin-left:25%;
@@ -169,4 +169,12 @@ margin:10px 0px 10px 20px;
     #menu{
          display:block;
      } 
+     #logoutdiv{
+        width:80vw;
+        margin-left:9%;
+     }
+     #logoutdiv2{
+        width:80vw;
+        margin-left:9%;
+     }
 }

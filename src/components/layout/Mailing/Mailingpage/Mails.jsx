@@ -193,14 +193,14 @@ function Mails(){
          autoComplete="off" value={fromName} required></input> 
         <img src={fromimg} id='mailimg2A'></img>
         <label htmlFor="from" id='formlabel'>Subject</label>
-        <input type='text' placeholder='Enter Subject' id='forminput3A' value={subject} onChange={handleSubject} required></input>
+        <input type='text' placeholder='Enter Subject' id='forminput3A' value={subject} onChange={handleSubject} required maxLength={300}></input>
         <img src={subjectimg} id='mailimg'></img>
         <p id='error5D'>Invalid Subject</p>
         {(templatesid==null)?<><label htmlFor="from" id='formlabel'>Body</label>
         <textarea rows={5} cols={6} value={body} onChange={handleBody} required id='textarea2'></textarea>
         <img src={bodyimg} id='failimg'></img></>:null}    
         <label htmlFor="from" id='formlabel'>Company Name</label>
-        <input type='text' placeholder='Enter Company Name' id='forminput3A' value={company} onChange={handleCompany} required></input>
+        <input type='text' placeholder='Enter Company Name' id='forminput3A' value={company} onChange={handleCompany} required maxLength={10}></input>
         <img src={companyimg} id='mailimg'></img>
         <p id='error5E'>Invalid Company Name</p>
         <div>

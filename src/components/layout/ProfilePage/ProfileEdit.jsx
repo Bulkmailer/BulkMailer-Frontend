@@ -143,11 +143,11 @@ function EditProfile(){
         <div>
         <form id='flexform2' onSubmit={handleSubmit}>
         <label htmlFor='title' id='formlabel'>Username</label>
-        <input type='text' id='forminput20' required value={username} onChange={handleUsername}></input>
+        <input type='text' id='forminput20' required value={username} onChange={handleUsername} maxLength={20}></input>
         <img src={emailimg} id="mailimg"></img>
         <p id='error5B'>Invalid UserName</p>
         <label htmlFor='title' id='formlabel'>Full Name</label>
-        <input type='text' id='forminput20' placeholder={arr.name} required value={name} onChange={handleName}></input>
+        <input type='text' id='forminput20' placeholder={arr.name} required value={name} onChange={handleName} maxLength={30}></input>
         <img src={names} id="mailimg"></img>
         <p id='error5A'>Invalid Name</p>
         <label htmlFor='title' id='formlabel'>Mobile Number</label>
