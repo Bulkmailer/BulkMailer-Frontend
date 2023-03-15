@@ -200,6 +200,31 @@ const config ={
               setCheck(1);
       })
   }
+  export const editContactdata =( contactdata  ,setCheck , navigate) =>
+  async (dispatch)=>{
+    var accesstoken =localStorage.getItem("accesstokenb")
+  const config ={
+      headers:{
+        Authorization:`Bearer ${accesstoken}`,
+      }
+    }
+      await api.patch("/dashboard/view_group_data/" ,  contactdata , config)
+        .then((res)=>{
+          navigate("/groupinfo");
+            dispatch(
+                {type:'EditContact' ,
+                payload :res}
+                )
+                setCheck(1);
+            })
+        .catch((err)=>{
+            dispatch(
+                {type:'EditContact' ,
+                payload :err}
+                )
+                setCheck(1);
+        })
+    }
 
   export const deleteschedule =(deletegroupdata , setCheck) =>
   async (dispatch)=>{
@@ -427,7 +452,7 @@ const config ={
                 await api.post("/dashboard/template_view/" , tempdata , config)
                   .then((res)=>{
                       setLoading(false);
-                      navigate("/templates")
+                      navigate("/template")
                       dispatch(
                           {type:'Addtemp' ,
                           payload :res}

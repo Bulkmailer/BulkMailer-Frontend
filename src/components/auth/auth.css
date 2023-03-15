@@ -248,6 +248,20 @@ flex-direction: column;
     top:507px;
     display:none;
 }
+#passerr3A{
+    color:#D14444;
+    font-weight: 600;
+    position:absolute;
+    top:217px;
+    display:none;
+}
+#passerr3B{
+    color:#D14444;
+    font-weight: 600;
+    position:absolute;
+    top:315px;
+    display:none;
+}
 #passwrderr3{
     color:#D14444;
     font-weight: 600;

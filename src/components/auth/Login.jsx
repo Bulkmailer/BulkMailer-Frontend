@@ -106,6 +106,7 @@ useEffect(() => {
                 value={email}
                 placeholder="Enter Your Email"
                 onChange={handleMail}
+                maxLength={30}
                 required
               ></input>
               <img src={mailimg} id="mailimg"></img>

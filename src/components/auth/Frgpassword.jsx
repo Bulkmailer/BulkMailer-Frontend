@@ -75,7 +75,7 @@ function FrgPass() {
        <form onSubmit={handleSubmit} id='formtop'>
         <div id='formflex'>
        <label htmlFor="email" id='formlabel'>Email Address</label> 
-       <input type='text' id='forminput' value={email} placeholder='Enter Your Email Address' onChange={handleMail} required></input>
+       <input type='text' id='forminput' value={email} maxLength={30} placeholder='Enter Your Email Address' onChange={handleMail} required></input>
        <img src={mailimg} id='mailimg'></img>
        <p id='emailerr2'>Invalid Email Address</p>
        </div>

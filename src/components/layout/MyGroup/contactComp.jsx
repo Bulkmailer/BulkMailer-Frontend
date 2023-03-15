@@ -5,6 +5,7 @@ import FormData from 'form-data';
 import deleteitem from '../../../assets/delete.svg'
 import { deletecontact } from '../../../redux/actions/GroupAction';
 import { useDispatch } from 'react-redux';
+import editImg from '../../../assets/editContact.svg';
 
 function Contactname(props){
     const dispatch = useDispatch();
@@ -29,6 +30,12 @@ function Contactname(props){
         localStorage.setItem("contactid" , e.currentTarget.id);
         }
     
+    function handleEdit(e){
+        localStorage.setItem("contactmail" , e.currentTarget.id);
+        console.log(e.currentTarget.id);
+        navigate("/editcontacts");
+    }
+    
 return(
     <>
             <div id='askmenudiv2'>
@@ -44,6 +51,7 @@ return(
     <pre><p id='contactpara'><span className="groupnames">Email     :</span>  {props.email}</p></pre>
     <pre><p id='contactpara'><span className="groupnames">Gender  :</span>  {props.gender}</p></pre>
    <img src={deleteitem} className='deleteimg' id={props.id} onClick={handleDelete}></img>
+   <img src={editImg} className='deleteimg' id={props.email} onClick={handleEdit}></img>
    </div>
    </div>
     </>

@@ -35,9 +35,12 @@ const mssg =useSelector((state)=>state.authreducer);
 useEffect(()=>{
     console.log(check);
     if(check==1){
+      console.log(mssg.statusB);
+      if(mssg.statusB==400){
     toast.error(mssg.response5[0], {
         position: toast.POSITION.TOP_RIGHT
     });
+  }
   }
 } ,[check]);
 

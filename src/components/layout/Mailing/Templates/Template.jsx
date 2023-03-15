@@ -49,7 +49,7 @@ return (<>
 {(tempArr1)?(tempArr1.map((rest)=>view(rest))):<p>No templates</p>}
 </div>
 {/* <Link to='/addtemp'><button id='formbtn10'>Add new</button></Link> */}
-<p id='buttonpara'><Link to='/addtemp'><button id='formbtn3' type='submit'>Add New</button></Link><button id='plike' onClick={handleSkip}>Skip</button></p>
+<p id='buttonpara'><button id='plike' onClick={handleSkip}>Skip</button></p>
     </div>
 </>)
 }

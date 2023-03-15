@@ -25,10 +25,14 @@ const[show2 , setShow2]=useState(false);
 
 const [correctPass , setCorrectPass] = useState(false);
 const [correctRepass , setCorrectRepass] = useState(false);
+const [correctName , setCorrectName] = useState(false);
+const [correctUserName , setCorrectUserName] = useState(false);
 
 const [loading , setLoading] = useState(false);
 
 const rightPass =/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+const rightName = /^[a-zA-Z]+[\-'\s]?[a-zA-Z ]+$/;
+const rightUsername = /^\w[a-zA-Z@#0-9.]*$/;
 
 const dispatch = useDispatch();
 const fd = new FormData();
@@ -58,6 +62,26 @@ var email = localStorage.getItem("signupMail");
     }
     },[repass])
 
+    useEffect(() => {
+      if ((rightName).test(fullname)){
+        document.getElementById("passerr3A").style.display = "none";
+        setCorrectName(true);
+      } else if (fullname){
+        document.getElementById("passerr3A").style.display = "block";
+        setCorrectName(false);
+      }
+    }, [fullname]);
+
+    useEffect(() => {
+      if (rightUsername.test(username)) {
+        document.getElementById("passerr3B").style.display = "none";
+        setCorrectUserName(true);
+      } else if (username) {
+        document.getElementById("passerr3B").style.display = "block";
+        setCorrectUserName(false);
+      }
+    }, [username]);
+
 function showHide1() {
     setShow1(!show1);
   }
@@ -81,7 +105,7 @@ function handleRepass(e){
 
 function handleSubmit(e){
     e.preventDefault();
-    if(correctPass && correctRepass){
+    if(correctPass && correctRepass && correctName && correctUserName){
     setLoading(true);
     fd.append("email" , email);
     fd.append("user_name" , username);
@@ -103,11 +127,13 @@ function handleSubmit(e){
        <form onSubmit={handleSubmit}>
        <div id='formflex'>
        <label htmlFor="fullname" id='formlabel'>Full Name</label> 
-       <input type='text' id='forminput' placeholder='Enter Your Name' value={fullname} onChange={handleFullname} required></input>
+       <input type='text' id='forminput' placeholder='Enter Your Name' value={fullname} onChange={handleFullname} required maxLength={30}></input>
        <img src={names} id='mailimg'></img>
+       <p id='passerr3A'>Invalid Full Name</p>
        <label htmlFor="username" id='formlabel3'>Username</label> 
-       <input type='text' id='forminput' placeholder='Enter Your Username' value={username} onChange={handleUsername} required></input>
+       <input type='text' id='forminput' placeholder='Enter Your Username' maxLength={30} value={username} onChange={handleUsername} required></input>
        <img src={names} id='mailimg'></img>
+       <p id='passerr3B'>Invalid UserName</p>
        {show1 ? (
                 <FontAwesomeIcon
                   icon={faEye}

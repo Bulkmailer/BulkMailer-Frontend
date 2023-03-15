@@ -32,6 +32,7 @@ import TemplateComp from './components/layout/Mailing/Templates/TemplateComp';
 import AddTemplate from './components/layout/Mailing/Templates/Addtemplate';
 import FileUpload from './components/layout/Mailing/Mailingpage/FileUpload';
 import TemplatesShow from './components/layout/Mailing/Templates/TempShow';
+import EditContacts from './components/layout/MyGroup/ContactEdit';
 
 function App() {
   return (
@@ -68,8 +69,8 @@ function App() {
       <Route path="/schedule" exact element={<Schedule/>}></Route>
       <Route path="/addtemp" exact element={<AddTemplate/>}></Route>
       <Route path="/fileupload" exact element={<FileUpload/>}></Route>
-      <Route path="/template" exact element={<TemplatesShow/>}></Route>
-     
+      <Route path="/template" exact element={<TemplatesShow/>}></Route>    
+      <Route path="/editcontacts" exact element={<EditContacts/>}></Route>    
     </Routes>
   </Router>
   </>

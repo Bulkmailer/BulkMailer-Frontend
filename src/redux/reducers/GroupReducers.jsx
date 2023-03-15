@@ -34,6 +34,10 @@ if(action.payload.data){
             case "Delete" :{
                 console.log(action.payload);
             break;
+            }
+            case "EditContact" :{
+                console.log(action.payload);
+            break;
                 }
                 case "DeleteContact" :{
                     console.log(action.payload);

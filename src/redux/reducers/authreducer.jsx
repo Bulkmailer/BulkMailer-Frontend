@@ -6,7 +6,8 @@ const initial={
     response3:["a" , "b"],
     response4:["a" , "b"],
     response5:["a" , "b"],
-    response6:["a" , "b"]
+    response6:["a" , "b"] , 
+    statusB:""
 };
 const authreducer =(state=initial 
     , action)=>{
@@ -49,8 +50,17 @@ const authreducer =(state=initial
         case "LoginOtp" :{
         console.log(action.payload);
         console.log(action.payload.response.data.msg);
+        // if(action.payload.response.status==400){
+            console.log(action.payload.response.status)
+        // }
+        if(action.payload.response.status==400){
+            return {
+                statusB:action.payload.response.status,
+                response5:action.payload.response.data.msg 
+            }
+        }
         return{
-            response5:action.payload.response.data.msg
+            statusB:action.payload.response.status
             }
         }
         case "ResetPass" :{

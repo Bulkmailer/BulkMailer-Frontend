@@ -77,11 +77,13 @@ function Mails(){
     const emailArr1= useSelector((state)=>state.profilereducer)
 
     useEffect(()=>{
+        console.log(check);
     if(check==1){
      setGroupArr(groupArr1.initial)
     }
     },[check])
     useEffect(()=>{
+        console.log(check2)
         if(check2==1){
          setemailArr(emailArr1.response2);
         }
