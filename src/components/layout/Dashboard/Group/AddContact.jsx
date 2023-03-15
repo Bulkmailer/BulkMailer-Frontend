@@ -41,16 +41,18 @@ function AddContacts(){
       if(check==1){
         console.log(mssg);
         console.log(mssg.statusA);
+        if(mssg.statusA==400){
       toast.error(mssg.response2[0], {
           position: toast.POSITION.TOP_RIGHT}
       );
+        }
     }
   } ,[check]);
 
   useEffect(()=>{
     console.log(check2);
     if(check2==1){
-    toast.success("fvj", {
+    toast.success("Added Successfully", {
         position: toast.POSITION.TOP_RIGHT}
     );
   }
@@ -124,7 +126,7 @@ function AddContacts(){
         <p id='mailerr'>Invalid Email Address</p>
         <img src={emailimg} id="mailimg"></img>
         <label htmlFor='title' id='formlabel'>Full Name</label>
-        <input type='text' id='forminput20' placeholder='Enter Fullname' required value={name} onChange={handleName} maxLength={70}></input>
+        <input type='text' id='forminput20' placeholder='Enter Fullname' required value={name} onChange={handleName} maxLength={20}></input>
         <p id='mailerrA'>Invalid Name</p>
         <img src={names} id="mailimg"></img>
         <label htmlFor='title' id='formlabel'>Gender</label>

@@ -15,6 +15,8 @@ function MyGroup(){
     const [check , setCheck] = useState(0);
     const [loading , setLoading] = useState(true);
     const [groupArr , setGrouparr] = useState();
+    const [len, setLen] = useState();
+
     const dispatch = useDispatch();
     useEffect(()=>{
     dispatch(showgroup(setCheck , setLoading));
@@ -25,10 +27,12 @@ function MyGroup(){
     useEffect(()=>{
     if(check==1){
     setGrouparr(groupArr1.initial);
+    setLen(groupArr1.init)
     }
     },[check])
     
     function getGroup(grouparr) {
+    // setLen(groupArr.length)
         return (
           <Groupname
             id={grouparr.id}
@@ -42,7 +46,7 @@ return(<>
 <img src={background} id='background'></img>
 <Navbar />
 {(groupArr&&groupArr.length!=0)?<h1 id='listhead'>My Groups</h1>:null}
-{(groupArr&&groupArr.length!=0)?<p className='groupnames2'>Total No. Of Groups : {groupArr.length}</p>:null}
+{(groupArr&&groupArr.length!=0)?<p className='groupnames2'>Total No. Of Groups : {len}</p>:null}
 <div className="namesdiv">
 {(groupArr&&groupArr.length!=0)?<>{groupArr.map((rest)=>getGroup(rest))}</>:<div id='nothing'><img src={nogroups} id='nothingimg'></img><Link to='/creategroup'><div id='btndiv'><button id='formbtn9'>Add Groups</button></div></Link></div>}
 </div>

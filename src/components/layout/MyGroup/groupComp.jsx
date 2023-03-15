@@ -15,7 +15,7 @@ function Groupname(props){
     const dispatch = useDispatch();
     const fd = new FormData();
     var navigate = useNavigate();
-    
+
     const [check , setCheck] = useState(0);
 
     function groupclick(e){

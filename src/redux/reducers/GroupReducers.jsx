@@ -46,8 +46,13 @@ if(action.payload.data){
             case "AddContacts":{
                 console.log(action.payload);
                 console.log(action.payload.status);
+                if(action.payload.status==201){
+                    return{
+                        statusA:action.payload.status,
+                    }  
+                }
                 return{
-                    statusA:action.payload.status,
+                    statusA:action.payload.response.status,
                     response2:action.payload.response.data.msg
                 }
             }

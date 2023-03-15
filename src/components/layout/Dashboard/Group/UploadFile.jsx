@@ -19,9 +19,11 @@ function Uploads(){
     const [loading , setLoading] = useState(false);
     const [check , setCheck] = useState(0);
     const [bool , setbool] = useState(false);
-    const [arr , setArr] = useState([]);
+    const [array , setArray] = useState([]);
+   let arr=[];
 
     var group = localStorage.getItem("groupid");
+    var j , k;
 
     const mssg = useSelector((s)=>s.groupreducer);
     useEffect(()=>{
@@ -52,29 +54,79 @@ function Uploads(){
 console.log(file);
     }
 
+    useEffect(()=>{
+      const uniqueContacts = Array.from(new Set(array.map(a => a.email)))
+      .map(email => {
+        return (array.find(a => a.email === email))
+      })
+     console.log(uniqueContacts);
+
+// let newArr=[];
+// let uniqueObj={}
+// for(let j in array){
+//   const objEmail = array[j]['email'];
+//   uniqueObj[objEmail] = array[j];
+// }
+// for( j in uniqueObj){
+//   newArr.push(uniqueObj[j]);
+// }
+// console.log(newArr);
+
+     
+     const resultFinal = uniqueContacts.map(Object.values);
+         let i=1;
+         // let i=0;
+     (resultFinal).map((data , index)=>{
+     if(i==0){
+       let table = document.getElementById('tb1-data');
+       generateTableHead(table , data);
+     }
+     else{
+       let table = document.getElementById('tb1-data');
+       generateTableRows(table , data);
+     }
+     i++;
+         });
+       }
+       ,[array])
+
 function handleFiles(e){
 setbool(true);
 console.log(bool);
 setFile(e.target.files[0]);
 Papa.parse(e.target.files[0],{
-  header:false,
+  header:true,
   download:true, 
   skipEmptyLines:true ,
   complete:function (result){
     console.log(result);
-    setArr(result);
-    let i=0;
-result.data.map((data , index)=>{
-if(i==0){
-  let table = document.getElementById('tb1-data');
-  generateTableHead(table , data);
-}
-else{
-  let table = document.getElementById('tb1-data');
-  generateTableRows(table , data);
-}
-i++;
-    });
+    setArray(result.data);
+
+    // let uniqueObjectArr = [
+    //   ...new Map(result.data.map((item)=>[item["email"] , item])).values() ,
+    // ];
+    // console.log(uniqueObjectArr);
+
+//   const uniqueContacts = Array.from(new Set(result.data.map(a => a.email)))
+//  .map(email => {
+//    return result.data.find(a => a.email === email)
+//  })
+// console.log(uniqueContacts);
+
+// const resultFinal = uniqueContacts.map(Object.values);
+//     let i=1;
+//     // let i=0;
+// (resultFinal).map((data , index)=>{
+// if(i==0){
+//   let table = document.getElementById('tb1-data');
+//   generateTableHead(table , data);
+// }
+// else{
+//   let table = document.getElementById('tb1-data');
+//   generateTableRows(table , data);
+// }
+// i++;
+//     });
   }
 })
   }
@@ -100,7 +152,7 @@ i++;
   }
 
     return(<>
-    {console.log(arr)}
+    {console.log(array)}
           <img src={background} id='background'></img>
     {loading ? (
         <div id="loader">
