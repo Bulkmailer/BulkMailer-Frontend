@@ -61,11 +61,17 @@
     #flexform{
         margin:0px 6vw 0 6vw;
     }
+    #error5G{
+        top:405px;
+    }
 }
 @media(max-width:720px){
     #create{
      display: none;
     }   
+    #error5G{
+        top:365px;
+    }
     #grouphead{
         margin:120px 6vw 0 8vw;
          }
@@ -360,6 +366,9 @@ margin-top:200px;
     #forminput20{
         width:85vw;
     }
+    #mailerrA{
+        top:400px;
+    }
     #forminput20A{
         width:85vw;
     }
@@ -405,6 +414,7 @@ width:10px;
     display:none;
 }
 #imgdiv{
+    word-wrap: break-word;
     width:40vw;
    border:1px dashed black;
    text-align:center;

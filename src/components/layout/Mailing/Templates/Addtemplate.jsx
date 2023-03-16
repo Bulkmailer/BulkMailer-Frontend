@@ -8,6 +8,7 @@ import { addtemp } from "../../../../redux/actions/GroupAction";
 import background from '../../../../assets/background.jpg';
 import { useEffect } from "react";
 import uploads from '../../../../assets/uploads.svg';
+import templateimgs from '../../../../assets/templatesimg.svg';
 
 function AddTemplate(){
 
@@ -63,28 +64,30 @@ return(
     <>
       <img src={background} id='background'></img>
     <Navbar />
-   <div id='marginer'>
+    <div id='flexkro'>
+   <div id='marginerA'>
     <h1 id='formhead'>Add A Template</h1>
     <form id='formflexer' onSubmit={handleSubmit}>
         <label htmlFor='name' id='formlabel'>Template Name</label>
-        <input type='text' placeholder='Enter Template Name' id='forminput3' value={tempName} onChange={handleTempName} maxLength={20}></input>
+        <input type='text' placeholder='Enter Template Name' id='forminput3B' value={tempName} onChange={handleTempName} maxLength={20}></input>
         <img src={templateimg} id='mailimg'></img>
         <p id='error5F'>Invalid Template Name</p>
         <label htmlFor="from" id='formlabel'>Template File</label>
-        {(file.length==0)?<label htmlFor="file-input">
+        {(file.length==0)?<div id='fixer'><label htmlFor="file-input">
        <div id='imgdiv'>
         <img src={uploads} id='upimg'></img>
         <p id='upload'>Upload file here</p>
        </div>
-    </label>:<><p>{name}</p> <div>
+    </label></div>:<><div id='fixer'><div id='imgdiv'><p id='marginp'>{name}</p></div></div><div>
         <button type='submit' id='formbtn10'>Next</button>
         </div></>}
     <input type="file" name='file' multiple accept=".html" id='file-input' onChange={handleFiles}/>
         {/* <label htmlFor="from" id='formlabel'>Template code</label>
         <p>Enter your template html code here..</p>
         <textarea rows={5} cols={6} required id='textarea2' value={temp} onChange={handleTemp}></textarea> */}
-       
     </form>
+</div>
+<img src={templateimgs} id='mailbox2'></img>
 </div>
     </>
 )

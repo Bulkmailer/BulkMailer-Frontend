@@ -3,14 +3,31 @@
     color:#00000080;
     height:100px;
 }
+#marginp{
+    padding:0 20px;
+}
 #templatesdiv{
     margin:40px 40px;
+}
+#forminput3B{
+    background-color: #D6D7DC50;
+    border:0.5px solid black;
+    margin-top:1px;
+    border-radius:7px;
+    width:41vw;
+    height:50px;
+    font-size: 1rem;
+    font-weight: 600;
+    padding-left:42px;
 }
 #error5F{
     color:#D14444;
     position:absolute;
     top:265px;
     display: none;
+}
+#fixer{
+    margin-left:-6vw;
 }
 .template{
     border:2px dotted black;
@@ -42,6 +59,9 @@
     cursor: pointer;
     margin-right:30px;
 }
+#marginerA{
+    margin-left:40px;
+}
 @media(max-width:1262px){
     #templateflex{
        flex-wrap:wrap;
@@ -62,6 +82,18 @@
 @media(max-width:780px){
     #formbtn30{
        width:30vw;
+    }
+}
+@media(max-width:545px){
+    #forminput3B{
+        width:87vw;
+        /* margin-left:1vw; */
+    }
+    #mailbox2{
+        display: none;
+    }
+    #marginerA{
+        margin:0 6vw;
     }
 }
 @media(max-width:541px){

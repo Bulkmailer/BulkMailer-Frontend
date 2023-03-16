@@ -104,7 +104,14 @@ function Mails(){
         }
 
     function showdiv(){
+        // if(groupArr.length!=0){
    document.getElementById("groupsdiv").style.display="block";
+        // } 
+        if(groupArr.length==0){
+    toast.error("Please add a group first", {
+        position: toast.POSITION.TOP_RIGHT
+    });
+   }
     }
     function showdiv2(){
         document.getElementById("groupsdiv2").style.display="block";
@@ -136,8 +143,8 @@ function Mails(){
     }
     function handleSubmit(e){
         e.preventDefault();
-        if(correctSubject && correctCompanyName){
         if(from && group && company && subject){
+        if(correctSubject && correctCompanyName){
         console.log("hey")
         setCheck(0);
         console.log(company , subject ,body , from, group , campaign , scheduleMail);
@@ -152,11 +159,11 @@ function Mails(){
         fd.append("scheduleMail" , scheduleMail);
         dispatch(sendmaildata( setCheck , fd , navigate));
         }
-        else{
-            toast.error("Please Fill in all the fields first", {
-                position: toast.POSITION.TOP_RIGHT
-            });
-        }
+    }
+    else{
+        toast.error("Please Fill in all the fields first", {
+            position: toast.POSITION.TOP_RIGHT
+        });
     }
     }
     function setValue(){
@@ -190,7 +197,7 @@ function Mails(){
         <input type='text' placeholder='--select--' id='forminput3A' onClick={showdiv} autoComplete="off" value={groupname} required></input>
         <img src={toimg} id='mailimg'></img>
         <label htmlFor="from" id='formlabel'>From</label>
-        <input type='text' placeholder='--select--' id='forminput3' 
+        <input type='text' placeholder='--select--' id='forminput3A' 
         onClick={showdiv2} 
          autoComplete="off" value={fromName} required></input> 
         <img src={fromimg} id='mailimg2A'></img>

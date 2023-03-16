@@ -96,6 +96,12 @@ function AddContacts(){
      function handleSubmit(e){
       e.preventDefault();
       if(correctMail && correctName){
+      if(!gender){
+        toast.error("Select a Gender", {
+          position: toast.POSITION.TOP_RIGHT}
+      );
+      }
+      else{
       setLoading(true);
       setCheck(0);
       fd.append("email" , email);
@@ -106,6 +112,7 @@ function AddContacts(){
       setEmail('');
       setName('');
       document.getElementById('forminput20A').selectedIndex=0;
+      }
       }
      }   
     return(<>
@@ -131,7 +138,7 @@ function AddContacts(){
         <img src={names} id="mailimg"></img>
         <label htmlFor='title' id='formlabel'>Gender</label>
         <select name="gender" className='gender' id='forminput20A' onChange={handleGender}>
-              <option value='0'>--select--</option>
+              <option value="">--select--</option>
               <option value="Male">Male</option>
               <option value="Female">Female</option>
               {/* <option value="Binary">Binary</option>

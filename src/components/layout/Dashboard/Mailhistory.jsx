@@ -25,6 +25,7 @@ const list =useSelector((s)=>s.groupreducer);
         setList1(list.mailList);
         }
         },[check])
+
         function getMail(list1) {
             return (
               <HistoryComp

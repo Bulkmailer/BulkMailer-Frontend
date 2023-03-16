@@ -20,7 +20,9 @@ function Uploads(){
     const [check , setCheck] = useState(0);
     const [bool , setbool] = useState(false);
     const [array , setArray] = useState([]);
+    const [newArray , setNewArray] = useState([]);
    let arr=[];
+ let uniqueContacts=[];
 
     var group = localStorage.getItem("groupid");
     var j , k;
@@ -46,20 +48,23 @@ function Uploads(){
     console.log(group);
     setLoading(true);
     setCheck(0);
-    fd.append("file" , file);
-    fd.append("group" , group);
-    dispatch(uploaddata(fd, setLoading , navigate , setCheck));
+    const data ={
+    "group":group , 
+    "data[]":newArray
+    }
+    dispatch(uploaddata(data, setLoading , navigate , setCheck));
     }
     function handleCancel(){
 console.log(file);
     }
 
     useEffect(()=>{
-      const uniqueContacts = Array.from(new Set(array.map(a => a.email)))
+      uniqueContacts = Array.from(new Set(array.map(a => a.email)))
       .map(email => {
         return (array.find(a => a.email === email))
       })
      console.log(uniqueContacts);
+     setNewArray( uniqueContacts);
 
 // let newArr=[];
 // let uniqueObj={}
@@ -152,7 +157,7 @@ Papa.parse(e.target.files[0],{
   }
 
     return(<>
-    {console.log(array)}
+    {console.log(newArray)}
           <img src={background} id='background'></img>
     {loading ? (
         <div id="loader">
