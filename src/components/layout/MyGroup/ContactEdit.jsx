@@ -36,6 +36,23 @@ function EditContacts(){
 
    const [loading, setLoading] = useState(false);
    const [check, setCheck] = useState(0);
+   const [check2, setCheck2] = useState(0);
+
+  //  const mssg = useSelector((state)=>state.groupreducer);
+
+   useEffect(()=>{
+    if(check==1){
+      setLoading(false);
+    }
+   },[check])
+
+   useEffect(()=>{
+    if(check2==1){
+      toast.error("Email Already Exist in this Group", {
+        position: toast.POSITION.TOP_RIGHT
+    });
+    }
+   },[check2])
 
    const dispatch = useDispatch();
    const navigate= useNavigate();
@@ -85,7 +102,7 @@ function EditContacts(){
       fd.append("name" , name);
       fd.append("id" , id);
       fd.append("gender" , gender);
-      dispatch(editContactdata(fd,  setCheck , navigate));
+      dispatch(editContactdata(fd,  setCheck , navigate , setCheck2));
       }
      }   
 

@@ -200,7 +200,7 @@ const config ={
               setCheck(1);
       })
   }
-  export const editContactdata =( contactdata  ,setCheck , navigate) =>
+  export const editContactdata =( contactdata  ,setCheck , navigate , setCheck2) =>
   async (dispatch)=>{
     var accesstoken =localStorage.getItem("accesstokenb")
   const config ={
@@ -216,13 +216,15 @@ const config ={
                 payload :res}
                 )
                 setCheck(1);
+                setCheck2(0);
             })
         .catch((err)=>{
+          setCheck(1);
+          setCheck2(1);
             dispatch(
                 {type:'EditContact' ,
                 payload :err}
                 )
-                setCheck(1);
         })
     }
 

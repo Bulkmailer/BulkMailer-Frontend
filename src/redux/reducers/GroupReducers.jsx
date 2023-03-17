@@ -9,7 +9,7 @@ status2:"" ,
 status3:"" , 
 temp:"",
 delete:"",
-statusA:""
+statusA:""  ,
 };
 const groupreducer =(state=initial 
     , action)=>{
@@ -23,7 +23,6 @@ if(action.payload.data){
     return{
         response:action.payload.response.data.msg
     }
-
         }
         case "Upload" :{
             console.log(action.payload);
@@ -35,10 +34,6 @@ if(action.payload.data){
                 console.log(action.payload);
             break;
             }
-            case "EditContact" :{
-                console.log(action.payload);
-            break;
-                }
                 case "DeleteContact" :{
                     console.log(action.payload);
                 break;

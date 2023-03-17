@@ -208,6 +208,16 @@
 #flexkro{
     display:flex;
 }
+@media(max-width:1331px){
+    #error1{
+        top:405px;
+    }
+}
+@media(max-width:720px){
+    #error1{
+        top:325px;
+    }
+}
 @media(max-width:545px){
     #plike2{
         margin:10px 6vw;

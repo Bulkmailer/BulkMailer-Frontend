@@ -68,6 +68,9 @@
     #create9{
      display: none;
     }   
+    #error5C{
+        top:365px;
+    }
     #groupheadA{
         margin:120px 6vw 0 8vw;
          }
@@ -137,12 +140,17 @@ margin-left:6vw;
        display: none;
         }
 }
+@media(max-width:499px){
+    #previewImg{
+        width:87vw;
+     }
+}
 @media(max-width:380px){
     #intropara3A{
         width:300px;
     }
     #formbtn32{
-        width:60vw;
+        width:40vw;
     }
 }
 @media(max-width:313px){

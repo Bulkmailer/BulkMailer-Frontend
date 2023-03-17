@@ -21,11 +21,9 @@ function Uploads(){
     const [bool , setbool] = useState(false);
     const [array , setArray] = useState([]);
     const [newArray , setNewArray] = useState([]);
-   let arr=[];
- let uniqueContacts=[];
+    let uniqueContacts=[];
 
     var group = localStorage.getItem("groupid");
-    var j , k;
 
     const mssg = useSelector((s)=>s.groupreducer);
     useEffect(()=>{
@@ -65,18 +63,6 @@ console.log(file);
       })
      console.log(uniqueContacts);
      setNewArray( uniqueContacts);
-
-// let newArr=[];
-// let uniqueObj={}
-// for(let j in array){
-//   const objEmail = array[j]['email'];
-//   uniqueObj[objEmail] = array[j];
-// }
-// for( j in uniqueObj){
-//   newArr.push(uniqueObj[j]);
-// }
-// console.log(newArr);
-
      
      const resultFinal = uniqueContacts.map(Object.values);
          let i=1;
@@ -106,32 +92,6 @@ Papa.parse(e.target.files[0],{
   complete:function (result){
     console.log(result);
     setArray(result.data);
-
-    // let uniqueObjectArr = [
-    //   ...new Map(result.data.map((item)=>[item["email"] , item])).values() ,
-    // ];
-    // console.log(uniqueObjectArr);
-
-//   const uniqueContacts = Array.from(new Set(result.data.map(a => a.email)))
-//  .map(email => {
-//    return result.data.find(a => a.email === email)
-//  })
-// console.log(uniqueContacts);
-
-// const resultFinal = uniqueContacts.map(Object.values);
-//     let i=1;
-//     // let i=0;
-// (resultFinal).map((data , index)=>{
-// if(i==0){
-//   let table = document.getElementById('tb1-data');
-//   generateTableHead(table , data);
-// }
-// else{
-//   let table = document.getElementById('tb1-data');
-//   generateTableRows(table , data);
-// }
-// i++;
-//     });
   }
 })
   }

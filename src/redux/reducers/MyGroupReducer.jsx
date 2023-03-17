@@ -12,6 +12,11 @@ const mygroupreducer =(state=initial
        initial:action.payload.data , 
        init:action.payload.data.length
         }
+        case "EditContact" :{
+         console.log(action.payload);
+         console.log(action.payload.response.data.msg);
+     break;
+         }
          default: return state;
     } 
  }
