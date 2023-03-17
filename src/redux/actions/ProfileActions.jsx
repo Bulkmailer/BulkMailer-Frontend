@@ -50,7 +50,7 @@ const config ={
         })
     }
 
-    export const apppassdata =( apppassdata , setCheck , setLoading) =>
+    export const apppassdata =( apppassdata , setCheck ,navigate, setLoading) =>
     async (dispatch)=>{
       var accesstoken =localStorage.getItem("accesstokenb")
     const config ={
@@ -62,6 +62,7 @@ const config ={
           .then((res)=>{
             setCheck(1);
             setLoading(false);
+            navigate("profilepage");
               dispatch(
                   {type:'AddPass' ,
                   payload :res}
@@ -70,6 +71,7 @@ const config ={
               })
           .catch((err)=>{
             setCheck(1);
+            // setLoading(false);
               dispatch(
                   {type:'AddPass' ,
                   payload :err}

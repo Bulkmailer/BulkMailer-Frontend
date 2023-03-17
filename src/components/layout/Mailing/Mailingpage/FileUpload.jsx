@@ -49,7 +49,7 @@ function FileUpload(){
     <h1 id='pagehead2'>Upload a File</h1>   
     <p id='intropara3A'>Select a file to be attached with your email</p>
 
-    {(file.length!=0)?<form><div id='imgdiv2'><img src={file2} id='previewImg' alt={name}></img></div><p id='buttonpara'><button id='formbtn32' type='submit' onClick={handleSubmit}>Upload</button><Link to='/mailingpage'><button id='plike'>Skip</button></Link><button id='plike' type='submit'>Cancel</button></p></form>:<><label htmlFor="file-input">
+    {(file.length!=0)?<form><img src={file2} id='previewImg' alt={name}></img><p id='buttonpara'><button id='formbtn32' type='submit' onClick={handleSubmit}>Upload</button><Link to='/mailingpage'><button id='plike'>Skip</button></Link><button id='plike' type='submit'>Cancel</button></p></form>:<><label htmlFor="file-input">
        <div id='imgdiv'>
         <img src={uploads} id='upimg'></img>
         <p id='upload'>Upload file here</p>

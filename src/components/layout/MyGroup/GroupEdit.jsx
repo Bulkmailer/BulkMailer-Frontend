@@ -63,8 +63,13 @@ useEffect(() => {
     setLoading(true);
     setCheck(0);
     console.log(object.id);
+    if(name!=object.name){
     fd.append("id" , object.id);
     fd.append("name" , name);
+    }
+    else{
+        fd.append("id" , object.id);
+    }
     dispatch(editGrouptdata(fd,  setCheck , navigate , setCheck2 , setLoading));
     }
   }

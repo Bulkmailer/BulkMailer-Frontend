@@ -425,8 +425,8 @@ width:10px;
     width:40vw;
    border:1px dashed black;
    text-align:center;
-   height:270px;
-   overflow: hidden;
+   /* height:270px; */
+   /* overflow: hidden; */
    /* padding:100px 0; */
    margin:10px 6vw 0 6vw;
 }

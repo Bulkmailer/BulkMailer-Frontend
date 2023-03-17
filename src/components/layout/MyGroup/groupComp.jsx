@@ -61,7 +61,9 @@ return(
     <p className='groupnames' id={props.id}> {props.groupname}</p>
    <img src={deleteitem} className='deleteimg' id={props.id} onClick={handleDelete}></img>
    <img src={editImg} className='deleteimg' id={props.groupname} onClick={handleEdit}></img>
-   <FontAwesomeIcon icon={faEye} id={props.id} className="eyeimg" onClick={groupclick} />
+   <FontAwesomeIcon icon={faEye} 
+   id={props.id}
+    className="eyeimg" onClick={groupclick} />
    </div>
     </>
 );

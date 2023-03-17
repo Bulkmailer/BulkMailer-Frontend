@@ -129,8 +129,8 @@ margin-left:6vw;
     margin-right:5vw;
 }
 #previewImg{
-   width:40vw;
-   height:270px;
+   width:35vw;
+   margin:20px 6vw 0 6vw;
 }
 @media(max-width:545px){
     #formbtn32{

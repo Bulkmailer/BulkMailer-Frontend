@@ -60,7 +60,7 @@ function AddPassword(){
     setCheck(0);
     fd.append("app_password" , password);
     fd.append("email" , email);
-    dispatch(apppassdata(fd, setCheck))
+    dispatch(apppassdata(fd, setCheck , navigate , setLoading))
   }
 
     return(
