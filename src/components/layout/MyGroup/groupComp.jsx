@@ -10,6 +10,7 @@ import { faEye } from '@fortawesome/fontawesome-free-solid';
 import { useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import editImg from '../../../assets/editContact.svg';
 
 function Groupname(props){
     const dispatch = useDispatch();
@@ -41,6 +42,12 @@ function handleConfirm(){
     localStorage.setItem('deletegroup' ,e.currentTarget.id);
     }
 
+    function handleEdit(e){
+        localStorage.setItem("groupID" , e.currentTarget.id);
+        console.log(e.currentTarget.id);
+        navigate("/editgroup");
+    }
+
 return(
     <>
             <div id='askmenudiv2'>
@@ -53,7 +60,8 @@ return(
    <div className="groupnamediv2"  id={props.id}>
     <p className='groupnames' id={props.id}> {props.groupname}</p>
    <img src={deleteitem} className='deleteimg' id={props.id} onClick={handleDelete}></img>
-   <FontAwesomeIcon icon={faEye} id={props.id} className={props.groupname} onClick={groupclick} />
+   <img src={editImg} className='deleteimg' id={props.groupname} onClick={handleEdit}></img>
+   <FontAwesomeIcon icon={faEye} id={props.id} className="eyeimg" onClick={groupclick} />
    </div>
     </>
 );

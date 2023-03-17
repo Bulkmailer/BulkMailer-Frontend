@@ -10,6 +10,7 @@ status3:"" ,
 temp:"",
 delete:"",
 statusA:""  ,
+statusB:"" ,
 };
 const groupreducer =(state=initial 
     , action)=>{
@@ -38,6 +39,10 @@ if(action.payload.data){
                     console.log(action.payload);
                 break;
                     }
+                    case "EditGroup" :{
+                        console.log(action.payload);
+                    break;
+                        }
                     case "DeleteSchedule" :{
                         console.log(action.payload);
                     break;
@@ -65,7 +70,10 @@ if(action.payload.data){
             }
             case "Addtemp":{
                 console.log(action.payload);
-               return null ;
+                console.log(action.payload.response.data.name);
+               return {
+                statusB:action.payload.response.data.name
+               } ;
             }
             case "Templateview":{
                 console.log(action.payload);

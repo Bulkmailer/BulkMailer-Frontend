@@ -55,6 +55,35 @@ const config ={
               setCheck(1);
       })
   }
+   export const editGrouptdata =( groupdata  ,setCheck , navigate , setCheck2 , setLoading) =>
+  async (dispatch)=>{
+    var accesstoken =localStorage.getItem("accesstokenb")
+  const config ={
+      headers:{
+        Authorization:`Bearer ${accesstoken}`,
+      }
+    }
+      await api.patch("/dashboard/create_group/" ,  groupdata , config)
+        .then((res)=>{
+          navigate("/mygrp");
+            dispatch(
+                {type:'EditGroup' ,
+                payload :res}
+                )
+                setCheck(1);
+                setCheck2(0);
+                setLoading(false);
+            })
+        .catch((err)=>{
+          setCheck(1);
+          setCheck2(1);
+          setLoading(false);
+            dispatch(
+                {type:'EditGroup' ,
+                payload :err}
+                )
+        })
+    }
 
   export const uploaddata =(uploaddata , setLoading , navigate ,setCheck) =>
   async (dispatch)=>{

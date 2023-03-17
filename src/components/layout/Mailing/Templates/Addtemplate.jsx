@@ -8,6 +8,9 @@ import { addtemp } from "../../../../redux/actions/GroupAction";
 import background from '../../../../assets/background.jpg';
 import { useEffect } from "react";
 import uploads from '../../../../assets/uploads.svg';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { useSelector } from "react-redux";
 import templateimgs from '../../../../assets/templatesimg.svg';
 
 function AddTemplate(){
@@ -36,6 +39,20 @@ useEffect(() => {
       setCorrectTemplateName(false);
     }
   }, [tempName]);
+
+  const mssg = useSelector((state)=>state.groupreducer);
+  
+  useEffect(()=>{
+      // console.log(check);
+      if(check==1){
+        console.log(mssg.statusB);
+        if(mssg.statusB){
+      toast.error("Template Model With this Name Already Exist", {
+          position: toast.POSITION.TOP_RIGHT}
+      );
+        }
+    }
+  } ,[check]);
 
 // function handleTemp(e){
 // setTemp(e.target.value);
@@ -86,6 +103,7 @@ return(
         <p>Enter your template html code here..</p>
         <textarea rows={5} cols={6} required id='textarea2' value={temp} onChange={handleTemp}></textarea> */}
     </form>
+    <ToastContainer />
 </div>
 <img src={templateimgs} id='mailbox2'></img>
 </div>
