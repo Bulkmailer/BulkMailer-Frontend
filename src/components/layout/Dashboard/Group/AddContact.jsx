@@ -147,7 +147,7 @@ function AddContacts(){
         <img src={genderimg} id="mailimg"></img>
         <div id='buttondiv'>
       <button id='formbtn31' type='submit'>Save & Add next</button>
-      <Link to='/mails'><button id='formbtn31'>Close</button></Link>
+      <Link to='/groupinfo'><button id='formbtn31'>Close</button></Link>
       </div>
         </form>
         <ToastContainer />

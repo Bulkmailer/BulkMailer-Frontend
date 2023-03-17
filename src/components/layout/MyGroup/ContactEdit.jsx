@@ -96,14 +96,28 @@ function EditContacts(){
      function handleSubmit(e){
       e.preventDefault();
       if(correctMail && correctName){
+        if(!gender){
+          toast.error("Select a Gender", {
+            position: toast.POSITION.TOP_RIGHT}
+        );
+        }
+        else{
       setLoading(true);
       setCheck(0);
+      if(email!=object.email){
       fd.append("email" , email);
       fd.append("name" , name);
       fd.append("id" , id);
       fd.append("gender" , gender);
+      }
+      else{
+        fd.append("name" , name);
+        fd.append("id" , id);
+        fd.append("gender" , gender);
+      }
       dispatch(editContactdata(fd,  setCheck , navigate , setCheck2));
       }
+    }
      }   
 
     return (<>
@@ -129,7 +143,7 @@ function EditContacts(){
         <img src={names} id="mailimg"></img>
         <label htmlFor='title' id='formlabel'>Gender</label>
         <select name="gender" className='gender' id='forminput20A' onChange={handleGender}>
-              <option value='0'>--select--</option>
+              <option value=''>--select--</option>
               <option value="Male">Male</option>
               <option value="Female">Female</option>
               {/* <option value="Binary">Binary</option>

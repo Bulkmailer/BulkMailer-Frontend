@@ -47,7 +47,7 @@ useEffect(() => {
   useEffect(()=>{
       console.log(check);
       if(check==1){
-      toast.error(mssg.response[0], {
+      toast.error(mssg.response, {
           position: toast.POSITION.TOP_RIGHT
       });
     }
