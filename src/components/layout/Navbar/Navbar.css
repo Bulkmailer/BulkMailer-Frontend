@@ -125,6 +125,18 @@ margin:10px 0px 10px 20px;
     position: absolute;
     z-index: 2;
 }
+#askmenudiv3{
+    margin-top:-200px;
+    margin-left:-40px;
+    height:150vh;
+    width:100vw;
+    display:none ;
+    text-align: center;
+    position: fixed;
+    background-color: rgba(255 , 255 , 255 ,0.5);
+    position: absolute;
+    z-index: 2;
+}
 #logoutdiv2{
     background-color: #D6D7DC ;
     width:50vw;
@@ -177,4 +189,22 @@ margin:10px 0px 10px 20px;
         width:80vw;
         margin-left:9%;
      }
+}
+@media(max-width:541px){
+    #askmenudiv3{
+        margin-left:-25vw;
+        width:100vw;
+    }
+}
+@media(max-width:423px){
+    #askmenudiv3{
+        margin-left:-22vw;
+        /* width:100vw; */
+    }
+}
+@media(max-width:370px){
+    #askmenudiv3{
+        margin-left:-18vw;
+        /* width:100vw; */
+    }
 }

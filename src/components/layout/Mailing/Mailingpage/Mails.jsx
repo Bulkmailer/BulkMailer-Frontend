@@ -19,6 +19,7 @@ import mailimg from '../../../../assets/mailimg.svg'
 import background from '../../../../assets/background.jpg'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import * as ReactBootStrap from "react-bootstrap";
 
 function Mails(){
     var a=1;
@@ -45,6 +46,7 @@ function Mails(){
 
     const[correctSubject , setCorrectSubject]= useState(false);
     const[correctCompanyName , setCorrectCompanyName]= useState(false);
+    const[loading , setLoading]= useState(false);
 
     const rightSubject=/^[^\s]+(\s+[^\s]+)*$/;
 
@@ -157,7 +159,7 @@ function Mails(){
         fd.append("id" , campaign);
         fd.append("_template" , templatesid);
         fd.append("scheduleMail" , scheduleMail);
-        dispatch(sendmaildata( setCheck , fd , navigate));
+        dispatch(sendmaildata( setCheck , fd , navigate , setLoading));
         }
     }
     else{
@@ -185,6 +187,11 @@ function Mails(){
     }
     return(
         <>
+        {loading ? (
+        <div id="loader">
+          <ReactBootStrap.Spinner animation="border" id="spinner" />
+        </div>
+      ) : null}
             <img src={background} id='background'></img>
 <Navbar />
 <div id='groupsdiv'>{groupArr.map((rest)=>getGroup(rest))}</div>

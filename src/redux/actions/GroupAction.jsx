@@ -96,7 +96,7 @@ const config ={
       await api.post("/dashboard/bulk_add/" , uploaddata , config)
         .then((res)=>{
             setLoading(false);
-            navigate("/mails")
+            navigate("/groupinfo")
             dispatch(
                 {type:'Upload' ,
                 payload :res}
@@ -229,6 +229,7 @@ const config ={
               setCheck(1);
       })
   }
+
   export const editContactdata =( contactdata  ,setCheck , navigate , setCheck2) =>
   async (dispatch)=>{
     var accesstoken =localStorage.getItem("accesstokenb")
@@ -256,6 +257,35 @@ const config ={
                 )
         })
     }
+
+    export const deleteTemplate =(deletetempdata , setCheck , navigate) =>
+    async (dispatch)=>{
+      var accesstoken =localStorage.getItem("accesstokenb")
+    const config ={
+          Authorization:`Bearer ${accesstoken}`,
+      }
+        await api.delete("/dashboard/template_view/", {
+          headers:config , 
+          data : deletetempdata
+        })
+          .then((res)=>{
+              dispatch(
+                  {
+                    type:'DeleteTemp',
+                  payload :res
+                }
+                  )
+                  setCheck(1);
+                  // navigate("/groupinfo");
+              })
+          .catch((err)=>{
+              dispatch(
+                  {type:'DeleteTemp' ,
+                  payload :err}
+                  )
+                  setCheck(1);
+          })
+      }
 
   export const deleteschedule =(deletegroupdata , setCheck) =>
   async (dispatch)=>{
@@ -315,7 +345,7 @@ const config ={
                     setLoading(false);
             })
         }
-        export const sendmaildata =( setCheck , sendmail , navigate) =>
+        export const sendmaildata =( setCheck , sendmail , navigate , setLoading) =>
         async (dispatch)=>{
           var accesstoken =localStorage.getItem("accesstokenb");
         const config ={
@@ -332,6 +362,7 @@ const config ={
                       payload :res}
                       )
                       setCheck(1);
+                      setLoading(false);
                   })
               .catch((err)=>{
                   dispatch(
@@ -339,6 +370,7 @@ const config ={
                       payload :err}
                       )
                       setCheck(1);
+                      setLoading(false);
               })
           }
             export const fileuploadimg =( sendmail , navigate , setCheck) =>

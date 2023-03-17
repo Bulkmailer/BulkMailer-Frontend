@@ -29,6 +29,10 @@
 #fixer{
     margin-left:-6vw;
 }
+#fixer2{
+    margin-top:-20px;
+    margin-left:-20px;
+}
 .template{
     border:2px dotted black;
     width:220px;
@@ -46,6 +50,8 @@
     display:flex;
     flex-wrap:wrap;
    margin-right:-20px;
+   margin-top:-20px;
+   /* margin-left:-20px; */
    width:1200px;
 }
 #formbtn30{

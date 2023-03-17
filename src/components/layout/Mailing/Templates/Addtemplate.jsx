@@ -12,6 +12,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useSelector } from "react-redux";
 import templateimgs from '../../../../assets/templatesimg.svg';
+import addimg from '../../../../assets/add.svg';
 
 function AddTemplate(){
 

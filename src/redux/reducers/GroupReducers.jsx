@@ -39,6 +39,10 @@ if(action.payload.data){
                     console.log(action.payload);
                 break;
                     }
+                    case "DeleteTemp" :{
+                        console.log(action.payload);
+                    break;
+                        }
                     case "EditGroup" :{
                         console.log(action.payload);
                     break;
