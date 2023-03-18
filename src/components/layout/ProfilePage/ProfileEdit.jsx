@@ -119,6 +119,12 @@ function EditProfile(){
      function handleSubmit(e){
       e.preventDefault();
       if(correctNo && correctName && correctUsername){
+        if(!gender){
+          toast.error("Select a Gender", {
+            position: toast.POSITION.TOP_RIGHT}
+        );
+        }
+        else{
       setCheck2(0);
       setLoading(true);
       fd.append("user_name" , username);
@@ -127,6 +133,7 @@ function EditProfile(){
       fd.append("gender" , gender);
       dispatch(editprofiledata( fd , setCheck2))
       }
+    }
      }   
     return(<>
     <img src={background} id='background'></img>
@@ -156,7 +163,7 @@ function EditProfile(){
         <p id='error5'>Invalid Phone No.</p>
         <label htmlFor='title' id='formlabel'>Gender</label>
         <select name="foodcategory" id='forminput20' onChange={handleGender}>
-              <option value="Select">--select--</option>
+              <option value="">--select--</option>
               <option value="Male">Male</option>
               <option value="Female">Female</option>
               <option value="Others">Others</option>
