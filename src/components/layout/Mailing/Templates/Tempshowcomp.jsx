@@ -4,8 +4,21 @@ import { useDispatch } from 'react-redux';
 import {useNavigate} from 'react-router-dom';
 import { useState } from 'react';
 import { deleteTemplate } from "../../../../redux/actions/GroupAction";
+import * as htmlToImage from 'html-to-image';
+import { toPng, toJpeg, toBlob, toPixelData, toSvg } from 'html-to-image';
 
 function TemplateShowComp(props){
+
+//     var node = document.getElementById('my-node');
+// htmlToImage.toPng(node)
+//   .then(function (dataUrl) {
+//     var img = new Image();
+//     img.src = dataUrl;
+//     document.body.appendChild(img);
+//   })
+//   .catch(function (error) {
+//     console.error('oops, something went wrong!', error);
+//   });
 
     const dispatch = useDispatch();
     const [check , setCheck] = useState(0);
@@ -32,6 +45,15 @@ function handleDelete(e){
 return(
 <>
 {/* <div id='fixer2'> */}
+{/* <div id='my-node'><html>
+<body>
+
+<p>This is a paragraph.</p>
+<p>This is another paragraph.</p>
+
+</body>
+</html></div> */}
+{/* <div id='my-node'>{props.template}</div> */}
 <div id='askmenudiv3'>
         <div id='logoutdiv'>
             <p >Do you really want to delete this template?</p>
