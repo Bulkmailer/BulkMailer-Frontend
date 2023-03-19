@@ -163,10 +163,9 @@ function EditProfile(){
         <p id='error5'>Invalid Phone No.</p>
         <label htmlFor='title' id='formlabel'>Gender</label>
         <select name="foodcategory" id='forminput20' onChange={handleGender}>
-              <option value="">--select--</option>
-              <option value="Male">Male</option>
-              <option value="Female">Female</option>
-              <option value="Others">Others</option>
+              <option value="" selected={(arr1.response.gender=="")?true:false}>--select--</option>
+              <option value="Male" selected={(arr1.response.gender=="Male")?true:false}>Male</option>
+              <option value="Female" selected={(arr1.response.gender=="Female")?true:false}>Female</option>
              </select>
         <img src={genderimg} id="mailimg"></img>
         <div id='buttondiv'>

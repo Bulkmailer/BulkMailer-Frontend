@@ -143,9 +143,9 @@ function EditContacts(){
         <img src={names} id="mailimg"></img>
         <label htmlFor='title' id='formlabel'>Gender</label>
         <select name="gender" className='gender' id='forminput20A' onChange={handleGender}>
-              <option value=''>--select--</option>
-              <option value="Male">Male</option>
-              <option value="Female">Female</option>
+              <option value='' selected={(object.gender=="")?true:false}>--select--</option>
+              <option value="Male" selected={(object.gender=="Male")?true:false}>Male</option>
+              <option value="Female" selected={(object.gender=="Female")?true:false}>Female</option>
               {/* <option value="Binary">Binary</option>
               <option value="Prefer not to say">Prefer not to say</option> */}
              </select>
