@@ -49,7 +49,7 @@ const list =useSelector((s)=>s.groupreducer);
         <button id='formbtn17'>Schedule</button> */}
         {/* <hr></hr> */}
         <div className="namesdiv2">
-{(list1)?(list1.map((rest)=>getMail(rest))):<div id='nothing'><img src={nomails} id='nothingimg'></img><p>No contacts</p></div>}
+{(list1 && list1.length!=0)?(list1.map((rest)=>getMail(rest))):<div id='nothing'><img src={nomails} id='nothingimg'></img><p>No contacts</p></div>}
     </div>
     </>)
 }
