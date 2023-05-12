@@ -1,4 +1,4 @@
 import axios from 'axios';
 export default axios.create({
-    baseURL:"https://bulkmailersi.centralindia.cloudapp.azure.com/"
+    baseURL:"http://ec2-43-204-233-190.ap-south-1.compute.amazonaws.com/"
 })

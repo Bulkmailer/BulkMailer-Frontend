@@ -4,8 +4,8 @@ import { useDispatch } from 'react-redux';
 import {useNavigate} from 'react-router-dom';
 import { useState } from 'react';
 import { deleteTemplate } from "../../../../redux/actions/GroupAction";
-import * as htmlToImage from 'html-to-image';
-import { toPng, toJpeg, toBlob, toPixelData, toSvg } from 'html-to-image';
+// import * as htmlToImage from 'html-to-image';
+// import { toPng, toJpeg, toBlob, toPixelData, toSvg } from 'html-to-image';
 
 function TemplateShowComp(props){
 

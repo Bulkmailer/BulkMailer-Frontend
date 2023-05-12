@@ -19,7 +19,7 @@ const authreducer =(state=initial
             console.log(localStorage.getItem("accesstokenb"));
         }
             return{
-                response:action.payload.response.data&&action.payload.response.data.msg
+                response:action.payload.response.data && action.payload.response.data.msg
             }   
     }
         case "Forgot" :{
