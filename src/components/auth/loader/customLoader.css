@@ -1,0 +1,60 @@
+.shapes-9-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+.shapes-9 {
+  width: 40px;
+  height: 20px;
+  background: orange;
+  position: relative;
+  animation: sh9-0 1.5s infinite linear;
+}
+.shapes-9:before,
+.shapes-9:after {
+  content: "";
+  position: absolute;
+  background: inherit;
+  bottom: 100%;
+  width: 50%;
+  height: 100%;
+  animation: inherit;
+  animation-name: sh9-1;
+}
+.shapes-9:before {
+  left: 0;
+  transform-origin: bottom left;
+  --s: -1;
+}
+.shapes-9:after {
+  right: 0;
+  transform-origin: bottom right;
+}
+@keyframes sh9-0 {
+  0%,
+  10% {
+    transform: translateY(0%) scaleY(1);
+  }
+  49.99% {
+    transform: translateY(-50%) scaleY(1);
+  }
+  50% {
+    transform: translateY(-50%) scaleY(-1);
+  }
+  90%,
+  100% {
+    transform: translateY(-100%) scaleY(-1);
+  }
+}
+@keyframes sh9-1 {
+  10%,
+  90% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(calc(var(--s, 1) * 180deg));
+  }
+}

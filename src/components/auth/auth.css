@@ -1,6 +1,12 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500&display=swap");
+
 * {
-  font-family: "Montserrat", sans-serif;
   overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+h1 {
+  font-family: "Inter", sans-serif !important;
 }
 
 /* login */
@@ -19,17 +25,78 @@
 #formtop {
   margin-top: 55.58px;
 }
+
+.titlelogotext {
+  display: flex;
+  flex-direction: column;
+}
+
+.bluelogo {
+  display: flex;
+}
+
+.bluelogoimg {
+  height: 70.4px;
+  margin-left: 50px;
+  margin-top: 50px;
+}
+
+.bluelogotext {
+  font-family: "Inter", sans-serif !important;
+  font-weight: 500 !important;
+  font-size: 14px !important;
+  margin-top: 50px;
+  margin-left: -50px;
+}
+
+.bluelogotext2 {
+  font-family: "Inter", sans-serif !important;
+  font-weight: 500 !important;
+  font-size: 18px !important;
+  margin-left: -50px;
+  margin-top: -20px;
+}
+
 .bluediv {
   box-sizing: border-box;
-  background-color: #536dfe80;
+  background-color: rgba(83, 109, 254, 0.9);
   width: 50%;
   height: 100vh;
   overflow-y: hidden;
 }
+
+.bluetext {
+  display: flex;
+  flex-direction: column;
+}
+
+.bluediv h2 {
+  font-family: Inter;
+  font-size: 36px;
+  font-weight: 600;
+  line-height: 50px;
+  letter-spacing: 0em;
+  text-align: left;
+  padding: 40px 50px 0 50px;
+  color: #e6f0ff;
+}
+
+.bluediv p {
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 22px;
+  letter-spacing: 0em;
+  text-align: left;
+  padding: 0px 50px 0 50px;
+  color: #ffffff;
+}
+
 .bluedivimg {
   width: 34.58vw;
   height: 58.89vh;
-  margin: 20.89vh 8.33vw 23.04vh 3.16vw;
+  margin: 5.89vh 38.33vw 0vh 0vw;
+  position: absolute;
 }
 .bluecircleimg {
   position: absolute;
@@ -49,11 +116,15 @@
   display: flex;
 }
 .form-heading {
-  margin-top: 17.632vh;
-  font-size: 3.5rem;
+  margin-top: 50px;
+  /* font-size: 2.5rem;
   font-weight: 600;
   z-index: -1;
-  padding-right: 40px;
+  padding-right: 40px; */
+  color: #27374a;
+  font-weight: 600;
+  font-size: 36px;
+  /* margin-bottom: 16px; */
 }
 #forms {
   padding-left: 7.25vw;
@@ -64,31 +135,36 @@
   flex-direction: column;
 }
 #forminput {
-  background-color: #d6d7dc50;
+  background-color: white;
   border: 0.5px solid black;
   margin-top: 1px;
-  border-radius: 7px;
-  width: 35.43vw;
-  height: 50px;
+  border-radius: 12px;
+  width: 30.43vw;
+  height: 64px;
   font-size: 1rem;
   font-weight: 600;
-  padding-left: 42px;
+  padding-left: 52px;
 }
+
+#forminput::placeholder {
+  color: #b5b5b5;
+}
+
 #formlabel {
   font-weight: 600;
   margin-top: 7px;
 }
 #eyecloseimg {
   width: 24px;
-  margin-top: -60px;
-  margin-left: 32.63vw;
+  margin-top: -69px;
+  margin-left: 27.63vw;
   color: grey;
   height: 20px;
 }
 #mailimg {
-  width: 24px;
+  width: 30px;
   position: relative;
-  top: -36px;
+  top: -46px;
   left: 10px;
 }
 #mailimg2A {
@@ -98,17 +174,19 @@
   left: 10px;
 }
 #emailerr {
-  color: #d14444;
+  color: #ec7d7d;
   font-weight: 600;
+  font-size: 15px;
   position: absolute;
-  top: 342px;
+  top: 214px;
   display: none;
 }
 #endtxt {
   margin-top: 30px;
-  font-weight: 600;
-  font-size: 19px;
+  font-weight: 500;
+  font-size: 16px;
   padding-right: 90px;
+  color: #5a6675;
 }
 #endlink a {
   color: #3150ff;
@@ -121,16 +199,16 @@
 #forgotlink a {
   font-weight: 700;
   text-decoration: none;
-  color: black;
+  color: #3150ff;
 }
 #formbtn {
   background-color: rgba(83, 109, 254, 0.9);
   border: none;
   color: white;
-  margin-top: 40px;
+  margin-top: 20px;
   font-weight: 600;
-  width: 35.43vw;
-  height: 50px;
+  width: 30.43vw;
+  height: 64px;
   border-radius: 5px;
   cursor: pointer;
 }
@@ -225,6 +303,14 @@
   margin-top: 4vh;
 }
 
+.form-info {
+  font-weight: 500;
+  font-size: 16px;
+  color: #5a6675;
+  margin-bottom: -32px;
+  line-height: 150%;
+}
+
 /* signupdetails */
 #eyecloseimg3 {
   position: relative;
@@ -302,6 +388,10 @@
   }
 }
 @media (max-width: 680px) {
+  #emailerr {
+    top: 239px;
+  }
+
   .bluediv {
     display: none;
   }
@@ -313,31 +403,27 @@
     width: 70.43vw;
   }
   .form-heading {
-    margin-left: 20vw;
     height: 70px;
   }
   #eyecloseimg {
-    margin-left: 64.63vw;
+    margin-left: 62.63vw;
   }
   #formbtn {
     width: 70.43vw;
   }
   #eyecloseimg2 {
-    margin-left: 64.63vw;
+    margin-left: 62.63vw;
   }
   #eyecloseimg3 {
     margin-left: 64.63vw;
   }
 }
 @media (max-width: 535px) {
-  .form-heading {
+  /* .form-heading {
     margin-left: 17vw;
-  }
+  } */
 }
 @media (max-width: 465px) {
-  .form-heading {
-    margin-left: 14vw;
-  }
   #eyecloseimg {
     margin-left: 63vw;
   }
@@ -349,8 +435,11 @@
   }
 }
 @media (max-width: 410px) {
-  .form-heading {
+  /* .form-heading {
     margin-left: 12vw;
+  } */
+  #emailerr {
+    top: 120px;
   }
 }
 @media (max-width: 365px) {
@@ -368,9 +457,9 @@
   #emailerr {
     top: 320px;
   }
-  .form-heading {
-    margin-left: 5vw;
-  }
+  /* .form-heading {
+      margin-left: 5vw;
+    } */
 }
 @media (min-width: 1280px) and (max-width: 1280px) {
   #emailerr {
@@ -478,7 +567,7 @@
 }
 @media (min-width: 393px) and (max-width: 393px) {
   #emailerr {
-    top: 355px;
+    top: 265px;
   }
 }
 @media (min-width: 390px) and (max-width: 390px) {
@@ -746,7 +835,7 @@
 }
 @media (max-width: 735px) {
   #forms4 {
-    /* width:70%; */
+    width: 70%;
   }
 }
 @media (max-width: 680px) {
@@ -786,4 +875,9 @@
   .form-heading4 {
     font-size: 2rem;
   }
+}
+
+.footer-terms-content {
+  margin-top: 25vh;
+  text-align: left;
 }

@@ -1,5 +1,6 @@
 import "./auth.css";
 import login from "../../assets/login.svg";
+import bulkmailerlogo from "../../assets/bulkmailerlogo.png";
 import circle from "../../assets/circle.svg";
 import mailimg from "../../assets/mail.svg";
 import lockimg from "../../assets/lock.svg";
@@ -13,6 +14,7 @@ import { logindata } from "../../redux/actions/AuthAction";
 import { Link } from "react-router-dom";
 import * as ReactBootStrap from "react-bootstrap";
 import { ToastContainer, toast } from "react-toastify";
+import CustomLoader from "./loader/customLoader";
 import "react-toastify/dist/ReactToastify.css";
 
 function Login() {
@@ -85,18 +87,37 @@ function Login() {
         <div id="loader">
           <ReactBootStrap.Spinner animation="border" id="spinner" />
         </div>
-      ) : null}
+      ) : // <div>
+      //   <CustomLoader />
+      // </div>
+      null}
       <div id="flex">
         <div className="bluediv">
-          <img src={login} className="bluedivimg" />
+          <div className="bluelogo">
+            <img src={bulkmailerlogo} className="bluelogoimg" />
+            <div className="titlelogotext">
+              <p className="bluelogotext">Bulk</p>
+              <p className="bluelogotext2">Mailer</p>
+            </div>
+          </div>
+          <div className="bluetext">
+            <h2>Elevate Your Email Reach Effortlessly</h2>
+            <p>
+              Unleash the power of bulk communication with our advanced mailer
+              application. Seamlessly send messages to a multitude of
+              recipients, ensuring your message reaches far and wide without a
+              hitch.
+            </p>
+          </div>
+          <img src={bulkmailerlogo} className="bluedivimg" />
         </div>
         <div id="forms">
           <h1 className="form-heading">Login</h1>
+          <p className="form-info">
+            Please enter your Bulk Mailer login credentials.
+          </p>
           <form onSubmit={handleSubmit} id="formtop">
             <div id="formflex">
-              <label htmlFor="email" id="formlabel">
-                Email Address
-              </label>
               <input
                 type="text"
                 id="forminput"
@@ -108,9 +129,6 @@ function Login() {
               ></input>
               <img src={mailimg} id="mailimg"></img>
               <p id="emailerr">Invalid Email Address</p>
-              <label htmlFor="password" id="formlabel">
-                Password
-              </label>
               <input
                 type={show ? "text" : "password"}
                 id="forminput"
@@ -145,8 +163,11 @@ function Login() {
           <p id="endtxt">
             New To Bulk Mailer?
             <span id="endlink">
-              <Link to="/signup">Signup</Link>
+              <Link to="/signup"> Signup</Link>
             </span>
+          </p>
+          <p className="footer-terms-content">
+            ©2023 Bulk Mailer - All Rights Reserved
           </p>
         </div>
       </div>
