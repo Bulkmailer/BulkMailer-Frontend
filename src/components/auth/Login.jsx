@@ -1,22 +1,19 @@
 import "./auth.css";
 import login from "../../assets/login.svg";
 import circle from "../../assets/circle.svg";
-import mailimg from '../../assets/mail.svg';
-import lockimg from '../../assets/lock.svg';
+import mailimg from "../../assets/mail.svg";
+import lockimg from "../../assets/lock.svg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faEye,
-  faEyeSlash,
-} from "@fortawesome/fontawesome-free-solid";
+import { faEye, faEyeSlash } from "@fortawesome/fontawesome-free-solid";
 import { useNavigate } from "react-router-dom";
-import FormData from 'form-data';
+import FormData from "form-data";
 import { useState, useEffect } from "react";
-import { useDispatch , useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { logindata } from "../../redux/actions/AuthAction";
 import { Link } from "react-router-dom";
 import * as ReactBootStrap from "react-bootstrap";
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function Login() {
   const [email, setEmail] = useState("");
@@ -35,21 +32,21 @@ function Login() {
   const fd = new FormData();
   const navigate = useNavigate();
 
-  const [check , setCheck]= useState(0);
+  const [check, setCheck] = useState(0);
 
-const mssg = useSelector((state)=>state.authreducer);
-console.log(mssg);
+  const mssg = useSelector((state) => state.authreducer);
+  console.log(mssg);
 
-useEffect(()=>{
+  useEffect(() => {
     console.log(check);
-    if(check==1){
-    toast.error(mssg.response[0], {
-        position: toast.POSITION.TOP_RIGHT
-    });
-  }
-} ,[check]);
-   
-useEffect(() => {
+    if (check == 1) {
+      toast.error(mssg.response[0], {
+        position: toast.POSITION.TOP_RIGHT,
+      });
+    }
+  }, [check]);
+
+  useEffect(() => {
     if (rightmail.test(email)) {
       document.getElementById("emailerr").style.display = "none";
       setCorrectMail(true);
@@ -71,14 +68,14 @@ useEffect(() => {
   }
   function handleSubmit(e) {
     e.preventDefault();
-    localStorage.setItem("loginMail" , email);
+    localStorage.setItem("loginMail", email);
     if (correctMail) {
       setLoading(true);
       setCheck(0);
-      fd.append("email" , email);
-      fd.append("password" , password);
+      fd.append("email", email);
+      fd.append("password", password);
       console.log(fd);
-      dispatch(logindata(fd, setLoading , navigate , setCheck));
+      dispatch(logindata(fd, setLoading, navigate, setCheck));
     }
   }
 
@@ -95,7 +92,7 @@ useEffect(() => {
         </div>
         <div id="forms">
           <h1 className="form-heading">Login</h1>
-          <form onSubmit={handleSubmit} id='formtop'>
+          <form onSubmit={handleSubmit} id="formtop">
             <div id="formflex">
               <label htmlFor="email" id="formlabel">
                 Email Address

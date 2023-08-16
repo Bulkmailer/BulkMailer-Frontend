@@ -1,202 +1,199 @@
-.namesdiv2{
-    word-wrap: break-word;
-    display:flex;
-    flex-wrap: wrap;
-margin:0px 0px 0px 10px;
+.namesdiv2 {
+  word-wrap: break-word;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0px 0px 0px 10px;
 }
-.groupnamediv{
-    background-color: #D6D7DC50;
-    margin:15px 15px 15px 15px;
-    padding:30px 20px;
-    width:47vw;
-    border:0.5px solid grey;
-    border-radius:10px;   
+.groupnamediv {
+  background-color: #d6d7dc50;
+  margin: 15px 15px 15px 15px;
+  padding: 30px 20px;
+  width: 47vw;
+  border: 0.5px solid grey;
+  border-radius: 10px;
 }
-#listhead{
-    font-weight:700;
-    color:#00000080;
-    margin:40px 0 0 30px;
-    height:50px;
+#listhead {
+  font-weight: 700;
+  color: #00000080;
+  margin: 40px 0 0 30px;
+  height: 50px;
 }
-#nothingpara{
-    font-weight: bold;
-    margin-left:13vw;
-    margin-top:20px;
-    height:50px;
-}
-
-@media(max-width:1230px){
-    .groupnamediv{
-width:46.5vw;
-    }
-}
-@media(max-width:1050px){
-    .groupnamediv{
-        width:46vw;
-    }
-}
-@media(max-width:930px){
-    .groupnamediv{
-        width:45.5vw;
-    }
-}
-@media(max-width:860px){
-    .groupnamediv{
-        width:45vw;
-    }
-}
-@media(max-width:800px){
-    .groupnamediv{
-        width:44.5vw;
-    }
-}
-@media(max-width:740px){
-    #nothingpara{
-       margin-left:10vw;
-    }
-}
-@media(max-width:680px){
-    .groupnamediv{
-        width:89vw;
-    }
-    #nothingpara{
-        margin-left:7vw;
-     }
-}
-@media(max-width:500px){
-    #nothingpara{
-       margin-left:4vw;
-    }
-}
-@media(max-width:450px){
-    .groupnamediv{
-        width:88vw;
-    }
-}
-@media(max-width:440px){
-    #nothingpara{
-       margin-left:2vw;
-    }
-}
-@media(max-width:380px){
-    .groupnamediv{
-        width:87vw;
-    }
-}
-@media(max-width:340px){
-    .groupnamediv{
-        width:86vw;
-    }
-}
-@media(max-width:320px){
-    .groupnamediv{
-        width:85vw;
-    }
-}
-@media(max-width:300px){
-    .groupnamediv{
-        width:84vw;
-    }
+#nothingpara {
+  font-weight: bold;
+  margin-left: 13vw;
+  margin-top: 20px;
+  height: 50px;
 }
 
-
-
-
-#managerdiv{
-    display:flex;
-    margin-left:5vw;
-    margin-right:5vw;
+@media (max-width: 1230px) {
+  .groupnamediv {
+    width: 46.5vw;
+  }
+}
+@media (max-width: 1050px) {
+  .groupnamediv {
+    width: 46vw;
+  }
+}
+@media (max-width: 930px) {
+  .groupnamediv {
+    width: 45.5vw;
+  }
+}
+@media (max-width: 860px) {
+  .groupnamediv {
+    width: 45vw;
+  }
+}
+@media (max-width: 800px) {
+  .groupnamediv {
+    width: 44.5vw;
+  }
+}
+@media (max-width: 740px) {
+  #nothingpara {
+    margin-left: 10vw;
+  }
+}
+@media (max-width: 680px) {
+  .groupnamediv {
+    width: 89vw;
+  }
+  #nothingpara {
+    margin-left: 7vw;
+  }
+}
+@media (max-width: 500px) {
+  #nothingpara {
+    margin-left: 4vw;
+  }
+}
+@media (max-width: 450px) {
+  .groupnamediv {
+    width: 88vw;
+  }
+}
+@media (max-width: 440px) {
+  #nothingpara {
+    margin-left: 2vw;
+  }
+}
+@media (max-width: 380px) {
+  .groupnamediv {
+    width: 87vw;
+  }
+}
+@media (max-width: 340px) {
+  .groupnamediv {
+    width: 86vw;
+  }
+}
+@media (max-width: 320px) {
+  .groupnamediv {
+    width: 85vw;
+  }
+}
+@media (max-width: 300px) {
+  .groupnamediv {
+    width: 84vw;
+  }
 }
 
-#create13{
-    width:20vw;
-    margin-left:3vw;
-    margin-top:-200px;
-    transform: scaleX(-1);
+#managerdiv {
+  display: flex;
+  margin-left: 5vw;
+  margin-right: 5vw;
 }
-#create14{
-    width:20vw;
-    margin-top:370px;
-    margin-right:3vw;
+
+#create13 {
+  width: 20vw;
+  margin-left: 3vw;
+  margin-top: -200px;
+  transform: scaleX(-1);
 }
-#siderdiv{
-    margin:120px 6vw 0 6vw;
+#create14 {
+  width: 20vw;
+  margin-top: 370px;
+  margin-right: 3vw;
 }
-#headd{
-    font-weight:700;
-    color:#00000080;
-    height:50px;
+#siderdiv {
+  margin: 120px 6vw 0 6vw;
 }
-.forminput5{
-    background-color: #D6D7DC50;
-    border:0.5px solid black;
-    border-radius:7px;
-    width:90px;
-    height:50px;
-    font-size: 1rem;
-    font-weight: 600;
-    padding-left:12px;
-    margin-right:20px;
-    margin-bottom:30px;
+#headd {
+  font-weight: 700;
+  color: #00000080;
+  height: 50px;
 }
-#scheduleform{
-    display:flex;
-    flex-direction: column;
-    margin-top:20px;
+.forminput5 {
+  background-color: #d6d7dc50;
+  border: 0.5px solid black;
+  border-radius: 7px;
+  width: 90px;
+  height: 50px;
+  font-size: 1rem;
+  font-weight: 600;
+  padding-left: 12px;
+  margin-right: 20px;
+  margin-bottom: 30px;
 }
-#formbtn11{
-    background-color: rgba(83 , 109 , 254 , 0.9);
-    border:none;
-    color:white;
-    font-weight: 600;
-    width:200px;
-    height:40px;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top:20px;
+#scheduleform {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
 }
-@media(max-width:818px){
-    #siderdiv{
-        margin:120px 3vw 0 3vw;
-    }   
+#formbtn11 {
+  background-color: rgba(83, 109, 254, 0.9);
+  border: none;
+  color: white;
+  font-weight: 600;
+  width: 200px;
+  height: 40px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
 }
-@media(max-width:610px){
-    #create13{
-        margin-left:1vw;
-    }
-    #create14{
-        margin-right:1vw;
-    }
+@media (max-width: 818px) {
+  #siderdiv {
+    margin: 120px 3vw 0 3vw;
+  }
 }
-@media(max-width:558px){
-    #create13{
-        display:none;
-    }
-    #create14{
-        width:35vw;
-        margin-top:200px;
-    }
+@media (max-width: 610px) {
+  #create13 {
+    margin-left: 1vw;
+  }
+  #create14 {
+    margin-right: 1vw;
+  }
 }
-@media(max-width:497px){
-    #create14{
-        display:none;
-    }
-    .forminput5{
-        width:30vw;
-    }
+@media (max-width: 558px) {
+  #create13 {
+    display: none;
+  }
+  #create14 {
+    width: 35vw;
+    margin-top: 200px;
+  }
 }
-@media(max-width:321px){
-    #managerdiv{
-        margin-left:2vw;
-        margin-right:2vw;
-    }
+@media (max-width: 497px) {
+  #create14 {
+    display: none;
+  }
+  .forminput5 {
+    width: 30vw;
+  }
 }
-@media(max-width:299px){
-    #managerdiv{
-        margin-left:1vw;
-        margin-right:1vw;
-    }
-    .forminput5{
-        width:25vw;
-    }
+@media (max-width: 321px) {
+  #managerdiv {
+    margin-left: 2vw;
+    margin-right: 2vw;
+  }
+}
+@media (max-width: 299px) {
+  #managerdiv {
+    margin-left: 1vw;
+    margin-right: 1vw;
+  }
+  .forminput5 {
+    width: 25vw;
+  }
 }

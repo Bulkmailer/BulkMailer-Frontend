@@ -1,321 +1,319 @@
 /* Campaign */
 
-#managerA{
-    display: flex;
+#managerA {
+  display: flex;
 }
-#create9{
-    width:20vw;
-    margin-left:5vw;
-    margin-top:-200px;
+#create9 {
+  width: 20vw;
+  margin-left: 5vw;
+  margin-top: -200px;
 }
-#create10{
-    width:20vw;
-    transform: scaleX(-1);
-    margin-top:370px;
-    margin-right:5vw;
+#create10 {
+  width: 20vw;
+  transform: scaleX(-1);
+  margin-top: 370px;
+  margin-right: 5vw;
 }
-#groupheadA{
-    font-weight:700;
-    color:#00000080;
-    /* height:100px; */
-    margin:200px 6vw 0 6vw;
+#groupheadA {
+  font-weight: 700;
+  color: #00000080;
+  /* height:100px; */
+  margin: 200px 6vw 0 6vw;
 }
-#error5C{
-    color:#D14444;
-    position:absolute;
-    top:403px;
-    display: none;
+#error5C {
+  color: #d14444;
+  position: absolute;
+  top: 403px;
+  display: none;
 }
-#flexformA{
-    display: flex;
-    flex-direction: column;
-    margin:10px 6vw 0 6vw;
+#flexformA {
+  display: flex;
+  flex-direction: column;
+  margin: 10px 6vw 0 6vw;
 }
-#forminput2A{
-    background-color: #D6D7DC50;
-    border:0.5px solid black;
-    margin-top:1px;
-    border-radius:7px;
-    width:35.43vw;
-    height:50px;
-    font-size: 1rem;
-    font-weight: 600;
-    padding-left:42px;
+#forminput2A {
+  background-color: #d6d7dc50;
+  border: 0.5px solid black;
+  margin-top: 1px;
+  border-radius: 7px;
+  width: 35.43vw;
+  height: 50px;
+  font-size: 1rem;
+  font-weight: 600;
+  padding-left: 42px;
 }
-#formbtn3A{
-    background-color: rgba(83 , 109 , 254 , 0.9);
-    border:none;
-    color:white;
-    margin-top:2vh;
-    font-weight: 600;
-    width:15.43vw;
-    height:50px;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-right:30px;
-}
-
-@media(max-width:1331px){
-    #groupheadA{
-   margin-top:160px;
-   height:100px;
-    }
-    #flexformA{
-        margin:0px 6vw 0 6vw;
-    }
-}
-@media(max-width:720px){
-    #create9{
-     display: none;
-    }   
-    #error5C{
-        top:365px;
-    }
-    #groupheadA{
-        margin:120px 6vw 0 8vw;
-         }
-         #flexformA{
-            margin:0px 6vw 0 8vw;
-        }
-        #create10{
-            width:35vw;
-            margin-top:150px;
-            margin-right:5vw;
-        }
-}
-@media(max-width:680px){
-    #create10{
-        margin-left:-65vw;
-        margin-top:450px;
-    } 
-    #forminput2A{
-        width:85.43vw;
-    }
+#formbtn3A {
+  background-color: rgba(83, 109, 254, 0.9);
+  border: none;
+  color: white;
+  margin-top: 2vh;
+  font-weight: 600;
+  width: 15.43vw;
+  height: 50px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 30px;
 }
 
-@media(max-width:457px){
-    #formbtn3A{
-        width:25.43vw;
-    }
+@media (max-width: 1331px) {
+  #groupheadA {
+    margin-top: 160px;
+    height: 100px;
+  }
+  #flexformA {
+    margin: 0px 6vw 0 6vw;
+  }
 }
-@media(max-width:400px){
-    #create10{
+@media (max-width: 720px) {
+  #create9 {
     display: none;
-    } 
+  }
+  #error5C {
+    top: 365px;
+  }
+  #groupheadA {
+    margin: 120px 6vw 0 8vw;
+  }
+  #flexformA {
+    margin: 0px 6vw 0 8vw;
+  }
+  #create10 {
+    width: 35vw;
+    margin-top: 150px;
+    margin-right: 5vw;
+  }
+}
+@media (max-width: 680px) {
+  #create10 {
+    margin-left: -65vw;
+    margin-top: 450px;
+  }
+  #forminput2A {
+    width: 85.43vw;
+  }
+}
+
+@media (max-width: 457px) {
+  #formbtn3A {
+    width: 25.43vw;
+  }
+}
+@media (max-width: 400px) {
+  #create10 {
+    display: none;
+  }
 }
 
 /* fileupload */
-#intropara3A{
-    margin:10px 6vw 0 6vw;
-       font-size:15px;
-       font-weight: 500;
-   }
-   #formbtn32{
-    background-color: rgba(83 , 109 , 254 , 0.9);
-    border:none;
-    color:white;
-    font-weight: 600;
-    width:15vw;
-    height:40px;
-margin-left:6vw;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top:30px;
-    margin-right:20px;
+#intropara3A {
+  margin: 10px 6vw 0 6vw;
+  font-size: 15px;
+  font-weight: 500;
 }
-#create11{
-    width:20vw;
-    margin-top:370px;
-    margin-right:5vw;
+#formbtn32 {
+  background-color: rgba(83, 109, 254, 0.9);
+  border: none;
+  color: white;
+  font-weight: 600;
+  width: 15vw;
+  height: 40px;
+  margin-left: 6vw;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 30px;
+  margin-right: 20px;
 }
-#previewImg{
-   width:35vw;
-   margin:20px 6vw 0 6vw;
+#create11 {
+  width: 20vw;
+  margin-top: 370px;
+  margin-right: 5vw;
 }
-@media(max-width:545px){
-    #formbtn32{
-        width:20vw;
-    }
-        #create11{
-       display: none;
-        }
+#previewImg {
+  width: 35vw;
+  margin: 20px 6vw 0 6vw;
 }
-@media(max-width:499px){
-    #previewImg{
-        width:87vw;
-     }
+@media (max-width: 545px) {
+  #formbtn32 {
+    width: 20vw;
+  }
+  #create11 {
+    display: none;
+  }
 }
-@media(max-width:380px){
-    #intropara3A{
-        width:300px;
-    }
-    #formbtn32{
-        width:40vw;
-    }
+@media (max-width: 499px) {
+  #previewImg {
+    width: 87vw;
+  }
 }
-@media(max-width:313px){
-#intropara3A{
-    width:250px;
+@media (max-width: 380px) {
+  #intropara3A {
+    width: 300px;
+  }
+  #formbtn32 {
+    width: 40vw;
+  }
 }
+@media (max-width: 313px) {
+  #intropara3A {
+    width: 250px;
+  }
 }
 
 /* mails */
 
-#error5D{
-    color:#D14444;
-    position:absolute;
-    top:479px;
+#error5D {
+  color: #d14444;
+  position: absolute;
+  top: 479px;
+  display: none;
+}
+#error5E {
+  color: #d14444;
+  position: absolute;
+  top: 802px;
+  display: none;
+}
+#mailbox {
+  transform: scaleX(-1);
+  width: 35vw;
+  margin-left: 6vw;
+}
+#mailbox2 {
+  width: 35vw;
+  margin-left: 10vw;
+  margin-top: 150px;
+}
+#formhead {
+  font-weight: 700;
+  color: #00000080;
+  margin-top: 40px;
+  height: 50px;
+}
+#formbtn10 {
+  background-color: rgba(83, 109, 254, 0.9);
+  border: none;
+  color: white;
+  font-weight: 600;
+  width: 15vw;
+  height: 40px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 40px;
+  margin-right: 20px;
+}
+#formbtn10A {
+  background-color: rgba(83, 109, 254, 0.9);
+  border: none;
+  color: white;
+  font-weight: 600;
+  width: 15vw;
+  height: 40px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 20vw;
+}
+#buttoner {
+  margin-top: -40px;
+}
+#textarea2 {
+  width: 45.43vw;
+  padding: 20px;
+  border: 1px solid black;
+  font-weight: 500;
+  background-color: #d6d7dc50;
+  border: 0.5px solid black;
+  margin-top: 1px;
+  border-radius: 7px;
+  font-size: 1rem;
+  font-weight: 600;
+}
+#forminput3A {
+  background-color: #d6d7dc50;
+  border: 0.5px solid black;
+  margin-top: 1px;
+  border-radius: 7px;
+  width: 45.43vw;
+  height: 50px;
+  font-size: 1rem;
+  font-weight: 600;
+  padding-left: 42px;
+}
+#formflexer {
+  display: flex;
+  flex-direction: column;
+  margin-top: 30px;
+}
+#failimg {
+  visibility: hidden;
+  width: 24px;
+  position: relative;
+  top: -36px;
+  left: 10px;
+}
+#groupsdiv {
+  display: none;
+  position: absolute;
+  background-color: #d6d7dc;
+  width: 45.43vw;
+  top: 265px;
+  left: 40px;
+  padding: 20px 0 20px 10px;
+  z-index: 2;
+  font-weight: bold;
+}
+#groupsdiv2 {
+  display: none;
+  position: absolute;
+  background-color: #d6d7dc;
+  width: 45.43vw;
+  top: 372px;
+  left: 40px;
+  padding: 20px 0 20px 10px;
+  z-index: 2;
+  font-weight: bold;
+}
+@media (max-width: 632px) {
+  #formbtn10 {
+    width: 20vw;
+  }
+  #formbtn10A {
+    width: 20vw;
+    margin-left: 23vw;
+  }
+}
+@media (max-width: 497px) {
+  #mailbox {
     display: none;
+  }
+  #textarea2 {
+    width: 80vw;
+  }
+  #forminput3A {
+    width: 80vw;
+  }
+  #formbtn10 {
+    width: 35vw;
+  }
+  #formbtn10A {
+    width: 35vw;
+    margin-left: 38vw;
+  }
 }
-#error5E{
-    color:#D14444;
-    position:absolute;
-    top:802px;
-    display: none;
-}
-#mailbox{
-    transform: scaleX(-1);
-    width:35vw;
-    margin-left:6vw;
-}
-#mailbox2{
-    width:35vw;
-    margin-left:10vw;
-    margin-top:150px;
-}
-#formhead{
-    font-weight:700;
-    color:#00000080;
-    margin-top:40px;
-    height:50px;
-}
-#formbtn10{
-    background-color: rgba(83 , 109 , 254 , 0.9);
-    border:none;
-    color:white;
-    font-weight: 600;
-    width:15vw;
-    height:40px;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top:40px;
-    margin-right:20px;
-}
-#formbtn10A{
-    background-color: rgba(83 , 109 , 254 , 0.9);
-    border:none;
-    color:white;
-    font-weight: 600;
-    width:15vw;
-    height:40px;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-left:20vw;
-}
-#buttoner{
-    margin-top:-40px;
-}
-#textarea2{
-    width:45.43vw;
-    padding:20px;
-    border:1px solid black;
-    font-weight:500;
-    background-color: #D6D7DC50;
-    border:0.5px solid black;
-    margin-top:1px;
-    border-radius:7px;
-    font-size: 1rem;
-    font-weight: 600;
-}
-#forminput3A{
-    background-color: #D6D7DC50;
-    border:0.5px solid black;
-    margin-top:1px;
-    border-radius:7px;
-    width:45.43vw;
-    height:50px;
-    font-size: 1rem;
-    font-weight: 600;
-    padding-left:42px;
-}
-#formflexer{
-    display: flex;
-    flex-direction: column;
-    margin-top:30px;
-}
-#failimg{
-    visibility: hidden;
-    width:24px;
-    position:relative;
-    top:-36px;
-    left:10px;
-}
-#groupsdiv{
-    display:none;
-    position:absolute;
-    background-color: #D6D7DC;
-    width:45.43vw;
-    top:265px;
-    left:40px;
-    padding:20px 0 20px 10px;
-    z-index:2;
-    font-weight:bold;
-}
-#groupsdiv2{
-    display:none;
-    position:absolute;
-    background-color: #D6D7DC;
-    width:45.43vw;
-    top:372px;
-    left:40px;
-    padding:20px 0 20px 10px;
-    z-index:2;
-    font-weight:bold;
-}
-@media(max-width:632px){
-    #formbtn10{
-        width:20vw;
-    }
-    #formbtn10A{
-        width:20vw;
-        margin-left:23vw;
-    }
-}
-@media(max-width:497px){
-    #mailbox{
-        display: none;
-    }
-    #textarea2{
-        width:80vw;
-    }
-    #forminput3A{
-        width:80vw;
-    }
-    #formbtn10{
-        width:35vw;
-    }
-    #formbtn10A{
-        width:35vw;
-        margin-left:38vw;
-    }
-}
-@media(max-width:361px){
-    #marginer{
-        margin-left:10vw;
-    }
+@media (max-width: 361px) {
+  #marginer {
+    margin-left: 10vw;
+  }
 }
 
-
-
-#mailimg2{
-    width:20px;
-    position:relative;
-    top:-36px;
-    left:10px;
+#mailimg2 {
+  width: 20px;
+  position: relative;
+  top: -36px;
+  left: 10px;
 }
-#sider{
-    margin-left:100px;
+#sider {
+  margin-left: 100px;
 }
-#showpara{
-    display:none;
+#showpara {
+  display: none;
 }

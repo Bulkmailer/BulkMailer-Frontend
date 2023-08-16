@@ -1,138 +1,138 @@
-#dashboardimg{
-margin-top:100px; 
-margin-left:60px; 
-margin-bottom:-50px;
+#dashboardimg {
+  margin-top: 100px;
+  margin-left: 60px;
+  margin-bottom: -50px;
 }
-#h1part{
-    color:#536DFE;
-    font-weight: 700;
-    padding-right:50px;
+#h1part {
+  color: #536dfe;
+  font-weight: 700;
+  padding-right: 50px;
 }
-#welcome{
-    margin-left:60px;  
-    margin-top:60px; 
+#welcome {
+  margin-left: 60px;
+  margin-top: 60px;
 }
-#intropara{
-    margin-left:60px;  
-    margin-top:20px; 
-    font-size:26px;
-    padding-right:100px;
-    font-weight: 500;
+#intropara {
+  margin-left: 60px;
+  margin-top: 20px;
+  font-size: 26px;
+  padding-right: 100px;
+  font-weight: 500;
 }
-#box{
-  background: #536DFE40;  
-  width:300px;
-  margin-right:50px;
+#box {
+  background: #536dfe40;
+  width: 300px;
+  margin-right: 50px;
   text-align: center;
   box-sizing: border-box;
-  padding:50px 0;
+  padding: 50px 0;
   font-size: 20px;
   font-weight: 600;
   border-radius: 20px;
   margin-top: 30px;
   text-decoration: none;
-  border:none;
+  border: none;
 }
-#box:hover{
-    background: #536DFE90;  
+#box:hover {
+  background: #536dfe90;
 }
-#box a{
-    text-decoration: none;
-    color:#00000080
+#box a {
+  text-decoration: none;
+  color: #00000080;
 }
-#boxflex{
-    display: flex;
-    /* justify-content: space-between; */
-    width:1200px;
-    margin-left:60px;
-    flex-wrap: wrap;
+#boxflex {
+  display: flex;
+  /* justify-content: space-between; */
+  width: 1200px;
+  margin-left: 60px;
+  flex-wrap: wrap;
 }
-#frontpageimg{
-    width:20vw;
+#frontpageimg {
+  width: 20vw;
 }
-#frontpagediv{
-margin-left:65vw;
-margin-top:-100px;
-margin-bottom: -100px;
+#frontpagediv {
+  margin-left: 65vw;
+  margin-top: -100px;
+  margin-bottom: -100px;
 }
 
-@media(max-width:570px){
-    #intropara{
-        font-size:20px;
-        padding-right:50px;
-    } 
+@media (max-width: 570px) {
+  #intropara {
+    font-size: 20px;
+    padding-right: 50px;
+  }
 }
-@media(max-width:1099px){
-    #boxflex{
-        width:1000px;
-    }
+@media (max-width: 1099px) {
+  #boxflex {
+    width: 1000px;
+  }
 }
-@media(max-width:1034px){
-    #frontpagediv{
-        margin-bottom: -60px;
-        } 
+@media (max-width: 1034px) {
+  #frontpagediv {
+    margin-bottom: -60px;
+  }
 }
-@media(max-width:922px){
-    #frontpagediv{
-        margin-bottom: -30px;
-        } 
+@media (max-width: 922px) {
+  #frontpagediv {
+    margin-bottom: -30px;
+  }
 }
-@media(max-width:756px){
-    #boxflex{
-    width:600px;
-    margin-left:30%;
-    }
+@media (max-width: 756px) {
+  #boxflex {
+    width: 600px;
+    margin-left: 30%;
+  }
 }
-@media(max-width:725px){
-        #dashboardimg{
-            margin-bottom:-30px;
-            }
+@media (max-width: 725px) {
+  #dashboardimg {
+    margin-bottom: -30px;
+  }
 }
-@media(max-width:620px){
-    #boxflex{
-    width:600px;
-    margin-left:25%;
-    }
+@media (max-width: 620px) {
+  #boxflex {
+    width: 600px;
+    margin-left: 25%;
+  }
 }
-@media(max-width:589px){
-    #dashboardimg{
-        margin-bottom:0px;
-        }
-        #frontpagediv{
-           display:none;
-            }
+@media (max-width: 589px) {
+  #dashboardimg {
+    margin-bottom: 0px;
+  }
+  #frontpagediv {
+    display: none;
+  }
 }
-@media(max-width:518px){
-    #boxflex{
-    width:600px;
-    margin-left:20%;
-    }
+@media (max-width: 518px) {
+  #boxflex {
+    width: 600px;
+    margin-left: 20%;
+  }
 }
-@media(max-width:457px){
-    #boxflex{
-    width:600px;
-    margin-left:15%;
-    }
+@media (max-width: 457px) {
+  #boxflex {
+    width: 600px;
+    margin-left: 15%;
+  }
 }
-@media(max-width:399px){
-    #padder{
-   padding:0 13vw;
-    }
-    #dashboardimg{
-        margin-left:0px; 
-        }
-        #welcome{
-            margin-left:0px;  
-        }
-        #intropara{
-            margin-left:0px;
-        }
-        #boxflex{
-            margin-left:0px;
-        }
+@media (max-width: 399px) {
+  #padder {
+    padding: 0 13vw;
+  }
+  #dashboardimg {
+    margin-left: 0px;
+  }
+  #welcome {
+    margin-left: 0px;
+  }
+  #intropara {
+    margin-left: 0px;
+  }
+  #boxflex {
+    margin-left: 0px;
+  }
 }
-@media(max-width:363px){
-    #padder{
-        padding:0 8vw;
-    }
+@media (max-width: 363px) {
+  #padder {
+    padding: 0 8vw;
+  }
 }
