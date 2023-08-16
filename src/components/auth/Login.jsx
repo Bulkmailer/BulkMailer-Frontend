@@ -17,7 +17,7 @@ import { Link } from "react-router-dom";
 import * as ReactBootStrap from "react-bootstrap";
 import { ToastContainer, toast } from "react-toastify";
 import CustomLoader from "./loader/customLoader";
-import PageLayout from "./commonPageLayout/authSidePage";
+import PageLayout from "./commonPageLayout/authPageLayout";
 
 import "react-toastify/dist/ReactToastify.css";
 
