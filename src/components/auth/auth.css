@@ -1,7 +1,8 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500&display=swap");
 
 * {
   overflow-x: hidden;
+  overflow-y: hidden;
 }
 
 h1 {
@@ -24,17 +25,78 @@ h1 {
 #formtop {
   margin-top: 55.58px;
 }
+
+.titlelogotext {
+  display: flex;
+  flex-direction: column;
+}
+
+.bluelogo {
+  display: flex;
+}
+
+.bluelogoimg {
+  height: 70.4px;
+  margin-left: 50px;
+  margin-top: 50px;
+}
+
+.bluelogotext {
+  font-family: "Inter", sans-serif !important;
+  font-weight: 500 !important;
+  font-size: 14px !important;
+  margin-top: 50px;
+  margin-left: -50px;
+}
+
+.bluelogotext2 {
+  font-family: "Inter", sans-serif !important;
+  font-weight: 500 !important;
+  font-size: 18px !important;
+  margin-left: -50px;
+  margin-top: -20px;
+}
+
 .bluediv {
   box-sizing: border-box;
-  background-color: #536dfe80;
+  background-color: rgba(83, 109, 254, 0.9);
   width: 50%;
   height: 100vh;
   overflow-y: hidden;
 }
+
+.bluetext {
+  display: flex;
+  flex-direction: column;
+}
+
+.bluediv h2 {
+  font-family: Inter;
+  font-size: 36px;
+  font-weight: 600;
+  line-height: 50px;
+  letter-spacing: 0em;
+  text-align: left;
+  padding: 40px 50px 0 50px;
+  color: #e6f0ff;
+}
+
+.bluediv p {
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 22px;
+  letter-spacing: 0em;
+  text-align: left;
+  padding: 0px 50px 0 50px;
+  color: #ffffff;
+}
+
 .bluedivimg {
   width: 34.58vw;
   height: 58.89vh;
-  margin: 20.89vh 8.33vw 23.04vh 3.16vw;
+  margin: 5.89vh 38.33vw 0vh 0vw;
+  position: absolute;
 }
 .bluecircleimg {
   position: absolute;
@@ -773,7 +835,7 @@ h1 {
 }
 @media (max-width: 735px) {
   #forms4 {
-    /* width:70%; */
+    width: 70%;
   }
 }
 @media (max-width: 680px) {
