@@ -133,22 +133,41 @@ h1 {
 #formflex {
   display: flex;
   flex-direction: column;
+  margin-bottom: 20px;
 }
-#forminput {
+
+#formflex-signup {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  height: 350px;
+}
+
+.sign-up-name {
+  margin-bottom: 20px;
+}
+
+.ant-input-affix-wrapper,
+.otp-input {
   background-color: white;
   border: 0.5px solid black;
   color: #5a6675;
-  margin-top: 1px;
   border-radius: 12px;
   width: 30.43vw;
   height: 64px;
   font-size: 1rem;
   font-weight: 600;
-  padding-left: 52px;
 }
 
-#forminput::placeholder {
-  color: #b5b5b5;
+.ant-input {
+  text-indent: 20px;
+}
+
+.passwordInput {
+  margin: 30px 0 -10px 0;
+}
+.ant-input-prefix {
+  padding-left: 10px;
 }
 
 #formlabel {
@@ -214,6 +233,10 @@ h1 {
   cursor: pointer;
 }
 
+.sign-up-username {
+  margin-bottom: -10px;
+}
+
 /* forgot */
 #forms2 {
   padding-left: 90px;
@@ -224,10 +247,9 @@ h1 {
   background-color: rgba(83, 109, 254, 0.9);
   border: none;
   color: white;
-  margin-top: 2vh;
   font-weight: 600;
-  width: 35.43vw;
-  height: 50px;
+  width: 30.43vw;
+  height: 64px;
   border-radius: 5px;
   cursor: pointer;
 }
@@ -235,7 +257,7 @@ h1 {
   color: #d14444;
   font-weight: 600;
   position: absolute;
-  top: 405px;
+  top: 305px;
   display: none;
 }
 .form-heading2 {
@@ -272,7 +294,7 @@ h1 {
   color: #d14444;
   font-weight: 600;
   position: absolute;
-  top: 320px;
+  top: 520px;
   padding-right: 90px;
   display: none;
 }
@@ -280,7 +302,7 @@ h1 {
   color: #d14444;
   font-weight: 600;
   position: absolute;
-  top: 465px;
+  top: 540px;
   width: 410px;
   display: none;
 }
@@ -332,7 +354,7 @@ h1 {
   color: #d14444;
   font-weight: 600;
   position: absolute;
-  top: 507px;
+  top: 467px;
   display: none;
 }
 #passerr3A {
@@ -367,6 +389,11 @@ h1 {
 }
 
 @media (max-width: 976px) {
+  .ant-input-affix-wrapper,
+  .otp-input {
+    width: 30.43vw;
+  }
+
   #eyecloseimg {
     margin-left: 32vw;
   }
@@ -400,7 +427,8 @@ h1 {
     padding-left: 15vw;
     width: 100%;
   }
-  #forminput {
+  .ant-input-affix-wrapper,
+  .otp-input {
     width: 70.43vw;
   }
   .form-heading {
@@ -795,11 +823,11 @@ h1 {
 
 @media (max-width: 1034px) {
   #passwrderr {
-    top: 300px;
+    top: 520px;
     font-size: 12px;
   }
   #passwrderr2 {
-    top: 445px;
+    top: 540px;
     font-size: 12px;
   }
 }
@@ -813,10 +841,10 @@ h1 {
 }
 @media (max-width: 969px) {
   #passwrderr {
-    top: 345px;
+    top: 520;
   }
   #passwrderr2 {
-    top: 492px;
+    top: 540;
   }
 }
 @media (max-width: 917px) {
@@ -879,6 +907,12 @@ h1 {
 }
 
 .footer-terms-content {
+  position: relative;
   margin-top: 25vh;
+  text-align: left;
+}
+
+.footer-terms-content-forgot-password {
+  margin-top: 43vh;
   text-align: left;
 }

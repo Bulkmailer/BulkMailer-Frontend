@@ -4,8 +4,12 @@ import bulkmailerlogo from "../../assets/bulkmailerlogo.png";
 import circle from "../../assets/circle.svg";
 import mailimg from "../../assets/mail.svg";
 import lockimg from "../../assets/lock.svg";
+import EnvelopeIcon from "../../assets/Envelope";
+import PasswordIcon from "../../assets/passwordIcon";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash } from "@fortawesome/fontawesome-free-solid";
+import { EyeFilled, EyeInvisibleFilled } from "@ant-design/icons";
+import { Input } from "antd";
 import { useNavigate } from "react-router-dom";
 import FormData from "form-data";
 import { useState, useEffect } from "react";
@@ -15,6 +19,8 @@ import { Link } from "react-router-dom";
 import * as ReactBootStrap from "react-bootstrap";
 import { ToastContainer, toast } from "react-toastify";
 import CustomLoader from "./loader/customLoader";
+import PageLayout from "./commonPageLayout/authPageLayout";
+
 import "react-toastify/dist/ReactToastify.css";
 
 function Login() {
@@ -80,7 +86,6 @@ function Login() {
       dispatch(logindata(fd, setLoading, navigate, setCheck));
     }
   }
-
   return (
     <>
       {loading ? (
@@ -92,25 +97,7 @@ function Login() {
       // </div>
       null}
       <div id="flex">
-        <div className="bluediv">
-          <div className="bluelogo">
-            <img src={bulkmailerlogo} className="bluelogoimg" />
-            <div className="titlelogotext">
-              <p className="bluelogotext">Bulk</p>
-              <p className="bluelogotext2">Mailer</p>
-            </div>
-          </div>
-          <div className="bluetext">
-            <h2>Elevate Your Email Reach Effortlessly</h2>
-            <p>
-              Unleash the power of bulk communication with our advanced mailer
-              application. Seamlessly send messages to a multitude of
-              recipients, ensuring your message reaches far and wide without a
-              hitch.
-            </p>
-          </div>
-          <img src={bulkmailerlogo} className="bluedivimg" />
-        </div>
+        <PageLayout />
         <div id="forms">
           <h1 className="form-heading">Login</h1>
           <p className="form-info">
@@ -118,39 +105,32 @@ function Login() {
           </p>
           <form onSubmit={handleSubmit} id="formtop">
             <div id="formflex">
-              <input
-                type="text"
-                id="forminput"
-                value={email}
-                placeholder="Enter Your Email"
+              <Input
+                prefix={<EnvelopeIcon />}
                 onChange={handleMail}
                 maxLength={30}
+                value={email}
+                type="text"
+                placeholder="Enter Your Email"
                 required
-              ></input>
-              <img src={mailimg} id="mailimg"></img>
+              />
               <p id="emailerr">Invalid Email Address</p>
-              <input
-                type={show ? "text" : "password"}
-                id="forminput"
-                value={password}
-                placeholder="Enter Your Password"
+
+              <Input
+                prefix={<PasswordIcon />}
+                suffix={
+                  show ? (
+                    <EyeFilled onClick={() => showHide()} />
+                  ) : (
+                    <EyeInvisibleFilled onClick={() => showHide()} />
+                  )
+                }
                 onChange={handlePass}
-                required
-              ></input>
-              <img src={lockimg} id="mailimg"></img>
-              {show ? (
-                <FontAwesomeIcon
-                  icon={faEye}
-                  onClick={showHide}
-                  id="eyecloseimg"
-                />
-              ) : (
-                <FontAwesomeIcon
-                  icon={faEyeSlash}
-                  onClick={showHide}
-                  id="eyecloseimg"
-                />
-              )}
+                placeholder="Input Password"
+                type={show ? "text" : "password"}
+                className="passwordInput"
+              />
+
               <p id="forgotlink">
                 <Link to="/forgot">Forgot Password?</Link>
               </p>

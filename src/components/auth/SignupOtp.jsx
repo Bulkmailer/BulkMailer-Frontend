@@ -4,6 +4,8 @@ import key from "../../assets/key.svg";
 import circle from "../../assets/circle.svg";
 import otpimg from "../../assets/otp.svg";
 import FormData from "form-data";
+import { Input } from "antd";
+import PageLayout from "./commonPageLayout/authPageLayout";
 import { useDispatch, useSelector } from "react-redux";
 import { signupotp } from "../../redux/actions/AuthAction";
 import * as ReactBootStrap from "react-bootstrap";
@@ -95,30 +97,24 @@ function Signupotp() {
         </div>
       ) : null}
       <div id="flex">
-        <div className="bluediv">
-          <img src={otpimg} className="bluedivimg" />
-        </div>
+        <PageLayout />
         <div id="forms3">
-          <h1 className="form-heading2">OTP Verification</h1>
-          <p id="endtxt">We have sent an OTP to your Email</p>
+          <h1 className="form-heading">OTP Verification</h1>
+          <p id="endtxt">4 Digit OTP has been sent on your E-mail ID.</p>
           <form onSubmit={handleSubmit} id="formtop">
             <div id="formflex">
-              <label htmlFor="otp" id="formlabel">
-                OTP
-              </label>
-              <input
-                type="text"
-                id="forminput"
-                value={otp}
-                placeholder="Enter Your OTP"
+              <Input
                 onChange={handleOtp}
                 maxLength={4}
+                value={otp}
+                type="text"
+                placeholder="Enter Your OTP"
+                className="otp-input"
                 required
-              ></input>
-              <img src={key} id="mailimg"></img>
+              />
               <p id="emailerr3">Numbers Only</p>
             </div>
-            <button type="submit" id="formbtn2">
+            <button type="submit" id="formbtn">
               Verify
             </button>
           </form>

@@ -10,6 +10,11 @@ import {
 } from "@fortawesome/fontawesome-free-solid";
 import { useState, useEffect } from "react";
 import FormData from "form-data";
+import { Input } from "antd";
+import PageLayout from "./commonPageLayout/authPageLayout";
+import { EyeFilled, EyeInvisibleFilled } from "@ant-design/icons";
+import EnvelopeIcon from "../../assets/Envelope";
+import PasswordIcon from "../../assets/passwordIcon";
 import { useDispatch } from "react-redux";
 import names from "../../assets/names.svg";
 import lock from "../../assets/lock.svg";
@@ -127,95 +132,65 @@ function SignupDetails() {
         </div>
       ) : null}
       <div id="flex">
-        <div className="bluediv">
-          <img src={signup} className="bluedivimg" />
-        </div>
+        <PageLayout />
         <div id="forms3">
           <h1 className="form-heading4">User Details</h1>
           <form onSubmit={handleSubmit}>
-            <div id="formflex">
-              <label htmlFor="fullname" id="formlabel">
-                Full Name
-              </label>
-              <input
-                type="text"
-                id="forminput"
-                placeholder="Enter Your Name"
-                value={fullname}
+            <div id="formflex-signup">
+              <Input
+                prefix={<EnvelopeIcon />}
                 onChange={handleFullname}
-                required
                 maxLength={30}
-              ></input>
-              <img src={names} id="mailimg"></img>
-              <p id="passerr3A">Invalid Full Name</p>
-              <label htmlFor="username" id="formlabel3">
-                Username
-              </label>
-              <input
+                value={fullname}
                 type="text"
-                id="forminput"
-                placeholder="Enter Your Username"
+                placeholder="Enter Your Name"
+                required
+                className="sign-up-name"
+              />
+              <p id="passerr3A">Invalid Full Name</p>
+              <Input
+                prefix={<EnvelopeIcon />}
+                onChange={handleUsername}
                 maxLength={30}
                 value={username}
-                onChange={handleUsername}
+                type="text"
+                placeholder="Enter Your Username"
                 required
-              ></input>
-              <img src={names} id="mailimg"></img>
+                className="sign-up-username"
+              />
               <p id="passerr3B">Invalid UserName</p>
-              {show1 ? (
-                <FontAwesomeIcon
-                  icon={faEye}
-                  id="eyecloseimg3"
-                  onClick={showHide1}
-                />
-              ) : (
-                <FontAwesomeIcon
-                  icon={faEyeSlash}
-                  id="eyecloseimg3"
-                  onClick={showHide1}
-                />
-              )}
-              <label htmlFor="text" id="formlabel4">
-                Password
-              </label>
-              <input
-                type={show1 ? "text" : "password"}
-                id="forminput"
-                placeholder="Enter Your Password"
-                value={password}
+              <Input
+                prefix={<PasswordIcon />}
+                suffix={
+                  show1 ? (
+                    <EyeFilled onClick={() => showHide1()} />
+                  ) : (
+                    <EyeInvisibleFilled onClick={() => showHide1()} />
+                  )
+                }
                 onChange={handlePassword}
-                required
-              ></input>
-              <img src={lock} id="mailimg"></img>
-              {show2 ? (
-                <FontAwesomeIcon
-                  icon={faEye}
-                  id="eyecloseimg3"
-                  onClick={showHide2}
-                />
-              ) : (
-                <FontAwesomeIcon
-                  icon={faEyeSlash}
-                  id="eyecloseimg3"
-                  onClick={showHide2}
-                />
-              )}
-              <label htmlFor="password" id="formlabel4">
-                Confirm Password
-              </label>
-              <input
-                type={show2 ? "text" : "password"}
-                id="forminput"
-                placeholder="Re-enter Password"
-                value={repass}
+                value={password}
+                placeholder="Input Password"
+                type={show1 ? "text" : "password"}
+                className="passwordInput"
+              />
+              <Input
+                prefix={<PasswordIcon />}
+                suffix={
+                  show2 ? (
+                    <EyeFilled onClick={() => showHide2()} />
+                  ) : (
+                    <EyeInvisibleFilled onClick={() => showHide2()} />
+                  )
+                }
                 onChange={handleRepass}
-                required
-              ></input>
-              <img src={lock} id="mailimg"></img>
+                value={repass}
+                placeholder="Re-enter Password"
+                type={show2 ? "text" : "password"}
+                className="passwordInput"
+              />
               <p id="passerr3">Didn't Match</p>
             </div>
-            {/* <div id='formflex'>
-       </div> */}
             <button type="submit" id="formbtn2">
               Continue
             </button>
