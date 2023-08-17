@@ -134,21 +134,27 @@ h1 {
   display: flex;
   flex-direction: column;
 }
-#forminput {
+
+.ant-input-affix-wrapper {
   background-color: white;
   border: 0.5px solid black;
   color: #5a6675;
-  margin-top: 1px;
+  /* margin-top: 50px; */
   border-radius: 12px;
   width: 30.43vw;
   height: 64px;
   font-size: 1rem;
   font-weight: 600;
-  padding-left: 52px;
 }
 
-#forminput::placeholder {
-  color: #b5b5b5;
+.passwordInput {
+  margin: 30px 0 -10px 0;
+}
+.ant-input::placeholder {
+  padding: 20px;
+}
+.ant-input-prefix {
+  padding-left: 10px;
 }
 
 #formlabel {
@@ -367,6 +373,10 @@ h1 {
 }
 
 @media (max-width: 976px) {
+  .ant-input-affix-wrapper {
+    width: 30.43vw;
+  }
+
   #eyecloseimg {
     margin-left: 32vw;
   }
@@ -400,7 +410,7 @@ h1 {
     padding-left: 15vw;
     width: 100%;
   }
-  #forminput {
+  .ant-input-affix-wrapper {
     width: 70.43vw;
   }
   .form-heading {

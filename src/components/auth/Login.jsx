@@ -5,9 +5,11 @@ import circle from "../../assets/circle.svg";
 import mailimg from "../../assets/mail.svg";
 import lockimg from "../../assets/lock.svg";
 import EnvelopeIcon from "../../assets/Envelope";
+import PasswordIcon from "../../assets/passwordIcon";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash } from "@fortawesome/fontawesome-free-solid";
-import { Carousel } from "antd";
+import { EyeFilled, EyeInvisibleFilled } from "@ant-design/icons";
+import { Input } from "antd";
 import { useNavigate } from "react-router-dom";
 import FormData from "form-data";
 import { useState, useEffect } from "react";
@@ -103,41 +105,32 @@ function Login() {
           </p>
           <form onSubmit={handleSubmit} id="formtop">
             <div id="formflex">
-              <input
-                type="text"
-                id="forminput"
-                value={email}
-                placeholder="Enter Your Email"
+              <Input
+                prefix={<EnvelopeIcon />}
                 onChange={handleMail}
                 maxLength={30}
+                value={email}
+                type="text"
+                placeholder="Enter Your Email"
                 required
-              ></input>
-              <img src={mailimg} id="mailimg"></img>
-
+              />
               <p id="emailerr">Invalid Email Address</p>
-              <input
-                type={show ? "text" : "password"}
-                id="forminput"
-                value={password}
-                placeholder="Enter Your Password"
-                onChange={handlePass}
-                required
-              ></input>
-              <img src={lockimg} id="mailimg"></img>
 
-              {show ? (
-                <FontAwesomeIcon
-                  icon={faEye}
-                  onClick={showHide}
-                  id="eyecloseimg"
-                />
-              ) : (
-                <FontAwesomeIcon
-                  icon={faEyeSlash}
-                  onClick={showHide}
-                  id="eyecloseimg"
-                />
-              )}
+              <Input
+                prefix={<PasswordIcon />}
+                suffix={
+                  show ? (
+                    <EyeFilled onClick={() => showHide()} />
+                  ) : (
+                    <EyeInvisibleFilled onClick={() => showHide()} />
+                  )
+                }
+                onChange={handlePass}
+                placeholder="Input Password"
+                type={show ? "text" : "password"}
+                className="passwordInput"
+              />
+
               <p id="forgotlink">
                 <Link to="/forgot">Forgot Password?</Link>
               </p>
