@@ -133,6 +133,18 @@ h1 {
 #formflex {
   display: flex;
   flex-direction: column;
+  margin-bottom: 20px;
+}
+
+#formflex-signup {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  height: 350px;
+}
+
+.sign-up-name {
+  margin-bottom: 20px;
 }
 
 .ant-input-affix-wrapper,
@@ -221,6 +233,10 @@ h1 {
   cursor: pointer;
 }
 
+.sign-up-username {
+  margin-bottom: -10px;
+}
+
 /* forgot */
 #forms2 {
   padding-left: 90px;
@@ -231,10 +247,9 @@ h1 {
   background-color: rgba(83, 109, 254, 0.9);
   border: none;
   color: white;
-  margin-top: 2vh;
   font-weight: 600;
-  width: 35.43vw;
-  height: 50px;
+  width: 30.43vw;
+  height: 64px;
   border-radius: 5px;
   cursor: pointer;
 }
@@ -242,7 +257,7 @@ h1 {
   color: #d14444;
   font-weight: 600;
   position: absolute;
-  top: 405px;
+  top: 305px;
   display: none;
 }
 .form-heading2 {
@@ -339,7 +354,7 @@ h1 {
   color: #d14444;
   font-weight: 600;
   position: absolute;
-  top: 507px;
+  top: 467px;
   display: none;
 }
 #passerr3A {

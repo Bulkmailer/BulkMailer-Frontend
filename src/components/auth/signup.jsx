@@ -2,7 +2,10 @@ import { useState, useEffect } from "react";
 import "./auth.css";
 import emailimg from "../../assets/email.svg";
 import circle from "../../assets/circle.svg";
+import EnvelopeIcon from "../../assets/Envelope";
+import PageLayout from "./commonPageLayout/authPageLayout";
 import FormData from "form-data";
+import { Input } from "antd";
 import mailimg from "../../assets/mail.svg";
 import { useDispatch, useSelector } from "react-redux";
 import { signupdata } from "../../redux/actions/AuthAction";
@@ -71,29 +74,24 @@ function FrgPass() {
         </div>
       ) : null}
       <div id="flex">
-        <div className="bluediv">
-          <img src={emailimg} className="bluedivimg" />
-        </div>
-        <div id="forms2">
-          <h1 className="form-heading2">Email Verification</h1>
+        <PageLayout />
+        <div id="forms">
+          <h1 className="form-heading2">Sign up for Bulk Mailer</h1>
+          <p className="form-info">Please Enter Your Email</p>
           <form onSubmit={handleSubmit} id="formtop">
             <div id="formflex">
-              <label htmlFor="email" id="formlabel">
-                Email Address
-              </label>
-              <input
-                type="text"
-                id="forminput"
-                value={email}
-                placeholder="Enter Your Email Address"
+              <Input
+                prefix={<EnvelopeIcon />}
                 onChange={handleMail}
-                required
                 maxLength={30}
-              ></input>
-              <img src={mailimg} id="mailimg"></img>
+                value={email}
+                type="text"
+                placeholder="Enter Your Email"
+                required
+              />
               <p id="emailerr2">Invalid Email Address</p>
             </div>
-            <button type="submit" id="formbtn2">
+            <button type="submit" id="formbtn">
               Send OTP
             </button>
             <ToastContainer />
