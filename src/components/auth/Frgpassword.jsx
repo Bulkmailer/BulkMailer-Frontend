@@ -5,6 +5,9 @@ import circle from "../../assets/circle.svg";
 import FormData from "form-data";
 import { useDispatch, useSelector } from "react-redux";
 import { frgdata } from "../../redux/actions/AuthAction";
+import EnvelopeIcon from "../../assets/Envelope";
+import { Input } from "antd";
+import PageLayout from "./commonPageLayout/authPageLayout";
 import mailimg from "../../assets/mail.svg";
 import { useNavigate } from "react-router-dom";
 import * as ReactBootStrap from "react-bootstrap";
@@ -70,31 +73,31 @@ function FrgPass() {
         </div>
       ) : null}
       <div id="flex">
-        <div className="bluediv">
-          <img src={forgot} className="bluedivimg" />
-        </div>
+        <PageLayout />
         <div id="forms2">
-          <h1 className="form-heading2">Email Verification</h1>
+          <h1 className="form-heading">Email Verification</h1>
+          <p className="form-info">
+            Enter your E-mail ID, which will receive the 4 digit OTP.
+          </p>
           <form onSubmit={handleSubmit} id="formtop">
             <div id="formflex">
-              <label htmlFor="email" id="formlabel">
-                Email Address
-              </label>
-              <input
-                type="text"
-                id="forminput"
-                value={email}
-                maxLength={30}
-                placeholder="Enter Your Email Address"
+              <Input
+                prefix={<EnvelopeIcon />}
                 onChange={handleMail}
+                maxLength={30}
+                value={email}
+                type="text"
+                placeholder="Enter Your Email"
                 required
-              ></input>
-              <img src={mailimg} id="mailimg"></img>
+              />
               <p id="emailerr2">Invalid Email Address</p>
             </div>
-            <button type="submit" id="formbtn2">
+            <button type="submit" id="formbtn">
               Send OTP
             </button>
+            <p className="footer-terms-content-forgot-password">
+              ©2023 Bulk Mailer - All Rights Reserved
+            </p>
             <ToastContainer />
           </form>
         </div>

@@ -2,6 +2,10 @@ import "./auth.css";
 import reset from "../../assets/reset.svg";
 import circle from "../../assets/circle.svg";
 import lock from "../../assets/lock.svg";
+import { Input } from "antd";
+import PasswordIcon from "../../assets/passwordIcon";
+import PageLayout from "./commonPageLayout/authPageLayout";
+import { EyeFilled, EyeInvisibleFilled } from "@ant-design/icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash } from "@fortawesome/fontawesome-free-solid";
 import { useState } from "react";
@@ -103,63 +107,39 @@ function ResetPass() {
         </div>
       ) : null}
       <div id="flex">
-        <div className="bluediv">
-          <img src={reset} className="bluedivimg" />
-        </div>
+        <PageLayout />
         <div id="forms2">
           <form onSubmit={handleSubmit} id="formtop">
             <div id="formflex">
-              <h1 className="form-heading3">Reset Password</h1>
-              {show1 ? (
-                <FontAwesomeIcon
-                  icon={faEye}
-                  id="eyecloseimg2"
-                  onClick={showHide1}
-                />
-              ) : (
-                <FontAwesomeIcon
-                  icon={faEyeSlash}
-                  id="eyecloseimg2"
-                  onClick={showHide1}
-                />
-              )}
-              <label htmlFor="text" id="formlabel2">
-                Password
-              </label>
-              <input
-                type={show1 ? "text" : "password"}
-                id="forminput"
-                placeholder="Enter Your Password"
-                value={password}
+              <h1 className="form-heading">Reset Password</h1>
+              <Input
+                prefix={<PasswordIcon />}
+                suffix={
+                  show1 ? (
+                    <EyeFilled onClick={() => showHide1()} />
+                  ) : (
+                    <EyeInvisibleFilled onClick={() => showHide1()} />
+                  )
+                }
                 onChange={handlePassword}
-                required
-              ></input>
-              <img src={lock} id="mailimg"></img>
-              {show2 ? (
-                <FontAwesomeIcon
-                  icon={faEye}
-                  id="eyecloseimg2"
-                  onClick={showHide2}
-                />
-              ) : (
-                <FontAwesomeIcon
-                  icon={faEyeSlash}
-                  id="eyecloseimg2"
-                  onClick={showHide2}
-                />
-              )}
-              <label htmlFor="password" id="formlabel2">
-                Confirm Password
-              </label>
-              <input
-                type={show2 ? "text" : "password"}
-                id="forminput"
-                placeholder="Re-enter Password"
-                value={repass}
+                placeholder="Enter Your Password"
+                type={show1 ? "text" : "password"}
+                className="passwordInput"
+              />
+              <Input
+                prefix={<PasswordIcon />}
+                suffix={
+                  show2 ? (
+                    <EyeFilled onClick={() => showHide2()} />
+                  ) : (
+                    <EyeInvisibleFilled onClick={() => showHide2()} />
+                  )
+                }
                 onChange={handleRepass}
-                required
-              ></input>
-              <img src={lock} id="mailimg"></img>
+                placeholder="Enter Your Password"
+                type={show2 ? "text" : "password"}
+                className="passwordInput"
+              />
               <p id="passwrderr2">Didn't Match</p>
               <button type="submit" id="formbtn">
                 Continue

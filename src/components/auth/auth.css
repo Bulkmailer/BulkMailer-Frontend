@@ -135,11 +135,11 @@ h1 {
   flex-direction: column;
 }
 
-.ant-input-affix-wrapper {
+.ant-input-affix-wrapper,
+.otp-input {
   background-color: white;
   border: 0.5px solid black;
   color: #5a6675;
-  /* margin-top: 50px; */
   border-radius: 12px;
   width: 30.43vw;
   height: 64px;
@@ -147,11 +147,12 @@ h1 {
   font-weight: 600;
 }
 
+.ant-input {
+  text-indent: 20px;
+}
+
 .passwordInput {
   margin: 30px 0 -10px 0;
-}
-.ant-input::placeholder {
-  padding: 20px;
 }
 .ant-input-prefix {
   padding-left: 10px;
@@ -278,7 +279,7 @@ h1 {
   color: #d14444;
   font-weight: 600;
   position: absolute;
-  top: 320px;
+  top: 520px;
   padding-right: 90px;
   display: none;
 }
@@ -286,7 +287,7 @@ h1 {
   color: #d14444;
   font-weight: 600;
   position: absolute;
-  top: 465px;
+  top: 540px;
   width: 410px;
   display: none;
 }
@@ -373,7 +374,8 @@ h1 {
 }
 
 @media (max-width: 976px) {
-  .ant-input-affix-wrapper {
+  .ant-input-affix-wrapper,
+  .otp-input {
     width: 30.43vw;
   }
 
@@ -410,7 +412,8 @@ h1 {
     padding-left: 15vw;
     width: 100%;
   }
-  .ant-input-affix-wrapper {
+  .ant-input-affix-wrapper,
+  .otp-input {
     width: 70.43vw;
   }
   .form-heading {
@@ -805,11 +808,11 @@ h1 {
 
 @media (max-width: 1034px) {
   #passwrderr {
-    top: 300px;
+    top: 520px;
     font-size: 12px;
   }
   #passwrderr2 {
-    top: 445px;
+    top: 540px;
     font-size: 12px;
   }
 }
@@ -823,10 +826,10 @@ h1 {
 }
 @media (max-width: 969px) {
   #passwrderr {
-    top: 345px;
+    top: 520;
   }
   #passwrderr2 {
-    top: 492px;
+    top: 540;
   }
 }
 @media (max-width: 917px) {
@@ -889,6 +892,12 @@ h1 {
 }
 
 .footer-terms-content {
+  position: relative;
   margin-top: 25vh;
+  text-align: left;
+}
+
+.footer-terms-content-forgot-password {
+  margin-top: 43vh;
   text-align: left;
 }
