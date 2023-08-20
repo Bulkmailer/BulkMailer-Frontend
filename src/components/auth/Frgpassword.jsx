@@ -104,6 +104,9 @@ function FrgPass() {
             </p>
             <ToastContainer />
           </form>
+          <p className="footer-terms-content">
+            ©2023 Bulk Mailer - All Rights Reserved
+          </p>
         </div>
         <div></div>
         <img src={circle} className="bluecircleimg"></img>

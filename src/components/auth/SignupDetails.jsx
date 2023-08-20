@@ -199,6 +199,9 @@ function SignupDetails() {
             Password must contain at least 8 characters, a special symbol, an
             uppercase, a lowecase, a numeric value and no space.
           </p>
+          <p className="footer-terms-content">
+            ©2023 Bulk Mailer - All Rights Reserved
+          </p>
         </div>
         <img src={circle} className="bluecircleimg"></img>
         <div className="bluecircleimg2"></div>
