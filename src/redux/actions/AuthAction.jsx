@@ -7,7 +7,7 @@ export const logindata =
       .then((res) => {
         setCheck(1);
         setLoading(false);
-        navigate("/home");
+        navigate("/home", { replace: true });
         dispatch({ type: "Login", payload: res });
       })
       .catch((err) => {
