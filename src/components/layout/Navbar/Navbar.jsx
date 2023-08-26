@@ -54,10 +54,10 @@ function Navbar() {
         </div>
       </div>
       <div id="uli">
-        <img src={cross} id="crossimg" onClick={close}></img>
+        <img src={cross} id="crossimg" onClick={close} />
         <ul>
           <li onClick={listitems}>
-            <img src={dashboardimg} id="dashboardimg3"></img>Dashboard
+            <img src={dashboardimg} id="dashboardimg3" />Dashboard
             <ol id="olli">
               <li>
                 <Link to="/creategroup">Create Group</Link>
@@ -72,20 +72,20 @@ function Navbar() {
           </li>
           <li>
             <Link to="/mails">
-              <img src={mails} id="dashboardimg4"></img>Mails
+              <img src={mails} id="dashboardimg4" />Mails
             </Link>
           </li>
           <li>
             <Link to="/mygrp">
-              <img src={groups} id="dashboardimg4"></img>My Groups
+              <img src={groups} id="dashboardimg4" />My Groups
             </Link>
           </li>
         </ul>
       </div>
       <nav id="nav" className="blur">
-        <img src={logo} id="logo"></img>
+        <img src={logo} id="logo" />
         <ul id="navul">
-          <li></li>
+          <li />
           <NavLink
             to="/home"
             className={
@@ -135,13 +135,13 @@ function Navbar() {
             <li>My Schedules</li>
           </NavLink>
         </ul>
-        <img src={menu} id="menu" onClick={showmenu}></img>
+        <img src={menu} id="menu" onClick={showmenu} />
         <Link to="/profilepage">
-          <img src={profile} id="profile"></img>
+          <img src={profile} id="profile" />
         </Link>
-        <img src={logout} id="logout" onClick={askmenu}></img>
+        <img src={logout} id="logout" onClick={askmenu} />
       </nav>
-      <img src={circle} id="circletwo"></img>
+      <img src={circle} id="circletwo" />
     </>
   );
 }

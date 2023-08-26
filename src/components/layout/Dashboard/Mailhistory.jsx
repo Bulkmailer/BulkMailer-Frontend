@@ -42,7 +42,7 @@ function Mailhistory() {
 
   return (
     <>
-      <img src={background} id="background"></img>
+      <img src={background} id="background" />
       <Navbar />
       <h1 id="listhead">Mail History</h1>
       {/* <button id='formbtn17'>All</button>
@@ -54,7 +54,7 @@ function Mailhistory() {
           list1.map((rest) => getMail(rest))
         ) : (
           <div id="nothing">
-            <img src={nomails} id="nothingimg"></img>
+            <img src={nomails} id="nothingimg" />
             <p>No contacts</p>
           </div>
         )}

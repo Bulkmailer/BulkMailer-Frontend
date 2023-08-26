@@ -151,8 +151,8 @@ function Login() {
           </p>
         </div>
       </div>
-      <img src={circle} className="bluecircleimg"></img>
-      <div className="bluecircleimg2"></div>
+      <img src={circle} className="bluecircleimg" />
+      <div className="bluecircleimg2" />
     </>
   );
 }

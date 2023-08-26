@@ -8,13 +8,13 @@ import background from "../../../../assets/background.jpg";
 function Contacts() {
   return (
     <>
-      <img src={background} id="background"></img>
+      <img src={background} id="background" />
       <Navbar />
       <div id="managerC">
-        <img src={newcontact} id="create3"></img>
+        <img src={newcontact} id="create3" />
         <div>
           <h1 id="pagehead">
-            <img src={contacts}></img>Contacts
+            <img src={contacts} />Contacts
           </h1>
           <p id="intropara2">
             You can add contacts manually or upload them through csv , txt , xls
@@ -31,7 +31,7 @@ function Contacts() {
             </div>
           </div>
         </div>
-        <img src={newcontact} id="create4"></img>
+        <img src={newcontact} id="create4" />
       </div>
     </>
   );

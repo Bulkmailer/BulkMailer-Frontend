@@ -32,7 +32,7 @@ function ProfilePage() {
 
   return (
     <>
-      <img src={background} id="background"></img>
+      <img src={background} id="background" />
       {loading ? (
         <div id="loader">
           <ReactBootStrap.Spinner animation="border" id="spinner" />
@@ -40,7 +40,7 @@ function ProfilePage() {
       ) : null}
       <Navbar />
       <div id="flexkro">
-        <img src={profileimg} id="create7"></img>
+        <img src={profileimg} id="create7" />
         <div id="profilediv">
           <h1 id="prohead">User Profile</h1>
           <div id="profilecomp">
@@ -90,7 +90,7 @@ function ProfilePage() {
             </Link>
           </div>
         </div>
-        <img src={profileimg} id="create8A"></img>
+        <img src={profileimg} id="create8A" />
       </div>
     </>
   );

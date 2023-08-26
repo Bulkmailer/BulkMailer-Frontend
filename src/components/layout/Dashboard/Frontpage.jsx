@@ -11,12 +11,12 @@ import background from "../../../assets/background.jpg";
 function FrontPage() {
   return (
     <>
-      <img src={background} id="background"></img>
+      <img src={background} id="background" />
       <Navbar />
       <div id="padder">
-        <img src={dashboard} id="dashboardimg"></img>
+        <img src={dashboard} id="dashboardimg" />
         <div id="frontpagediv">
-          <img src={frontpage} id="frontpageimg"></img>
+          <img src={frontpage} id="frontpageimg" />
         </div>
         <h1 id="welcome">
           Welcome To <span id="h1part">BULK MAILER!!!</span>

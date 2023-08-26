@@ -52,7 +52,7 @@ function Groupinfo() {
           <ReactBootStrap.Spinner animation="border" id="spinner" />
         </div>
       ) : null}
-      <img src={background} id="background"></img>
+      <img src={background} id="background" />
       <Navbar />
       {list1 ? <h1 id="listhead">Group Contacts</h1> : null}
       {/* {(list1)?<p className='groupnames2'>Total No. Of Contacts : {list1.length}</p>:null} */}
@@ -61,7 +61,7 @@ function Groupinfo() {
           list1.map((rest) => getContact(rest))
         ) : (
           <div id="nothing">
-            <img src={nocontacts} id="nothingimg"></img>
+            <img src={nocontacts} id="nothingimg" />
             <div id="btndiv">
               <Link to="/contacts">
                 <button id="formbtn10">Add Contacts</button>
