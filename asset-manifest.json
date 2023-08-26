@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.f0185c2e.css",
-    "main.js": "/static/js/main.41d4117e.js",
+    "main.css": "/static/css/main.07919ed4.css",
+    "main.js": "/static/js/main.aec11935.js",
     "static/js/787.174f8a24.chunk.js": "/static/js/787.174f8a24.chunk.js",
     "static/media/background.jpg": "/static/media/background.db009591e32e41e8065b.jpg",
     "static/media/bulkmailerlogo.png": "/static/media/bulkmailerlogo.dee039af1fd0fa49fa51.png",
@@ -56,12 +56,12 @@
     "static/media/from.svg": "/static/media/from.f59d0069605b26aeb4be810bf51c0d68.svg",
     "static/media/circle.svg": "/static/media/circle.467a82d5e4549d6b2a9a211265359112.svg",
     "static/media/add.svg": "/static/media/add.650530ff929516c1318377006819cf10.svg",
-    "main.f0185c2e.css.map": "/static/css/main.f0185c2e.css.map",
-    "main.41d4117e.js.map": "/static/js/main.41d4117e.js.map",
+    "main.07919ed4.css.map": "/static/css/main.07919ed4.css.map",
+    "main.aec11935.js.map": "/static/js/main.aec11935.js.map",
     "787.174f8a24.chunk.js.map": "/static/js/787.174f8a24.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.f0185c2e.css",
-    "static/js/main.41d4117e.js"
+    "static/css/main.07919ed4.css",
+    "static/js/main.aec11935.js"
   ]
 }
