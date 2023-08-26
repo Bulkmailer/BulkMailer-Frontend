@@ -40,51 +40,51 @@ function App() {
     <>
       <Router>
         <Routes>
-          <Route path="/" exact element={<Login />}></Route>
-          <Route path="/forgot" exact element={<FrgPass />}></Route>
-          <Route path="/loginotp" exact element={<Loginotp />}></Route>
-          <Route path="/resetpass" exact element={<ResetPass />}></Route>
-          <Route path="/signup" exact element={<Signup />}></Route>
-          <Route path="/signupotp" exact element={<Signupotp />}></Route>
+          <Route path="/" exact element={<Login />} />
+          <Route path="/forgot" exact element={<FrgPass />} />
+          <Route path="/loginotp" exact element={<Loginotp />} />
+          <Route path="/resetpass" exact element={<ResetPass />} />
+          <Route path="/signup" exact element={<Signup />} />
+          <Route path="/signupotp" exact element={<Signupotp />} />
           <Route
             path="/signupdetails"
             exact
             element={<SignupDetails />}
-          ></Route>
-          <Route path="/home" exact element={<FrontPage />}></Route>
-          <Route path="/contacts" exact element={<Contacts />}></Route>
-          <Route path="/import" exact element={<Import />}></Route>
-          <Route path="/copy" exact element={<Copy />}></Route>
-          <Route path="/creategroup" exact element={<CreateGroup />}></Route>
-          <Route path="/uploads" exact element={<Uploads />}></Route>
-          <Route path="/addcontacts" exact element={<AddContacts />}></Route>
-          <Route path="/mailhistory" exact element={<Mailhistory />}></Route>
-          <Route path="/mygrp" exact element={<MyGroup />}></Route>
-          <Route path="/groupinfo" exact element={<Groupinfo />}></Route>
-          <Route path="/profilepage" exact element={<ProfilePage />}></Route>
-          <Route path="/templates" exact element={<Templates />}></Route>
-          <Route path="/editprofile" exact element={<EditProfile />}></Route>
-          <Route path="/addpassword" exact element={<AddPassword />}></Route>
+           />
+          <Route path="/home" exact element={<FrontPage />} />
+          <Route path="/contacts" exact element={<Contacts />} />
+          <Route path="/import" exact element={<Import />} />
+          <Route path="/copy" exact element={<Copy />} />
+          <Route path="/creategroup" exact element={<CreateGroup />} />
+          <Route path="/uploads" exact element={<Uploads />} />
+          <Route path="/addcontacts" exact element={<AddContacts />} />
+          <Route path="/mailhistory" exact element={<Mailhistory />} />
+          <Route path="/mygrp" exact element={<MyGroup />} />
+          <Route path="/groupinfo" exact element={<Groupinfo />} />
+          <Route path="/profilepage" exact element={<ProfilePage />} />
+          <Route path="/templates" exact element={<Templates />} />
+          <Route path="/editprofile" exact element={<EditProfile />} />
+          <Route path="/addpassword" exact element={<AddPassword />} />
           <Route
             path="/updatepassword"
             exact
             element={<UpdatePassword />}
-          ></Route>
-          <Route path="/addmails" exact element={<AddEmails />}></Route>
-          <Route path="/mails" exact element={<Campaign />}></Route>
-          <Route path="/mailingpage" exact element={<Mails />}></Route>
+           />
+          <Route path="/addmails" exact element={<AddEmails />} />
+          <Route path="/mails" exact element={<Campaign />} />
+          <Route path="/mailingpage" exact element={<Mails />} />
           {/* <Route path="/" exact element={<Home />}></Route> */}
           <Route
             path="/schedulehistory"
             exact
             element={<ScheduleHistory />}
-          ></Route>
-          <Route path="/schedule" exact element={<Schedule />}></Route>
-          <Route path="/addtemp" exact element={<AddTemplate />}></Route>
-          <Route path="/fileupload" exact element={<FileUpload />}></Route>
-          <Route path="/template" exact element={<TemplatesShow />}></Route>
-          <Route path="/editcontacts" exact element={<EditContacts />}></Route>
-          <Route path="/editgroup" exact element={<EditGroup />}></Route>
+           />
+          <Route path="/schedule" exact element={<Schedule />} />
+          <Route path="/addtemp" exact element={<AddTemplate />} />
+          <Route path="/fileupload" exact element={<FileUpload />} />
+          <Route path="/template" exact element={<TemplatesShow />} />
+          <Route path="/editcontacts" exact element={<EditContacts />} />
+          <Route path="/editgroup" exact element={<EditGroup />} />
         </Routes>
       </Router>
     </>

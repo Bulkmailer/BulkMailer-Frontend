@@ -71,13 +71,13 @@ function Groupname(props) {
           className="deleteimg"
           id={props.id}
           onClick={handleDelete}
-        ></img>
+         />
         <img
           src={editImg}
           className="deleteimg"
           id={props.groupname}
           onClick={handleEdit}
-        ></img>
+         />
         <FontAwesomeIcon
           icon={faEye}
           id={props.id}

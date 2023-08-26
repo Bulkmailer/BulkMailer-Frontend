@@ -73,7 +73,7 @@ function EditGroup() {
 
   return (
     <>
-      <img src={background} id="background"></img>
+      <img src={background} id="background" />
       {loading ? (
         <div id="loader">
           <ReactBootStrap.Spinner animation="border" id="spinner" />
@@ -82,7 +82,7 @@ function EditGroup() {
       <Navbar />
 
       <div id="managerC">
-        <img src={create} id="create"></img>
+        <img src={create} id="create" />
         <div>
           <h1 id="grouphead">Edit Group</h1>
           <form id="flexform" onSubmit={handleSubmit}>
@@ -97,8 +97,8 @@ function EditGroup() {
               onChange={handleName}
               required
               maxLength={40}
-            ></input>
-            <img src={group} id="mailimg"></img>
+             />
+            <img src={group} id="mailimg" />
             <p id="error5G">Invalid Group Name</p>
             <p id="buttonpara">
               <button id="formbtn3" type="submit">
@@ -111,7 +111,7 @@ function EditGroup() {
           </form>
           <ToastContainer />
         </div>
-        <img src={create} id="create2"></img>
+        <img src={create} id="create2" />
       </div>
     </>
   );

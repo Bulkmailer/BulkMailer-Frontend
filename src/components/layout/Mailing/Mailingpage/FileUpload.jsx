@@ -45,17 +45,17 @@ function FileUpload() {
   }
   return (
     <>
-      <img src={background} id="background"></img>
+      <img src={background} id="background" />
       <Navbar />
       <div id="managerC">
-        <img src={uploading} id="create7"></img>
+        <img src={uploading} id="create7" />
         <div>
           <h1 id="pagehead2">Upload a File</h1>
           <p id="intropara3A">Select a file to be attached with your email</p>
 
           {file.length != 0 ? (
             <form>
-              <img src={file2} id="previewImg" alt={name}></img>
+              <img src={file2} id="previewImg" alt={name} />
               <p id="buttonpara">
                 <button id="formbtn32" type="submit" onClick={handleSubmit}>
                   Upload
@@ -72,7 +72,7 @@ function FileUpload() {
             <>
               <label htmlFor="file-input">
                 <div id="imgdiv">
-                  <img src={uploads} id="upimg"></img>
+                  <img src={uploads} id="upimg" />
                   <p id="upload">Upload file here</p>
                 </div>
               </label>
@@ -89,7 +89,7 @@ function FileUpload() {
           />
           <ToastContainer />
         </div>
-        <img src={uploading} id="create11"></img>
+        <img src={uploading} id="create11" />
       </div>
     </>
   );

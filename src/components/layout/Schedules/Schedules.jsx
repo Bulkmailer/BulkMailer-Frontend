@@ -230,10 +230,10 @@ function Schedule() {
   }
   return (
     <>
-      <img src={background} id="background"></img>
+      <img src={background} id="background" />
       <Navbar />
       <div id="managerdiv">
-        <img src={schedule} id="create13"></img>
+        <img src={schedule} id="create13" />
         <div id="siderdiv">
           <h1 id="headd">Schedule Mail</h1>
           <div>
@@ -303,7 +303,7 @@ function Schedule() {
             </form>
           </div>
         </div>
-        <img src={schedule} id="create14"></img>
+        <img src={schedule} id="create14" />
         <ToastContainer />
       </div>
     </>
