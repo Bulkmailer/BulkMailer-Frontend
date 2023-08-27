@@ -19,7 +19,7 @@ const authreducer = (state = initial, action) => {
       }
       return {
         response:
-          action.payload.response.data && action.payload.response.data.msg,
+           action.payload.response.data?.msg,
       };
     }
     case "Forgot": {
