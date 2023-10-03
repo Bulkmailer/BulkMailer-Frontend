@@ -133,7 +133,7 @@ function EditProfile() {
   }
   return (
     <>
-      <img src={background} id="background"></img>
+      <img src={background} id="background" />
       {loading ? (
         <div id="loader">
           <ReactBootStrap.Spinner animation="border" id="spinner" />
@@ -141,7 +141,7 @@ function EditProfile() {
       ) : null}
       <Navbar />
       <div id="managerC">
-        <img src={edit} id="create"></img>
+        <img src={edit} id="create" />
         <div>
           <h1 id="pagehead21">Edit Profile</h1>
           <div>
@@ -156,8 +156,8 @@ function EditProfile() {
                 value={username}
                 onChange={handleUsername}
                 maxLength={20}
-              ></input>
-              <img src={emailimg} id="mailimg"></img>
+               />
+              <img src={emailimg} id="mailimg" />
               <p id="error5B">Invalid UserName</p>
               <label htmlFor="title" id="formlabel">
                 Full Name
@@ -170,8 +170,8 @@ function EditProfile() {
                 value={name}
                 onChange={handleName}
                 maxLength={30}
-              ></input>
-              <img src={names} id="mailimg"></img>
+               />
+              <img src={names} id="mailimg" />
               <p id="error5A">Invalid Name</p>
               <label htmlFor="title" id="formlabel">
                 Mobile Number
@@ -183,8 +183,8 @@ function EditProfile() {
                 required
                 value={mobile}
                 onChange={handleMobile}
-              ></input>
-              <img src={names} id="mailimg"></img>
+               />
+              <img src={names} id="mailimg" />
               <p id="error5">Invalid Phone No.</p>
               <label htmlFor="title" id="formlabel">
                 Gender
@@ -213,7 +213,7 @@ function EditProfile() {
                   Female
                 </option>
               </select>
-              <img src={genderimg} id="mailimg"></img>
+              <img src={genderimg} id="mailimg" />
               <div id="buttondiv">
                 <p id="buttonpara">
                   <button id="formbtn3" type="submit">
@@ -228,7 +228,7 @@ function EditProfile() {
           </div>
           <ToastContainer />
         </div>
-        <img src={edit} id="create6"></img>
+        <img src={edit} id="create6" />
       </div>
     </>
   );

@@ -79,7 +79,7 @@ function AddTemplate() {
 
   return (
     <>
-      <img src={background} id="background"></img>
+      <img src={background} id="background" />
       <Navbar />
       <div id="flexkro">
         <div id="marginerA">
@@ -95,8 +95,8 @@ function AddTemplate() {
               value={tempName}
               onChange={handleTempName}
               maxLength={20}
-            ></input>
-            <img src={templateimg} id="mailimg"></img>
+             />
+            <img src={templateimg} id="mailimg" />
             <p id="error5F">Invalid Template Name</p>
             <label htmlFor="from" id="formlabel">
               Template File
@@ -105,7 +105,7 @@ function AddTemplate() {
               <div id="fixer">
                 <label htmlFor="file-input">
                   <div id="imgdiv">
-                    <img src={uploads} id="upimg"></img>
+                    <img src={uploads} id="upimg" />
                     <p id="upload">Upload file here</p>
                   </div>
                 </label>
@@ -138,7 +138,7 @@ function AddTemplate() {
           </form>
           <ToastContainer />
         </div>
-        <img src={templateimgs} id="mailbox2"></img>
+        <img src={templateimgs} id="mailbox2" />
       </div>
     </>
   );

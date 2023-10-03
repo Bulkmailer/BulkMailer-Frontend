@@ -71,13 +71,13 @@ function Contactname(props) {
             className="deleteimg"
             id={props.id}
             onClick={handleDelete}
-          ></img>
+           />
           <img
             src={editImg}
             className="deleteimg"
             id={props.email}
             onClick={handleEdit}
-          ></img>
+           />
         </div>
       </div>
     </>

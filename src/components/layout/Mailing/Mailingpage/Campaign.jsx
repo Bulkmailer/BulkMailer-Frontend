@@ -72,7 +72,7 @@ function Campaign() {
   }
   return (
     <>
-      <img src={background} id="background"></img>
+      <img src={background} id="background" />
       {loading ? (
         <div id="loader">
           <ReactBootStrap.Spinner animation="border" id="spinner" />
@@ -80,7 +80,7 @@ function Campaign() {
       ) : null}
       <Navbar />
       <div id="managerA">
-        <img src={campaign} id="create9"></img>
+        <img src={campaign} id="create9" />
         <div>
           <h1 id="groupheadA">Add Campaign Name</h1>
           <form id="flexformA" onSubmit={handleSubmit}>
@@ -95,8 +95,8 @@ function Campaign() {
               onChange={handleCampaign}
               required
               maxLength={30}
-            ></input>
-            <img src={campaignlogo} id="mailimg"></img>
+             />
+            <img src={campaignlogo} id="mailimg" />
             <p id="error5C">Invalid Campaign Name</p>
             <p id="buttonpara">
               <button id="formbtn3A" type="submit">
@@ -109,7 +109,7 @@ function Campaign() {
           </form>
           <ToastContainer />
         </div>
-        <img src={campaign} id="create10"></img>
+        <img src={campaign} id="create10" />
       </div>
     </>
   );

@@ -906,12 +906,7 @@ h1 {
 }
 
 .footer-terms-content {
-  position: relative;
-  margin-top: 25vh;
-  text-align: left;
-}
-
-.footer-terms-content-forgot-password {
-  margin-top: 43vh;
+  position: absolute;
+  bottom: 20px;
   text-align: left;
 }

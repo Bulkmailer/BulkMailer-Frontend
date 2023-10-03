@@ -68,8 +68,8 @@ function TemplateShowComp(props) {
       <div id="center">
         <div className="template" id={props.id}>
           {props.name}
-          <br></br>
-          <img src={deleteitem} id={props.id} onClick={handleDelete}></img>
+          <br />
+          <img src={deleteitem} id={props.id} onClick={handleDelete} />
         </div>
       </div>
     </>

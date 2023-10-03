@@ -119,7 +119,7 @@ function EditContacts() {
 
   return (
     <>
-      <img src={background} id="background"></img>
+      <img src={background} id="background" />
       {loading ? (
         <div id="loader">
           <ReactBootStrap.Spinner animation="border" id="spinner" />
@@ -127,7 +127,7 @@ function EditContacts() {
       ) : null}
       <Navbar />
       <div id="managerC">
-        <img src={addcontacts} id="create"></img>
+        <img src={addcontacts} id="create" />
         <div>
           <h1 id="pagehead20">Edit Contacts</h1>
           <form id="flexform2" onSubmit={handleSubmit} name="contactform">
@@ -141,9 +141,9 @@ function EditContacts() {
               required
               value={email}
               onChange={handleMail}
-            ></input>
+             />
             <p id="mailerr">Invalid Email Address</p>
-            <img src={emailimg} id="mailimg"></img>
+            <img src={emailimg} id="mailimg" />
             <label htmlFor="title" id="formlabel">
               Full Name
             </label>
@@ -155,9 +155,9 @@ function EditContacts() {
               value={name}
               onChange={handleName}
               maxLength={20}
-            ></input>
+             />
             <p id="mailerrA">Invalid Name</p>
-            <img src={names} id="mailimg"></img>
+            <img src={names} id="mailimg" />
             <label htmlFor="title" id="formlabel">
               Gender
             </label>
@@ -185,7 +185,7 @@ function EditContacts() {
               {/* <option value="Binary">Binary</option>
               <option value="Prefer not to say">Prefer not to say</option> */}
             </select>
-            <img src={genderimg} id="mailimg"></img>
+            <img src={genderimg} id="mailimg" />
             <div id="buttondiv">
               <p id="buttonpara">
                 <button id="formbtn31" type="submit">
@@ -200,7 +200,7 @@ function EditContacts() {
           </form>
           <ToastContainer />
         </div>
-        <img src={addcontacts} id="create6"></img>
+        <img src={addcontacts} id="create6" />
       </div>
     </>
   );

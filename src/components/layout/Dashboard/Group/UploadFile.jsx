@@ -121,7 +121,7 @@ function Uploads() {
   return (
     <>
       {console.log(newArray)}
-      <img src={background} id="background"></img>
+      <img src={background} id="background" />
       {loading ? (
         <div id="loader">
           <ReactBootStrap.Spinner animation="border" id="spinner" />
@@ -129,14 +129,14 @@ function Uploads() {
       ) : null}
       <Navbar />
       <div id="managerC">
-        <img src={uploading} id="create7"></img>
+        <img src={uploading} id="create7" />
         <div>
           <h1 id="pagehead2">Upload a File</h1>
           <p id="intropara3">Select a .csv or an excel file...</p>
 
           {file.length != 0 ? (
             <form>
-              <table id="tb1-data"></table>
+              <table id="tb1-data" />
               <p id="buttonpara">
                 <button id="formbtn5" onClick={handleSubmit}>
                   Upload
@@ -150,7 +150,7 @@ function Uploads() {
             <div id="show">
               <label htmlFor="file-input">
                 <div id="imgdiv">
-                  <img src={uploads} id="upimg"></img>
+                  <img src={uploads} id="upimg" />
                   <p id="upload">Upload file here</p>
                 </div>
               </label>
@@ -165,7 +165,7 @@ function Uploads() {
             onChange={handleFiles}
           />
         </div>
-        <img src={uploading} id="create8"></img>
+        <img src={uploading} id="create8" />
       </div>
     </>
   );
