@@ -159,6 +159,17 @@ nav a.active {
   font-weight: 600;
   text-align: center;
 }
+
+#login {
+  position: absolute;
+  width: 50px;
+  margin: 15px 0px 10px 20px;
+  right: 2.5rem;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 1.1rem;
+}
+
 #formbtn12 {
   background-color: rgba(83, 109, 254, 0.9);
   border: none;
