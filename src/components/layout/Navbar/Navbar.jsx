@@ -23,8 +23,8 @@ function Navbar() {
     document.getElementById("askmenudiv").style.display = "block";
   }
   function logoutfunc() {
-    Navigate("/");
     localStorage.removeItem("accesstokenb");
+    Navigate("/");
   }
   function hideaskmenu() {
     document.getElementById("askmenudiv").style.display = "none";
@@ -136,10 +136,17 @@ function Navbar() {
           </NavLink>
         </ul>
         <img src={menu} id="menu" onClick={showmenu}></img>
-        <Link to="/profilepage">
+        {localStorage.getItem('accesstokenb') && <Link to="/profilepage">
           <img src={profile} id="profile"></img>
-        </Link>
-        <img src={logout} id="logout" onClick={askmenu}></img>
+        </Link>}
+        {
+          localStorage.getItem('accesstokenb') && <img src={logout} id="logout" onClick={askmenu}></img>
+        }
+
+        {
+          !localStorage.getItem('accesstokenb') && <Link id="login" to="/">Login</Link>
+        }
+        
       </nav>
       <img src={circle} id="circletwo"></img>
     </>
