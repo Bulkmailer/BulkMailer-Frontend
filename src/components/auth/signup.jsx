@@ -83,7 +83,7 @@ function FrgPass() {
               <Input
                 prefix={<EnvelopeIcon />}
                 onChange={handleMail}
-                maxLength={30}
+                maxLength={320}
                 value={email}
                 type="text"
                 placeholder="Enter Your Email"
