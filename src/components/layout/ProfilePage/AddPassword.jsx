@@ -65,7 +65,7 @@ function AddPassword() {
 
   return (
     <>
-      <img src={background} id="background"></img>
+      <img src={background} id="background" />
       {loading ? (
         <div id="loader">
           <ReactBootStrap.Spinner animation="border" id="spinner" />
@@ -73,7 +73,7 @@ function AddPassword() {
       ) : null}
       <Navbar />
       <div id="managerA">
-        <img src={addpass} id="create9"></img>
+        <img src={addpass} id="create9" />
         <div>
           <h1 id="groupheadA">Add App Password</h1>
           <form id="flexformA" onSubmit={handleSubmit}>
@@ -87,8 +87,8 @@ function AddPassword() {
               value={password}
               onChange={handlePass}
               required
-            ></input>
-            <img src={lock} id="mailimg"></img>
+             />
+            <img src={lock} id="mailimg" />
             <p id="buttonpara">
               <button id="formbtn3A" type="submit">
                 Submit
@@ -100,7 +100,7 @@ function AddPassword() {
             {/* <p id='error4'>Password must contain at least 8 characters, a special symbol, an uppercase, a lowecase, a numeric value and no space.</p> */}
           </form>
         </div>
-        <img src={addpass} id="create10"></img>
+        <img src={addpass} id="create10" />
       </div>
     </>
   );

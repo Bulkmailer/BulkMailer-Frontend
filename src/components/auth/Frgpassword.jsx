@@ -10,6 +10,7 @@ import { Input } from "antd";
 import PageLayout from "./commonPageLayout/authPageLayout";
 import mailimg from "../../assets/mail.svg";
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import * as ReactBootStrap from "react-bootstrap";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -75,7 +76,7 @@ function FrgPass() {
       <div id="flex">
         <PageLayout />
         <div id="forms2">
-          <h1 className="form-heading">Email Verification</h1>
+          <h1 className="form-heading">Forgot Password</h1>
           <p className="form-info">
             Enter your E-mail ID, which will receive the 4 digit OTP.
           </p>
@@ -95,15 +96,21 @@ function FrgPass() {
             <button type="submit" id="formbtn">
               Send OTP
             </button>
-            <p className="footer-terms-content-forgot-password">
-              ©2023 Bulk Mailer - All Rights Reserved
+            <p id="endtxt">
+              Return to{" "}
+              <span id="endlink">
+                <Link to="/">Login</Link>
+              </span>
             </p>
             <ToastContainer />
           </form>
+          <p className="footer-terms-content">
+            ©2023 Bulk Mailer - All Rights Reserved
+          </p>
         </div>
-        <div></div>
-        <img src={circle} className="bluecircleimg"></img>
-        <div className="bluecircleimg2"></div>
+        <div />
+        <img src={circle} className="bluecircleimg" />
+        <div className="bluecircleimg2" />
       </div>
     </>
   );

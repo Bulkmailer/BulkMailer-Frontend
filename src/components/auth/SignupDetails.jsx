@@ -41,7 +41,7 @@ function SignupDetails() {
   const [loading, setLoading] = useState(false);
 
   const rightPass =
-    /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+    /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[-!@#$%^&*(){}[\]|+<>?/])[A-Za-z\d\-!@#$%^&*(){}[\]|+<>?/]{8,}$/;
   const rightName = /^[a-zA-Z]+[\-'\s]?[a-zA-Z ]+$/;
   const rightUsername = /^\w[a-zA-Z@#0-9.]*$/;
 
@@ -199,9 +199,12 @@ function SignupDetails() {
             Password must contain at least 8 characters, a special symbol, an
             uppercase, a lowecase, a numeric value and no space.
           </p>
+          <p className="footer-terms-content">
+            ©2023 Bulk Mailer - All Rights Reserved
+          </p>
         </div>
-        <img src={circle} className="bluecircleimg"></img>
-        <div className="bluecircleimg2"></div>
+        <img src={circle} className="bluecircleimg" />
+        <div className="bluecircleimg2" />
       </div>
     </>
   );

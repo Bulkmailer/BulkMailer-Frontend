@@ -37,7 +37,7 @@ function Templates() {
   }
   return (
     <>
-      <img src={background} id="background"></img>
+      <img src={background} id="background" />
       <Navbar />
       <div id="templatesdiv">
         <h1 id="heading1">My Templates</h1>

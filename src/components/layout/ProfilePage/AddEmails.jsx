@@ -74,7 +74,7 @@ function AddEmails() {
   }
   return (
     <>
-      <img src={background} id="background"></img>
+      <img src={background} id="background" />
       {loading ? (
         <div id="loader">
           <ReactBootStrap.Spinner animation="border" id="spinner" />
@@ -82,7 +82,7 @@ function AddEmails() {
       ) : null}
       <Navbar />
       <div id="managerA">
-        <img src={addmails} id="create9"></img>
+        <img src={addmails} id="create9" />
         <div>
           <h1 id="groupheadB">Add Mails</h1>
           <form id="flexformA" onSubmit={handleSubmit}>
@@ -96,8 +96,8 @@ function AddEmails() {
               value={email}
               onChange={handleEmail}
               required
-            ></input>
-            <img src={mailimg} id="mailimg"></img>
+             />
+            <img src={mailimg} id="mailimg" />
             <p id="error1">Invalid Mail</p>
             <label htmlFor="title" id="formslabel">
               App Password
@@ -109,8 +109,8 @@ function AddEmails() {
               value={password}
               onChange={handlePass}
               required
-            ></input>
-            <img src={lock} id="mailimg"></img>
+             />
+            <img src={lock} id="mailimg" />
             <p id="buttonpara">
               <button id="formbtn3A" type="submit">
                 Submit
@@ -122,7 +122,7 @@ function AddEmails() {
           </form>
           <ToastContainer />
         </div>
-        <img src={addmails} id="create10"></img>
+        <img src={addmails} id="create10" />
       </div>
     </>
   );

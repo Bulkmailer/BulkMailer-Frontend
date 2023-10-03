@@ -95,7 +95,6 @@ h1 {
   width: 34.58vw;
   height: 58.89vh;
   margin: 5.89vh 38.33vw 0vh 0vw;
-  position: absolute;
 }
 .bluecircleimg {
   position: absolute;
@@ -906,12 +905,7 @@ h1 {
 }
 
 .footer-terms-content {
-  position: relative;
-  margin-top: 25vh;
-  text-align: left;
-}
-
-.footer-terms-content-forgot-password {
-  margin-top: 43vh;
+  position: absolute;
+  bottom: 20px;
   text-align: left;
 }

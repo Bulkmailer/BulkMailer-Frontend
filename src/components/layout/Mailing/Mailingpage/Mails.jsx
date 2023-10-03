@@ -200,7 +200,7 @@ function Mails() {
           <ReactBootStrap.Spinner animation="border" id="spinner" />
         </div>
       ) : null}
-      <img src={background} id="background"></img>
+      <img src={background} id="background" />
       <Navbar />
       <div id="groupsdiv">{groupArr.map((rest) => getGroup(rest))}</div>
       <div id="groupsdiv2">{emailArr.map((rest) => getEmail(rest))}</div>
@@ -219,8 +219,8 @@ function Mails() {
               autoComplete="off"
               value={groupname}
               required
-            ></input>
-            <img src={toimg} id="mailimg"></img>
+             />
+            <img src={toimg} id="mailimg" />
             <label htmlFor="from" id="formlabel">
               From
             </label>
@@ -232,8 +232,8 @@ function Mails() {
               autoComplete="off"
               value={fromName}
               required
-            ></input>
-            <img src={fromimg} id="mailimg2A"></img>
+             />
+            <img src={fromimg} id="mailimg2A" />
             <label htmlFor="from" id="formlabel">
               Subject
             </label>
@@ -245,8 +245,8 @@ function Mails() {
               onChange={handleSubject}
               required
               maxLength={300}
-            ></input>
-            <img src={subjectimg} id="mailimg"></img>
+             />
+            <img src={subjectimg} id="mailimg" />
             <p id="error5D">Invalid Subject</p>
             {templatesid == null ? (
               <>
@@ -260,8 +260,8 @@ function Mails() {
                   onChange={handleBody}
                   required
                   id="textarea2"
-                ></textarea>
-                <img src={bodyimg} id="failimg"></img>
+                 />
+                <img src={bodyimg} id="failimg" />
               </>
             ) : null}
             <label htmlFor="from" id="formlabel">
@@ -275,8 +275,8 @@ function Mails() {
               onChange={handleCompany}
               required
               maxLength={10}
-            ></input>
-            <img src={companyimg} id="mailimg"></img>
+             />
+            <img src={companyimg} id="mailimg" />
             <p id="error5E">Invalid Company Name</p>
             <div>
               <button onClick={handleSubmit} id="formbtn10">
@@ -291,7 +291,7 @@ function Mails() {
    
     </div> */}
         </div>
-        <img src={mailimg} id="mailbox"></img>
+        <img src={mailimg} id="mailbox" />
       </div>
       <ToastContainer />
     </>

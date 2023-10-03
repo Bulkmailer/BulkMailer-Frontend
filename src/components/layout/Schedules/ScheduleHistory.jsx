@@ -52,7 +52,7 @@ function ScheduleHistory() {
           <ReactBootStrap.Spinner animation="border" id="spinner" />
         </div>
       ) : null}
-      <img src={background} id="background"></img>
+      <img src={background} id="background" />
       <Navbar />
       {list1 && list1.length != 0 ? <h1 id="listhead">My Schedules</h1> : null}
       <div className="namesdiv2">
@@ -60,7 +60,7 @@ function ScheduleHistory() {
           list1.map((rest) => getSchedule(rest))
         ) : (
           <div id="nothing">
-            <img src={noschedules} id="nothingimg"></img>
+            <img src={noschedules} id="nothingimg" />
             <h6 id="nothingpara">No Schedules</h6>
           </div>
         )}

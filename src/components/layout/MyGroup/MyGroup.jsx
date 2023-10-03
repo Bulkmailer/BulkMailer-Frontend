@@ -42,7 +42,7 @@ function MyGroup() {
           <ReactBootStrap.Spinner animation="border" id="spinner" />
         </div>
       )}
-      <img src={background} id="background"></img>
+      <img src={background} id="background" />
       <Navbar />
       {groupArr && groupArr.length != 0 ? (
         <h1 id="listhead">My Groups</h1>
@@ -53,7 +53,7 @@ function MyGroup() {
           <>{groupArr.map((rest) => getGroup(rest))}</>
         ) : (
           <div id="nothing">
-            <img src={nogroups} id="nothingimg"></img>
+            <img src={nogroups} id="nothingimg" />
             <Link to="/creategroup">
               <div id="btndiv">
                 <button id="formbtn9">Add Groups</button>

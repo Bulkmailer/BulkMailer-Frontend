@@ -30,9 +30,9 @@ function HistoryComp(props) {
               </span>
             ) : (
               <span className="dotted-container">
-                <span className="dot"></span>
-                <span className="dot"></span>
-                <span className="dot"></span>
+                <span className="dot" />
+                <span className="dot" />
+                <span className="dot" />
               </span>
             )}
           </p>
