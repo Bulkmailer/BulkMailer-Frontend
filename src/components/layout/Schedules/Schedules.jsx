@@ -104,27 +104,27 @@ function Schedule() {
         }
       }
     } else if (month == 2 && year % 4 != 0) {
-      for (var i = std - 1; i <= 28; i++) {
-        if (i == std - 1) {
+      for (let j = std - 1; j <= 28; j++) {
+        if (j == std - 1) {
           dateoptions = "<option value= '0'>Date</option>";
         } else {
-          dateoptions += "<option value='" + i + "'>" + i + "</option>";
+          dateoptions += "<option value='" + j + "'>" + j + "</option>";
         }
       }
     } else if (month == 2 && year % 4 == 0) {
-      for (var i = std - 1; i <= 29; i++) {
-        if (i == std - 1) {
+      for (let k = std - 1; k <= 29; k++) {
+        if (k == std - 1) {
           dateoptions = "<option value= '0'>Date</option>";
         } else {
-          dateoptions += "<option value='" + i + "'>" + i + "</option>";
+          dateoptions += "<option value='" + k + "'>" + k + "</option>";
         }
       }
     } else {
-      for (var i = std - 1; i <= 30; i++) {
-        if (i == std - 1) {
+      for (let p = std - 1; p <= 30; p++) {
+        if (p == std - 1) {
           dateoptions = "<option value= '0'>Date</option>";
         } else {
-          dateoptions += "<option value='" + i + "'>" + i + "</option>";
+          dateoptions += "<option value='" + p + "'>" + p + "</option>";
         }
       }
     }

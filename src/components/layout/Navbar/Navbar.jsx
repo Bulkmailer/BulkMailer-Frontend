@@ -23,8 +23,8 @@ function Navbar() {
     document.getElementById("askmenudiv").style.display = "block";
   }
   function logoutfunc() {
-    Navigate("/");
     localStorage.removeItem("accesstokenb");
+    Navigate("/");
   }
   function hideaskmenu() {
     document.getElementById("askmenudiv").style.display = "none";
@@ -135,6 +135,18 @@ function Navbar() {
             <li>My Schedules</li>
           </NavLink>
         </ul>
+        <img src={menu} id="menu" onClick={showmenu}></img>
+        {localStorage.getItem('accesstokenb') && <Link to="/profilepage">
+          <img src={profile} id="profile"></img>
+        </Link>}
+        {
+          localStorage.getItem('accesstokenb') && <img src={logout} id="logout" onClick={askmenu}></img>
+        }
+
+        {
+          !localStorage.getItem('accesstokenb') && <Link id="login" to="/">Login</Link>
+        }
+        
         <img src={menu} id="menu" onClick={showmenu} />
         <Link to="/profilepage">
           <img src={profile} id="profile" />

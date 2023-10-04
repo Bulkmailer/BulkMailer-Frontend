@@ -41,7 +41,7 @@ function SignupDetails() {
   const [loading, setLoading] = useState(false);
 
   const rightPass =
-    /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+    /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[-!@#$%^&*(){}[\]|+<>?/])[A-Za-z\d\-!@#$%^&*(){}[\]|+<>?/]{8,}$/;
   const rightName = /^[a-zA-Z]+[\-'\s]?[a-zA-Z ]+$/;
   const rightUsername = /^\w[a-zA-Z@#0-9.]*$/;
 
