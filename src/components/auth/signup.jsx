@@ -14,103 +14,89 @@ import { useNavigate } from "react-router-dom";
 import * as ReactBootStrap from "react-bootstrap";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { validateEmail } from "../../utils/validateEmail";
 
-function FrgPass() {
-  const [email, setEmail] = useState("");
+export default function FrgPass() {
+	const mssg = useSelector((state) => state.authreducer);
+	const [email, setEmail] = useState({
+		value: "",
+		error: "",
+	});
+	const [loading, setLoading] = useState(false);
+	const [check, setCheck] = useState(0);
+	const dispatch = useDispatch();
+	const fd = new FormData();
+	const navigate = useNavigate();
 
-  const [correctMail, setCorrectMail] = useState(false);
+	function handleMail(e) {
+		setEmail((curr) => ({
+			...curr,
+			value: e.target.value,
+			error: validateEmail(e.target.value) ? "" : "Invalid Email Address",
+		}));
+	}
 
-  const [loading, setLoading] = useState(false);
+	function handleSubmit(e) {
+		e.preventDefault();
+		localStorage.setItem("signupMail", email.value);
+		if (!email.error) {
+			setLoading(true);
+			setCheck(0);
+			fd.append("email", email.value);
+			dispatch(signupdata(fd, setLoading, navigate, setCheck));
+		}
+	}
 
-  const [check, setCheck] = useState(0);
+	useEffect(() => {
+		if (check === 1) {
+			toast.error(mssg.response3[0], {
+				position: toast.POSITION.TOP_RIGHT,
+			});
+		}
+	}, [check]);
 
-  const dispatch = useDispatch();
-  const fd = new FormData();
-  const navigate = useNavigate();
-
-  function handleMail(e) {
-    setEmail(e.target.value);
-  }
-
-  const rightmail =
-    /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-
-  useEffect(() => {
-    if (rightmail.test(email)) {
-      document.getElementById("emailerr2").style.display = "none";
-      setCorrectMail(true);
-    } else if (email) {
-      document.getElementById("emailerr2").style.display = "block";
-      setCorrectMail(false);
-    }
-  }, [email]);
-
-  const mssg = useSelector((state) => state.authreducer);
-
-  useEffect(() => {
-    console.log(check);
-    if (check == 1) {
-      toast.error(mssg.response3[0], {
-        position: toast.POSITION.TOP_RIGHT,
-      });
-    }
-  }, [check]);
-
-  function handleSubmit(e) {
-    e.preventDefault();
-    localStorage.setItem("signupMail", email);
-    if (correctMail) {
-      setLoading(true);
-      setCheck(0);
-      fd.append("email", email);
-      dispatch(signupdata(fd, setLoading, navigate, setCheck));
-    }
-  }
-  return (
-    <>
-      {loading ? (
-        <div id="loader">
-          <ReactBootStrap.Spinner animation="border" id="spinner" />
-        </div>
-      ) : null}
-      <div id="flex">
-        <PageLayout />
-        <div id="forms">
-          <h1 className="form-heading2">Sign up for Bulk Mailer</h1>
-          <p className="form-info">Please Enter Your Email</p>
-          <form onSubmit={handleSubmit} id="formtop">
-            <div id="formflex">
-              <Input
-                prefix={<EnvelopeIcon />}
-                onChange={handleMail}
-                maxLength={320}
-                value={email}
-                type="text"
-                placeholder="Enter Your Email"
-                required
-              />
-              <p id="emailerr2">Invalid Email Address</p>
-            </div>
-            <button type="submit" id="formbtn">
-              Send OTP
-            </button>
-            <ToastContainer />
-          </form>
-          <p id="endtxt">
-            Already A Customer?{" "}
-            <span id="endlink">
-              <Link to="/">Login</Link>
-            </span>
-          </p>
-          <p className="footer-terms-content">
-            ©2023 Bulk Mailer - All Rights Reserved
-          </p>
-        </div>
-        <div />
-        <img src={circle} className="bluecircleimg" />
-        <div className="bluecircleimg2" />
-      </div>
-    </>
-  );
+	return (
+		<>
+			{loading ? (
+				<div id="loader">
+					<ReactBootStrap.Spinner animation="border" id="spinner" />
+				</div>
+			) : null}
+			<div id="flex">
+				<PageLayout />
+				<div id="forms">
+					<h1 className="form-heading2">Sign up for Bulk Mailer</h1>
+					<p className="form-info">Please Enter Your Email</p>
+					<form onSubmit={handleSubmit} id="formtop">
+						<div id="formflex" className="signup-email-wrapper">
+							<Input
+								prefix={<EnvelopeIcon />}
+								onChange={handleMail}
+								maxLength={320}
+								value={email.value}
+								type="text"
+								placeholder="Enter Your Email"
+								required
+							/>
+							<p className="signup-input-error">{email.error}</p>
+						</div>
+						<button type="submit" id="formbtn">
+							Send OTP
+						</button>
+						<ToastContainer />
+					</form>
+					<p id="endtxt">
+						Already A Customer?{" "}
+						<span id="endlink">
+							<Link to="/">Login</Link>
+						</span>
+					</p>
+					<p className="footer-terms-content">©2023 Bulk Mailer - All Rights Reserved</p>
+				</div>
+				<div />
+				<img src={circle} className="bluecircleimg" alt="circle" />
+				<div className="bluecircleimg2" />
+			</div>
+		</>
+	);
 }
-export default FrgPass;
